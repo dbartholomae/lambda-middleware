@@ -6,10 +6,6 @@
   "ensureConsistentVersions": true,
   "projectFolderMinDepth": 2,
   "projectFolderMaxDepth": 2,
-  "approvedPackagesPolicy": {
-     "ignoredNpmScopes": [ "@types" ]
-  },
-
   "repository": {
      "url": "https://github.com/dbartholomae/function-middleware",
      "defaultBranch": "master",
