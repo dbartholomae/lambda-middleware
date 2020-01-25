@@ -11,5 +11,9 @@
      "defaultBranch": "master",
      "defaultRemote": "origin"
   },
-  "projects": []
+  "projects": [{
+    "packageName": "@lambda-middleware/error-handler",
+    "projectFolder": "packages/error-handler",
+    "shouldPublish": true
+  }]
 }
