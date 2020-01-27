@@ -7,7 +7,7 @@ This monorepo is a collection of middleware for AWS lambda functions.
 
 The following middlewares are currently available in this monorepo:
 
-* [@lambda-middleware/error-handler](/packages/error-handler): An error handler middleware for AWS http lambda
+* [@lambda-middleware/http-error-handler](/packages/http-error-handler): An error handler middleware for AWS http lambda
 functions.
 
 ## Usage

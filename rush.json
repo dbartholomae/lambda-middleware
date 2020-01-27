@@ -12,8 +12,8 @@
      "defaultRemote": "origin"
   },
   "projects": [{
-    "packageName": "@lambda-middleware/error-handler",
-    "projectFolder": "packages/error-handler",
+    "packageName": "@lambda-middleware/http-error-handler",
+    "projectFolder": "packages/http-error-handler",
     "shouldPublish": true
   }]
 }
