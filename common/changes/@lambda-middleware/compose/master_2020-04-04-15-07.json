@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/compose",
+      "comment": "add compose meta middleware",
+      "type": "major"
+    }
+  ],
+  "packageName": "@lambda-middleware/compose",
+  "email": "daniel@bartholomae.name"
+}

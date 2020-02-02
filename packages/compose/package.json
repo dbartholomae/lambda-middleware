@@ -1,0 +1,78 @@
+{
+  "name": "@lambda-middleware/compose",
+  "version": "0.0.0",
+  "description": "A compose function for functional lambda middleware.",
+  "homepage": "https://dbartholomae.github.io/lambda-middleware/",
+  "license": "MIT",
+  "author": {
+    "name": "Daniel Bartholomae",
+    "email": "daniel@bartholomae.name",
+    "url": ""
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "keywords": [
+    "aws",
+    "lambda",
+    "middleware",
+    "error",
+    "http",
+    "json"
+  ],
+  "types": "lib/index.d.ts",
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "private": false,
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "build": "rimraf ./lib && tsc --project tsconfig.build.json",
+    "pretest": "npm run build",
+    "release": "semantic-release",
+    "start": "cd test && serverless offline",
+    "test": "npm run lint && npm run test:unit && npm run test:integration && pkg-ok",
+    "test:integration": "concurrently --kill-others --success first \"cd test && serverless offline\" \"wait-on http://localhost:3000/status && jest -c jest.integration.config.js\"",
+    "test:unit": "jest",
+    "lint": "tslint --project tsconfig.json",
+    "lint:fix": "tslint --project tsconfig.json --fix",
+    "precommit:lint:fix": "tslint --project tsconfig.json --fix"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/commit-analyzer": "^6.1.0",
+    "@semantic-release/git": "^7.0.8",
+    "@semantic-release/npm": "^5.1.4",
+    "@semantic-release/release-notes-generator": "^7.1.4",
+    "@types/jest": "^24.0.6",
+    "@types/supertest": "^2.0.7",
+    "@types/aws-lambda": "^8.10.40",
+    "aws-lambda": "^1.0.5",
+    "codecov": "^3.2.0",
+    "concurrently": "^5.0.0",
+    "cross-env": "^6.0.0",
+    "http-errors": "^1.7.3",
+    "jest": "^25.1.0",
+    "jest-junit": "^10.0.0",
+    "pkg-ok": "^2.3.1",
+    "rimraf": "^3.0.0",
+    "semantic-release": "^15.13.3",
+    "serverless": "^1.37.1",
+    "serverless-offline": "^5.0.0",
+    "serverless-webpack": "^5.2.0",
+    "source-map-support": "^0.5.10",
+    "supertest": "^4.0.2",
+    "ts-jest": "^24.3.0",
+    "ts-loader": "^6.2.1",
+    "tslint": "^6.0.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-consistent-codestyle": "^1.16.0",
+    "typescript": "^3.7.5",
+    "wait-on": "^3.3.0",
+    "webpack": "^4.41.5"
+  },
+  "repository": "git@github.com:dbartholomae/lambda-middleware.git"
+}
