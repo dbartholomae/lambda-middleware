@@ -67,7 +67,7 @@
     "rimraf": "^3.0.0",
     "semantic-release": "^15.13.3",
     "serverless": "^1.37.1",
-    "serverless-offline": "^5.0.0",
+    "serverless-offline": "^6.0.0",
     "serverless-webpack": "^5.2.0",
     "source-map-support": "^0.5.10",
     "supertest": "^4.0.2",
