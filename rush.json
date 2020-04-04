@@ -7,7 +7,7 @@
   "projectFolderMinDepth": 2,
   "projectFolderMaxDepth": 2,
   "repository": {
-     "url": "https://github.com/dbartholomae/function-middleware",
+     "url": "https://github.com/dbartholomae/lambda-middleware.git",
      "defaultBranch": "master",
      "defaultRemote": "origin"
   },
