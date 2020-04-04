@@ -1,0 +1,25 @@
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: check-changelog
+      run: node ./common/scripts/install-run-rush.js change -v
+    - name: install
+      run: node ./common/scripts/install-run-rush.js install --no-link
+    - name: link
+      run: node ./common/scripts/install-run-rush.js link
+    - name: build
+      run: node ./common/scripts/install-run-rush.js rebuild --verbose
+    - name: test
+      run: node ./common/scripts/install-run-rush.js test
