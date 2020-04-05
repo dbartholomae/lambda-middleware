@@ -46,5 +46,9 @@ jobs:
       run: node ./common/scripts/install-run-rush.js link
     - name: build
       run: node ./common/scripts/install-run-rush.js rebuild --verbose
+    - name: set git credentials
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
     - name: publish
-      run: node ./common/scripts/install-run-rush.js publish -a -b master
+      run: node ./common/scripts/install-run-rush.js publish -a -b master -p
