@@ -35,7 +35,6 @@
   },
   "scripts": {
     "build": "rimraf ./lib && tsc --project tsconfig.build.json",
-    "codecov": "codecov",
     "lint": "eslint src/**/*.ts examples/**/*.ts",
     "pretest": "npm run build",
     "start": "cd test && serverless offline",
@@ -52,9 +51,7 @@
     "@typescript-eslint/parser": "^2.26.0",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "aws-lambda": "^1.0.5",
-    "codecov": "^3.6.5",
     "concurrently": "^5.1.0",
-    "cross-env": "^7.0.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",

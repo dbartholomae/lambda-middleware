@@ -21,15 +21,6 @@
     "ignoreDependencyOrder": true
   }, {
     "commandKind": "bulk",
-    "name": "codecov",
-    "summary": "Upload code coverage",
-    "description": "Upload code coverage for all packages to codecov.",
-    "safeForSimultaneousRushProcesses": true,
-    "enableParallelism": true,
-    "allowWarningsInSuccessfulBuild": true,
-    "ignoreDependencyOrder": true
-  }, {
-    "commandKind": "bulk",
     "name": "test:integration",
     "summary": "Run integration tests for all packages",
     "description": "Runs integration tests for all packages.",
