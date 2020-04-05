@@ -35,6 +35,7 @@
   },
   "scripts": {
     "build": "rimraf ./lib && tsc --project tsconfig.build.json",
+    "codecov": "codecov",
     "lint": "eslint src/**/*.ts examples/**/*.ts",
     "pretest": "npm run build",
     "start": "cd test && serverless offline",

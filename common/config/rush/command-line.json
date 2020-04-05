@@ -12,9 +12,27 @@
     "ignoreDependencyOrder": true
   }, {
     "commandKind": "bulk",
-    "name": "test",
-    "summary": "Test all packages",
-    "description": "Runs unit and integration tests for all packages.",
+    "name": "test:unit",
+    "summary": "Run unit tests for all packages",
+    "description": "Runs unit integration tests for all packages.",
+    "safeForSimultaneousRushProcesses": true,
+    "enableParallelism": true,
+    "allowWarningsInSuccessfulBuild": true,
+    "ignoreDependencyOrder": true
+  }, {
+    "commandKind": "bulk",
+    "name": "codecov",
+    "summary": "Upload code coverage",
+    "description": "Upload code coverage for all packages to codecov.",
+    "safeForSimultaneousRushProcesses": true,
+    "enableParallelism": true,
+    "allowWarningsInSuccessfulBuild": true,
+    "ignoreDependencyOrder": true
+  }, {
+    "commandKind": "bulk",
+    "name": "test:integration",
+    "summary": "Run integration tests for all packages",
+    "description": "Runs integration tests for all packages.",
     "safeForSimultaneousRushProcesses": true,
     "enableParallelism": true,
     "allowWarningsInSuccessfulBuild": true,

@@ -23,5 +23,9 @@ jobs:
       run: node ./common/scripts/install-run-rush.js rebuild --verbose
     - name: lint
       run: node ./common/scripts/install-run-rush.js lint
-    - name: test
-      run: node ./common/scripts/install-run-rush.js test
+    - name: run unit tests
+      run: node ./common/scripts/install-run-rush.js test:unit
+    - name: upload code coverage to codecov
+      run: node ./common/scripts/install-run-rush.js codecov
+    - name: run integration tests
+      run: node ./common/scripts/install-run-rush.js test:integration
