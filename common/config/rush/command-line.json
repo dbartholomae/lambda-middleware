@@ -8,6 +8,7 @@
     "description": "Runs linting, unit and integration tests for all packages.",
     "safeForSimultaneousRushProcesses": true,
     "enableParallelism": true,
+    "allowWarningsInSuccessfulBuild": true,
     "ignoreDependencyOrder": true
   }],
   "parameters": []
