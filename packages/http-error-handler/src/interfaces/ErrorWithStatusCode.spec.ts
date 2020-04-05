@@ -1,13 +1,13 @@
 import createHttpError from 'http-errors'
 import {
-  IErrorWithStatusCode,
+  ErrorWithStatusCode,
   isErrorWithStatusCode
-} from './IErrorWithStatusCode'
+} from './ErrorWithStatusCode'
 
-describe('IErrorWithStatusCode', () => {
+describe('ErrorWithStatusCode', () => {
   describe('interface', () => {
     it('accepts a valid error with status code', () => {
-      const error: IErrorWithStatusCode = createHttpError(400, 'Oh no')
+      const error: ErrorWithStatusCode = createHttpError(400, 'Oh no')
       expect(error).toBeDefined()
     })
   })

@@ -3,7 +3,9 @@ import createHttpError from 'http-errors'
 import { errorHandler } from '../'
 
 // This is your AWS handler
-async function helloWorld (event: APIGatewayEvent): Promise<APIGatewayProxyResult> {
+async function helloWorld(
+  event: APIGatewayEvent
+): Promise<APIGatewayProxyResult> {
   if (event.queryStringParameters?.search == null) {
     // If you throw an error with status code, the error will be returned as stringified JSON
     // Only the stack will be omitted.

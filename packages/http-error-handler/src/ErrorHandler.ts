@@ -1,13 +1,22 @@
-import { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from 'aws-lambda'
+import {
+  APIGatewayProxyEvent,
+  APIGatewayProxyResult,
+  Context
+} from 'aws-lambda'
 import debugFactory, { IDebugger } from 'debug'
 import { serializeError } from 'serialize-error'
 import { omit } from './helpers/omit'
-import { isErrorWithStatusCode } from './interfaces/IErrorWithStatusCode'
+import { isErrorWithStatusCode } from './interfaces/ErrorWithStatusCode'
 import { PromiseHandler } from './interfaces/PromiseHandler'
 
 const logger: IDebugger = debugFactory('@lambda-middleware/error-handler')
 
-export const errorHandler = () => <E extends APIGatewayProxyEvent>(handler: PromiseHandler<E, APIGatewayProxyResult>): PromiseHandler<E, APIGatewayProxyResult> => async (event: E, context: Context) => {
+export const errorHandler = () => <E extends APIGatewayProxyEvent>(
+  handler: PromiseHandler<E, APIGatewayProxyResult>
+): PromiseHandler<E, APIGatewayProxyResult> => async (
+  event: E,
+  context: Context
+) => {
   try {
     return await handler(event, context)
   } catch (error) {

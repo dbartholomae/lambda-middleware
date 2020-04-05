@@ -20,7 +20,5 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true
   },
-  "include": [
-    "**/*"
-  ]
+  "include": ["**/*"]
 }
