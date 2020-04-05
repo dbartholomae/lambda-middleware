@@ -3,9 +3,18 @@
 
   "commands": [{
     "commandKind": "bulk",
+    "name": "lint",
+    "summary": "Lint all packages",
+    "description": "Runs linting for all packages.",
+    "safeForSimultaneousRushProcesses": true,
+    "enableParallelism": true,
+    "allowWarningsInSuccessfulBuild": true,
+    "ignoreDependencyOrder": true
+  }, {
+    "commandKind": "bulk",
     "name": "test",
     "summary": "Test all packages",
-    "description": "Runs linting, unit and integration tests for all packages.",
+    "description": "Runs unit and integration tests for all packages.",
     "safeForSimultaneousRushProcesses": true,
     "enableParallelism": true,
     "allowWarningsInSuccessfulBuild": true,
