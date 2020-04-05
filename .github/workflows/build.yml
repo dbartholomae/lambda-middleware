@@ -50,5 +50,9 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+    - name: set npm credentials
+      run: echo //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN > .npmrc
+      env:
+        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
     - name: publish
       run: node ./common/scripts/install-run-rush.js publish -a -b master -p
