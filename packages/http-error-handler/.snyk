@@ -1,0 +1,11 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:debug:20170905':
+    - serverless > @serverless/components > @serverless/tencent-platform-client > serverless-tencent-tools > socket.io-stream > debug:
+        patched: '2020-04-08T00:04:38.922Z'
+  'npm:ms:20170412':
+    - serverless > @serverless/components > @serverless/tencent-platform-client > serverless-tencent-tools > socket.io-stream > debug > ms:
+        patched: '2020-04-08T00:04:38.922Z'
