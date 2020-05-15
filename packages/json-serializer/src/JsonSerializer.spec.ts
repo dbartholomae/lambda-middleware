@@ -11,11 +11,29 @@ describe('jsonSerializer', () => {
     })
 
     it('returns 200', async () => {
-      expect(response).toMatchObject({statusCode: 200})
+      expect(response).toMatchObject({ statusCode: 200 })
     })
 
     it('returns the stringified JSON response', async () => {
-      expect(response.body).toEqual("{}")
+      expect(response.body).toEqual('{}')
+    })
+  })
+
+  describe('with a handler returning undefined', () => {
+    let response: any
+
+    beforeEach(async () => {
+      const handler = () => undefined
+      const handlerWithMiddleware = jsonSerializer()(handler)
+      response = await handlerWithMiddleware({}, {})
+    })
+
+    it('returns 204', async () => {
+      expect(response).toMatchObject({ statusCode: 204 })
+    })
+
+    it('returns an empty string', async () => {
+      expect(response.body).toEqual('')
     })
   })
 
