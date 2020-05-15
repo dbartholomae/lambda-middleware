@@ -1,3 +1,4 @@
+import { Context } from 'aws-lambda'
 import { jsonSerializer } from './JsonSerializer'
 
 describe('jsonSerializer', () => {
@@ -5,9 +6,9 @@ describe('jsonSerializer', () => {
     let response: any
 
     beforeEach(async () => {
-      const handler = () => ({})
+      const handler = async () => ({})
       const handlerWithMiddleware = jsonSerializer()(handler)
-      response = await handlerWithMiddleware({}, {})
+      response = await handlerWithMiddleware({}, {} as Context)
     })
 
     it('returns 200', async () => {
@@ -23,9 +24,9 @@ describe('jsonSerializer', () => {
     let response: any
 
     beforeEach(async () => {
-      const handler = () => undefined
+      const handler = async () => undefined
       const handlerWithMiddleware = jsonSerializer()(handler)
-      response = await handlerWithMiddleware({}, {})
+      response = await handlerWithMiddleware({}, {} as Context)
     })
 
     it('returns 204', async () => {
