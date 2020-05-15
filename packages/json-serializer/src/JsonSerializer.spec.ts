@@ -18,4 +18,19 @@ describe('jsonSerializer', () => {
       expect(response.body).toEqual("{}")
     })
   })
+
+  describe('with a handler returning an object with a circular reference', () => {
+    let handlerWithMiddleware: any
+
+    beforeEach(async () => {
+      const returnedObject: any = {}
+      returnedObject.foo = returnedObject
+      const handler = () => returnedObject
+      handlerWithMiddleware = jsonSerializer()(handler)
+    })
+
+    it('rejects', async () => {
+      await expect(handlerWithMiddleware({}, {})).rejects.toBeDefined()
+    })
+  })
 })
