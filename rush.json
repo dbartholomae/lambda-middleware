@@ -15,5 +15,9 @@
     "packageName": "@lambda-middleware/http-error-handler",
     "projectFolder": "packages/http-error-handler",
     "shouldPublish": true
+  }, {
+    "packageName": "@lambda-middleware/json-serializer",
+    "projectFolder": "packages/json-serializer",
+    "shouldPublish": true
   }]
 }

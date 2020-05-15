@@ -1,0 +1,77 @@
+{
+  "name": "@lambda-middleware/json-serializer",
+  "version": "0.0.0",
+  "description": "A middleware for AWS http lambda functions to serialize JSON responses.",
+  "homepage": "https://dbartholomae.github.io/lambda-middleware/",
+  "license": "MIT",
+  "author": {
+    "name": "Daniel Bartholomae",
+    "email": "daniel@bartholomae.name",
+    "url": ""
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "keywords": [
+    "aws",
+    "lambda",
+    "middleware",
+    "http",
+    "json",
+    "serializer"
+  ],
+  "types": "lib/index.d.ts",
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "private": false,
+  "dependencies": {
+    "debug": ">=4.1.0"
+  },
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "build": "rimraf ./lib && tsc --project tsconfig.build.json",
+    "lint": "eslint src/**/*.ts examples/**/*.ts",
+    "pretest": "npm run build",
+    "start": "cd test && serverless offline",
+    "test": "npm run lint && npm run test:unit && npm run test:integration && pkg-ok",
+    "test:integration": "concurrently --raw --kill-others --success first \"cd test && serverless offline\" \"wait-on http://localhost:3000/dev/status && jest -c jest.integration.config.js\"",
+    "test:unit": "jest",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.5",
+    "@types/jest": "^25.2.1",
+    "@types/supertest": "^2.0.8",
+    "@types/aws-lambda": "^8.10.47",
+    "@typescript-eslint/parser": "^2.26.0",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "aws-lambda": "^1.0.5",
+    "concurrently": "^5.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^25.2.7",
+    "jest-junit": "^10.0.0",
+    "pkg-ok": "^2.3.1",
+    "prettier": "^2.0.2",
+    "prettier-config-standard": "^1.0.1",
+    "rimraf": "^3.0.2",
+    "serverless": "^1.67.0",
+    "serverless-offline": "^6.1.4",
+    "serverless-webpack": "^5.3.1",
+    "source-map-support": "^0.5.16",
+    "supertest": "^4.0.2",
+    "ts-jest": "^25.3.1",
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.7.5",
+    "wait-on": "^4.0.1",
+    "webpack": "^4.41.5"
+  },
+  "repository": "git@github.com:dbartholomae/lambda-middleware.git",
+  "snyk": true
+}
