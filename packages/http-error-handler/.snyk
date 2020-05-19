@@ -9,3 +9,6 @@ patch:
   'npm:ms:20170412':
     - serverless > @serverless/components > @serverless/platform-client-china > @serverless/utils-china > socket.io-stream > debug > ms:
         patched: '2020-04-09T23:59:38.794Z'
+  SNYK-JS-LODASH-567746:
+    - serverless > @serverless/components > @serverless/platform-client-china > archiver > async > lodash:
+        patched: '2020-05-19T00:01:39.960Z'
