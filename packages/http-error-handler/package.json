@@ -29,7 +29,7 @@
   "dependencies": {
     "debug": ">=4.1.0",
     "serialize-error": ">=5.0.0",
-    "snyk": "^1.305.1"
+    "snyk": "^1.321.0"
   },
   "directories": {
     "example": "examples"
