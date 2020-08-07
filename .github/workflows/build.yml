@@ -13,12 +13,12 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
-    - name: fetch master branch
-      run: git fetch origin master:refs/remotes/origin/master -a
-    - name: check-changelog
-      run: node ./common/scripts/install-run-rush.js change -v
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#    - name: fetch master branch
+#      run: git fetch origin master:refs/remotes/origin/master -a
+#    - name: check-changelog
+#      run: node ./common/scripts/install-run-rush.js change -v
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: install
       run: node ./common/scripts/install-run-rush.js install --no-link
     - name: link
@@ -34,29 +34,29 @@ jobs:
     - name: run integration tests
       run: node ./common/scripts/install-run-rush.js test:integration
 
-  deploy:
-    needs: build
-    if: github.event_name == 'push'
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js 12.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.x
-    - name: install
-      run: node ./common/scripts/install-run-rush.js install --no-link
-    - name: link
-      run: node ./common/scripts/install-run-rush.js link
-    - name: build
-      run: node ./common/scripts/install-run-rush.js rebuild --verbose
-    - name: set git credentials
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-    - name: set npm credentials
-      run: echo //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN > ~/.npmrc
-      env:
-        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-    - name: publish
-      run: node ./common/scripts/install-run-rush.js publish -a -b master -p
+#  deploy:
+#    needs: build
+#    if: github.event_name == 'push'
+#    runs-on: ubuntu-latest
+#    steps:
+#    - uses: actions/checkout@v2
+#    - name: Use Node.js 12.x
+#      uses: actions/setup-node@v1
+#      with:
+#        node-version: 12.x
+#    - name: install
+#      run: node ./common/scripts/install-run-rush.js install --no-link
+#    - name: link
+#      run: node ./common/scripts/install-run-rush.js link
+#    - name: build
+#      run: node ./common/scripts/install-run-rush.js rebuild --verbose
+#    - name: set git credentials
+#      run: |
+#        git config --local user.email "action@github.com"
+#        git config --local user.name "GitHub Action"
+#    - name: set npm credentials
+#      run: echo //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN > ~/.npmrc
+#      env:
+#        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+#    - name: publish
+#      run: node ./common/scripts/install-run-rush.js publish -a -b master -p
