@@ -25,7 +25,7 @@
     "summary": "Run integration tests for all packages",
     "description": "Runs integration tests for all packages.",
     "safeForSimultaneousRushProcesses": true,
-    "enableParallelism": true,
+    "enableParallelism": false,
     "allowWarningsInSuccessfulBuild": true,
     "ignoreDependencyOrder": true
   }],
