@@ -19,5 +19,9 @@
     "packageName": "@lambda-middleware/json-serializer",
     "projectFolder": "packages/json-serializer",
     "shouldPublish": true
+  }, {
+    "packageName": "@lambda-middleware/compose",
+    "projectFolder": "packages/compose",
+    "shouldPublish": true
   }]
 }
