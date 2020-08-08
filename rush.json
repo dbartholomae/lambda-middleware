@@ -23,5 +23,9 @@
     "packageName": "@lambda-middleware/compose",
     "projectFolder": "packages/compose",
     "shouldPublish": true
+  }, {
+    "packageName": "@lambda-middleware/jwt-auth",
+    "projectFolder": "packages/jwt-auth",
+    "shouldPublish": true
   }]
 }

@@ -1,7 +1,7 @@
 {
-  "name": "@lambda-middleware/json-serializer",
+  "name": "@lambda-middleware/jwt-auth",
   "version": "0.0.0",
-  "description": "A middleware for AWS http lambda functions to serialize JSON responses.",
+  "description": "A middleware for AWS http lambda functions to verify JWT auth tokens inspired by express-jwt.",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",
   "author": {
@@ -18,8 +18,8 @@
     "lambda",
     "middleware",
     "http",
-    "json",
-    "serializer"
+    "jwt",
+    "json web token"
   ],
   "types": "lib/index.d.ts",
   "engines": {
@@ -72,6 +72,5 @@
     "wait-on": "^4.0.1",
     "webpack": "^4.41.5"
   },
-  "repository": "git@github.com:dbartholomae/lambda-middleware.git",
-  "snyk": true
+  "repository": "git@github.com:dbartholomae/lambda-middleware.git"
 }
