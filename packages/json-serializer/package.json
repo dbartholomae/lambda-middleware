@@ -38,7 +38,7 @@
     "pretest": "npm run build",
     "start": "cd test && serverless offline",
     "test": "npm run lint && npm run test:unit && npm run test:integration && pkg-ok",
-    "test:integration": "concurrently --raw --kill-others --success first \"cd test && serverless offline\" \"wait-on http://localhost:3000/dev/status && jest -c jest.integration.config.js\"",
+    "test:integration": "concurrently --timeout 600000 --kill-others --success first \"cd test && serverless offline\" \"wait-on http://localhost:3000/dev/status && jest -c jest.integration.config.js\"",
     "test:unit": "jest",
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect"
