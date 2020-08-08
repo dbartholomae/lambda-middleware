@@ -12,18 +12,18 @@ async function helloWorld(): Promise<object> {
 // Write your own middleware
 
 const stringifyToBody = () => (
-  handler: PromiseHandler<APIGatewayEvent, object>
+  handle: PromiseHandler<APIGatewayEvent, object>
 ) => async (event: APIGatewayEvent, context: Context) => {
-  const response = await handler(event, context);
+  const response = await handle(event, context);
   return {
     body: JSON.stringify(response),
   };
 };
 
 const addStatusCode = (statusCode: number) => (
-  handler: PromiseHandler<APIGatewayEvent, { body: string }>
+  handle: PromiseHandler<APIGatewayEvent, { body: string }>
 ) => async (event: APIGatewayEvent, context: Context) => {
-  const response = await handler(event, context);
+  const response = await handle(event, context);
   return {
     ...response,
     statusCode,
