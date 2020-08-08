@@ -10,7 +10,6 @@ async function helloWorld(): Promise<object> {
 }
 
 // Write your own middleware
-
 const stringifyToBody = () => (
   handle: PromiseHandler<APIGatewayEvent, object>
 ) => async (event: APIGatewayEvent, context: Context) => {

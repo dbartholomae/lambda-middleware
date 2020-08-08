@@ -10,24 +10,41 @@ This middleware is part of the [lambda middleware series](https://dbartholomae.g
 ## Usage
 
 ```typescript
-import { errorHandler } from '@lambda-middleware/errorHandler'
-import { APIGatewayEvent, APIGatewayProxyResult } from 'aws-lambda'
-import createHttpError from 'http-errors'
+import { compose } from '@lambda-middleware/compose'
+import { Context, ProxyHandler, APIGatewayEvent } from "aws-lambda";
+import { PromiseHandler } from "../src/PromiseHandler";
 
 // This is your AWS handler
-async function helloWorld (event: APIGatewayEvent): Promise<APIGatewayProxyResult> {
-  if (event.queryStringParameters?.search == null) {
-    // If you throw an error with status code, the error will be returned as stringified JSON
-    // Only the stack will be omitted.
-    throw createHttpError(400, 'Query has to include a search')
-  }
-
-  // If you throw an error with no status code, only a generic message will be shown to the user
-  // instead of the full error
-  throw new Error('Search is not implemented yet')
+async function helloWorld(): Promise<object> {
+  return {
+    message: "Hello world!",
+  };
 }
 
-// Wrap the handler with the middleware
-export const handler = errorHandler()(helloWorld)
+// Write your own middleware
+const stringifyToBody = () => (
+  handle: PromiseHandler<APIGatewayEvent, object>
+) => async (event: APIGatewayEvent, context: Context) => {
+  const response = await handle(event, context);
+  return {
+    body: JSON.stringify(response),
+  };
+};
 
+const addStatusCode = (statusCode: number) => (
+  handle: PromiseHandler<APIGatewayEvent, { body: string }>
+) => async (event: APIGatewayEvent, context: Context) => {
+  const response = await handle(event, context);
+  return {
+    ...response,
+    statusCode,
+  };
+};
+
+// Wrap the handler with the middleware.
+// With compose you can wrap multiple middlewares around one handler.
+export const handler: ProxyHandler = compose(
+  addStatusCode(200),
+  stringifyToBody()
+)(helloWorld);
 ```
