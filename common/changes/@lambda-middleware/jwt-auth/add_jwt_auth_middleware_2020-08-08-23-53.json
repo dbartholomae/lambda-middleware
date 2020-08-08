@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/jwt-auth",
+      "comment": "Add JWT Auth middleware",
+      "type": "minor"
+    }
+  ],
+  "packageName": "@lambda-middleware/jwt-auth",
+  "email": "daniel@bartholomae.name"
+}
