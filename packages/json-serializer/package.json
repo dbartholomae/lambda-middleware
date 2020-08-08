@@ -69,7 +69,7 @@
     "ts-jest": "^25.3.1",
     "ts-loader": "^6.2.2",
     "typescript": "^3.7.5",
-    "wait-on": "^4.0.1",
+    "wait-on": "^5.2.0",
     "webpack": "^4.41.5"
   },
   "repository": "git@github.com:dbartholomae/lambda-middleware.git",
