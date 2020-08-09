@@ -35,8 +35,7 @@
     "start": "echo \"Cannot be started\" && exit 1",
     "test": "npm run lint && npm run test:unit && npm run test:integration && pkg-ok",
     "test:integration": "echo \"No integration test necessary\"",
-    "test:unit": "jest",
-    "prepublish": "npm run snyk-protect"
+    "test:unit": "jest"
   },
   "dependencies": {
     "@types/aws-lambda": "^8.10.47",
