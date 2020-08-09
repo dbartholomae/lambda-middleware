@@ -27,5 +27,9 @@
     "packageName": "@lambda-middleware/jwt-auth",
     "projectFolder": "packages/jwt-auth",
     "shouldPublish": true
+  }, {
+    "packageName": "@lambda-middleware/class-validator",
+    "projectFolder": "packages/class-validator",
+    "shouldPublish": true
   }]
 }

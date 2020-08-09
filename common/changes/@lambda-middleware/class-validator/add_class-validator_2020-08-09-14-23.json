@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/class-validator",
+      "comment": "Add class-validator middleware",
+      "type": "minor"
+    }
+  ],
+  "packageName": "@lambda-middleware/class-validator",
+  "email": "daniel@bartholomae.name"
+}
