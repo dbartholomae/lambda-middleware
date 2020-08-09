@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "commonjs",
+    "module": "esnext",
     "esModuleInterop": true,
     "target": "es5",
-    "lib": ["es6", "dom", "es2015.promise"],
+    "lib": ["es6", "dom"],
     "sourceMap": false,
     "jsx": "react",
     "moduleResolution": "node",
-    "rootDir": "src",
+    "rootDir": "../",
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
@@ -19,6 +19,5 @@
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true
-  },
-  "include": ["**/*"]
+  }
 }
