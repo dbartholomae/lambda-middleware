@@ -11,8 +11,8 @@ This middleware is part of the [lambda middleware series](https://dbartholomae.g
 
 ```typescript
 import { compose } from '@lambda-middleware/compose'
+import { PromiseHandler } from "@lambda-middleware/utils";
 import { Context, ProxyHandler, APIGatewayEvent } from "aws-lambda";
-import { PromiseHandler } from "../src/PromiseHandler";
 
 // This is your AWS handler
 async function helloWorld(): Promise<object> {

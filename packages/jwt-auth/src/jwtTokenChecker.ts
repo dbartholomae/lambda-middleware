@@ -1,3 +1,4 @@
+import { PromiseHandler } from '@lambda-middleware/utils'
 import { APIGatewayEvent, Context } from 'aws-lambda'
 import debugFactory from 'debug'
 import jwt, { TokenExpiredError, NotBeforeError } from 'jsonwebtoken'
@@ -9,7 +10,6 @@ import {
   AuthOptions,
   isAuthOptions
 } from './interfaces/AuthOptions'
-import { PromiseHandler } from './interfaces/PromiseHandler'
 
 const logger = debugFactory('@lambda-middleware/jwt-auth')
 

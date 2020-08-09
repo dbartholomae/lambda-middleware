@@ -1,6 +1,6 @@
+import { PromiseHandler } from '@lambda-middleware/utils'
 import debugFactory, { IDebugger } from 'debug'
 import { APIGatewayProxyResult, Context } from 'aws-lambda'
-import { PromiseHandler } from './interfaces/PromiseHandler'
 
 const logger: IDebugger = debugFactory('@lambda-middleware/no-sniff')
 

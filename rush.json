@@ -43,5 +43,9 @@
     "packageName": "@lambda-middleware/middy-adaptor",
     "projectFolder": "packages/middy-adaptor",
     "shouldPublish": true
+  }, {
+    "packageName": "@lambda-middleware/utils",
+    "projectFolder": "packages/utils",
+    "shouldPublish": true
   }]
 }

@@ -1,6 +1,6 @@
+import { PromiseHandler } from '@lambda-middleware/utils'
 import debugFactory, { IDebugger } from 'debug'
 import { Context } from 'aws-lambda'
-import { PromiseHandler } from './interfaces/PromiseHandler'
 import { ClassValidatorMiddlewareOptions } from './interfaces/ClassValidatorMiddlewareOptions'
 import { transformAndValidate } from 'class-transformer-validator'
 

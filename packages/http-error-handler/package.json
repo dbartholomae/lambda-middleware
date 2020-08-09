@@ -27,6 +27,7 @@
   },
   "private": false,
   "dependencies": {
+    "@lambda-middleware/utils": "*",
     "debug": ">=4.1.0",
     "serialize-error": ">=5.0.0"
   },

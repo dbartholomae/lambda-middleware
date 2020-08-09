@@ -1,3 +1,4 @@
+import { PromiseHandler } from '@lambda-middleware/utils'
 import {
   APIGatewayProxyEvent,
   APIGatewayProxyResult,
@@ -7,7 +8,6 @@ import debugFactory, { IDebugger } from 'debug'
 import { serializeError } from 'serialize-error'
 import { omit } from './helpers/omit'
 import { isErrorWithStatusCode } from './interfaces/ErrorWithStatusCode'
-import { PromiseHandler } from './interfaces/PromiseHandler'
 
 const logger: IDebugger = debugFactory('@lambda-middleware/error-handler')
 

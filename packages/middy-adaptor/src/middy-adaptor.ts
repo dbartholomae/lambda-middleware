@@ -1,6 +1,6 @@
 // import debugFactory, { IDebugger } from 'debug'
+import { PromiseHandler } from '@lambda-middleware/utils'
 import { Context } from 'aws-lambda'
-import { PromiseHandler } from './interfaces/PromiseHandler'
 import {
   Instance,
   MiddlewareObject,
