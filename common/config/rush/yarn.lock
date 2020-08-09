@@ -893,7 +893,7 @@
 
 "@rush-temp/class-validator@file:./projects/class-validator.tgz":
   version "0.0.0"
-  resolved "file:./projects/class-validator.tgz#df030b8d93e69c815455b55e975d571779919c66"
+  resolved "file:./projects/class-validator.tgz#f7e823ec43fec4c407bd8377814e98ce4cf058ac"
   dependencies:
     "@types/aws-lambda" "^8.10.47"
     "@types/debug" "^4.1.5"
@@ -1002,7 +1002,7 @@
 
 "@rush-temp/ie-no-open@file:./projects/ie-no-open.tgz":
   version "0.0.0"
-  resolved "file:./projects/ie-no-open.tgz#28753d2957c62c0b73923c37d2b953d0c2fb294c"
+  resolved "file:./projects/ie-no-open.tgz#4bf132dac67ae18dff973d89ae4137cb1b91bdeb"
   dependencies:
     "@types/aws-lambda" "^8.10.47"
     "@types/debug" "^4.1.5"
@@ -1106,7 +1106,7 @@
 
 "@rush-temp/middy-adaptor@file:./projects/middy-adaptor.tgz":
   version "0.0.0"
-  resolved "file:./projects/middy-adaptor.tgz#d3e704029840ae1137339e2e9586330cbca65907"
+  resolved "file:./projects/middy-adaptor.tgz#1c60a6e5d5560e6ed488b1d969a911ecb38c54be"
   dependencies:
     "@types/aws-lambda" "^8.10.47"
     "@types/debug" "^4.1.5"
@@ -1139,7 +1139,7 @@
 
 "@rush-temp/no-sniff@file:./projects/no-sniff.tgz":
   version "0.0.0"
-  resolved "file:./projects/no-sniff.tgz#1c7f089aac9f92873a040ebdda00a20a8981611e"
+  resolved "file:./projects/no-sniff.tgz#0e8cb433e108a2c79aa1394a0dcb3d5079fc22bf"
   dependencies:
     "@types/aws-lambda" "^8.10.47"
     "@types/debug" "^4.1.5"
@@ -1172,13 +1172,14 @@
 
 "@rush-temp/utils@file:./projects/utils.tgz":
   version "0.0.0"
-  resolved "file:./projects/utils.tgz#4a7f5ac7788ce294bc1afe0af9298b3097993168"
+  resolved "file:./projects/utils.tgz#d4d989c549fd915e1513ec6cd4accda830313d17"
   dependencies:
     "@types/aws-lambda" "^8.10.47"
     "@types/debug" "^4.1.5"
     "@types/jest" "^25.2.1"
     "@typescript-eslint/eslint-plugin" "^2.26.0"
     "@typescript-eslint/parser" "^2.26.0"
+    aws-lambda "^1.0.5"
     eslint "^6.8.0"
     eslint-config-prettier "^6.10.1"
     eslint-plugin-prettier "^3.1.2"
