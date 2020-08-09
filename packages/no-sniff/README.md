@@ -11,16 +11,16 @@ This middleware is part of the [lambda middleware series](https://dbartholomae.g
 ## Usage
 
 ```typescript
-import { noSniff } from '@lambda-middleware/no-sniff'
+import { noSniff } from "@lambda-middleware/no-sniff";
 
 // This is your AWS handler
 async function helloWorld() {
   return {
     statusCode: 200,
-    body: ''
-  }
+    body: "",
+  };
 }
 
 // Wrap the handler with the middleware
-export const handler = noSniff()(helloWorld)
+export const handler = noSniff()(helloWorld);
 ```

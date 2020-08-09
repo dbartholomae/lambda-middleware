@@ -1,175 +1,179 @@
-import { EncryptionAlgorithms, AuthOptions, isAuthOptions } from './AuthOptions'
+import {
+  EncryptionAlgorithms,
+  AuthOptions,
+  isAuthOptions,
+} from "./AuthOptions";
 
-describe('AuthOptions', () => {
-  describe('interface', () => {
-    it('accepts data that has algorithm and a string secretOrPublicKey', () => {
+describe("AuthOptions", () => {
+  describe("interface", () => {
+    it("accepts data that has algorithm and a string secretOrPublicKey", () => {
       const options: AuthOptions = {
         algorithm: EncryptionAlgorithms.ES256,
-        secretOrPublicKey: 'secret'
-      }
-      expect(options).not.toBeNull()
-    })
+        secretOrPublicKey: "secret",
+      };
+      expect(options).not.toBeNull();
+    });
 
-    it('accepts data that has algorithm and a Buffer secretOrPublicKey', () => {
+    it("accepts data that has algorithm and a Buffer secretOrPublicKey", () => {
       const options: AuthOptions = {
         algorithm: EncryptionAlgorithms.ES256,
-        secretOrPublicKey: Buffer.from([])
-      }
-      expect(options).not.toBeNull()
-    })
+        secretOrPublicKey: Buffer.from([]),
+      };
+      expect(options).not.toBeNull();
+    });
 
-    it('accepts data that has algorithm, a string secretOrPublicKey and a payload type guard', () => {
+    it("accepts data that has algorithm, a string secretOrPublicKey and a payload type guard", () => {
       interface Payload {
-        foo: string
+        foo: string;
       }
       function isPayload(payload: any): payload is Payload {
-        return payload != null && typeof payload.foo === 'string'
+        return payload != null && typeof payload.foo === "string";
       }
       const options: AuthOptions<Payload> = {
         algorithm: EncryptionAlgorithms.ES256,
         isPayload,
-        secretOrPublicKey: 'secret'
-      }
-      expect(options).not.toBeNull()
-    })
+        secretOrPublicKey: "secret",
+      };
+      expect(options).not.toBeNull();
+    });
 
-    it('accepts data that has algorithm, a string secretOrPublicKey and a tokenSource', () => {
+    it("accepts data that has algorithm, a string secretOrPublicKey and a tokenSource", () => {
       function tokenSource(event: any): string {
-        return ''
+        return "";
       }
       const options: AuthOptions = {
         algorithm: EncryptionAlgorithms.ES256,
-        secretOrPublicKey: 'secret',
-        tokenSource
-      }
-      expect(options).not.toBeNull()
-    })
-  })
+        secretOrPublicKey: "secret",
+        tokenSource,
+      };
+      expect(options).not.toBeNull();
+    });
+  });
 
-  describe('type guard', () => {
-    it('accepts data that has algorithm and a string secretOrPublicKey', () => {
+  describe("type guard", () => {
+    it("accepts data that has algorithm and a string secretOrPublicKey", () => {
       expect(
         isAuthOptions({
           algorithm: EncryptionAlgorithms.ES256,
-          secretOrPublicKey: 'secret'
+          secretOrPublicKey: "secret",
         })
-      ).toBe(true)
-    })
+      ).toBe(true);
+    });
 
-    it('accepts data that has algorithm and a Buffer secretOrPublicKey', () => {
+    it("accepts data that has algorithm and a Buffer secretOrPublicKey", () => {
       expect(
         isAuthOptions({
           algorithm: EncryptionAlgorithms.ES256,
-          secretOrPublicKey: Buffer.from([])
+          secretOrPublicKey: Buffer.from([]),
         })
-      ).toBe(true)
-    })
+      ).toBe(true);
+    });
 
-    it('accepts data that has algorithm, a string secretOrPublicKey and a payload type guard', () => {
+    it("accepts data that has algorithm, a string secretOrPublicKey and a payload type guard", () => {
       interface Payload {
-        foo: string
+        foo: string;
       }
       function isPayload(payload: any): payload is Payload {
-        return payload != null && typeof payload.foo === 'string'
+        return payload != null && typeof payload.foo === "string";
       }
       expect(
         isAuthOptions({
           algorithm: EncryptionAlgorithms.ES256,
           isPayload,
-          secretOrPublicKey: 'secret'
+          secretOrPublicKey: "secret",
         })
-      ).toBe(true)
-    })
+      ).toBe(true);
+    });
 
-    it('accepts data that has algorithm, a string secretOrPublicKey and an array of tokenSources', () => {
+    it("accepts data that has algorithm, a string secretOrPublicKey and an array of tokenSources", () => {
       function tokenSource(event: any): string {
-        return ''
+        return "";
       }
       expect(
         isAuthOptions({
           algorithm: EncryptionAlgorithms.ES256,
-          secretOrPublicKey: 'secret',
-          tokenSources: [tokenSource]
+          secretOrPublicKey: "secret",
+          tokenSources: [tokenSource],
         })
-      ).toBe(true)
-    })
+      ).toBe(true);
+    });
 
-    it('accepts data that has algorithm, a string secretOrPublicKey and a boolean credentialsRequired', () => {
+    it("accepts data that has algorithm, a string secretOrPublicKey and a boolean credentialsRequired", () => {
       expect(
         isAuthOptions({
           algorithm: EncryptionAlgorithms.ES256,
           credentialsRequired: true,
-          secretOrPublicKey: 'secret'
+          secretOrPublicKey: "secret",
         })
-      ).toBe(true)
-    })
+      ).toBe(true);
+    });
 
-    it('rejects data that is null', () => {
-      expect(isAuthOptions(null)).toBe(false)
-    })
+    it("rejects data that is null", () => {
+      expect(isAuthOptions(null)).toBe(false);
+    });
 
-    it('rejects data without algorithm', () => {
+    it("rejects data without algorithm", () => {
       expect(
         isAuthOptions({
-          secretOrPublicKey: 'secret'
+          secretOrPublicKey: "secret",
         })
-      ).toBe(false)
-    })
+      ).toBe(false);
+    });
 
     it("rejects data with algorithm that isn't an EncryptionAlgorithm ", () => {
       expect(
         isAuthOptions({
-          algorithm: 'some string',
-          secretOrPublicKey: 'secret'
+          algorithm: "some string",
+          secretOrPublicKey: "secret",
         })
-      ).toBe(false)
-    })
+      ).toBe(false);
+    });
 
-    it('rejects data without secretOrPublicKey', () => {
+    it("rejects data without secretOrPublicKey", () => {
       expect(
         isAuthOptions({
-          algorithm: EncryptionAlgorithms.ES256
+          algorithm: EncryptionAlgorithms.ES256,
         })
-      ).toBe(false)
-    })
+      ).toBe(false);
+    });
 
     it("rejects data where secretOrPublicKey isn't a string or Buffer", () => {
       expect(
         isAuthOptions({
           algorithm: EncryptionAlgorithms.ES256,
-          secretOrPublicKey: {}
+          secretOrPublicKey: {},
         })
-      ).toBe(false)
-    })
+      ).toBe(false);
+    });
 
-    it('rejects data with a payload type guard that is not a function', () => {
+    it("rejects data with a payload type guard that is not a function", () => {
       expect(
         isAuthOptions({
           algorithm: EncryptionAlgorithms.ES256,
           isPayload: {} as any,
-          secretOrPublicKey: 'secret'
+          secretOrPublicKey: "secret",
         })
-      ).toBe(false)
-    })
+      ).toBe(false);
+    });
 
-    it('rejects data with malformed tokenSource', () => {
+    it("rejects data with malformed tokenSource", () => {
       expect(
         isAuthOptions({
           algorithm: EncryptionAlgorithms.ES256,
-          secretOrPublicKey: 'secret',
-          tokenSource: {}
+          secretOrPublicKey: "secret",
+          tokenSource: {},
         })
-      ).toBe(false)
-    })
+      ).toBe(false);
+    });
 
-    it('rejects data with an credentialsRequired that is not a boolean', () => {
+    it("rejects data with an credentialsRequired that is not a boolean", () => {
       expect(
         isAuthOptions({
           algorithm: EncryptionAlgorithms.ES256,
-          credentialsRequired: '',
-          secretOrPublicKey: 'secret'
+          credentialsRequired: "",
+          secretOrPublicKey: "secret",
         })
-      ).toBe(false)
-    })
-  })
-})
+      ).toBe(false);
+    });
+  });
+});

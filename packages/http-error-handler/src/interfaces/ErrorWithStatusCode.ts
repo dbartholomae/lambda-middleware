@@ -1,9 +1,9 @@
 export interface ErrorWithStatusCode {
-  statusCode: number
+  statusCode: number;
 }
 
 export function isErrorWithStatusCode(
   error: any
 ): error is ErrorWithStatusCode {
-  return typeof error.statusCode === 'number'
+  return typeof error.statusCode === "number";
 }

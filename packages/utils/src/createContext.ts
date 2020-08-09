@@ -1,18 +1,18 @@
-import { Context } from 'aws-lambda'
+import { Context } from "aws-lambda";
 
 export function createContext(): Context {
   return {
-    awsRequestId: '',
+    awsRequestId: "",
     callbackWaitsForEmptyEventLoop: false,
-    functionName: '',
-    functionVersion: '',
-    invokedFunctionArn: '',
-    logGroupName: '',
-    logStreamName: '',
-    memoryLimitInMB: '',
+    functionName: "",
+    functionVersion: "",
+    invokedFunctionArn: "",
+    logGroupName: "",
+    logStreamName: "",
+    memoryLimitInMB: "",
     done: {} as any,
     fail: {} as any,
     getRemainingTimeInMillis: {} as any,
-    succeed: {} as any
-  }
+    succeed: {} as any,
+  };
 }

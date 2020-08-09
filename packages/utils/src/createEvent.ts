@@ -1,21 +1,21 @@
-import { APIGatewayEvent } from 'aws-lambda'
+import { APIGatewayEvent } from "aws-lambda";
 
 export function createEvent(
   overrides: Partial<APIGatewayEvent>
 ): APIGatewayEvent {
   return {
     headers: {},
-    body: '',
+    body: "",
     isBase64Encoded: false,
     multiValueHeaders: {},
     multiValueQueryStringParameters: null,
-    path: '',
+    path: "",
     pathParameters: null,
     queryStringParameters: null,
     requestContext: {} as any,
-    resource: '',
+    resource: "",
     stageVariables: null,
-    httpMethod: 'GET',
-    ...overrides
-  }
+    httpMethod: "GET",
+    ...overrides,
+  };
 }

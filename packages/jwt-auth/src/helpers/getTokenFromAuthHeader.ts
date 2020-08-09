@@ -1,78 +1,78 @@
-import { AuthOptions } from '../jwtTokenChecker'
-import debugFactory from 'debug'
-import createHttpError from 'http-errors'
-import { APIGatewayEvent } from 'aws-lambda'
+import { AuthOptions } from "../jwtTokenChecker";
+import debugFactory from "debug";
+import createHttpError from "http-errors";
+import { APIGatewayEvent } from "aws-lambda";
 
-const logger = debugFactory('@lambda-middleware/jwt-auth')
+const logger = debugFactory("@lambda-middleware/jwt-auth");
 
 function isLowerCaseAuthorizedEvent(
   event: APIGatewayEvent
 ): event is APIGatewayEvent & { headers: { authorization: string } } {
-  return typeof event.headers.authorization === 'string'
+  return typeof event.headers.authorization === "string";
 }
 
 function isUpperCaseAuthorizedEvent(
   event: APIGatewayEvent
 ): event is APIGatewayEvent & { headers: { Authorization: string } } {
-  return typeof event.headers.Authorization === 'string'
+  return typeof event.headers.Authorization === "string";
 }
 
 export function getTokenFromAuthHeader<Payload>(
   event: APIGatewayEvent,
-  options: Pick<AuthOptions, 'credentialsRequired'>
+  options: Pick<AuthOptions, "credentialsRequired">
 ): string | undefined {
-  logger('Checking whether event contains at least one authorization header')
+  logger("Checking whether event contains at least one authorization header");
   if (
     !isLowerCaseAuthorizedEvent(event) &&
     !isUpperCaseAuthorizedEvent(event)
   ) {
-    logger('No authorization header found')
+    logger("No authorization header found");
     if (options.credentialsRequired) {
       throw createHttpError(
         401,
-        'No valid bearer token was set in the authorization header',
+        "No valid bearer token was set in the authorization header",
         {
-          type: 'AuthenticationRequired'
+          type: "AuthenticationRequired",
         }
-      )
+      );
     }
-    return
+    return;
   }
 
-  logger('Checking whether event contains multiple authorization headers')
+  logger("Checking whether event contains multiple authorization headers");
   if (isLowerCaseAuthorizedEvent(event) && isUpperCaseAuthorizedEvent(event)) {
     logger(
-      'Both authorization and Authorization headers found, only one can be set'
-    )
+      "Both authorization and Authorization headers found, only one can be set"
+    );
     throw createHttpError(
       400,
-      'Both authorization and Authorization headers found, only one can be set',
+      "Both authorization and Authorization headers found, only one can be set",
       {
-        type: 'MultipleAuthorizationHeadersSet'
+        type: "MultipleAuthorizationHeadersSet",
       }
-    )
+    );
   }
-  logger('One authorization header found')
+  logger("One authorization header found");
 
-  logger('Checking whether authorization header is formed correctly')
+  logger("Checking whether authorization header is formed correctly");
   const authHeader = isLowerCaseAuthorizedEvent(event)
     ? event.headers.authorization
-    : event.headers.Authorization
+    : event.headers.Authorization;
 
-  const parts = authHeader.split(' ')
-  if (parts.length !== 2 || parts[0] !== 'Bearer') {
+  const parts = authHeader.split(" ");
+  if (parts.length !== 2 || parts[0] !== "Bearer") {
     logger(
       `Authorization header malformed, it was "${authHeader}" but should be of format "Bearer token"`
-    )
+    );
     throw createHttpError(
       401,
       `Format should be "Authorization: Bearer [token]", received "Authorization: ${authHeader}" instead`,
       {
-        type: 'WrongAuthFormat'
+        type: "WrongAuthFormat",
       }
-    )
+    );
   }
-  logger('Authorization header formed correctly')
+  logger("Authorization header formed correctly");
 
-  return parts[1]
+  return parts[1];
 }

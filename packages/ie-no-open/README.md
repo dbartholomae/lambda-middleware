@@ -11,16 +11,16 @@ This middleware is part of the [lambda middleware series](https://dbartholomae.g
 ## Usage
 
 ```typescript
-import { ieNoOpen } from '@lambda-middleware/ie-no-open'
+import { ieNoOpen } from "@lambda-middleware/ie-no-open";
 
 // This is your AWS handler
 async function helloWorld() {
   return {
     statusCode: 200,
-    body: ''
-  }
+    body: "",
+  };
 }
 
 // Wrap the handler with the middleware
-export const handler = ieNoOpen()(helloWorld)
+export const handler = ieNoOpen()(helloWorld);
 ```

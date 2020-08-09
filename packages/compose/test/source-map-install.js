@@ -1,1 +1,1 @@
-require('source-map-support').install();
+require("source-map-support").install();

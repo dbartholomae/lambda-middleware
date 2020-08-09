@@ -1,30 +1,30 @@
-import { AuthorizedEvent, isAuthorizedEvent } from './AuthorizedEvent'
+import { AuthorizedEvent, isAuthorizedEvent } from "./AuthorizedEvent";
 
-describe('AuthorizedEvent', () => {
-  describe('interface', () => {
-    it('accepts data with token information set in the generics', () => {
+describe("AuthorizedEvent", () => {
+  describe("interface", () => {
+    it("accepts data with token information set in the generics", () => {
       interface Token {
-        foo: string
+        foo: string;
       }
       const event: AuthorizedEvent<Token> = {
         auth: {
           payload: {
-            foo: ''
+            foo: "",
           },
-          token: ''
-        }
-      }
-      expect(event).not.toBeNull()
-    })
-  })
+          token: "",
+        },
+      };
+      expect(event).not.toBeNull();
+    });
+  });
 
-  describe('type guard', () => {
+  describe("type guard", () => {
     it(`accepts data that has a payload verified by the given type guard`, () => {
       interface Token {
-        foo: string
+        foo: string;
       }
       function isToken(token: any): token is Token {
-        return token != null && typeof token.foo === 'string'
+        return token != null && typeof token.foo === "string";
       }
 
       expect(
@@ -32,40 +32,40 @@ describe('AuthorizedEvent', () => {
           {
             auth: {
               payload: {
-                foo: 'bar'
+                foo: "bar",
               },
-              token: ''
-            }
+              token: "",
+            },
           },
           isToken
         )
-      ).toBe(true)
-    })
+      ).toBe(true);
+    });
 
-    it('rejects data that is null', () => {
-      expect(isAuthorizedEvent(null)).toBe(false)
-    })
+    it("rejects data that is null", () => {
+      expect(isAuthorizedEvent(null)).toBe(false);
+    });
 
-    it('rejects an empty object', () => {
-      expect(isAuthorizedEvent({})).toBe(false)
-    })
+    it("rejects an empty object", () => {
+      expect(isAuthorizedEvent({})).toBe(false);
+    });
 
-    it('rejects data where the payload is rejected by a given type guard', () => {
+    it("rejects data where the payload is rejected by a given type guard", () => {
       interface Token {
-        foo: string
+        foo: string;
       }
       function isToken(token: any): token is Token {
-        return token != null && typeof token.foo === 'string'
+        return token != null && typeof token.foo === "string";
       }
 
       expect(
         isAuthorizedEvent(
           {
-            auth: {}
+            auth: {},
           },
           isToken
         )
-      ).toBe(false)
-    })
-  })
-})
+      ).toBe(false);
+    });
+  });
+});
