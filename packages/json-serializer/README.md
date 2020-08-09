@@ -9,3 +9,15 @@ A middleware for AWS http lambda functions to serialize JSON responses, includin
 This middleware is part of the [lambda middleware series](https://dbartholomae.github.io/lambda-middleware/). It can be used independently.
 
 ## Usage
+
+```typescript
+import { jsonSerializer } from '@lambda-middleware/json-serializer'
+
+// This is your AWS handler
+async function helloWorld() {
+  return {}
+}
+
+// Wrap the handler with the middleware
+export const handler = jsonSerializer()(helloWorld)
+```

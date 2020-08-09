@@ -1,7 +1,7 @@
 {
-  "name": "@lambda-middleware/json-serializer",
+  "name": "@lambda-middleware/jwt-auth",
   "version": "0.0.0",
-  "description": "A middleware for AWS http lambda functions to serialize JSON responses.",
+  "description": "A middleware for AWS http lambda functions to verify JWT auth tokens inspired by express-jwt.",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",
   "author": {
@@ -18,8 +18,8 @@
     "lambda",
     "middleware",
     "http",
-    "json",
-    "serializer"
+    "jwt",
+    "json web token"
   ],
   "types": "lib/index.d.ts",
   "engines": {
@@ -27,7 +27,9 @@
   },
   "private": false,
   "dependencies": {
-    "debug": ">=4.1.0"
+    "debug": ">=4.1.0",
+    "http-errors": "^1.7.3",
+    "jsonwebtoken": "^8.4.0"
   },
   "directories": {
     "example": "examples"
@@ -45,7 +47,11 @@
   },
   "devDependencies": {
     "@types/debug": "^4.1.5",
+    "@types/http-errors": "^1.6.3",
     "@types/jest": "^25.2.1",
+    "@types/jsonwebtoken": "^8.3.0",
+    "@lambda-middleware/compose": "*",
+    "@lambda-middleware/http-error-handler": "*",
     "@types/supertest": "^2.0.8",
     "@types/aws-lambda": "^8.10.47",
     "@typescript-eslint/parser": "^2.26.0",
@@ -57,6 +63,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "jest": "^25.2.7",
     "jest-junit": "^10.0.0",
+    "moment": "^2.27.0",
     "pkg-ok": "^2.3.1",
     "prettier": "^2.0.2",
     "prettier-config-standard": "^1.0.1",
@@ -72,6 +79,5 @@
     "wait-on": "^5.2.0",
     "webpack": "^4.41.5"
   },
-  "repository": "git@github.com:dbartholomae/lambda-middleware.git",
-  "snyk": true
+  "repository": "git@github.com:dbartholomae/lambda-middleware.git"
 }

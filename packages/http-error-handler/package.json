@@ -39,7 +39,7 @@
     "pretest": "npm run build",
     "start": "cd test && serverless offline",
     "test": "npm run lint && npm run test:unit && npm run test:integration && pkg-ok",
-    "test:integration": "concurrently --raw --kill-others --success first \"cd test && serverless offline\" \"wait-on http://localhost:3000/dev/status && jest -c jest.integration.config.js\"",
+    "test:integration": "concurrently --timeout 600000 --kill-others --success first \"cd test && serverless offline\" \"wait-on http://localhost:3000/dev/status && jest -c jest.integration.config.js\"",
     "test:unit": "jest",
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect"
@@ -72,7 +72,7 @@
     "ts-jest": "^25.3.1",
     "ts-loader": "^6.2.2",
     "typescript": "^3.7.5",
-    "wait-on": "^4.0.1",
+    "wait-on": "^5.2.0",
     "webpack": "^4.41.5"
   },
   "repository": "git@github.com:dbartholomae/lambda-middleware.git",

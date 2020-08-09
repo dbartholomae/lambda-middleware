@@ -35,7 +35,7 @@
     "release": "semantic-release",
     "start": "cd test && serverless offline",
     "test": "npm run lint && npm run test:unit && npm run test:integration && pkg-ok",
-    "test:integration": "concurrently --kill-others --success first \"cd test && serverless offline\" \"wait-on http://localhost:3000/status && jest -c jest.integration.config.js\"",
+    "test:integration": "concurrently --timeout 600000 --kill-others --success first \"cd test && serverless offline\" \"wait-on http://localhost:3000/dev/status && jest -c jest.integration.config.js\"",
     "test:unit": "jest",
     "lint": "tslint --project tsconfig.json",
     "lint:fix": "tslint --project tsconfig.json --fix",
@@ -71,7 +71,7 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-consistent-codestyle": "^1.16.0",
     "typescript": "^3.7.5",
-    "wait-on": "^4.0.1",
+    "wait-on": "^5.2.0",
     "webpack": "^4.41.5"
   },
   "repository": "git@github.com:dbartholomae/lambda-middleware.git"
