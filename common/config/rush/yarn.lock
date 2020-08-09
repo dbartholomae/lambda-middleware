@@ -891,9 +891,9 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
 
-"@rush-temp/class-transformer@file:./projects/class-transformer.tgz":
+"@rush-temp/class-validator@file:./projects/class-validator.tgz":
   version "0.0.0"
-  resolved "file:./projects/class-transformer.tgz"
+  resolved "file:./projects/class-validator.tgz#df030b8d93e69c815455b55e975d571779919c66"
   dependencies:
     "@types/aws-lambda" "^8.10.47"
     "@types/debug" "^4.1.5"
