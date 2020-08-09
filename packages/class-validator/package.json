@@ -1,5 +1,5 @@
 {
-  "name": "@lambda-middleware/class-transformer",
+  "name": "@lambda-middleware/class-validator",
   "version": "0.0.0",
   "description": "A validation middleware for AWS http lambda functions based on class-validator.",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
