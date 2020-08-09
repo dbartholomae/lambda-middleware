@@ -35,5 +35,9 @@
     "packageName": "@lambda-middleware/no-sniff",
     "projectFolder": "packages/no-sniff",
     "shouldPublish": true
+  }, {
+    "packageName": "@lambda-middleware/ie-no-open",
+    "projectFolder": "packages/ie-no-open",
+    "shouldPublish": true
   }]
 }

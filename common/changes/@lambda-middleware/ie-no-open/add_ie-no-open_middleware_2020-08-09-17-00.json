@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/ie-no-open",
+      "comment": "add ie-no-open middleware",
+      "type": "minor"
+    }
+  ],
+  "packageName": "@lambda-middleware/ie-no-open",
+  "email": "daniel@bartholomae.name"
+}
