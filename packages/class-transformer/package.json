@@ -1,7 +1,7 @@
 {
-  "name": "@lambda-middleware/json-serializer",
+  "name": "@lambda-middleware/class-transformer",
   "version": "0.0.0",
-  "description": "A middleware for AWS http lambda functions to serialize JSON responses.",
+  "description": "A validation middleware for AWS http lambda functions based on class-validator.",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",
   "author": {
@@ -17,9 +17,8 @@
     "aws",
     "lambda",
     "middleware",
-    "http",
-    "json",
-    "serializer"
+    "validation",
+    "validator"
   ],
   "types": "lib/index.d.ts",
   "engines": {
@@ -27,7 +26,10 @@
   },
   "private": false,
   "dependencies": {
-    "debug": ">=4.1.0"
+    "debug": ">=4.1.0",
+    "class-transformer": ">=0.2.3",
+    "class-transformer-validator": ">=0.8.0",
+    "class-validator": ">=0.11.0"
   },
   "directories": {
     "example": "examples"
@@ -44,6 +46,7 @@
     "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
+    "@lambda-middleware/http-error-handler": "*",
     "@types/debug": "^4.1.5",
     "@types/jest": "^25.2.1",
     "@types/supertest": "^2.0.8",
