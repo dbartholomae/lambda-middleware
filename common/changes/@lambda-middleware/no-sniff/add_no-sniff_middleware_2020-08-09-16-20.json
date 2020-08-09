@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/no-sniff",
+      "comment": "add no-sniff middleware",
+      "type": "minor"
+    }
+  ],
+  "packageName": "@lambda-middleware/no-sniff",
+  "email": "daniel@bartholomae.name"
+}
