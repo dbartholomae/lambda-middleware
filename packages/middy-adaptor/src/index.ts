@@ -1,2 +1,4 @@
 /* istanbul ignore next */
-export * from './JsonSerializer'
+export * from './middy-adaptor'
+/* istanbul ignore next */
+export * from './interfaces/MiddyTypes'
