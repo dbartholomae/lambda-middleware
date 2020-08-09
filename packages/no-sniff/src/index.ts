@@ -1,2 +1,2 @@
 /* istanbul ignore next */
-export * from './JsonSerializer'
+export * from './noSniff'

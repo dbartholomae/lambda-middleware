@@ -1,9 +1,12 @@
-import { jsonSerializer } from '../'
+import { noSniff } from '../'
 
 // This is your AWS handler
 async function helloWorld() {
-  return {}
+  return {
+    statusCode: 200,
+    body: ''
+  }
 }
 
 // Wrap the handler with the middleware
-export const handler = jsonSerializer()(helloWorld)
+export const handler = noSniff()(helloWorld)
