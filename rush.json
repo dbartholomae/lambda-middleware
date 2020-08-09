@@ -39,5 +39,9 @@
     "packageName": "@lambda-middleware/ie-no-open",
     "projectFolder": "packages/ie-no-open",
     "shouldPublish": true
+  }, {
+    "packageName": "@lambda-middleware/middy-adaptor",
+    "projectFolder": "packages/middy-adaptor",
+    "shouldPublish": true
   }]
 }
