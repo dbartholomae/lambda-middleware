@@ -31,5 +31,9 @@
     "packageName": "@lambda-middleware/class-validator",
     "projectFolder": "packages/class-validator",
     "shouldPublish": true
+  }, {
+    "packageName": "@lambda-middleware/no-sniff",
+    "projectFolder": "packages/no-sniff",
+    "shouldPublish": true
   }]
 }

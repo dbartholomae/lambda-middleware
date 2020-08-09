@@ -1,7 +1,7 @@
 {
-  "name": "@lambda-middleware/json-serializer",
+  "name": "@lambda-middleware/no-sniff",
   "version": "0.0.0",
-  "description": "A middleware for AWS http lambda functions to serialize JSON responses.",
+  "description": "A middleware for adding the content type options no-sniff header to AWS lambdas.",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",
   "author": {
@@ -18,8 +18,9 @@
     "lambda",
     "middleware",
     "http",
-    "json",
-    "serializer"
+    "no-sniff",
+    "security",
+    "headers"
   ],
   "types": "lib/index.d.ts",
   "engines": {
@@ -72,6 +73,5 @@
     "wait-on": "^5.2.0",
     "webpack": "^4.41.5"
   },
-  "repository": "git@github.com:dbartholomae/lambda-middleware.git",
-  "snyk": true
+  "repository": "git@github.com:dbartholomae/lambda-middleware.git"
 }
