@@ -1,12 +1,12 @@
 import { APIGatewayEvent } from 'aws-lambda'
 import debugFactory from 'debug'
-import { IAuthOptions } from '../interfaces/IAuthOptions'
+import { AuthOptions } from '../interfaces/AuthOptions'
 
 const logger = debugFactory('@lambda-middleware/jwt-auth')
 
 export function getTokenFromSource(
   event: APIGatewayEvent,
-  options: Pick<IAuthOptions, 'tokenSource'>
+  options: Pick<AuthOptions, 'tokenSource'>
 ): string | undefined {
   logger('Checking whether event contains token based on given tokenSource')
   try {

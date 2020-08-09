@@ -21,7 +21,7 @@ export enum EncryptionAlgorithms {
 }
 
 /** Options for the middy-middleware-jwt-auth */
-export interface IAuthOptions<P = any> {
+export interface AuthOptions<P = any> {
   /** Algorithm to verify JSON web token signature */
   algorithm: EncryptionAlgorithms
   /** An optional type guard function that verifies token payload structure */
@@ -34,7 +34,7 @@ export interface IAuthOptions<P = any> {
   credentialsRequired?: boolean
 }
 
-export function isAuthOptions (options: any): options is IAuthOptions {
+export function isAuthOptions(options: any): options is AuthOptions {
   return (
     options != null &&
     options.algorithm != null &&

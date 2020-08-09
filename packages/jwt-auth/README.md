@@ -11,16 +11,16 @@ This middleware is part of the [lambda middleware series](https://dbartholomae.g
 ## Usage
 
 ```typescript
-import { jwtTokenChecker, EncryptionAlgorithms, IAuthorizedEvent } from '@lambda-middleware/jwt-auth'
+import { jwtTokenChecker, EncryptionAlgorithms, AuthorizedEvent } from '@lambda-middleware/jwt-auth'
 import { compose } from '@lambda-middleware/compose'
 import { errorHandler } from '@lambda-middleware/http-error-handler'
 import createHttpError from 'http-errors'
 
-interface ITokenPayload {
+interface TokenPayload {
   permissions: string[]
 }
 
-function isTokenPayload(token: any): token is ITokenPayload {
+function isTokenPayload(token: any): token is TokenPayload {
   return (
     token != null &&
     Array.isArray(token.permissions) &&
@@ -29,7 +29,7 @@ function isTokenPayload(token: any): token is ITokenPayload {
 }
 
 // This is your AWS handler
-const helloWorld = async (event: IAuthorizedEvent<ITokenPayload>) => {
+const helloWorld = async (event: AuthorizedEvent<TokenPayload>) => {
   // The middleware adds auth information if a valid token was added
   // If no auth was found and credentialsRequired is set to true, a 401 will be thrown. If auth exists you
   // have to check that it has the expected form.

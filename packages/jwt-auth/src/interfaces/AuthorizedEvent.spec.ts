@@ -1,12 +1,12 @@
-import { IAuthorizedEvent, isAuthorizedEvent } from './IAuthorizedEvent'
+import { AuthorizedEvent, isAuthorizedEvent } from './AuthorizedEvent'
 
-describe('IAuthorizedEvent', () => {
+describe('AuthorizedEvent', () => {
   describe('interface', () => {
     it('accepts data with token information set in the generics', () => {
-      interface IToken {
+      interface Token {
         foo: string
       }
-      const event: IAuthorizedEvent<IToken> = {
+      const event: AuthorizedEvent<Token> = {
         auth: {
           payload: {
             foo: ''
@@ -20,10 +20,10 @@ describe('IAuthorizedEvent', () => {
 
   describe('type guard', () => {
     it(`accepts data that has a payload verified by the given type guard`, () => {
-      interface IToken {
+      interface Token {
         foo: string
       }
-      function isToken(token: any): token is IToken {
+      function isToken(token: any): token is Token {
         return token != null && typeof token.foo === 'string'
       }
 
@@ -51,10 +51,10 @@ describe('IAuthorizedEvent', () => {
     })
 
     it('rejects data where the payload is rejected by a given type guard', () => {
-      interface IToken {
+      interface Token {
         foo: string
       }
-      function isToken(token: any): token is IToken {
+      function isToken(token: any): token is Token {
         return token != null && typeof token.foo === 'string'
       }
 

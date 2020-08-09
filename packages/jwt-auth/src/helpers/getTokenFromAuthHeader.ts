@@ -1,4 +1,4 @@
-import { IAuthOptions } from '../jwtTokenChecker'
+import { AuthOptions } from '../jwtTokenChecker'
 import debugFactory from 'debug'
 import createHttpError from 'http-errors'
 import { APIGatewayEvent } from 'aws-lambda'
@@ -19,7 +19,7 @@ function isUpperCaseAuthorizedEvent(
 
 export function getTokenFromAuthHeader<Payload>(
   event: APIGatewayEvent,
-  options: Pick<IAuthOptions, 'credentialsRequired'>
+  options: Pick<AuthOptions, 'credentialsRequired'>
 ): string | undefined {
   logger('Checking whether event contains at least one authorization header')
   if (

@@ -1,13 +1,9 @@
-import {
-  EncryptionAlgorithms,
-  IAuthOptions,
-  isAuthOptions
-} from './IAuthOptions'
+import { EncryptionAlgorithms, AuthOptions, isAuthOptions } from './AuthOptions'
 
-describe('IAuthOptions', () => {
+describe('AuthOptions', () => {
   describe('interface', () => {
     it('accepts data that has algorithm and a string secretOrPublicKey', () => {
-      const options: IAuthOptions = {
+      const options: AuthOptions = {
         algorithm: EncryptionAlgorithms.ES256,
         secretOrPublicKey: 'secret'
       }
@@ -15,7 +11,7 @@ describe('IAuthOptions', () => {
     })
 
     it('accepts data that has algorithm and a Buffer secretOrPublicKey', () => {
-      const options: IAuthOptions = {
+      const options: AuthOptions = {
         algorithm: EncryptionAlgorithms.ES256,
         secretOrPublicKey: Buffer.from([])
       }
@@ -23,13 +19,13 @@ describe('IAuthOptions', () => {
     })
 
     it('accepts data that has algorithm, a string secretOrPublicKey and a payload type guard', () => {
-      interface IPayload {
+      interface Payload {
         foo: string
       }
-      function isPayload (payload: any): payload is IPayload {
+      function isPayload(payload: any): payload is Payload {
         return payload != null && typeof payload.foo === 'string'
       }
-      const options: IAuthOptions<IPayload> = {
+      const options: AuthOptions<Payload> = {
         algorithm: EncryptionAlgorithms.ES256,
         isPayload,
         secretOrPublicKey: 'secret'
@@ -38,10 +34,10 @@ describe('IAuthOptions', () => {
     })
 
     it('accepts data that has algorithm, a string secretOrPublicKey and a tokenSource', () => {
-      function tokenSource (event: any): string {
+      function tokenSource(event: any): string {
         return ''
       }
-      const options: IAuthOptions = {
+      const options: AuthOptions = {
         algorithm: EncryptionAlgorithms.ES256,
         secretOrPublicKey: 'secret',
         tokenSource
@@ -70,10 +66,10 @@ describe('IAuthOptions', () => {
     })
 
     it('accepts data that has algorithm, a string secretOrPublicKey and a payload type guard', () => {
-      interface IPayload {
+      interface Payload {
         foo: string
       }
-      function isPayload (payload: any): payload is IPayload {
+      function isPayload(payload: any): payload is Payload {
         return payload != null && typeof payload.foo === 'string'
       }
       expect(
@@ -86,7 +82,7 @@ describe('IAuthOptions', () => {
     })
 
     it('accepts data that has algorithm, a string secretOrPublicKey and an array of tokenSources', () => {
-      function tokenSource (event: any): string {
+      function tokenSource(event: any): string {
         return ''
       }
       expect(

@@ -252,11 +252,11 @@ describe('jwtTokenChecker', () => {
   })
 
   describe('with a payload type guard', () => {
-    interface IPayload {
+    interface Payload {
       userId: number
     }
 
-    function isPayload(payload: any): payload is IPayload {
+    function isPayload(payload: any): payload is Payload {
       return payload != null && typeof payload.userId === 'number'
     }
 

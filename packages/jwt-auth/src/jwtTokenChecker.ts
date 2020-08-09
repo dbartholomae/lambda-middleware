@@ -6,14 +6,14 @@ import { getTokenFromAuthHeader } from './helpers/getTokenFromAuthHeader'
 import { getTokenFromSource } from './helpers/getTokenFromSource'
 import {
   EncryptionAlgorithms,
-  IAuthOptions,
+  AuthOptions,
   isAuthOptions
-} from './interfaces/IAuthOptions'
+} from './interfaces/AuthOptions'
 import { PromiseHandler } from './interfaces/PromiseHandler'
 
 const logger = debugFactory('@lambda-middleware/jwt-auth')
 
-export const jwtTokenChecker = <Payload>(options: IAuthOptions<Payload>) => {
+export const jwtTokenChecker = <Payload>(options: AuthOptions<Payload>) => {
   if (!isAuthOptions(options)) {
     throw new TypeError(
       `Expected IAuthOptions, received ${JSON.stringify(options)} instead`
@@ -97,8 +97,8 @@ export const jwtTokenChecker = <Payload>(options: IAuthOptions<Payload>) => {
   }
 }
 
-export { EncryptionAlgorithms, IAuthOptions, isAuthOptions }
+export { EncryptionAlgorithms, AuthOptions, isAuthOptions }
 export {
-  IAuthorizedEvent,
+  AuthorizedEvent,
   isAuthorizedEvent
-} from './interfaces/IAuthorizedEvent'
+} from './interfaces/AuthorizedEvent'
