@@ -893,7 +893,7 @@
 
 "@rush-temp/class-transformer@file:./projects/class-transformer.tgz":
   version "0.0.0"
-  resolved "file:./projects/class-transformer.tgz#dff8b99fbc0137bcad2d7936f0698e11c85d83e2"
+  resolved "file:./projects/class-transformer.tgz"
   dependencies:
     "@types/aws-lambda" "^8.10.47"
     "@types/debug" "^4.1.5"
@@ -915,6 +915,7 @@
     pkg-ok "^2.3.1"
     prettier "^2.0.2"
     prettier-config-standard "^1.0.1"
+    reflect-metadata "^0.1.13"
     rimraf "^3.0.2"
     serverless "^1.67.0"
     serverless-offline "^6.1.4"
@@ -8601,7 +8602,7 @@ redeyed@~2.1.0:
   dependencies:
     esprima "~4.0.0"
 
-reflect-metadata@^0.1.12:
+reflect-metadata@^0.1.12, reflect-metadata@^0.1.13:
   version "0.1.13"
   resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
 

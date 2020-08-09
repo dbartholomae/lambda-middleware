@@ -1,13 +1,32 @@
 import request from 'supertest'
+
 const server = request('http://localhost:3000/dev')
 
-describe('Handler with json serializer middleware', () => {
-  it('returns 200', async () => {
-    await server.get('/hello').expect(200)
+describe('Handler with class validator middleware', () => {
+  describe('with valid input', () => {
+    it('returns 200', async () => {
+      const response = await server
+        .post('/hello')
+        .send({
+          firstName: 'John',
+          lastName: 'Doe'
+        })
+        .expect(200)
+      expect(response.text).toEqual('Hello John Doe')
+    })
   })
 
-  it('returns the stringified JSON response', async () => {
-    const response = await server.get('/hello')
-    expect(response.body).toEqual({})
+  describe('with invalid input', () => {
+    it('returns 400 and the validation error', async () => {
+      const response = await server
+        .post('/hello')
+        .send({
+          firstName: 'John'
+        })
+        .expect(400)
+      expect(JSON.stringify(response.body)).toContain(
+        'lastName must be a string'
+      )
+    })
   })
 })

@@ -14,7 +14,7 @@ functions:
     handler: handler.fullExample
     events:
       - http:
-          method: get
+          method: post
           path: hello
 
   status:
