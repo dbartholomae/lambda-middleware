@@ -50,4 +50,19 @@ describe('classValidator', () => {
       })
     })
   })
+
+  describe('with null input', () => {
+    const body = null
+
+    it('throws an error with statusCode 400', async () => {
+      const handler = jest.fn()
+      await expect(
+        classValidator({
+          classType: NameBody
+        })(handler)({ body }, {} as any)
+      ).rejects.toMatchObject({
+        statusCode: 400
+      })
+    })
+  })
 })
