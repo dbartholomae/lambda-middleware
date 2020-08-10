@@ -21,17 +21,17 @@ export enum EncryptionAlgorithms {
 }
 
 /** Options for the middy-middleware-jwt-auth */
-export interface AuthOptions<P = any> {
+export interface AuthOptions<Payload = any, CredentialsRequired = undefined> {
   /** Algorithm to verify JSON web token signature */
   algorithm: EncryptionAlgorithms;
   /** An optional type guard function that verifies token payload structure */
-  isPayload?: (payload: any) => payload is P;
+  isPayload?: (payload: any) => payload is Payload;
   /** A string or buffer containing either the secret for HMAC algorithms, or the PEM encoded public key for RSA and ECDSA */
   secretOrPublicKey: string | Buffer;
   /** An optional function to get the authorization token from the event */
   tokenSource?: (event: any) => string;
   /** An optional boolean that allows making authorization necessary */
-  credentialsRequired?: boolean;
+  credentialsRequired?: CredentialsRequired & boolean;
 }
 
 export function isAuthOptions(options: any): options is AuthOptions {

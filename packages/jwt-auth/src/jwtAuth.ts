@@ -1,5 +1,5 @@
 import { PromiseHandler } from "@lambda-middleware/utils";
-import { APIGatewayEvent, Context } from "aws-lambda";
+import { APIGatewayEvent, APIGatewayProxyResult, Context } from "aws-lambda";
 import createHttpError from "http-errors";
 import jwt, { NotBeforeError, TokenExpiredError } from "jsonwebtoken";
 
@@ -10,18 +10,29 @@ import {
   EncryptionAlgorithms,
   isAuthOptions,
 } from "./interfaces/AuthOptions";
+import { AuthorizedEvent } from "./interfaces/AuthorizedEvent";
 import { logger } from "./logger";
 
-export const jwtAuth = <Payload>(options: AuthOptions<Payload>) => {
+export const jwtAuth = <Payload, CredentialsRequired>(
+  options: AuthOptions<Payload, CredentialsRequired>
+) => {
   if (!isAuthOptions(options)) {
     throw new TypeError(
       `Expected AuthOptions, received ${JSON.stringify(options)} instead`
     );
   }
-  return (handler: PromiseHandler) => async (
+  return (
+    handler: PromiseHandler<
+      APIGatewayEvent &
+        (CredentialsRequired extends true
+          ? AuthorizedEvent<Payload>
+          : Partial<AuthorizedEvent<Payload>>),
+      APIGatewayProxyResult
+    >
+  ) => async (
     event: APIGatewayEvent,
     context: Context
-  ) => {
+  ): Promise<APIGatewayProxyResult> => {
     if ((event as any).auth !== undefined) {
       logger("event.auth already populated, has to be empty");
       throw createHttpError(400, "The events auth property has to be empty", {
@@ -46,7 +57,7 @@ export const jwtAuth = <Payload>(options: AuthOptions<Payload>) => {
         );
       }
 
-      return await handler(event, context);
+      return await handler(event as any, context);
     }
 
     logger("Verifying authorization token");
@@ -104,7 +115,7 @@ export const jwtAuth = <Payload>(options: AuthOptions<Payload>) => {
       payload: jwt.decode(token),
       token,
     };
-    return await handler({ ...event, auth }, context);
+    return await handler({ ...event, auth } as any, context);
   };
 };
 

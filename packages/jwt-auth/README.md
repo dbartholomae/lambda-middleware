@@ -83,3 +83,13 @@ export const handler = compose(
   })
 )(helloWorld);
 ```
+
+Please note that there is some TypeScript magic going on that checks if
+`credentialsRequired` is set to true, and if it isn't, will check that your handler
+does not require on `event.auth` being set. Unfortunately this means that if you
+define options as a variable before handing them into the middleware, you have
+to define them `const options = { ... } as const` so TypeScript reads
+`credentialsRequired` as `true` instead of expanding the type to `boolean`.
+
+If you directly hand in the options to the middleware, this should not be
+snecessary.
