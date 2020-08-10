@@ -1,0 +1,19 @@
+{
+  "name": "@lambda-middleware/compose",
+  "entries": [
+    {
+      "version": "1.0.0",
+      "tag": "@lambda-middleware/compose_v1.0.0",
+      "date": "Mon, 10 Aug 2020 17:15:19 GMT",
+      "comments": {
+        "major": [
+          {
+            "comment": "add compose meta middleware",
+            "author": "Daniel Bartholomae <daniel@bartholomae.name>",
+            "commit": "5766c5d3e45e27eb25d2abf8d8b2739583bdde7a"
+          }
+        ]
+      }
+    }
+  ]
+}

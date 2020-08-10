@@ -1,6 +1,6 @@
 {
   "name": "@lambda-middleware/http-error-handler",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "An error handler middleware for AWS http lambda functions.",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",

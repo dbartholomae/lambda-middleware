@@ -1,0 +1,19 @@
+{
+  "name": "@lambda-middleware/middy-adaptor",
+  "entries": [
+    {
+      "version": "1.0.0",
+      "tag": "@lambda-middleware/middy-adaptor_v1.0.0",
+      "date": "Mon, 10 Aug 2020 17:15:19 GMT",
+      "comments": {
+        "major": [
+          {
+            "comment": "add middy-adaptor middleware",
+            "author": "Daniel Bartholomae <daniel@bartholomae.name>",
+            "commit": "ae65891f6f9a363a1d5115362bd14a1fe4e6cfcc"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "name": "@lambda-middleware/compose",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A compose function for functional lambda middleware.",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",

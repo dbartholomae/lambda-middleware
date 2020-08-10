@@ -1,6 +1,6 @@
 {
   "name": "@lambda-middleware/class-validator",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A validation middleware for AWS http lambda functions based on class-validator.",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",

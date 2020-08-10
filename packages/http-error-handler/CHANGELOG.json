@@ -1,0 +1,19 @@
+{
+  "name": "@lambda-middleware/http-error-handler",
+  "entries": [
+    {
+      "version": "1.0.0",
+      "tag": "@lambda-middleware/http-error-handler_v1.0.0",
+      "date": "Mon, 10 Aug 2020 17:15:19 GMT",
+      "comments": {
+        "major": [
+          {
+            "comment": "add http-error-handler middleware",
+            "author": "Daniel Bartholomae <daniel@bartholomae.name>",
+            "commit": "827c9757a69e48ccfea1af7fc9c479439b983b87"
+          }
+        ]
+      }
+    }
+  ]
+}
