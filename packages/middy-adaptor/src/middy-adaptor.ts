@@ -5,9 +5,13 @@ import { logger } from "./logger";
 import { CallbackListener } from "./CallbackListener/CallbackListener";
 import { MiddyMiddleware } from "./MiddyMiddleware/MiddyMiddleware";
 
-export const middyAdaptor = (
-  middyMiddlewareObject: MiddlewareObject<unknown, unknown>
-) => <Event, Response>(handler: PromiseHandler<Event, Response>) => async (
+export const middyAdaptor = <
+  Event,
+  Response,
+  ContextLike extends Context = Context
+>(
+  middyMiddlewareObject: MiddlewareObject<Event, Response, ContextLike>
+) => (handler: PromiseHandler<Event, Response>) => async (
   event: Event,
   context: Context
 ): Promise<Response> => {

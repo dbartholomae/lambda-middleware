@@ -1,24 +1,36 @@
 import { Callback, Context } from "aws-lambda";
 
-export interface MiddlewareObject<T, R, C extends Context = Context> {
-  before?: MiddlewareFunction<T, R, C>;
-  after?: MiddlewareFunction<T, R, C>;
-  onError?: MiddlewareFunction<T, R, C>;
+export interface MiddlewareObject<
+  Event,
+  Response,
+  ContextLike extends Context = Context
+> {
+  before?: MiddlewareFunction<Event, Response, ContextLike>;
+  after?: MiddlewareFunction<Event, Response, ContextLike>;
+  onError?: MiddlewareFunction<Event, Response, ContextLike>;
 }
 
-export type MiddlewareFunction<T, R, C extends Context = Context> = (
-  instance: Instance<T, R, C>,
+export type MiddlewareFunction<
+  Event,
+  Response,
+  ContextLike extends Context = Context
+> = (
+  instance: Instance<Event, Response, ContextLike>,
   next: NextFunction
 ) => void | Promise<any>;
 
 export type NextFunction = (error?: any) => void;
 
-export interface Instance<T = any, V = any, C extends Context = Context> {
-  event: T;
-  context: C;
-  response: V;
+export interface Instance<
+  Event = any,
+  Response = any,
+  ContextLike extends Context = Context
+> {
+  event: Event;
+  context: ContextLike;
+  response: Response;
   error: Error | null;
-  callback: Callback<V>;
+  callback: Callback<Response>;
 }
 
 type PromisifiedMiddlewareFunction = (instance: Instance) => Promise<any>;
