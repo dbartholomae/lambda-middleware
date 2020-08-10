@@ -34,6 +34,30 @@ describe('classValidator', () => {
     })
   })
 
+  describe('with superfluous input', () => {
+    const body = JSON.stringify({
+      firstName: 'John',
+      lastName: 'Doe',
+      injection: 'malicious'
+    })
+
+    it('sets the body to the transformed and validated value', async () => {
+      const handler = jest.fn()
+      await classValidator({
+        classType: NameBody
+      })(handler)({ body }, {} as any)
+      expect(handler).toHaveBeenCalledWith(
+        expect.objectContaining({
+          body: {
+            firstName: 'John',
+            lastName: 'Doe'
+          }
+        }),
+        expect.anything()
+      )
+    })
+  })
+
   describe('with invalid input', () => {
     const body = JSON.stringify({
       firstName: 'John'

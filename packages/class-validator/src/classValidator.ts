@@ -22,7 +22,8 @@ export const classValidator = <
   try {
     const transformedBody = (await transformAndValidate(
       options.classType,
-      event.body ?? '{}'
+      event.body ?? '{}',
+      { validator: { whitelist: true } }
     )) as T
     logger('Input is valid')
     return handler({ ...event, body: transformedBody }, context)
