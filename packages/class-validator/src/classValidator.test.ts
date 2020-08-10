@@ -1,6 +1,6 @@
 import { classValidator } from "./classValidator";
 
-import { IsString } from "class-validator";
+import { IsString, IsOptional } from "class-validator";
 
 class NameBody {
   @IsString()
@@ -87,6 +87,32 @@ describe("classValidator", () => {
       ).rejects.toMatchObject({
         statusCode: 400,
       });
+    });
+  });
+
+  describe("with an empty body and optional validation", () => {
+    const body = "";
+
+    class OptionalNameBody {
+      @IsOptional()
+      @IsString()
+      public firstName?: string;
+
+      @IsOptional()
+      @IsString()
+      public lastName?: string;
+    }
+
+    it("returns the handler's response", async () => {
+      const expectedResponse = {
+        statusCode: 200,
+        body: "Done",
+      };
+      const handler = jest.fn().mockResolvedValue(expectedResponse);
+      const actualResponse = await classValidator({
+        classType: OptionalNameBody,
+      })(handler)({ body }, {} as any);
+      expect(actualResponse).toEqual(expectedResponse);
     });
   });
 });

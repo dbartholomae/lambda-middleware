@@ -20,9 +20,10 @@ export const classValidator = <
 ): Promise<R> => {
   logger(`Checking input ${JSON.stringify(event.body)}`);
   try {
+    const body = event.body ?? "{}";
     const transformedBody = (await transformAndValidate(
       options.classType,
-      event.body ?? "{}",
+      body === "" ? "{}" : body,
       { validator: { whitelist: true } }
     )) as T;
     logger("Input is valid");
