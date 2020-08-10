@@ -19,7 +19,7 @@ This middleware is part of the [lambda middleware series](https://dbartholomae.g
 
 ```typescript
 import {
-  jwtTokenChecker,
+  jwtAuth,
   EncryptionAlgorithms,
   AuthorizedEvent,
 } from "@lambda-middleware/jwt-auth";
@@ -66,7 +66,7 @@ const helloWorld = async (event: AuthorizedEvent<TokenPayload>) => {
 
 export const handler = compose(
   errorHandler(),
-  jwtTokenChecker({
+  jwtAuth({
     /** Algorithm to verify JSON web token signature */
     algorithm: EncryptionAlgorithms.HS256,
     /** An optional boolean that enables making authorization mandatory */

@@ -1,7 +1,7 @@
 import { compose } from "@lambda-middleware/compose";
 import { errorHandler } from "@lambda-middleware/http-error-handler";
 import createHttpError from "http-errors";
-import { jwtTokenChecker, EncryptionAlgorithms, IAuthorizedEvent } from "../";
+import { jwtAuth, EncryptionAlgorithms, AuthorizedEvent } from "../";
 
 interface TokenPayload {
   permissions: string[];
@@ -16,7 +16,7 @@ function isTokenPayload(token: any): token is TokenPayload {
 }
 
 // This is your AWS handler
-const helloWorld = async (event: IAuthorizedEvent<TokenPayload>) => {
+const helloWorld = async (event: AuthorizedEvent<TokenPayload>) => {
   // The middleware adds auth information if a valid token was added
   // If no auth was found and credentialsRequired is set to true, a 401 will be thrown. If auth exists you
   // have to check that it has the expected form.
@@ -42,7 +42,7 @@ const helloWorld = async (event: IAuthorizedEvent<TokenPayload>) => {
 
 export const handler = compose(
   errorHandler(),
-  jwtTokenChecker({
+  jwtAuth({
     /** Algorithm to verify JSON web token signature */
     algorithm: EncryptionAlgorithms.HS256,
     /** An optional boolean that enables making authorization mandatory */

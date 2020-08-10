@@ -12,7 +12,7 @@ import {
 } from "./interfaces/AuthOptions";
 import { logger } from "./logger";
 
-export const jwtTokenChecker = <Payload>(options: AuthOptions<Payload>) => {
+export const jwtAuth = <Payload>(options: AuthOptions<Payload>) => {
   if (!isAuthOptions(options)) {
     throw new TypeError(
       `Expected IAuthOptions, received ${JSON.stringify(options)} instead`

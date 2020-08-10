@@ -3,8 +3,8 @@ import {
   EncryptionAlgorithms,
   isAuthOptions,
   isAuthorizedEvent,
-  jwtTokenChecker,
-} from "./jwtTokenChecker";
+  jwtAuth,
+} from "./jwtAuth";
 import createHttpError from "http-errors";
 import * as JWT from "jsonwebtoken";
 import moment from "moment";
@@ -23,7 +23,7 @@ describe("exports", () => {
   });
 });
 
-describe("jwtTokenChecker", () => {
+describe("jwtAuth", () => {
   const defaultOptions = {
     algorithm: EncryptionAlgorithms.HS256,
     secretOrPublicKey: "secret",
@@ -40,7 +40,7 @@ describe("jwtTokenChecker", () => {
   });
 
   it("throws a type error when defaultOptions are misformed", () => {
-    expect(() => jwtTokenChecker({} as any)).toThrowError(TypeError);
+    expect(() => jwtAuth({} as any)).toThrowError(TypeError);
   });
 
   describe("without a payload type guard", () => {
@@ -49,7 +49,7 @@ describe("jwtTokenChecker", () => {
         algorithm: defaultOptions.algorithm,
       });
       await expect(
-        jwtTokenChecker(defaultOptions)(handler)(
+        jwtAuth(defaultOptions)(handler)(
           createEvent({ headers: { Authorization: `Bearer ${token}` } }),
           createContext()
         )
@@ -61,7 +61,7 @@ describe("jwtTokenChecker", () => {
         algorithm: defaultOptions.algorithm,
       });
       await expect(
-        jwtTokenChecker(defaultOptions)(handler)(
+        jwtAuth(defaultOptions)(handler)(
           createEvent({ headers: { authorization: `Bearer ${token}` } }),
           createContext()
         )
@@ -73,7 +73,7 @@ describe("jwtTokenChecker", () => {
         algorithm: defaultOptions.algorithm,
       });
       await expect(
-        jwtTokenChecker(defaultOptions)(handler)(
+        jwtAuth(defaultOptions)(handler)(
           createEvent({ headers: { Authorization: `Bearer ${token}` } }),
           createContext()
         )
@@ -85,7 +85,7 @@ describe("jwtTokenChecker", () => {
       const token = JWT.sign(data, defaultOptions.secretOrPublicKey, {
         algorithm: defaultOptions.algorithm,
       });
-      await jwtTokenChecker(defaultOptions)(handler)(
+      await jwtAuth(defaultOptions)(handler)(
         createEvent({ headers: { Authorization: `Bearer ${token}` } }),
         createContext()
       );
@@ -104,7 +104,7 @@ describe("jwtTokenChecker", () => {
       const token = JWT.sign(data, defaultOptions.secretOrPublicKey, {
         algorithm: defaultOptions.algorithm,
       });
-      await jwtTokenChecker(defaultOptions)(handler)(
+      await jwtAuth(defaultOptions)(handler)(
         createEvent({ headers: { Authorization: `Bearer ${token}` } }),
         createContext()
       );
@@ -119,7 +119,7 @@ describe("jwtTokenChecker", () => {
         algorithm: defaultOptions.algorithm,
       });
       await expect(
-        jwtTokenChecker(defaultOptions)(handler)(
+        jwtAuth(defaultOptions)(handler)(
           createEvent({
             headers: { Authorization: `Bearer ${token}` },
             auth: {},
@@ -139,7 +139,7 @@ describe("jwtTokenChecker", () => {
         algorithm: defaultOptions.algorithm,
       });
       await expect(
-        jwtTokenChecker(defaultOptions)(handler)(
+        jwtAuth(defaultOptions)(handler)(
           createEvent({
             headers: {
               Authorization: `Bearer ${token}`,
@@ -161,7 +161,7 @@ describe("jwtTokenChecker", () => {
 
     it("rejects if Authorization header is malformed", async () => {
       await expect(
-        jwtTokenChecker(defaultOptions)(handler)(
+        jwtAuth(defaultOptions)(handler)(
           createEvent({
             headers: {
               Authorization: "Malformed header",
@@ -185,7 +185,7 @@ describe("jwtTokenChecker", () => {
         algorithm: defaultOptions.algorithm,
       });
       await expect(
-        jwtTokenChecker(defaultOptions)(handler)(
+        jwtAuth(defaultOptions)(handler)(
           createEvent({ headers: { Authorization: `Bearer ${token}` } }),
           createContext()
         )
@@ -201,7 +201,7 @@ describe("jwtTokenChecker", () => {
         algorithm: defaultOptions.algorithm,
       });
       await expect(
-        jwtTokenChecker(defaultOptions)(handler)(
+        jwtAuth(defaultOptions)(handler)(
           createEvent({ headers: { Authorization: `Bearer ${token}` } }),
           createContext()
         )
@@ -219,7 +219,7 @@ describe("jwtTokenChecker", () => {
         algorithm: defaultOptions.algorithm,
       });
       await expect(
-        jwtTokenChecker(defaultOptions)(handler)(
+        jwtAuth(defaultOptions)(handler)(
           createEvent({ headers: { Authorization: `Bearer ${token}` } }),
           createContext()
         )
@@ -237,7 +237,7 @@ describe("jwtTokenChecker", () => {
         credentialsRequired: true,
       };
       await expect(
-        jwtTokenChecker(options)(handler)(createEvent({}), createContext())
+        jwtAuth(options)(handler)(createEvent({}), createContext())
       ).rejects.toEqual(
         createHttpError(
           401,
@@ -270,7 +270,7 @@ describe("jwtTokenChecker", () => {
       const token = JWT.sign(data, defaultOptions.secretOrPublicKey, {
         algorithm: defaultOptions.algorithm,
       });
-      await jwtTokenChecker(defaultOptions)(handler)(
+      await jwtAuth(defaultOptions)(handler)(
         createEvent({ headers: { Authorization: `Bearer ${token}` } }),
         createContext()
       );
@@ -290,7 +290,7 @@ describe("jwtTokenChecker", () => {
         algorithm: defaultOptions.algorithm,
       });
       await expect(
-        jwtTokenChecker(defaultOptions)(handler)(
+        jwtAuth(defaultOptions)(handler)(
           createEvent({ headers: { Authorization: `Bearer ${token}` } }),
           createContext()
         )
@@ -313,7 +313,7 @@ describe("jwtTokenChecker", () => {
           tokenSource: (event: any) => event.queryStringParameters.token,
         };
         await expect(
-          jwtTokenChecker(options)(handler)(createEvent({}), createContext())
+          jwtAuth(options)(handler)(createEvent({}), createContext())
         ).resolves.toEqual(response);
       });
 
@@ -326,7 +326,7 @@ describe("jwtTokenChecker", () => {
         const token = JWT.sign(data, options.secretOrPublicKey, {
           algorithm: options.algorithm,
         });
-        await jwtTokenChecker(options)(handler)(
+        await jwtAuth(options)(handler)(
           createEvent({
             queryStringParameters: { token },
           }),
