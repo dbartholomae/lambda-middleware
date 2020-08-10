@@ -1,4 +1,4 @@
-import { MiddlewareObject, PromisifiedMiddlewareObject } from "..";
+import { MiddlewareObject, PromisifiedMiddlewareObject } from "../index";
 import { promisifyMiddyMiddlewareFunction } from "./promisifyMiddyMiddlewareFunction";
 
 export function promisifyMiddyMiddleware(

@@ -1,5 +1,5 @@
 import { Instance, MiddlewareFunction } from "../interfaces/MiddyTypes";
-import { isPromise } from "./isPromise";
+import { isPromise } from "../utils/isPromise";
 
 export function promisifyMiddyMiddlewareFunction(
   fn: MiddlewareFunction<unknown, unknown>

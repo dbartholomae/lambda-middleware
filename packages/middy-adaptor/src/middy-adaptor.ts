@@ -3,15 +3,14 @@ import { Context } from "aws-lambda";
 import { Instance, MiddlewareObject } from "./interfaces/MiddyTypes";
 import { logger } from "./logger";
 import { CallbackListener } from "./CallbackListener/CallbackListener";
-import { promisifyMiddyMiddleware } from "./utils/promisifyMiddyMiddleware";
-import { runMiddleware } from "./utils/runMiddleware";
+import { MiddyMiddleware } from "./MiddyMiddleware/MiddyMiddleware";
 
-export const middyAdaptor = <Event>(
-  middyMiddleware: MiddlewareObject<unknown, unknown>
-) => (handler: PromiseHandler<Event, unknown>) => async (
+export const middyAdaptor = <Event, Response>(
+  middyMiddlewareObject: MiddlewareObject<unknown, unknown>
+) => (handler: PromiseHandler<Event, Response>) => async (
   event: Event,
   context: Context
-) => {
+): Promise<Response> => {
   const callbackListener = new CallbackListener();
   const instance: Instance = {
     context: { ...context },
@@ -21,10 +20,11 @@ export const middyAdaptor = <Event>(
     callback: callbackListener.callback,
   };
 
-  const promisifiedMiddyMiddleware = promisifyMiddyMiddleware(middyMiddleware);
+  const middyMiddleware = new MiddyMiddleware(middyMiddlewareObject);
 
   try {
-    await runMiddleware(promisifiedMiddyMiddleware, "before", instance);
+    await middyMiddleware.before(instance);
+
     if (callbackListener.callbackCalled) {
       return callbackListener.handleCallback();
     }
@@ -33,17 +33,11 @@ export const middyAdaptor = <Event>(
     instance.response = await handler(instance.event, context);
     logger("handler ran successfully");
 
-    await runMiddleware(promisifiedMiddyMiddleware, "after", instance);
+    await middyMiddleware.after(instance);
   } catch (error) {
     logger("error in handler or before or after middleware");
     instance.error = error;
-    let newError = error;
-    logger("Checking for onError middleware");
-    if (promisifiedMiddyMiddleware.onError !== undefined) {
-      logger("Calling onError middleware");
-      newError = await promisifiedMiddyMiddleware.onError(instance);
-      logger("onError middleware called");
-    }
+    const newError = await middyMiddleware.onError(instance, error);
     if (newError) {
       throw newError;
     }

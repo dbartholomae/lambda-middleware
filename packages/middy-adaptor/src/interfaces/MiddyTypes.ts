@@ -21,8 +21,10 @@ export interface Instance<T = any, V = any, C extends Context = Context> {
   callback: Callback<V>;
 }
 
+type PromisifiedMiddlewareFunction = (instance: Instance) => Promise<any>;
+
 export type PromisifiedMiddlewareObject = {
-  before?: (instance: Instance) => Promise<any>;
-  after?: (instance: Instance) => Promise<any>;
-  onError?: (instance: Instance) => Promise<any>;
+  before?: PromisifiedMiddlewareFunction;
+  after?: PromisifiedMiddlewareFunction;
+  onError?: PromisifiedMiddlewareFunction;
 };
