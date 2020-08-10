@@ -3,7 +3,7 @@
     {
       "packageName": "@lambda-middleware/no-sniff",
       "comment": "add no-sniff middleware",
-      "type": "minor"
+      "type": "major"
     }
   ],
   "packageName": "@lambda-middleware/no-sniff",
