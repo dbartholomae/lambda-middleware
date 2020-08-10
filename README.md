@@ -122,3 +122,7 @@ const bodyParser = () =>
 }
 ```
 so that if multiple middlewares change the event, the resulting type will have all changes and not just the latest.
+
+## Contributing
+
+If you want to contribute to the project, please read our [contributing guidelines](./CONTRIBUTING.md) first.
