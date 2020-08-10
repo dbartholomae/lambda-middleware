@@ -17,6 +17,11 @@ These utilities are part of the [lambda middleware series](https://dbartholomae.
 
 ## Production utils
 
+### promisifyHandler
+
+Converts a handler that can either use a callback or return a `Promise`
+to a handler that is only `Promise` based.
+
 ### PromiseHandler
 
 This type is for a handler function that does not take a callback,
