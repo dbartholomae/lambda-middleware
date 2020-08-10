@@ -1,6 +1,6 @@
 import { classValidator } from "./classValidator";
 
-import { IsString, IsOptional } from "class-validator";
+import { IsOptional, IsString } from "class-validator";
 
 class NameBody {
   @IsString()
@@ -32,6 +32,18 @@ describe("classValidator", () => {
         expect.anything()
       );
     });
+
+    it("with excludeExtraneousValues throws an error", async () => {
+      const handler = jest.fn();
+      await expect(
+        classValidator({
+          bodyType: NameBody,
+          transformer: {
+            excludeExtraneousValues: true,
+          },
+        })(handler)({ body }, {} as any)
+      ).rejects.toBeDefined();
+    });
   });
 
   describe("with superfluous input", () => {
@@ -41,7 +53,7 @@ describe("classValidator", () => {
       injection: "malicious",
     });
 
-    it("sets the body to the transformed and validated value", async () => {
+    it("omits the superfluous input", async () => {
       const handler = jest.fn();
       await classValidator({
         bodyType: NameBody,
@@ -55,6 +67,21 @@ describe("classValidator", () => {
         }),
         expect.anything()
       );
+    });
+
+    it("without whitelisting returns the handler's response", async () => {
+      const expectedResponse = {
+        statusCode: 200,
+        body: "Done",
+      };
+      const handler = jest.fn().mockResolvedValue(expectedResponse);
+      const actualResponse = await classValidator({
+        bodyType: NameBody,
+        validator: {
+          whitelist: false,
+        },
+      })(handler)({ body }, {} as any);
+      expect(actualResponse).toEqual(expectedResponse);
     });
   });
 

@@ -21,10 +21,14 @@ export const classValidator = <
   logger(`Checking input ${JSON.stringify(event.body)}`);
   try {
     const body = event.body ?? "{}";
+    const transformer = options.transformer;
+    const validator = options.validator ?? {
+      whitelist: true,
+    };
     const transformedBody = (await transformAndValidate(
       options.bodyType,
       body === "" ? "{}" : body,
-      { validator: { whitelist: true } }
+      { transformer, validator }
     )) as T;
     logger("Input is valid");
     return handler({ ...event, body: transformedBody }, context);

@@ -35,5 +35,13 @@ export const handler = compose(
   classValidator({
     // Add the validation class here
     bodyType: NameBody,
+    // You can add options to class-transformer. These will be passed through,
+    // so read the class-transformer documentation for details
+    transformer: {},
+    // You can add options to class-validator. For security reasons,
+    // whitelist by default is set to true. If you set any options, you have
+    // to set it to true manually as the default for class-validator would be
+    // false
+    validator: {},
   })
 )(helloWorld);

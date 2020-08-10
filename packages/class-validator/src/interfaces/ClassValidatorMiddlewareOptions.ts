@@ -1,6 +1,10 @@
-import { ClassType } from "class-transformer-validator";
+import {
+  ClassType,
+  TransformValidationOptions,
+} from "class-transformer-validator";
 
-export interface ClassValidatorMiddlewareOptions<T extends object> {
+export interface ClassValidatorMiddlewareOptions<T extends object>
+  extends TransformValidationOptions {
   bodyType: ClassType<T>;
 }
 
