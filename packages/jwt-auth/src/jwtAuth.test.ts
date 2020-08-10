@@ -56,7 +56,7 @@ describe("jwtAuth", () => {
       ).resolves.toEqual(response);
     });
 
-    it("returns what the handler returns if token is valid in lower-case header", async () => {
+    it("returns what the handler returns if token is given in lower-case authorization header", async () => {
       const token = JWT.sign({}, defaultOptions.secretOrPublicKey, {
         algorithm: defaultOptions.algorithm,
       });
@@ -68,7 +68,7 @@ describe("jwtAuth", () => {
       ).resolves.toEqual(response);
     });
 
-    it("returns what the handler returns if token is given in lower case authorization header", async () => {
+    it("returns what the handler returns if token is given in upper-case authorization header", async () => {
       const token = JWT.sign({}, defaultOptions.secretOrPublicKey, {
         algorithm: defaultOptions.algorithm,
       });
@@ -80,7 +80,7 @@ describe("jwtAuth", () => {
       ).resolves.toEqual(response);
     });
 
-    it("saves token information to event.auth.payload if token is valid", async () => {
+    it("calls the handler with token payload in event.auth.payload if token is valid", async () => {
       const data = { userId: 1 };
       const token = JWT.sign(data, defaultOptions.secretOrPublicKey, {
         algorithm: defaultOptions.algorithm,
@@ -99,7 +99,7 @@ describe("jwtAuth", () => {
       });
     });
 
-    it("saves the token itself to event.auth.token if token is valid", async () => {
+    it("calls the handler with token in event.auth.token if token is valid", async () => {
       const data = { userId: 1 };
       const token = JWT.sign(data, defaultOptions.secretOrPublicKey, {
         algorithm: defaultOptions.algorithm,
@@ -265,7 +265,7 @@ describe("jwtAuth", () => {
       secretOrPublicKey: "secret",
     };
 
-    it("saves token information to event.auth.payload if token is valid", async () => {
+    it("calls the handler with token payload in event.auth.payload if token is valid", async () => {
       const data = { userId: 1 };
       const token = JWT.sign(data, defaultOptions.secretOrPublicKey, {
         algorithm: defaultOptions.algorithm,
@@ -317,7 +317,7 @@ describe("jwtAuth", () => {
         ).resolves.toEqual(response);
       });
 
-      it("saves token information to event.auth.payload if token is valid", async () => {
+      it("calls the handler with token payload in event.auth.payload if token is valid", async () => {
         const options = {
           ...defaultOptions,
           tokenSource: (e: any) => e.queryStringParameters.token,
@@ -342,7 +342,7 @@ describe("jwtAuth", () => {
         });
       });
 
-      it("saves token information to event.auth.payload if token is valid and credentials are required", async () => {
+      it("calls the handler with token payload in event.auth.payload if token is valid and credentials are required", async () => {
         const options = {
           ...defaultOptions,
           credentialsRequired: true,
