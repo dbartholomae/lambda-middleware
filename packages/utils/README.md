@@ -15,19 +15,21 @@ A collection of utilities for middleware for AWS lambda functions.
 
 These utilities are part of the [lambda middleware series](https://dbartholomae.github.io/lambda-middleware/). They can be used independently.
 
-## Usage
+## Production utils
 
-```typescript
-import { noSniff } from "@lambda-middleware/utils";
+### PromiseHandler
 
-// This is your AWS handler
-async function helloWorld() {
-  return {
-    statusCode: 200,
-    body: "",
-  };
-}
+This type is for a handler function that does not take a callback,
+but instead returns a promise for the response.
 
-// Wrap the handler with the middleware
-export const handler = noSniff()(helloWorld);
-```
+## Test utils
+
+### createEvent
+
+Creates an `APIGatewayEvent` for testing.
+Currently does not implement `requestContext`.
+
+### createContext
+
+Creates an AWS Lambda `Context` for testing.
+Currently does not implement `done`, `fail`, `getRemainingTimeInMillis` and `succeed`.
