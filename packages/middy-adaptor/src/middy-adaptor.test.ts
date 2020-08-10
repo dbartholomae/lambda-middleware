@@ -1,5 +1,6 @@
 import { middyAdaptor } from "./middy-adaptor";
 import { Instance, MiddlewareObject } from "./interfaces/MiddyTypes";
+import { PromiseHandler } from "@lambda-middleware/utils";
 
 describe("middyAdaptor", () => {
   describe("with an empty middleware", () => {
@@ -95,7 +96,10 @@ describe("middyAdaptor", () => {
       middyMiddleware.after = async (instance: Instance) => {
         instance.response.statusCode = 204;
       };
-      const handler = jest.fn().mockResolvedValue(response);
+      const handler = jest.fn().mockResolvedValue(response) as PromiseHandler<
+        any,
+        any
+      >;
       const middlewareResponse = await middyAdaptor(middyMiddleware)(handler)(
         {} as any,
         {} as any
