@@ -26,6 +26,7 @@
   },
   "private": false,
   "dependencies": {
+    "@lambda-middleware/utils": "*",
     "debug": ">=4.1.0",
     "class-transformer": ">=0.2.3",
     "class-transformer-validator": ">=0.8.0",
@@ -41,9 +42,7 @@
     "start": "cd test && serverless offline",
     "test": "npm run lint && npm run test:unit && npm run test:integration && pkg-ok",
     "test:integration": "concurrently --timeout 600000 --kill-others --success first \"cd test && serverless offline\" \"wait-on http://localhost:3000/dev/status && jest -c jest.integration.config.js\"",
-    "test:unit": "jest",
-    "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "test:unit": "jest"
   },
   "devDependencies": {
     "@lambda-middleware/compose": "*",
@@ -77,6 +76,5 @@
     "wait-on": "^5.2.0",
     "webpack": "^4.41.5"
   },
-  "repository": "git@github.com:dbartholomae/lambda-middleware.git",
-  "snyk": true
+  "repository": "git@github.com:dbartholomae/lambda-middleware.git"
 }

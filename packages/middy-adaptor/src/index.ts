@@ -1,4 +1,4 @@
 /* istanbul ignore next */
-export * from './middy-adaptor'
+export * from "./middy-adaptor";
 /* istanbul ignore next */
-export * from './interfaces/MiddyTypes'
+export * from "./interfaces/MiddyTypes";

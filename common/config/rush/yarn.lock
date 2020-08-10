@@ -135,8 +135,8 @@
     js-tokens "^4.0.0"
 
 "@babel/parser@^7.1.0", "@babel/parser@^7.10.4", "@babel/parser@^7.11.0", "@babel/parser@^7.11.1":
-  version "7.11.2"
-  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.11.2.tgz#0882ab8a455df3065ea2dcb4c753b2460a24bead"
+  version "7.11.3"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.11.3.tgz#9e1eae46738bcd08e23e867bab43e7b95299a8f9"
 
 "@babel/plugin-syntax-async-generators@^7.8.4":
   version "7.8.4"
@@ -843,8 +843,8 @@
     "@types/node" ">= 8"
 
 "@octokit/types@^5.0.0", "@octokit/types@^5.0.1":
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/@octokit/types/-/types-5.3.0.tgz#f0d11e73887fdd06f34587d1fed1c2f597b1f752"
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/@octokit/types/-/types-5.4.0.tgz#25f2f8e24fec09214553168c41c06383c9d0f529"
   dependencies:
     "@types/node" ">= 8"
 
@@ -893,7 +893,7 @@
 
 "@rush-temp/class-validator@file:./projects/class-validator.tgz":
   version "0.0.0"
-  resolved "file:./projects/class-validator.tgz#df030b8d93e69c815455b55e975d571779919c66"
+  resolved "file:./projects/class-validator.tgz#f7e823ec43fec4c407bd8377814e98ce4cf058ac"
   dependencies:
     "@types/aws-lambda" "^8.10.47"
     "@types/debug" "^4.1.5"
@@ -930,7 +930,7 @@
 
 "@rush-temp/compose@file:./projects/compose.tgz":
   version "0.0.0"
-  resolved "file:./projects/compose.tgz"
+  resolved "file:./projects/compose.tgz#4a025cc5d6f163a3f2d6ee6f633bda6a01927da9"
   dependencies:
     "@semantic-release/changelog" "^3.0.2"
     "@semantic-release/commit-analyzer" "^6.1.0"
@@ -966,7 +966,7 @@
 
 "@rush-temp/http-error-handler@file:./projects/http-error-handler.tgz":
   version "0.0.0"
-  resolved "file:./projects/http-error-handler.tgz"
+  resolved "file:./projects/http-error-handler.tgz#bf4f4032ca0154e4182cb9e7e5f0d6515b3d21bd"
   dependencies:
     "@types/aws-lambda" "^8.10.47"
     "@types/debug" "^4.1.5"
@@ -1000,9 +1000,42 @@
     wait-on "^5.2.0"
     webpack "^4.41.5"
 
+"@rush-temp/ie-no-open@file:./projects/ie-no-open.tgz":
+  version "0.0.0"
+  resolved "file:./projects/ie-no-open.tgz#4bf132dac67ae18dff973d89ae4137cb1b91bdeb"
+  dependencies:
+    "@types/aws-lambda" "^8.10.47"
+    "@types/debug" "^4.1.5"
+    "@types/jest" "^25.2.1"
+    "@types/supertest" "^2.0.8"
+    "@typescript-eslint/eslint-plugin" "^2.26.0"
+    "@typescript-eslint/parser" "^2.26.0"
+    aws-lambda "^1.0.5"
+    concurrently "^5.1.0"
+    debug ">=4.1.0"
+    eslint "^6.8.0"
+    eslint-config-prettier "^6.10.1"
+    eslint-plugin-prettier "^3.1.2"
+    jest "^25.2.7"
+    jest-junit "^10.0.0"
+    pkg-ok "^2.3.1"
+    prettier "^2.0.2"
+    prettier-config-standard "^1.0.1"
+    rimraf "^3.0.2"
+    serverless "^1.67.0"
+    serverless-offline "^6.1.4"
+    serverless-webpack "^5.3.1"
+    source-map-support "^0.5.16"
+    supertest "^4.0.2"
+    ts-jest "^25.3.1"
+    ts-loader "^6.2.2"
+    typescript "^3.7.5"
+    wait-on "^5.2.0"
+    webpack "^4.41.5"
+
 "@rush-temp/json-serializer@file:./projects/json-serializer.tgz":
   version "0.0.0"
-  resolved "file:./projects/json-serializer.tgz"
+  resolved "file:./projects/json-serializer.tgz#58773ce3a4bb4279f4f0034547cfc942c758f98b"
   dependencies:
     "@types/aws-lambda" "^8.10.47"
     "@types/debug" "^4.1.5"
@@ -1035,7 +1068,7 @@
 
 "@rush-temp/jwt-auth@file:./projects/jwt-auth.tgz":
   version "0.0.0"
-  resolved "file:./projects/jwt-auth.tgz"
+  resolved "file:./projects/jwt-auth.tgz#871aae032696588daa6a1c8b55aa60ab44da0060"
   dependencies:
     "@types/aws-lambda" "^8.10.47"
     "@types/debug" "^4.1.5"
@@ -1070,6 +1103,95 @@
     typescript "^3.7.5"
     wait-on "^5.2.0"
     webpack "^4.41.5"
+
+"@rush-temp/middy-adaptor@file:./projects/middy-adaptor.tgz":
+  version "0.0.0"
+  resolved "file:./projects/middy-adaptor.tgz#1c60a6e5d5560e6ed488b1d969a911ecb38c54be"
+  dependencies:
+    "@types/aws-lambda" "^8.10.47"
+    "@types/debug" "^4.1.5"
+    "@types/jest" "^25.2.1"
+    "@types/supertest" "^2.0.8"
+    "@typescript-eslint/eslint-plugin" "^2.26.0"
+    "@typescript-eslint/parser" "^2.26.0"
+    aws-lambda "^1.0.5"
+    concurrently "^5.1.0"
+    debug ">=4.1.0"
+    eslint "^6.8.0"
+    eslint-config-prettier "^6.10.1"
+    eslint-plugin-prettier "^3.1.2"
+    jest "^25.2.7"
+    jest-junit "^10.0.0"
+    pkg-ok "^2.3.1"
+    prettier "^2.0.2"
+    prettier-config-standard "^1.0.1"
+    rimraf "^3.0.2"
+    serverless "^1.67.0"
+    serverless-offline "^6.1.4"
+    serverless-webpack "^5.3.1"
+    source-map-support "^0.5.16"
+    supertest "^4.0.2"
+    ts-jest "^25.3.1"
+    ts-loader "^6.2.2"
+    typescript "^3.7.5"
+    wait-on "^5.2.0"
+    webpack "^4.41.5"
+
+"@rush-temp/no-sniff@file:./projects/no-sniff.tgz":
+  version "0.0.0"
+  resolved "file:./projects/no-sniff.tgz#0e8cb433e108a2c79aa1394a0dcb3d5079fc22bf"
+  dependencies:
+    "@types/aws-lambda" "^8.10.47"
+    "@types/debug" "^4.1.5"
+    "@types/jest" "^25.2.1"
+    "@types/supertest" "^2.0.8"
+    "@typescript-eslint/eslint-plugin" "^2.26.0"
+    "@typescript-eslint/parser" "^2.26.0"
+    aws-lambda "^1.0.5"
+    concurrently "^5.1.0"
+    debug ">=4.1.0"
+    eslint "^6.8.0"
+    eslint-config-prettier "^6.10.1"
+    eslint-plugin-prettier "^3.1.2"
+    jest "^25.2.7"
+    jest-junit "^10.0.0"
+    pkg-ok "^2.3.1"
+    prettier "^2.0.2"
+    prettier-config-standard "^1.0.1"
+    rimraf "^3.0.2"
+    serverless "^1.67.0"
+    serverless-offline "^6.1.4"
+    serverless-webpack "^5.3.1"
+    source-map-support "^0.5.16"
+    supertest "^4.0.2"
+    ts-jest "^25.3.1"
+    ts-loader "^6.2.2"
+    typescript "^3.7.5"
+    wait-on "^5.2.0"
+    webpack "^4.41.5"
+
+"@rush-temp/utils@file:./projects/utils.tgz":
+  version "0.0.0"
+  resolved "file:./projects/utils.tgz#d4d989c549fd915e1513ec6cd4accda830313d17"
+  dependencies:
+    "@types/aws-lambda" "^8.10.47"
+    "@types/debug" "^4.1.5"
+    "@types/jest" "^25.2.1"
+    "@typescript-eslint/eslint-plugin" "^2.26.0"
+    "@typescript-eslint/parser" "^2.26.0"
+    aws-lambda "^1.0.5"
+    eslint "^6.8.0"
+    eslint-config-prettier "^6.10.1"
+    eslint-plugin-prettier "^3.1.2"
+    jest "^25.2.7"
+    jest-junit "^10.0.0"
+    pkg-ok "^2.3.1"
+    prettier "^2.0.2"
+    prettier-config-standard "^1.0.1"
+    rimraf "^3.0.2"
+    source-map-support "^0.5.16"
+    ts-jest "^25.3.1"
+    typescript "^3.7.5"
 
 "@semantic-release/changelog@^3.0.2":
   version "3.0.6"
@@ -1578,8 +1700,8 @@
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
 
 "@types/superagent@*":
-  version "4.1.8"
-  resolved "https://registry.yarnpkg.com/@types/superagent/-/superagent-4.1.8.tgz#f663dcdd24705e07fce055003ace9b824f2a51c9"
+  version "4.1.9"
+  resolved "https://registry.yarnpkg.com/@types/superagent/-/superagent-4.1.9.tgz#d899d3bc90b17eb298cac18b7aa22f7c3ec88c13"
   dependencies:
     "@types/cookiejar" "*"
     "@types/node" "*"
@@ -3315,8 +3437,8 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     sha.js "^2.4.8"
 
 cron-parser@^2.7.3:
-  version "2.16.2"
-  resolved "https://registry.yarnpkg.com/cron-parser/-/cron-parser-2.16.2.tgz#2fa3ac4dcbb8624df52abb4a35a73a6982d4b71c"
+  version "2.16.3"
+  resolved "https://registry.yarnpkg.com/cron-parser/-/cron-parser-2.16.3.tgz#acb8e405eed1733aac542fdf604cb7c1daf0204a"
   dependencies:
     is-nan "^1.3.0"
     moment-timezone "^0.5.31"
@@ -3462,7 +3584,7 @@ debug@^3.1.0, debug@^3.1.1:
   dependencies:
     ms "^2.1.1"
 
-debuglog@^1.0.1:
+debuglog@*, debuglog@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/debuglog/-/debuglog-1.0.1.tgz#aa24ffb9ac3df9a2351837cfb2d279360cd78492"
 
@@ -4727,8 +4849,8 @@ get-stream@^4.0.0, get-stream@^4.1.0:
     pump "^3.0.0"
 
 get-stream@^5.0.0, get-stream@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/get-stream/-/get-stream-5.1.0.tgz#01203cdc92597f9b909067c3e656cc1f4d3c4dc9"
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/get-stream/-/get-stream-5.2.0.tgz#4966a1795ee5ace65e706c4b7beb71257d6e22d3"
   dependencies:
     pump "^3.0.0"
 
@@ -5204,7 +5326,7 @@ import-local@^3.0.2:
     pkg-dir "^4.2.0"
     resolve-cwd "^3.0.0"
 
-imurmurhash@^0.1.4:
+imurmurhash@*, imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
 
@@ -6569,6 +6691,10 @@ lockfile@^1.0.4:
   dependencies:
     signal-exit "^3.0.2"
 
+lodash._baseindexof@*:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/lodash._baseindexof/-/lodash._baseindexof-3.1.0.tgz#fe52b53a1c6761e42618d654e4a25789ed61822c"
+
 lodash._baseuniq@~4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash._baseuniq/-/lodash._baseuniq-4.6.0.tgz#0ebb44e456814af7905c6212fa2c9b2d51b841e8"
@@ -6576,9 +6702,27 @@ lodash._baseuniq@~4.6.0:
     lodash._createset "~4.0.0"
     lodash._root "~3.0.0"
 
+lodash._bindcallback@*:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/lodash._bindcallback/-/lodash._bindcallback-3.0.1.tgz#e531c27644cf8b57a99e17ed95b35c748789392e"
+
+lodash._cacheindexof@*:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/lodash._cacheindexof/-/lodash._cacheindexof-3.0.2.tgz#3dc69ac82498d2ee5e3ce56091bafd2adc7bde92"
+
+lodash._createcache@*:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/lodash._createcache/-/lodash._createcache-3.1.2.tgz#56d6a064017625e79ebca6b8018e17440bdcf093"
+  dependencies:
+    lodash._getnative "^3.0.0"
+
 lodash._createset@~4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/lodash._createset/-/lodash._createset-4.0.3.tgz#0f4659fbb09d75194fa9e2b88a6644d363c9fe26"
+
+lodash._getnative@*, lodash._getnative@^3.0.0:
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/lodash._getnative/-/lodash._getnative-3.9.1.tgz#570bc7dede46d61cdcde687d65d3eecbaa3aaff5"
 
 lodash._root@~3.0.0:
   version "3.0.1"
@@ -6647,6 +6791,10 @@ lodash.memoize@4.x:
 lodash.once@^4.0.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.once/-/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
+
+lodash.restparam@*:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/lodash.restparam/-/lodash.restparam-3.6.1.tgz#936a4e309ef330a7645ed4145986c85ae5b20805"
 
 lodash.set@^4.3.2:
   version "4.3.2"
@@ -7682,8 +7830,8 @@ onetime@^2.0.0:
     mimic-fn "^1.0.0"
 
 onetime@^5.1.0:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/onetime/-/onetime-5.1.1.tgz#5c8016847b0d67fcedb7eef254751cfcdc7e9418"
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/onetime/-/onetime-5.1.2.tgz#d0e96ebb56b07476df1dd9c4806e5237985ca45e"
   dependencies:
     mimic-fn "^2.1.0"
 

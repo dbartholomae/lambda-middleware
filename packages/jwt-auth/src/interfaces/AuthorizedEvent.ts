@@ -2,9 +2,9 @@
 export interface AuthorizedEvent<TokenPayload = any> {
   /** Authorization information added by this middleware from a JWT. Has to be undefined before hitting the middleware. */
   auth: {
-    payload: TokenPayload
-    token: string
-  }
+    payload: TokenPayload;
+    token: string;
+  };
 }
 
 export function isAuthorizedEvent<P>(
@@ -14,7 +14,7 @@ export function isAuthorizedEvent<P>(
   return (
     event != null &&
     event.auth != null &&
-    typeof event.auth.token === 'string' &&
+    typeof event.auth.token === "string" &&
     (isTokenPayload == null || isTokenPayload(event.auth.payload))
-  )
+  );
 }

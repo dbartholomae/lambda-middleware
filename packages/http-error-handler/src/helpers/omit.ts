@@ -4,20 +4,20 @@ export function omit<T, K extends string>(
   names: readonly K[],
   obj: T
 ): Omit<T, K> {
-  const result: any = {}
-  const index: any = {}
-  let idx = 0
-  const len = names.length
+  const result: any = {};
+  const index: any = {};
+  let idx = 0;
+  const len = names.length;
 
   while (idx < len) {
-    index[names[idx]] = 1
-    idx += 1
+    index[names[idx]] = 1;
+    idx += 1;
   }
 
   for (const prop in obj) {
     if (!index.hasOwnProperty(prop)) {
-      result[prop] = obj[prop]
+      result[prop] = obj[prop];
     }
   }
-  return result
+  return result;
 }

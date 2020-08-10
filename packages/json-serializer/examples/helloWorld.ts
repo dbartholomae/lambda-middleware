@@ -1,9 +1,9 @@
-import { jsonSerializer } from '../'
+import { jsonSerializer } from "../";
 
 // This is your AWS handler
 async function helloWorld() {
-  return {}
+  return {};
 }
 
 // Wrap the handler with the middleware
-export const handler = jsonSerializer()(helloWorld)
+export const handler = jsonSerializer()(helloWorld);

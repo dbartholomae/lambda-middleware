@@ -1,68 +1,145 @@
-import { classValidator } from './classValidator'
+import { classValidator } from "./classValidator";
 
-import { IsString } from 'class-validator'
+import { IsOptional, IsString } from "class-validator";
 
 class NameBody {
   @IsString()
-  public firstName: string
+  public firstName: string;
 
   @IsString()
-  public lastName: string
+  public lastName: string;
 }
 
-describe('classValidator', () => {
-  describe('with valid input', () => {
+describe("classValidator", () => {
+  describe("with valid input", () => {
     const body = JSON.stringify({
-      firstName: 'John',
-      lastName: 'Doe'
-    })
+      firstName: "John",
+      lastName: "Doe",
+    });
 
-    it('sets the body to the transformed and validated value', async () => {
-      const handler = jest.fn()
+    it("sets the body to the transformed and validated value", async () => {
+      const handler = jest.fn();
       await classValidator({
-        classType: NameBody
-      })(handler)({ body }, {} as any)
+        bodyType: NameBody,
+      })(handler)({ body }, {} as any);
       expect(handler).toHaveBeenCalledWith(
         expect.objectContaining({
           body: {
-            firstName: 'John',
-            lastName: 'Doe'
-          }
+            firstName: "John",
+            lastName: "Doe",
+          },
         }),
         expect.anything()
-      )
-    })
-  })
+      );
+    });
 
-  describe('with invalid input', () => {
+    it("with excludeExtraneousValues throws an error", async () => {
+      const handler = jest.fn();
+      await expect(
+        classValidator({
+          bodyType: NameBody,
+          transformer: {
+            excludeExtraneousValues: true,
+          },
+        })(handler)({ body }, {} as any)
+      ).rejects.toBeDefined();
+    });
+  });
+
+  describe("with superfluous input", () => {
     const body = JSON.stringify({
-      firstName: 'John'
-    })
+      firstName: "John",
+      lastName: "Doe",
+      injection: "malicious",
+    });
 
-    it('throws an error with statusCode 400', async () => {
-      const handler = jest.fn()
+    it("omits the superfluous input", async () => {
+      const handler = jest.fn();
+      await classValidator({
+        bodyType: NameBody,
+      })(handler)({ body }, {} as any);
+      expect(handler).toHaveBeenCalledWith(
+        expect.objectContaining({
+          body: {
+            firstName: "John",
+            lastName: "Doe",
+          },
+        }),
+        expect.anything()
+      );
+    });
+
+    it("without whitelisting returns the handler's response", async () => {
+      const expectedResponse = {
+        statusCode: 200,
+        body: "Done",
+      };
+      const handler = jest.fn().mockResolvedValue(expectedResponse);
+      const actualResponse = await classValidator({
+        bodyType: NameBody,
+        validator: {
+          whitelist: false,
+        },
+      })(handler)({ body }, {} as any);
+      expect(actualResponse).toEqual(expectedResponse);
+    });
+  });
+
+  describe("with invalid input", () => {
+    const body = JSON.stringify({
+      firstName: "John",
+    });
+
+    it("throws an error with statusCode 400", async () => {
+      const handler = jest.fn();
       await expect(
         classValidator({
-          classType: NameBody
+          bodyType: NameBody,
         })(handler)({ body }, {} as any)
       ).rejects.toMatchObject({
-        statusCode: 400
-      })
-    })
-  })
+        statusCode: 400,
+      });
+    });
+  });
 
-  describe('with null input', () => {
-    const body = null
+  describe("with null input", () => {
+    const body = null;
 
-    it('throws an error with statusCode 400', async () => {
-      const handler = jest.fn()
+    it("throws an error with statusCode 400", async () => {
+      const handler = jest.fn();
       await expect(
         classValidator({
-          classType: NameBody
+          bodyType: NameBody,
         })(handler)({ body }, {} as any)
       ).rejects.toMatchObject({
-        statusCode: 400
-      })
-    })
-  })
-})
+        statusCode: 400,
+      });
+    });
+  });
+
+  describe("with an empty body and optional validation", () => {
+    const body = "";
+
+    class OptionalNameBody {
+      @IsOptional()
+      @IsString()
+      public firstName?: string;
+
+      @IsOptional()
+      @IsString()
+      public lastName?: string;
+    }
+
+    it("returns the handler's response", async () => {
+      const expectedResponse = {
+        statusCode: 200,
+        body: "Done",
+      };
+      const handler = jest.fn().mockResolvedValue(expectedResponse);
+      const actualResponse = await classValidator({
+        bodyType: OptionalNameBody,
+      })(handler)({ body }, {} as any);
+      expect(actualResponse).toEqual(expectedResponse);
+    });
+  });
+});

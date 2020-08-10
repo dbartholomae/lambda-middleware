@@ -1,2 +1,2 @@
 /* istanbul ignore next */
-export * from './classValidator'
+export * from "./classValidator";

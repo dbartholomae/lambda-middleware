@@ -1,0 +1,63 @@
+{
+  "name": "@lambda-middleware/utils",
+  "version": "0.0.0",
+  "description": "Utilities for use with AWS lambda middleware",
+  "homepage": "https://dbartholomae.github.io/lambda-middleware/",
+  "license": "MIT",
+  "author": {
+    "name": "Daniel Bartholomae",
+    "email": "daniel@bartholomae.name",
+    "url": ""
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "keywords": [
+    "aws",
+    "lambda",
+    "middleware",
+    "utilities",
+    "util"
+  ],
+  "types": "lib/index.d.ts",
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "private": false,
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "build": "rimraf ./lib && tsc --project tsconfig.build.json",
+    "lint": "eslint src/**/*.ts",
+    "pretest": "npm run build",
+    "start": "echo \"Cannot be started\" && exit 1",
+    "test": "npm run lint && npm run test:unit && npm run test:integration && pkg-ok",
+    "test:integration": "echo \"No integration test necessary\"",
+    "test:unit": "jest"
+  },
+  "dependencies": {
+    "@types/aws-lambda": "^8.10.47",
+    "aws-lambda": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.5",
+    "@types/jest": "^25.2.1",
+    "@typescript-eslint/parser": "^2.26.0",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^25.2.7",
+    "jest-junit": "^10.0.0",
+    "pkg-ok": "^2.3.1",
+    "prettier": "^2.0.2",
+    "prettier-config-standard": "^1.0.1",
+    "rimraf": "^3.0.2",
+    "source-map-support": "^0.5.16",
+    "ts-jest": "^25.3.1",
+    "typescript": "^3.7.5"
+  },
+  "repository": "git@github.com:dbartholomae/lambda-middleware.git"
+}

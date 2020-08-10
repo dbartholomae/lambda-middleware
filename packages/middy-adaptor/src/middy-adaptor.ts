@@ -1,75 +1,54 @@
-// import debugFactory, { IDebugger } from 'debug'
-import { Context } from 'aws-lambda'
-import { PromiseHandler } from './interfaces/PromiseHandler'
-import {
-  Instance,
-  MiddlewareObject,
-  PromisifiedMiddlewareObject
-} from './interfaces/MiddyTypes'
-import { promisifyMiddyMiddleware } from './utils/promisifyMiddyMiddleware'
+import { PromiseHandler } from "@lambda-middleware/utils";
+import { Context } from "aws-lambda";
+import { Instance, MiddlewareObject } from "./interfaces/MiddyTypes";
+import { logger } from "./logger";
+import { CallbackListener } from "./CallbackListener/CallbackListener";
+import { MiddyMiddleware } from "./MiddyMiddleware/MiddyMiddleware";
 
-// const logger: IDebugger = debugFactory('@lambda-middleware/no-sniff')
-
-export const middyAdaptor = <Event>(
-  middyMiddleware: MiddlewareObject<unknown, unknown>
-) => (handler: PromiseHandler<Event, unknown>) => async (
+export const middyAdaptor = <
+  Event,
+  Response,
+  ContextLike extends Context = Context
+>(
+  middyMiddlewareObject: MiddlewareObject<Event, Response, ContextLike>
+) => (handler: PromiseHandler<Event, Response>) => async (
   event: Event,
   context: Context
-) => {
-  let callbackCalled = false
-  let callbackError: unknown = undefined
-  let callbackResponse: unknown = undefined
-
-  const callback = (error: unknown, result: unknown) => {
-    callbackCalled = true
-    callbackError = error
-    callbackResponse = result
-  }
+): Promise<Response> => {
+  const callbackListener = new CallbackListener();
   const instance: Instance = {
     context: { ...context },
     event: { ...event },
     response: null,
     error: null,
-    callback
-  }
+    callback: callbackListener.callback,
+  };
 
-  const promisifiedMiddyMiddleware: PromisifiedMiddlewareObject = {}
+  const middyMiddleware = new MiddyMiddleware(middyMiddlewareObject);
 
-  for (const key in middyMiddleware) {
-    promisifiedMiddyMiddleware[key] = promisifyMiddyMiddleware(
-      middyMiddleware[key]
-    )
-  }
-
-  if (promisifiedMiddyMiddleware.before !== undefined) {
-    await promisifiedMiddyMiddleware.before(instance)
-    if (callbackCalled) {
-      if (callbackError) {
-        throw callbackError
-      }
-      return callbackResponse
-    }
-  }
   try {
-    instance.response = await handler(instance.event, context)
-    if (promisifiedMiddyMiddleware.after !== undefined) {
-      await promisifiedMiddyMiddleware.after(instance)
+    await middyMiddleware.before(instance);
+
+    if (callbackListener.callbackCalled) {
+      return callbackListener.handleCallback();
     }
+
+    logger("Calling handler");
+    instance.response = await handler(instance.event, context);
+    logger("handler ran successfully");
+
+    await middyMiddleware.after(instance);
   } catch (error) {
-    instance.error = error
-    let newError = error
-    if (promisifiedMiddyMiddleware.onError !== undefined) {
-      newError = await promisifiedMiddyMiddleware.onError(instance)
-    }
+    logger("error in handler or before or after middleware");
+    instance.error = error;
+    const newError = await middyMiddleware.onError(instance, error);
     if (newError) {
-      throw newError
+      throw newError;
     }
   }
-  if (callbackCalled) {
-    if (callbackError) {
-      throw callbackError
-    }
-    return callbackResponse
+  if (callbackListener.callbackCalled) {
+    return callbackListener.handleCallback();
   }
-  return instance.response
-}
+  logger("returning response");
+  return instance.response;
+};

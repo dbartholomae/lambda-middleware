@@ -1,15 +1,33 @@
 # @lambda-middleware
-[![open issues](https://img.shields.io/github/issues-raw/dbartholomae/lambda-middleware.svg)](https://github.com/dbartholomae/lambda-middleware/issues)  [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdbartholomae%2Flambda-middleware.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdbartholomae%2Flambda-middleware?ref=badge_shield) [![debug](https://img.shields.io/badge/debug-blue.svg)](https://github.com/visionmedia/debug#readme)  [![build status](https://img.shields.io/circleci/project/github/dbartholomae/lambda-middleware/master.svg?style=flat)](https://circleci.com/gh/dbartholomae/workflows/lambda-middleware/tree/master)  [![codecov](https://codecov.io/gh/dbartholomae/lambda-middleware/branch/master/graph/badge.svg)](https://codecov.io/gh/dbartholomae/lambda-middleware)    [![semantic release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release#badge)
+
+[![open issues](https://img.shields.io/github/issues-raw/dbartholomae/lambda-middleware.svg)](https://github.com/dbartholomae/lambda-middleware/issues)
+[![debug](https://img.shields.io/badge/debug-blue.svg)](https://github.com/visionmedia/debug#readme)
+[![build status](https://github.com/dbartholomae/lambda-middleware/workflows/.github/workflows/build.yml/badge.svg?branch=master)](https://github.com/dbartholomae/lambda-middleware/actions?query=workflow%3A.github%2Fworkflows%2Fbuild.yml)
+[![codecov](https://codecov.io/gh/dbartholomae/lambda-middleware/branch/master/graph/badge.svg)](https://codecov.io/gh/dbartholomae/lambda-middleware)
 
 This monorepo is a collection of middleware for AWS lambda functions.
 
 ## Middlewares
 
-The following middlewares are currently available in this monorepo:
-
+* [@lambda-middleware/class-validator](/packages/class-validator): A validation middleware for AWS http lambda functions
+  based on class-validator.
 * [@lambda-middleware/compose](/packages/compose): A compose function for functional lambda middleware.
 * [@lambda-middleware/http-error-handler](/packages/http-error-handler): An error handler middleware for AWS http lambda
-functions.
+  functions.
+* [@lambda-middleware/ie-no-open](/packages/ie-no-open): A middleware for adding the download options no-open header to
+  AWS lambdas.
+* [@lambda-middleware/json-serializer](/packages/json-serializer): A middleware for AWS http lambda functions to
+  serialize JSON responses.
+* [@lambda-middleware/jwt-auth](/packages/jwt-auth): A middleware for AWS http lambda functions to verify JWT auth
+  tokens inspired by express-jwt.
+* [@lambda-middleware/middy-adaptor](/packages/middy-adaptor): An adaptor to use middy middleware as functional
+  middleware.
+* [@lambda-middleware/no-sniff](/packages/no-sniff): A middleware for adding the content type options no-sniff header
+  to AWS lambdas.
+
+## Other packages
+
+Furthermore there is utility collection available at [@lambda-middleware/utils](/packages/utils).
 
 ## Usage
 
@@ -122,3 +140,7 @@ const bodyParser = () =>
 }
 ```
 so that if multiple middlewares change the event, the resulting type will have all changes and not just the latest.
+
+## Contributing
+
+If you want to contribute to the project, please read our [contributing guidelines](./CONTRIBUTING.md) first.
