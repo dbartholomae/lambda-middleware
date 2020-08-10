@@ -18,6 +18,10 @@ describe("jsonSerializer", () => {
     it("returns the stringified JSON response", async () => {
       expect(response.body).toEqual("{}");
     });
+
+    it("sets Content-Type header to application/json", () => {
+      expect(response.headers["Content-Type"]).toEqual("application/json");
+    });
   });
 
   describe("with a handler returning undefined", () => {

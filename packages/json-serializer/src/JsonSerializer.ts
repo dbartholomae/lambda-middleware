@@ -21,6 +21,9 @@ export const jsonSerializer = <E>() => (
   logger("Response is not undefined, returning response and statusCode 200");
   return {
     statusCode: 200,
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify(response),
   };
 };
