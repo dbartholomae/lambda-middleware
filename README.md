@@ -9,8 +9,6 @@ This monorepo is a collection of middleware for AWS lambda functions.
 
 ## Middlewares
 
-The following middlewares are currently available in this monorepo:
-
 * [@lambda-middleware/class-validator](/packages/class-validator): A validation middleware for AWS http lambda functions
   based on class-validator.
 * [@lambda-middleware/compose](/packages/compose): A compose function for functional lambda middleware.
@@ -26,6 +24,8 @@ The following middlewares are currently available in this monorepo:
   middleware.
 * [@lambda-middleware/no-sniff](/packages/no-sniff): A middleware for adding the content type options no-sniff header
   to AWS lambdas.
+
+## Other packages
 
 Furthermore there is utility collection available at [@lambda-middleware/utils](/packages/utils).
 
