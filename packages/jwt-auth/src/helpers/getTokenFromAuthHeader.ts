@@ -1,6 +1,6 @@
-import { AuthOptions } from "../jwtTokenChecker";
-import createHttpError from "http-errors";
 import { APIGatewayEvent } from "aws-lambda";
+import createHttpError from "http-errors";
+import { AuthOptions } from "../interfaces/AuthOptions";
 import { logger } from "../logger";
 
 function isLowerCaseAuthorizedEvent(
