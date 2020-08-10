@@ -17,7 +17,7 @@ function isUpperCaseAuthorizedEvent(
 
 export function getTokenFromAuthHeader<Payload>(
   event: APIGatewayEvent,
-  options: Pick<AuthOptions, "credentialsRequired">
+  options: { credentialsRequired?: AuthOptions["credentialsRequired"] }
 ): string | undefined {
   logger("Checking whether event contains at least one authorization header");
   if (
