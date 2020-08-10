@@ -5,18 +5,18 @@ export class CallbackListener {
   public callbackError: any;
   public callbackResponse: any;
 
-  public callback(error: unknown, result: unknown) {
+  public callback = (error: unknown, result: unknown) => {
     logger("instance callback function called");
     this.callbackCalled = true;
     this.callbackError = error;
     this.callbackResponse = result;
-  }
+  };
 
-  public handleCallback() {
+  public handleCallback = () => {
     logger("callback called in after or onError middleware");
     if (this.callbackError) {
       throw this.callbackError;
     }
     return this.callbackResponse;
-  }
+  };
 }

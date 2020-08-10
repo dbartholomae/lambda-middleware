@@ -4,6 +4,7 @@ import { Instance, MiddlewareObject } from "./interfaces/MiddyTypes";
 import { logger } from "./logger";
 import { CallbackListener } from "./CallbackListener/CallbackListener";
 import { promisifyMiddyMiddleware } from "./utils/promisifyMiddyMiddleware";
+import { runMiddleware } from "./utils/runMiddleware";
 
 export const middyAdaptor = <Event>(
   middyMiddleware: MiddlewareObject<unknown, unknown>
@@ -23,25 +24,16 @@ export const middyAdaptor = <Event>(
   const promisifiedMiddyMiddleware = promisifyMiddyMiddleware(middyMiddleware);
 
   try {
-    logger("Checking for before middleware");
-    if (promisifiedMiddyMiddleware.before !== undefined) {
-      logger("Calling before middleware");
-      await promisifiedMiddyMiddleware.before(instance);
-      logger("before middleware called");
-      if (callbackListener.callbackCalled) {
-        return callbackListener.handleCallback();
-      }
+    await runMiddleware(promisifiedMiddyMiddleware, "before", instance);
+    if (callbackListener.callbackCalled) {
+      return callbackListener.handleCallback();
     }
 
     logger("Calling handler");
     instance.response = await handler(instance.event, context);
     logger("handler ran successfully");
-    logger("Checking for after middleware");
-    if (promisifiedMiddyMiddleware.after !== undefined) {
-      logger("Calling after middleware");
-      await promisifiedMiddyMiddleware.after(instance);
-      logger("after middleware called");
-    }
+
+    await runMiddleware(promisifiedMiddyMiddleware, "after", instance);
   } catch (error) {
     logger("error in handler or before or after middleware");
     instance.error = error;
