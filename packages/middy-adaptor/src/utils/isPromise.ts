@@ -1,4 +1,4 @@
-export function isPromise(promise: any): promise is Promise<any> {
+export function isPromise(promise: any): promise is Promise<unknown> {
   return (
     promise &&
     typeof promise.then === "function" &&
