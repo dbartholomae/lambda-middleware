@@ -13,5 +13,5 @@ module.exports = {
       statements: 100,
     },
   },
-  testRegex: ".*(test|spec)\\.(t|j)sx?$",
+  testRegex: ".*test\\.(t|j)sx?$",
 };
