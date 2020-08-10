@@ -11,6 +11,9 @@
 
 A middleware for AWS http lambda functions to serialize JSON responses, including correct status codes and content-header.
 
+Please note that this middleware just uses `JSON.stringify` for serialization and therefore does **not** strip any serializable content.
+Please act as if any data your handler returns could end up on the client side and take care of appropriate whitelisting in the handler or a different middleware!
+
 ## Lambda middleware
 
 This middleware is part of the [lambda middleware series](https://dbartholomae.github.io/lambda-middleware/). It can be used independently.
