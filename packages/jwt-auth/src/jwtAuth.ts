@@ -15,7 +15,7 @@ import { logger } from "./logger";
 export const jwtAuth = <Payload>(options: AuthOptions<Payload>) => {
   if (!isAuthOptions(options)) {
     throw new TypeError(
-      `Expected IAuthOptions, received ${JSON.stringify(options)} instead`
+      `Expected AuthOptions, received ${JSON.stringify(options)} instead`
     );
   }
   return (handler: PromiseHandler) => async (
