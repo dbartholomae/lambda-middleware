@@ -177,6 +177,25 @@ describe("middyAdaptor", () => {
         message: "Callback error",
       });
     });
+
+    it("forwards errors from the before middleware to the onError middleware", async () => {
+      const response = {
+        statusCode: 200,
+        body: "",
+      };
+      const error = new Error("Error from before");
+      middyMiddleware.before = async (instance: Instance) => {
+        throw error;
+      };
+      const handler = jest.fn().mockResolvedValue(response);
+      await middyAdaptor(middyMiddleware)(handler)({} as any, {} as any);
+      expect(middyMiddleware.onError).toHaveBeenCalledWith(
+        expect.objectContaining({
+          error,
+        }),
+        expect.anything()
+      );
+    });
   });
 
   describe("with a callback-based middleware", () => {

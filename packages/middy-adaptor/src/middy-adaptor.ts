@@ -43,20 +43,21 @@ export const middyAdaptor = <Event>(
     );
   }
 
-  logger("Checking for before middleware");
-  if (promisifiedMiddyMiddleware.before !== undefined) {
-    logger("Calling before middleware");
-    await promisifiedMiddyMiddleware.before(instance);
-    logger("before middleware called");
-    if (callbackCalled) {
-      logger("callback called in before middleware");
-      if (callbackError) {
-        throw callbackError;
-      }
-      return callbackResponse;
-    }
-  }
   try {
+    logger("Checking for before middleware");
+    if (promisifiedMiddyMiddleware.before !== undefined) {
+      logger("Calling before middleware");
+      await promisifiedMiddyMiddleware.before(instance);
+      logger("before middleware called");
+      if (callbackCalled) {
+        logger("callback called in before middleware");
+        if (callbackError) {
+          throw callbackError;
+        }
+        return callbackResponse;
+      }
+    }
+
     logger("Calling handler");
     instance.response = await handler(instance.event, context);
     logger("handler ran successfully");
