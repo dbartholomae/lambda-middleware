@@ -1,6 +1,5 @@
 import { APIGatewayEvent } from "aws-lambda";
 import createHttpError from "http-errors";
-import { AuthOptions } from "../interfaces/AuthOptions";
 import { logger } from "../logger";
 
 function isLowerCaseAuthorizedEvent(
@@ -16,25 +15,14 @@ function isUpperCaseAuthorizedEvent(
 }
 
 export function getTokenFromAuthHeader<Payload>(
-  event: APIGatewayEvent,
-  options: { credentialsRequired?: AuthOptions["credentialsRequired"] }
+  event: APIGatewayEvent
 ): string | undefined {
   logger("Checking whether event contains at least one authorization header");
   if (
     !isLowerCaseAuthorizedEvent(event) &&
     !isUpperCaseAuthorizedEvent(event)
   ) {
-    logger("No authorization header found");
-    if (options.credentialsRequired) {
-      throw createHttpError(
-        401,
-        "No valid bearer token was set in the authorization header",
-        {
-          type: "AuthenticationRequired",
-        }
-      );
-    }
-    return;
+    return undefined;
   }
 
   logger("Checking whether event contains multiple authorization headers");

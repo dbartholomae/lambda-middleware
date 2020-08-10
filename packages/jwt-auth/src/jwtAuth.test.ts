@@ -341,6 +341,32 @@ describe("jwtAuth", () => {
           },
         });
       });
+
+      it("saves token information to event.auth.payload if token is valid and credentials are required", async () => {
+        const options = {
+          ...defaultOptions,
+          credentialsRequired: true,
+          tokenSource: (e: any) => e.queryStringParameters.token,
+        };
+        const data = { userId: 1 };
+        const token = JWT.sign(data, options.secretOrPublicKey, {
+          algorithm: options.algorithm,
+        });
+        await jwtAuth(options)(handler)(
+          createEvent({
+            queryStringParameters: { token },
+          }),
+          createContext()
+        );
+        expect(handler.mock.calls[0][0]).toMatchObject({
+          auth: {
+            payload: {
+              ...data,
+              iat: expect.any(Number),
+            },
+          },
+        });
+      });
     });
   });
 });

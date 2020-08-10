@@ -30,10 +30,22 @@ export const jwtAuth = <Payload>(options: AuthOptions<Payload>) => {
     }
 
     const token =
-      getTokenFromSource(event, options) ??
-      getTokenFromAuthHeader(event, options);
+      getTokenFromSource(event, options.tokenSource) ??
+      getTokenFromAuthHeader(event);
 
     if (token === undefined) {
+      logger("No authorization header found");
+
+      if (options.credentialsRequired) {
+        throw createHttpError(
+          401,
+          "No valid bearer token was set in the authorization header",
+          {
+            type: "AuthenticationRequired",
+          }
+        );
+      }
+
       return await handler(event, context);
     }
 
