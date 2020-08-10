@@ -1,8 +1,6 @@
 import { APIGatewayEvent } from "aws-lambda";
-import debugFactory from "debug";
 import { AuthOptions } from "../interfaces/AuthOptions";
-
-const logger = debugFactory("@lambda-middleware/jwt-auth");
+import { logger } from "../logger";
 
 export function getTokenFromSource(
   event: APIGatewayEvent,

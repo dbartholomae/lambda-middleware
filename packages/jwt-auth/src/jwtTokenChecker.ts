@@ -1,17 +1,16 @@
 import { PromiseHandler } from "@lambda-middleware/utils";
 import { APIGatewayEvent, Context } from "aws-lambda";
-import debugFactory from "debug";
-import jwt, { TokenExpiredError, NotBeforeError } from "jsonwebtoken";
 import createHttpError from "http-errors";
+import jwt, { NotBeforeError, TokenExpiredError } from "jsonwebtoken";
+
 import { getTokenFromAuthHeader } from "./helpers/getTokenFromAuthHeader";
 import { getTokenFromSource } from "./helpers/getTokenFromSource";
 import {
-  EncryptionAlgorithms,
   AuthOptions,
+  EncryptionAlgorithms,
   isAuthOptions,
 } from "./interfaces/AuthOptions";
-
-const logger = debugFactory("@lambda-middleware/jwt-auth");
+import { logger } from "./logger";
 
 export const jwtTokenChecker = <Payload>(options: AuthOptions<Payload>) => {
   if (!isAuthOptions(options)) {

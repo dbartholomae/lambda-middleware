@@ -1,9 +1,7 @@
 import { AuthOptions } from "../jwtTokenChecker";
-import debugFactory from "debug";
 import createHttpError from "http-errors";
 import { APIGatewayEvent } from "aws-lambda";
-
-const logger = debugFactory("@lambda-middleware/jwt-auth");
+import { logger } from "../logger";
 
 function isLowerCaseAuthorizedEvent(
   event: APIGatewayEvent
