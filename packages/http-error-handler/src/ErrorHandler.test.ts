@@ -42,6 +42,13 @@ describe("errorHandler", () => {
       })({} as APIGatewayProxyEvent, {} as Context);
       expect(JSON.parse(response.body).stack).toBeUndefined();
     });
+
+    it("sets the Content-Type header to application/json", async () => {
+      const response = await errorHandler()(() => {
+        throw createHttpError(statusCode, "Oops");
+      })({} as APIGatewayProxyEvent, {} as Context);
+      expect(response.headers?.["Content-Type"]).toEqual("application/json");
+    });
   });
 
   describe("with errors wit status code 500", () => {
@@ -62,6 +69,13 @@ describe("errorHandler", () => {
         message: "Internal server error",
         statusCode: 500,
       });
+    });
+
+    it("sets the Content-Type header to application/json", async () => {
+      const response = await errorHandler()(() => {
+        throw createHttpError(statusCode, "Oops");
+      })({} as APIGatewayProxyEvent, {} as Context);
+      expect(response.headers?.["Content-Type"]).toEqual("application/json");
     });
   });
 });

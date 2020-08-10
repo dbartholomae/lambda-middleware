@@ -24,6 +24,9 @@ export const errorHandler = () => <E extends APIGatewayProxyEvent>(
       logger(`Responding with full error as statusCode is ${error.statusCode}`);
       return {
         body: JSON.stringify(omit(["stack"], serializeError(error))),
+        headers: {
+          "Content-Type": "application/json",
+        },
         statusCode: error.statusCode,
       };
     }
@@ -33,6 +36,9 @@ export const errorHandler = () => <E extends APIGatewayProxyEvent>(
         message: "Internal server error",
         statusCode: 500,
       }),
+      headers: {
+        "Content-Type": "application/json",
+      },
       statusCode: 500,
     };
   }
