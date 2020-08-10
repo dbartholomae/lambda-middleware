@@ -1,4 +1,3 @@
-import debugFactory, { IDebugger } from "debug";
 import { PromiseHandler } from "@lambda-middleware/utils";
 import { Context } from "aws-lambda";
 import {
@@ -7,8 +6,8 @@ import {
   PromisifiedMiddlewareObject,
 } from "./interfaces/MiddyTypes";
 import { promisifyMiddyMiddleware } from "./utils/promisifyMiddyMiddleware";
-
-const logger: IDebugger = debugFactory("@lambda-middleware/middy-adaptor");
+import { logger } from "./logger";
+import { CallbackListener } from "./CallbackListener/CallbackListener";
 
 export const middyAdaptor = <Event>(
   middyMiddleware: MiddlewareObject<unknown, unknown>
@@ -16,23 +15,13 @@ export const middyAdaptor = <Event>(
   event: Event,
   context: Context
 ) => {
-  let callbackCalled = false;
-  let callbackError: unknown = undefined;
-  let callbackResponse: unknown = undefined;
-
-  const callback = (error: unknown, result: unknown) => {
-    logger("instance callback function called");
-    callbackCalled = true;
-    callbackError = error;
-    callbackResponse = result;
-  };
-
+  const callbackListener = new CallbackListener();
   const instance: Instance = {
     context: { ...context },
     event: { ...event },
     response: null,
     error: null,
-    callback,
+    callback: callbackListener.callback,
   };
 
   const promisifiedMiddyMiddleware: PromisifiedMiddlewareObject = {};
@@ -49,12 +38,8 @@ export const middyAdaptor = <Event>(
       logger("Calling before middleware");
       await promisifiedMiddyMiddleware.before(instance);
       logger("before middleware called");
-      if (callbackCalled) {
-        logger("callback called in before middleware");
-        if (callbackError) {
-          throw callbackError;
-        }
-        return callbackResponse;
+      if (callbackListener.callbackCalled) {
+        return callbackListener.handleCallback();
       }
     }
 
@@ -81,12 +66,8 @@ export const middyAdaptor = <Event>(
       throw newError;
     }
   }
-  if (callbackCalled) {
-    logger("callback called in after or onError middleware");
-    if (callbackError) {
-      throw callbackError;
-    }
-    return callbackResponse;
+  if (callbackListener.callbackCalled) {
+    return callbackListener.handleCallback();
   }
   logger("returning response");
   return instance.response;
