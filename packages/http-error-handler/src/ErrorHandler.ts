@@ -16,7 +16,7 @@ export const errorHandler = () => <E extends APIGatewayProxyEvent>(
 ): PromiseHandler<E, APIGatewayProxyResult> => async (
   event: E,
   context: Context
-) => {
+): Promise<APIGatewayProxyResult> => {
   try {
     return await handler(event, context);
   } catch (error) {
