@@ -20,7 +20,7 @@ describe("classValidator", () => {
     it("sets the body to the transformed and validated value", async () => {
       const handler = jest.fn();
       await classValidator({
-        classType: NameBody,
+        bodyType: NameBody,
       })(handler)({ body }, {} as any);
       expect(handler).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -44,7 +44,7 @@ describe("classValidator", () => {
     it("sets the body to the transformed and validated value", async () => {
       const handler = jest.fn();
       await classValidator({
-        classType: NameBody,
+        bodyType: NameBody,
       })(handler)({ body }, {} as any);
       expect(handler).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -67,7 +67,7 @@ describe("classValidator", () => {
       const handler = jest.fn();
       await expect(
         classValidator({
-          classType: NameBody,
+          bodyType: NameBody,
         })(handler)({ body }, {} as any)
       ).rejects.toMatchObject({
         statusCode: 400,
@@ -82,7 +82,7 @@ describe("classValidator", () => {
       const handler = jest.fn();
       await expect(
         classValidator({
-          classType: NameBody,
+          bodyType: NameBody,
         })(handler)({ body }, {} as any)
       ).rejects.toMatchObject({
         statusCode: 400,
@@ -110,7 +110,7 @@ describe("classValidator", () => {
       };
       const handler = jest.fn().mockResolvedValue(expectedResponse);
       const actualResponse = await classValidator({
-        classType: OptionalNameBody,
+        bodyType: OptionalNameBody,
       })(handler)({ body }, {} as any);
       expect(actualResponse).toEqual(expectedResponse);
     });

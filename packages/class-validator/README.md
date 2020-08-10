@@ -9,7 +9,7 @@
 [![dependency status](https://david-dm.org/dbartholomae/lambda-middleware.svg?theme=shields.io)](https://david-dm.org/dbartholomae/lambda-middleware)
 [![devDependency status](https://david-dm.org/dbartholomae/lambda-middleware/dev-status.svg)](https://david-dm.org/dbartholomae/lambda-middleware?type=dev)
 
-A validation middleware for AWS http lambda functions based on [class-validator](https://github.com/typestack/class-validator).
+A validation middleware for AWS http lambda functions based on [class-validator](https://github.com/typestack/class-validator) and [class-transformer](https://github.com/typestack/class-transformer).
 
 ## Lambda middleware
 
@@ -54,7 +54,7 @@ export const handler = compose(
   errorHandler(),
   classValidator({
     // Add the validation class here
-    classType: NameBody
+    bodyType: NameBody
   })
 )(helloWorld)
 ```

@@ -9,7 +9,7 @@ describe("ClassValidatorMiddlewareOptions", () => {
   describe("interface", () => {
     it("accepts valid options", () => {
       const options: ClassValidatorMiddlewareOptions<Validator> = {
-        classType: Validator,
+        bodyType: Validator,
       };
       expect(options).toBeDefined();
     });
@@ -18,7 +18,7 @@ describe("ClassValidatorMiddlewareOptions", () => {
   describe("type guard", () => {
     it("accepts valid options", () => {
       const options = {
-        classType: Validator,
+        bodyType: Validator,
       };
       expect(isMiddlewareOptions(options)).toBe(true);
     });

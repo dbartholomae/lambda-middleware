@@ -22,7 +22,7 @@ export const classValidator = <
   try {
     const body = event.body ?? "{}";
     const transformedBody = (await transformAndValidate(
-      options.classType,
+      options.bodyType,
       body === "" ? "{}" : body,
       { validator: { whitelist: true } }
     )) as T;

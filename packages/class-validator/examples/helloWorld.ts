@@ -34,6 +34,6 @@ export const handler = compose(
   errorHandler(),
   classValidator({
     // Add the validation class here
-    classType: NameBody,
+    bodyType: NameBody,
   })
 )(helloWorld);
