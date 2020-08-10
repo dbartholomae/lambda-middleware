@@ -1,13 +1,9 @@
 import { PromiseHandler } from "@lambda-middleware/utils";
 import { Context } from "aws-lambda";
-import {
-  Instance,
-  MiddlewareObject,
-  PromisifiedMiddlewareObject,
-} from "./interfaces/MiddyTypes";
-import { promisifyMiddyMiddleware } from "./utils/promisifyMiddyMiddleware";
+import { Instance, MiddlewareObject } from "./interfaces/MiddyTypes";
 import { logger } from "./logger";
 import { CallbackListener } from "./CallbackListener/CallbackListener";
+import { promisifyMiddyMiddleware } from "./utils/promisifyMiddyMiddleware";
 
 export const middyAdaptor = <Event>(
   middyMiddleware: MiddlewareObject<unknown, unknown>
@@ -24,13 +20,7 @@ export const middyAdaptor = <Event>(
     callback: callbackListener.callback,
   };
 
-  const promisifiedMiddyMiddleware: PromisifiedMiddlewareObject = {};
-
-  for (const key in middyMiddleware) {
-    promisifiedMiddyMiddleware[key] = promisifyMiddyMiddleware(
-      middyMiddleware[key]
-    );
-  }
+  const promisifiedMiddyMiddleware = promisifyMiddyMiddleware(middyMiddleware);
 
   try {
     logger("Checking for before middleware");

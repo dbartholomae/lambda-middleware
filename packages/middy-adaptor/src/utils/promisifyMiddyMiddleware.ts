@@ -1,22 +1,15 @@
-import { Instance, MiddlewareFunction } from "../interfaces/MiddyTypes";
-import { isPromise } from "./isPromise";
+import { MiddlewareObject, PromisifiedMiddlewareObject } from "..";
+import { promisifyMiddyMiddlewareFunction } from "./promisifyMiddyMiddlewareFunction";
 
 export function promisifyMiddyMiddleware(
-  fn: MiddlewareFunction<unknown, unknown>
-) {
-  return (instance: Instance) => {
-    return new Promise((resolve, reject) => {
-      function next(err: unknown): void {
-        if (err) {
-          return reject(err);
-        }
-        return resolve();
-      }
+  middyMiddleware: MiddlewareObject<unknown, unknown>
+): PromisifiedMiddlewareObject {
+  const promisifiedMiddyMiddleware: PromisifiedMiddlewareObject = {};
 
-      const result = fn(instance, next);
-      if (isPromise(result)) {
-        result.then(resolve, reject);
-      }
-    });
-  };
+  for (const key in middyMiddleware) {
+    promisifiedMiddyMiddleware[key] = promisifyMiddyMiddlewareFunction(
+      middyMiddleware[key]
+    );
+  }
+  return promisifiedMiddyMiddleware;
 }
