@@ -1,6 +1,6 @@
 import { Context, Handler } from "aws-lambda";
 import { PromiseHandler } from ".";
-import { isPromise } from "../../middy-adaptor/src/utils/isPromise";
+import { isPromise } from "./isPromise";
 
 export function promisifyHandler<Event, Response>(
   handler: Handler<Event, Response>
