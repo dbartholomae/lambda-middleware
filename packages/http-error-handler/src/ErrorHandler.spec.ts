@@ -17,7 +17,7 @@ describe("errorHandler", () => {
     });
   });
 
-  describe("with errors wit status code 400", () => {
+  describe("with errors with status code 400", () => {
     const statusCode = 400;
 
     it("sets the response status code to 400", async () => {
