@@ -1,5 +1,5 @@
 ---
-to: packages/<%= h.inflection.dasherize(name.toLowerCase()) %>/examples/hellowWorld.ts
+to: packages/<%= h.inflection.dasherize(name.toLowerCase()) %>/examples/helloWorld.ts
 ---
 import { <%=h.inflection.camelize(name, true) %> } from "../";
 

@@ -1,5 +1,5 @@
 ---
-to: packages/<%= h.inflection.dasherize(name.toLowerCase()) %>/examples/hellowWorld.int-test.ts
+to: packages/<%= h.inflection.dasherize(name.toLowerCase()) %>/examples/helloWorld.int-test.ts
 ---
 import request from "supertest";
 const server = request("http://localhost:3000/dev");
