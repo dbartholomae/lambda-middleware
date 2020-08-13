@@ -1,6 +1,6 @@
 import { Context } from "aws-lambda";
 
-export function createContext(): Context {
+export function createContext(overrides?: Partial<Context>): Context {
   return {
     awsRequestId: "",
     callbackWaitsForEmptyEventLoop: true,
@@ -14,5 +14,6 @@ export function createContext(): Context {
     fail: {} as any,
     getRemainingTimeInMillis: {} as any,
     succeed: {} as any,
+    ...(overrides ?? {}),
   };
 }

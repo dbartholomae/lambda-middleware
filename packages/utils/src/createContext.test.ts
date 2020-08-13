@@ -6,4 +6,11 @@ describe("createContext", () => {
     const context: Context = createContext();
     expect(context).toBeDefined();
   });
+
+  it("allows to change callbackWaitsForEmptyEventLoop value", () => {
+    const context: Context = createContext({
+      callbackWaitsForEmptyEventLoop: false,
+    });
+    expect(context.callbackWaitsForEmptyEventLoop).toBe(false);
+  });
 });
