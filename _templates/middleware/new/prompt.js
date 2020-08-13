@@ -1,5 +1,4 @@
 const uppercase = new RegExp("([A-Z])", "g");
-const underbar_prefix = new RegExp("^_");
 
 function replaceAll(str, subStrs, by) {
   let result = str;
