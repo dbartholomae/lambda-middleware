@@ -1,12 +1,17 @@
-import { http-header-normalizer } from "../";
+import { httpHeaderNormalizer } from "../";
+import { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
 
 // This is your AWS handler
-async function helloWorld() {
+async function helloWorld({
+  headers,
+}: APIGatewayProxyEvent): APIGatewayProxyResult {
   return {
+    body: JSON.stringify({
+      msg: headers["custom-header"],
+    }),
     statusCode: 200,
-    body: "",
   };
 }
 
 // Wrap the handler with the middleware
-export const handler = http-header-normalizer()(helloWorld);
+export const handler = httpHeaderNormalizer()(helloWorld);
