@@ -29,7 +29,8 @@ to: packages/<%= h.inflection.dasherize(name.toLowerCase()) %>/package.json
   "private": false,
   "dependencies": {
     "@lambda-middleware/utils": "*",
-    "debug": ">=4.1.0"
+    "debug": ">=4.1.0",
+    "tslib": "^2.0.1"
   },
   "directories": {
     "example": "examples"

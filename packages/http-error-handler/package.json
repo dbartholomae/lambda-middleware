@@ -29,7 +29,8 @@
   "dependencies": {
     "@lambda-middleware/utils": "*",
     "debug": ">=4.1.0",
-    "serialize-error": ">=5.0.0"
+    "serialize-error": ">=5.0.0",
+    "tslib": "^2.0.1"
   },
   "directories": {
     "example": "examples"

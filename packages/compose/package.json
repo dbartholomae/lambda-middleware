@@ -38,6 +38,9 @@
     "test:integration": "concurrently --timeout 600000 --kill-others --success first \"cd test && serverless offline\" \"wait-on http://localhost:3000/dev/status && jest -c jest.integration.config.js\"",
     "test:unit": "jest"
   },
+  "dependencies": {
+    "tslib": "^2.0.1"
+  },
   "devDependencies": {
     "@lambda-middleware/utils": "*",
     "@semantic-release/changelog": "^3.0.2",
