@@ -15,7 +15,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
-    - name: check-changelog
+    - name: check consistent dependencies
+      run: node ./common/scripts/install-run-rush.js check
+    - name: check changelog
       run: node ./common/scripts/install-run-rush.js change -v
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
