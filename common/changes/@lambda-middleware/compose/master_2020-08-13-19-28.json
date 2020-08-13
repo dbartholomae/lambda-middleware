@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/compose",
+      "comment": "Add tslib dependency",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@lambda-middleware/compose",
+  "email": "daniel@bartholomae.name"
+}

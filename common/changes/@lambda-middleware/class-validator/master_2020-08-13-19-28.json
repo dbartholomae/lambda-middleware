@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/class-validator",
+      "comment": "Add tslib dependency",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@lambda-middleware/class-validator",
+  "email": "daniel@bartholomae.name"
+}

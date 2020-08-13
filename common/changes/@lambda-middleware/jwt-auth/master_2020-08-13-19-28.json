@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/jwt-auth",
+      "comment": "Add tslib dependency",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@lambda-middleware/jwt-auth",
+  "email": "daniel@bartholomae.name"
+}
