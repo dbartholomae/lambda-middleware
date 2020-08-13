@@ -3,7 +3,7 @@ to: packages/<%= h.inflection.dasherize(name.toLowerCase()) %>/package.json
 ---
 {
   "name": "@lambda-middleware/<%= h.inflection.dasherize(name.toLowerCase()) %>",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "<%= description %>",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",
