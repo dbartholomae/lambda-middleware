@@ -26,6 +26,8 @@ This monorepo is a collection of middleware for AWS lambda functions.
   to AWS lambdas.
 * [@lambda-middleware/http-header-normalizer](/packages/http-header-normalizer): Middleware for AWS lambdas that
   normalizes headers to lower-case.
+* [@lambda-middleware/do-not-wait](/packages/do-not-wait): AWS lambda middleware to prevent Lambda from timing out
+  because of processes running after returning a value.
 
 ## Other packages
 

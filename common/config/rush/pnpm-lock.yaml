@@ -1,6 +1,7 @@
 dependencies:
   '@rush-temp/class-validator': 'file:projects/class-validator.tgz'
   '@rush-temp/compose': 'file:projects/compose.tgz'
+  '@rush-temp/do-not-wait': 'file:projects/do-not-wait.tgz'
   '@rush-temp/http-error-handler': 'file:projects/http-error-handler.tgz'
   '@rush-temp/http-header-normalizer': 'file:projects/http-header-normalizer.tgz'
   '@rush-temp/ie-no-open': 'file:projects/ie-no-open.tgz'
@@ -11534,6 +11535,43 @@ packages:
       integrity: sha512-Aj8/W4j46LKGrVw8AOjI2hJlq+OFGWT+qZRJwZoOGimwSN+N2HMrlWfCIQuFwx3bx8NLh4srCRkY7yQuzxJTiA==
       tarball: 'file:projects/compose.tgz'
     version: 0.0.0
+  'file:projects/do-not-wait.tgz':
+    dependencies:
+      '@types/aws-lambda': 8.10.61
+      '@types/debug': 4.1.5
+      '@types/jest': 25.2.3
+      '@types/supertest': 2.0.10
+      '@typescript-eslint/eslint-plugin': 2.34.0_5004700905763c91177aaa7d1d0d56ac
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@3.9.7
+      aws-lambda: 1.0.6
+      concurrently: 5.3.0
+      debug: 4.1.1
+      eslint: 6.8.0
+      eslint-config-prettier: 6.11.0_eslint@6.8.0
+      eslint-plugin-prettier: 3.1.4_eslint@6.8.0+prettier@2.0.5
+      jest: 25.5.4
+      jest-junit: 10.0.0
+      pkg-ok: 2.3.1
+      prettier: 2.0.5
+      prettier-config-standard: 1.0.1
+      rimraf: 3.0.2
+      serverless: 1.78.1
+      serverless-offline: 6.5.0_serverless@1.78.1
+      serverless-webpack: 5.3.3_typescript@3.9.7+webpack@4.44.1
+      source-map-support: 0.5.19
+      supertest: 4.0.2
+      ts-jest: 25.5.1_jest@25.5.4+typescript@3.9.7
+      ts-loader: 6.2.2_typescript@3.9.7
+      tslib: 2.0.1
+      typescript: 3.9.7
+      wait-on: 5.2.0
+      webpack: 4.44.1_webpack@4.44.1
+    dev: false
+    name: '@rush-temp/do-not-wait'
+    resolution:
+      integrity: sha512-Fjq1wjodNx4xTG5Rg+jOp2GnlowN1YAP/wae86m4ktBveVXhgWD+pbFLWdladm8Lz/y+K7NaaU0Ew/EbRX42BA==
+      tarball: 'file:projects/do-not-wait.tgz'
+    version: 0.0.0
   'file:projects/http-error-handler.tgz':
     dependencies:
       '@types/aws-lambda': 8.10.61
@@ -11832,6 +11870,7 @@ registry: ''
 specifiers:
   '@rush-temp/class-validator': 'file:./projects/class-validator.tgz'
   '@rush-temp/compose': 'file:./projects/compose.tgz'
+  '@rush-temp/do-not-wait': 'file:./projects/do-not-wait.tgz'
   '@rush-temp/http-error-handler': 'file:./projects/http-error-handler.tgz'
   '@rush-temp/http-header-normalizer': 'file:./projects/http-header-normalizer.tgz'
   '@rush-temp/ie-no-open': 'file:./projects/ie-no-open.tgz'

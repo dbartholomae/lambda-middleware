@@ -51,5 +51,9 @@
     "packageName": "@lambda-middleware/http-header-normalizer",
     "projectFolder": "packages/http-header-normalizer",
     "shouldPublish": true
+  }, {
+    "packageName": "@lambda-middleware/do-not-wait",
+    "projectFolder": "packages/do-not-wait",
+    "shouldPublish": true
   }]
 }
