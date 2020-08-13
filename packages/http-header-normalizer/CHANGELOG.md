@@ -1,4 +1,4 @@
-# Change Log - @lambda-middleware/http-error-handler
+# Change Log - @lambda-middleware/http-header-normalizer
 
 This log was last generated on Thu, 13 Aug 2020 19:32:50 GMT and should not be manually modified.
 
@@ -8,11 +8,4 @@ Thu, 13 Aug 2020 19:32:50 GMT
 ### Patches
 
 - Add tslib dependency
-
-## 1.0.0
-Mon, 10 Aug 2020 17:15:19 GMT
-
-### Breaking changes
-
-- add http-error-handler middleware
 

@@ -2,6 +2,29 @@
   "name": "@lambda-middleware/class-validator",
   "entries": [
     {
+      "version": "1.0.1",
+      "tag": "@lambda-middleware/class-validator_v1.0.1",
+      "date": "Thu, 13 Aug 2020 19:32:50 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Add tslib dependency"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@lambda-middleware/utils\" from `*` to `*`"
+          },
+          {
+            "comment": "Updating dependency \"@lambda-middleware/compose\" from `*` to `*`"
+          },
+          {
+            "comment": "Updating dependency \"@lambda-middleware/http-error-handler\" from `*` to `*`"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.0",
       "tag": "@lambda-middleware/class-validator_v1.0.0",
       "date": "Mon, 10 Aug 2020 17:15:19 GMT",

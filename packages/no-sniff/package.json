@@ -1,6 +1,6 @@
 {
   "name": "@lambda-middleware/no-sniff",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A middleware for adding the content type options no-sniff header to AWS lambdas.",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",

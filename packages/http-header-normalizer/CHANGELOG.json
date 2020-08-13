@@ -1,0 +1,25 @@
+{
+  "name": "@lambda-middleware/http-header-normalizer",
+  "entries": [
+    {
+      "version": "1.0.1",
+      "tag": "@lambda-middleware/http-header-normalizer_v1.0.1",
+      "date": "Thu, 13 Aug 2020 19:32:50 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Add tslib dependency"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@lambda-middleware/compose\" from `*` to `*`"
+          },
+          {
+            "comment": "Updating dependency \"@lambda-middleware/utils\" from `*` to `*`"
+          }
+        ]
+      }
+    }
+  ]
+}

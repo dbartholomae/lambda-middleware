@@ -1,6 +1,6 @@
 {
   "name": "@lambda-middleware/jwt-auth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A middleware for AWS http lambda functions to verify JWT auth tokens inspired by express-jwt.",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",
