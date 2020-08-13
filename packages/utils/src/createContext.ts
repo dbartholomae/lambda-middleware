@@ -3,7 +3,7 @@ import { Context } from "aws-lambda";
 export function createContext(): Context {
   return {
     awsRequestId: "",
-    callbackWaitsForEmptyEventLoop: false,
+    callbackWaitsForEmptyEventLoop: true,
     functionName: "",
     functionVersion: "",
     invokedFunctionArn: "",
