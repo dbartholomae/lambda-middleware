@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/http-error-handler",
+      "comment": "",
+      "type": "none"
+    }
+  ],
+  "packageName": "@lambda-middleware/http-error-handler",
+  "email": "daniel@bartholomae.name"
+}
