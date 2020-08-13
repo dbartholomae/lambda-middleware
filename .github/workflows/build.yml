@@ -9,16 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
     - name: Use Node.js 12.x
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
-#    - name: fetch master branch
-#      run: git fetch origin master:refs/remotes/origin/master -a
-#    - name: check-changelog
-#      run: node ./common/scripts/install-run-rush.js change -v
-#      env:
-#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: check-changelog
+      run: node ./common/scripts/install-run-rush.js change -v
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: install
       run: node ./common/scripts/install-run-rush.js install --no-link
     - name: link
