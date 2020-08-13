@@ -1,6 +1,6 @@
 {
   "name": "@lambda-middleware/http-header-normalizer",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Middleware for AWS lambdas that normalizes headers to lower-case",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",
