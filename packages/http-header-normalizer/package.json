@@ -27,8 +27,8 @@
   },
   "private": false,
   "dependencies": {
-    "@lambda-middleware/compose": "*",
-    "@lambda-middleware/utils": "*",
+    "@lambda-middleware/compose": "^1.0.1",
+    "@lambda-middleware/utils": "^1.0.1",
     "debug": ">=4.1.0",
     "tslib": "^2.0.1"
   },

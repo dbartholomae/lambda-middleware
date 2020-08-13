@@ -26,7 +26,7 @@
   },
   "private": false,
   "dependencies": {
-    "@lambda-middleware/utils": "*",
+    "@lambda-middleware/utils": "^1.0.1",
     "debug": ">=4.1.0",
     "class-transformer": ">=0.2.3",
     "class-transformer-validator": ">=0.8.0",
@@ -46,8 +46,8 @@
     "test:unit": "jest"
   },
   "devDependencies": {
-    "@lambda-middleware/compose": "*",
-    "@lambda-middleware/http-error-handler": "*",
+    "@lambda-middleware/compose": "^1.0.1",
+    "@lambda-middleware/http-error-handler": "^1.0.1",
     "@types/debug": "^4.1.5",
     "@types/jest": "^25.2.1",
     "@types/supertest": "^2.0.8",
