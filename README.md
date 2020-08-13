@@ -24,6 +24,8 @@ This monorepo is a collection of middleware for AWS lambda functions.
   middleware.
 * [@lambda-middleware/no-sniff](/packages/no-sniff): A middleware for adding the content type options no-sniff header
   to AWS lambdas.
+* [@lambda-middleware/http-header-normalizer](/packages/http-header-normalizer): Middleware for AWS lambdas that
+  normalizes headers to lower-case.
 
 ## Other packages
 

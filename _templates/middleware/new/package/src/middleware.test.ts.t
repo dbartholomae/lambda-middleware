@@ -10,7 +10,7 @@ describe("<%=h.inflection.camelize(name, true) %>", () => {
       body: "",
     };
     const handler = jest.fn().mockResolvedValue(response);
-    expect(await noSniff()(handler)({} as any, {} as any)).toMatchObject(
+    expect(await <%=h.inflection.camelize(name, true) %>()(handler)({} as any, {} as any)).toMatchObject(
       response
     );
   });

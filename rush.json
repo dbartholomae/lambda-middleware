@@ -47,5 +47,9 @@
     "packageName": "@lambda-middleware/utils",
     "projectFolder": "packages/utils",
     "shouldPublish": true
+  }, {
+    "packageName": "@lambda-middleware/http-header-normalizer",
+    "projectFolder": "packages/http-header-normalizer",
+    "shouldPublish": true
   }]
 }
