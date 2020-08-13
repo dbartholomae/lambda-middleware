@@ -8,9 +8,9 @@ describe("doNotWait", () => {
       body: "",
     };
     const handler = jest.fn().mockResolvedValue(response);
-    expect(await doNotWait()(handler)({} as any, {} as any)).toMatchObject(
-      response
-    );
+    expect(
+      await doNotWait()(handler)(createEvent({}), createContext())
+    ).toMatchObject(response);
   });
 
   it("sets callbackWaitsForEmptyEventLoop to false", async () => {
