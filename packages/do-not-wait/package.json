@@ -33,7 +33,7 @@
   },
   "scripts": {
     "build": "rimraf ./lib && tsc --project tsconfig.build.json",
-    "lint": "eslint src/**/*.ts examples/**/*.ts",
+    "lint": "eslint src/**/*.ts",
     "pretest": "npm run build",
     "start": "cd test && serverless offline",
     "test": "npm run lint && npm run test:unit && npm run test:integration && pkg-ok",
