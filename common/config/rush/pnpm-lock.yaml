@@ -1,6 +1,7 @@
 dependencies:
   '@rush-temp/class-validator': 'file:projects/class-validator.tgz'
   '@rush-temp/compose': 'file:projects/compose.tgz'
+  '@rush-temp/cors': 'file:projects/cors.tgz'
   '@rush-temp/do-not-wait': 'file:projects/do-not-wait.tgz'
   '@rush-temp/http-error-handler': 'file:projects/http-error-handler.tgz'
   '@rush-temp/http-header-normalizer': 'file:projects/http-header-normalizer.tgz'
@@ -11488,7 +11489,7 @@ packages:
     dev: false
     name: '@rush-temp/class-validator'
     resolution:
-      integrity: sha512-at5nz7YxQCDzwebdEamKb7shWRchxNi5yqhS092Vx9Tr0KtYmggXFWs6Thoqc1QhYA+OiHB91M/1IoS2sbgEsg==
+      integrity: sha512-j9sR/x1o0dlFz5I+7k2Gp+VnAUyoOH3v6Z1929XZR9zEu15YqAdOwQXi8wU0Sbmq12qfcNlzjHie1TIIToHxag==
       tarball: 'file:projects/class-validator.tgz'
     version: 0.0.0
   'file:projects/compose.tgz':
@@ -11532,8 +11533,45 @@ packages:
     dev: false
     name: '@rush-temp/compose'
     resolution:
-      integrity: sha512-Aj8/W4j46LKGrVw8AOjI2hJlq+OFGWT+qZRJwZoOGimwSN+N2HMrlWfCIQuFwx3bx8NLh4srCRkY7yQuzxJTiA==
+      integrity: sha512-30IkkNhghnj7ABP4MzUFlkemKNfm08QdI8mg9IHaunJu5j88rAy3EQ/VzvCDFebyQLX0T4cuDI00ISCphO+BjA==
       tarball: 'file:projects/compose.tgz'
+    version: 0.0.0
+  'file:projects/cors.tgz':
+    dependencies:
+      '@types/aws-lambda': 8.10.61
+      '@types/debug': 4.1.5
+      '@types/jest': 25.2.3
+      '@types/supertest': 2.0.10
+      '@typescript-eslint/eslint-plugin': 2.34.0_5004700905763c91177aaa7d1d0d56ac
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@3.9.7
+      aws-lambda: 1.0.6
+      concurrently: 5.3.0
+      debug: 4.1.1
+      eslint: 6.8.0
+      eslint-config-prettier: 6.11.0_eslint@6.8.0
+      eslint-plugin-prettier: 3.1.4_eslint@6.8.0+prettier@2.0.5
+      jest: 25.5.4
+      jest-junit: 10.0.0
+      pkg-ok: 2.3.1
+      prettier: 2.0.5
+      prettier-config-standard: 1.0.1
+      rimraf: 3.0.2
+      serverless: 1.78.1
+      serverless-offline: 6.5.0_serverless@1.78.1
+      serverless-webpack: 5.3.3_typescript@3.9.7+webpack@4.44.1
+      source-map-support: 0.5.19
+      supertest: 4.0.2
+      ts-jest: 25.5.1_jest@25.5.4+typescript@3.9.7
+      ts-loader: 6.2.2_typescript@3.9.7
+      tslib: 2.0.1
+      typescript: 3.9.7
+      wait-on: 5.2.0
+      webpack: 4.44.1_webpack@4.44.1
+    dev: false
+    name: '@rush-temp/cors'
+    resolution:
+      integrity: sha512-5v3rfHO4cQ2nE4AHNOMJ1MvIx2dluG9O96y63HczLr1hwT2/IbKK+0h+O1g68ldNGrN3IacIZOpB65dk9Tmwow==
+      tarball: 'file:projects/cors.tgz'
     version: 0.0.0
   'file:projects/do-not-wait.tgz':
     dependencies:
@@ -11569,7 +11607,7 @@ packages:
     dev: false
     name: '@rush-temp/do-not-wait'
     resolution:
-      integrity: sha512-Fjq1wjodNx4xTG5Rg+jOp2GnlowN1YAP/wae86m4ktBveVXhgWD+pbFLWdladm8Lz/y+K7NaaU0Ew/EbRX42BA==
+      integrity: sha512-rTXchACLNjPMPyPmVvdzM1h/CvSAGNsiEUhuHTkt7Ou3TiMP61uPgAX1d6GBp6uZr4i1fOKovt16NcE3qnK2Tw==
       tarball: 'file:projects/do-not-wait.tgz'
     version: 0.0.0
   'file:projects/http-error-handler.tgz':
@@ -11609,7 +11647,7 @@ packages:
     dev: false
     name: '@rush-temp/http-error-handler'
     resolution:
-      integrity: sha512-Ft1AkEhrvsV42TeKRjOLoucXMURRp9sjmeSXmCAVBoEIv4+qfv7mSG515Ix2RNUzCfS+EHdq4uOzyraJxhYl4w==
+      integrity: sha512-/TwaKl7pyzvVv1jqCc0DmrsGWInVQrZAo3pbv/bYRHZHCcSzheonf/sGBLqSWlZh2ylbfwiw7ZldlFUoN6a+3w==
       tarball: 'file:projects/http-error-handler.tgz'
     version: 0.0.0
   'file:projects/http-header-normalizer.tgz':
@@ -11646,7 +11684,7 @@ packages:
     dev: false
     name: '@rush-temp/http-header-normalizer'
     resolution:
-      integrity: sha512-No/QWmzpHoMEQHBqWTo0Ihi26agptZcIb1D8NUucp1QbqJ/bkqUZr4VlnlmwPo9Lmz+GBuDbrbf+MDH1clCXcQ==
+      integrity: sha512-ygA6Vfyq7w+5Xh1fp9dmzNWIAtB3HtjcJVIeX3BoG/kJutcW6B7CoMGjri6I9PIK3wvWLbmTi0EFCZFCu1627w==
       tarball: 'file:projects/http-header-normalizer.tgz'
     version: 0.0.0
   'file:projects/ie-no-open.tgz':
@@ -11683,7 +11721,7 @@ packages:
     dev: false
     name: '@rush-temp/ie-no-open'
     resolution:
-      integrity: sha512-pn0Kg153qZ8Fdnx9mXqenUp9ZDQDtxsHaQa18c+sSYkYL2NSbGppaDMl41p4Y1BznSFq/dtWHL4TYaRTpZjAsg==
+      integrity: sha512-wZH2yn2RxRMMKk/jmXxDbajt0rVhn/k29jWXYOzQajZ0FrG4eo50JkFsaoQCTa2eeqfJfMQtrIOM3sedd7Fr5A==
       tarball: 'file:projects/ie-no-open.tgz'
     version: 0.0.0
   'file:projects/json-serializer.tgz':
@@ -11720,7 +11758,7 @@ packages:
     dev: false
     name: '@rush-temp/json-serializer'
     resolution:
-      integrity: sha512-Q0F5OjkOKFMyQ92GR75zMI/+w2RBSIyBb7CYjUBLhyr2frze9lEe6QkdR6Cz70uXEFkcAo3nWrbW1kJOs0ldeQ==
+      integrity: sha512-6xgihqOuDANUt19fWQG1Th+INPMdGtGNG4fR78mFvWVoQElHI/amvo/vaBOPqSW4749VZtYHnjgCT1YG2L1sjg==
       tarball: 'file:projects/json-serializer.tgz'
     version: 0.0.0
   'file:projects/jwt-auth.tgz':
@@ -11762,7 +11800,7 @@ packages:
     dev: false
     name: '@rush-temp/jwt-auth'
     resolution:
-      integrity: sha512-jooOsufgziDnIZPjPDeSFS1Io9EXUlbREPre53OVvBOqsJkw9DKhHKjOj5oPSLwKaPU1xC36JL+x/cEtkDC93w==
+      integrity: sha512-kwtCUtVpPprWgNJao0gB1R9HwymgZa+1jwglgdKTYtW9qPPnWt4vjkq1pUzCSTDT+tljUHc2r18KXERbp1H8Mw==
       tarball: 'file:projects/jwt-auth.tgz'
     version: 0.0.0
   'file:projects/middy-adaptor.tgz':
@@ -11799,7 +11837,7 @@ packages:
     dev: false
     name: '@rush-temp/middy-adaptor'
     resolution:
-      integrity: sha512-4Zv4Vk71qNO431Aqqjs2sDHZsQ9ww2pKAsMDo1wiR+CdOGi4/puzDIZqCJJs9x28e2nAMkI7r5oXjuaHKy4tkA==
+      integrity: sha512-sFpdN0hqQQd1A/zoq1/3dIy0xVVJ24JHSx/uQFl6yZFtmGlRl+yqngec4GMPz8CT8bnfUAvuUzLkW6L1sb3jmw==
       tarball: 'file:projects/middy-adaptor.tgz'
     version: 0.0.0
   'file:projects/no-sniff.tgz':
@@ -11836,7 +11874,7 @@ packages:
     dev: false
     name: '@rush-temp/no-sniff'
     resolution:
-      integrity: sha512-vtj/xnDcWHydn6xHdg7Qomzimb6TGuboHd15Dz2BQkD0gKFSPG57AyvQOyCvnmMPgDuFwVV7CgUrk1jalizk9w==
+      integrity: sha512-DUsDm91q9Rl+4Pv2VhyTHoFc9XPpA1L88bg2CRzxTO1kj7IfO4yTYijJveTHWTCReOsTfDdIO2Y0JoRz3t98fA==
       tarball: 'file:projects/no-sniff.tgz'
     version: 0.0.0
   'file:projects/utils.tgz':
@@ -11870,6 +11908,7 @@ registry: ''
 specifiers:
   '@rush-temp/class-validator': 'file:./projects/class-validator.tgz'
   '@rush-temp/compose': 'file:./projects/compose.tgz'
+  '@rush-temp/cors': 'file:./projects/cors.tgz'
   '@rush-temp/do-not-wait': 'file:./projects/do-not-wait.tgz'
   '@rush-temp/http-error-handler': 'file:./projects/http-error-handler.tgz'
   '@rush-temp/http-header-normalizer': 'file:./projects/http-header-normalizer.tgz'
