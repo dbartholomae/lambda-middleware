@@ -22,9 +22,10 @@ This middleware is part of the [lambda middleware series](https://dbartholomae.g
 
 ```typescript
 import { <%=h.inflection.camelize(name, true) %> } from "@lambda-middleware/<%= h.inflection.dasherize(name.toLowerCase()) %>";
+import { APIGatewayProxyResult } from "aws-lambda";
 
 // This is your AWS handler
-async function helloWorld() {
+async function helloWorld(): Promise<APIGatewayProxyResult> {
   return {
     statusCode: 200,
     body: "",
