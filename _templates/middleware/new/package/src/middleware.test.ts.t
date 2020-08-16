@@ -11,10 +11,8 @@ describe("<%=h.inflection.camelize(name, true) %>", () => {
       body: "",
     };
     const handler = jest.fn().mockResolvedValue(response);
-    expect(await <%=h.inflection.camelize(name, true) %>()(handler)(
-      createEvent({}), createContext()
-    ).toMatchObject(
-      response
-    );
+    expect(
+      await <%=h.inflection.camelize(name, true) %>()(handler)(createEvent({}), createContext())
+    ).toMatchObject(response);
   });
 });

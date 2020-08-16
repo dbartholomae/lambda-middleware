@@ -1,0 +1,26 @@
+service:
+  name: test-microservice
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  hello:
+    handler: handler.fullExample
+    events:
+      - http:
+          method: any
+          path: hello
+          cors: true
+
+  status:
+    handler: handler.status
+    events:
+      - http:
+          method: get
+          path: status

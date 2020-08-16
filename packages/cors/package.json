@@ -1,10 +1,7 @@
----
-to: packages/<%= h.inflection.dasherize(name.toLowerCase()) %>/package.json
----
 {
-  "name": "@lambda-middleware/<%= h.inflection.dasherize(name.toLowerCase()) %>",
+  "name": "@lambda-middleware/cors",
   "version": "1.0.0",
-  "description": "<%= description %>",
+  "description": "AWS lambda middleware for automatically adding CORS headers",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",
   "author": {
@@ -19,8 +16,9 @@ to: packages/<%= h.inflection.dasherize(name.toLowerCase()) %>/package.json
   "keywords": [
     "aws",
     "lambda",
-    "middleware"<% if(keywords.trim().length > 0) { %>,
-    <% } %><%- keywords.trim().split(',').filter(str => str !== '').map(keyword => '"' + keyword.trim() + '"').join(',\n    ') %>
+    "middleware",
+    "cors",
+    "http"
   ],
   "types": "lib/index.d.ts",
   "engines": {

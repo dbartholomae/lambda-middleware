@@ -55,5 +55,9 @@
     "packageName": "@lambda-middleware/do-not-wait",
     "projectFolder": "packages/do-not-wait",
     "shouldPublish": true
+  }, {
+    "packageName": "@lambda-middleware/cors",
+    "projectFolder": "packages/cors",
+    "shouldPublish": true
   }]
 }
