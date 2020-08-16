@@ -9,26 +9,26 @@ This monorepo is a collection of middleware for AWS lambda functions.
 
 ## Middlewares
 
-* [@lambda-middleware/class-validator](/packages/class-validator): A validation middleware for AWS http lambda functions
+* [@lambda-middleware/class-validator](packages/class-validator): A validation middleware for AWS http lambda functions
   based on class-validator.
-* [@lambda-middleware/compose](/packages/compose): A compose function for functional lambda middleware.
-* [@lambda-middleware/http-error-handler](/packages/http-error-handler): An error handler middleware for AWS http lambda
+* [@lambda-middleware/compose](packages/compose): A compose function for functional lambda middleware.
+* [@lambda-middleware/http-error-handler](packages/http-error-handler): An error handler middleware for AWS http lambda
   functions.
-* [@lambda-middleware/ie-no-open](/packages/ie-no-open): A middleware for adding the download options no-open header to
+* [@lambda-middleware/ie-no-open](packages/ie-no-open): A middleware for adding the download options no-open header to
   AWS lambdas.
-* [@lambda-middleware/json-serializer](/packages/json-serializer): A middleware for AWS http lambda functions to
+* [@lambda-middleware/json-serializer](packages/json-serializer): A middleware for AWS http lambda functions to
   serialize JSON responses.
-* [@lambda-middleware/jwt-auth](/packages/jwt-auth): A middleware for AWS http lambda functions to verify JWT auth
+* [@lambda-middleware/jwt-auth](packages/jwt-auth): A middleware for AWS http lambda functions to verify JWT auth
   tokens inspired by express-jwt.
-* [@lambda-middleware/middy-adaptor](/packages/middy-adaptor): An adaptor to use middy middleware as functional
+* [@lambda-middleware/middy-adaptor](packages/middy-adaptor): An adaptor to use middy middleware as functional
   middleware.
-* [@lambda-middleware/no-sniff](/packages/no-sniff): A middleware for adding the content type options no-sniff header
+* [@lambda-middleware/no-sniff](packages/no-sniff): A middleware for adding the content type options no-sniff header
   to AWS lambdas.
-* [@lambda-middleware/http-header-normalizer](/packages/http-header-normalizer): Middleware for AWS lambdas that
+* [@lambda-middleware/http-header-normalizer](packages/http-header-normalizer): Middleware for AWS lambdas that
   normalizes headers to lower-case.
-* [@lambda-middleware/do-not-wait](/packages/do-not-wait): AWS lambda middleware to prevent Lambda from timing out
+* [@lambda-middleware/do-not-wait](packages/do-not-wait): AWS lambda middleware to prevent Lambda from timing out
   because of processes running after returning a value.
-* [@lambda-middleware/cors](/packages/cors): AWS lambda middleware for automatically adding CORS headers.
+* [@lambda-middleware/cors](packages/cors): AWS lambda middleware for automatically adding CORS headers.
 
 ## Other packages
 
@@ -53,7 +53,7 @@ Each middleware is build as
 ```
 
 This means that middleware can be composed and piped like any other function with only one parameter (the handler).
-This library contains [a helper for composing](/packages/compose), but [any](https://lodash.com/docs/4.17.15#flowRight)
+This library contains [a helper for composing](packages/compose), but [any](https://lodash.com/docs/4.17.15#flowRight)
 [other](https://ramdajs.com/docs/#compose) [implementation](https://github.com/tc39/proposal-pipeline-operator) should
 work as well.
 
@@ -148,4 +148,4 @@ so that if multiple middlewares change the event, the resulting type will have a
 
 ## Contributing
 
-If you want to contribute to the project, please read our [contributing guidelines](./CONTRIBUTING.md) first.
+If you want to contribute to the project, please read our [contributing guidelines](CONTRIBUTING.md) first.
