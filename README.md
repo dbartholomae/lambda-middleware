@@ -1,4 +1,4 @@
-# @lambda-middleware
+![@lambda-middleware](assets/lambda-middleware-logo.png)
 
 [![open issues](https://img.shields.io/github/issues-raw/dbartholomae/lambda-middleware.svg)](https://github.com/dbartholomae/lambda-middleware/issues)
 [![debug](https://img.shields.io/badge/debug-blue.svg)](https://github.com/visionmedia/debug#readme)
