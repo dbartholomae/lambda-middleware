@@ -1,0 +1,9 @@
+export { isString } from "./isString";
+export { isArrayWith } from "./isArrayWith";
+export { isNil } from "./isNil";
+export { isNull } from "./isNull";
+export { isBoolean } from "./isBoolean";
+export { isInt } from "./isInt";
+export { isRegExp } from "./isRegExp";
+export { optional } from "./optional";
+export { or } from "./or";

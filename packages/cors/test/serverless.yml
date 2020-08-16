@@ -14,8 +14,9 @@ functions:
     handler: handler.fullExample
     events:
       - http:
-          method: get
+          method: any
           path: hello
+          cors: true
 
   status:
     handler: handler.status
