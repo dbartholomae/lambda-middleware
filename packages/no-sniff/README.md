@@ -1,4 +1,4 @@
-!# @lambda-middleware/no-sniff
+# @lambda-middleware/no-sniff
 
 [![npm version](https://badge.fury.io/js/%40lambda-middleware%2Fno-sniff.svg)](https://npmjs.org/package/@lambda-middleware/no-sniff)
 [![downloads](https://img.shields.io/npm/dw/%40lambda-middleware%2Fno-sniff.svg)](https://npmjs.org/package/@lambda-middleware/no-sniff)
