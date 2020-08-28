@@ -38,7 +38,7 @@ jobs:
     - name: run integration tests
       run: node ./common/scripts/install-run-rush.js test:integration
 
-  deploy:
+  publish:
     needs: build
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
