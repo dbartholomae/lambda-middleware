@@ -32,7 +32,7 @@ This monorepo is a collection of middleware for AWS lambda functions.
 
 ## Other packages
 
-Furthermore there is utility collection available at [@lambda-middleware/utils](/packages/utils).
+Furthermore there is utility collection available at [@lambda-middleware/utils](packages/utils).
 
 ## Usage
 
