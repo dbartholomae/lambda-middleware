@@ -60,5 +60,9 @@
     "ts-jest": "^25.3.1",
     "typescript": "^3.7.5"
   },
-  "repository": "git@github.com:dbartholomae/lambda-middleware.git"
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dbartholomae/lambda-middleware.git",
+    "directory": "packages/utils"
+  }
 }

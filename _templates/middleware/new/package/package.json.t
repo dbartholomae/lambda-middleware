@@ -73,5 +73,9 @@ to: packages/<%= h.inflection.dasherize(name.toLowerCase()) %>/package.json
     "wait-on": "^5.2.0",
     "webpack": "^4.41.5"
   },
-  "repository": "git@github.com:dbartholomae/lambda-middleware.git"
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dbartholomae/lambda-middleware.git",
+    "directory": "packages/<%= h.inflection.dasherize(name.toLowerCase()) %>"
+  }
 }
