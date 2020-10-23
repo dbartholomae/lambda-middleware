@@ -22,6 +22,7 @@ dependencies:
   '@types/http-errors': 1.8.0
   '@types/jest': 25.2.3
   '@types/jsonwebtoken': 8.5.0
+  '@types/node': 14.14.2
   '@types/supertest': 2.0.10
   '@typescript-eslint/eslint-plugin': 2.34.0_7b4bd3cb2bb8840c27da3f93640083dc
   '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
@@ -11488,7 +11489,7 @@ packages:
     dev: false
     name: '@rush-temp/e2e-tests'
     resolution:
-      integrity: sha512-+jQ571GTE/mdtyfdQ7Lfgk7TPEMhy8MSsYnJMdrY0mif26HOOCDByO8pbHPSmEQudSZaBZmdn0thR5NED6PzUg==
+      integrity: sha512-EBms1BPrr2ZtRs932MNahK5GG8+2nQ8o0m0Xw9yXrg/wUV3t/s71oOTi4KKlv7jLE3R+uPLN5uB3Qq7BCftTPQ==
       tarball: 'file:projects/e2e-tests.tgz'
     version: 0.0.0
   'file:projects/http-error-handler.tgz':
@@ -11649,6 +11650,7 @@ packages:
       '@types/http-errors': 1.8.0
       '@types/jest': 25.2.3
       '@types/jsonwebtoken': 8.5.0
+      '@types/node': 14.14.2
       '@types/supertest': 2.0.10
       '@typescript-eslint/eslint-plugin': 2.34.0_7b4bd3cb2bb8840c27da3f93640083dc
       '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
@@ -11681,7 +11683,7 @@ packages:
     dev: false
     name: '@rush-temp/jwt-auth'
     resolution:
-      integrity: sha512-tfaC07RKFseAA+Q4oatxx2HPlnvEtpLSlbvfsrjhMal0WDMRI4JJplu8ipI9JFyCmg0KhH0h007wa7zdyY0s7g==
+      integrity: sha512-8hslbK1nAF1IV/fHQvAakC/eZriQbmnNGSbwDh8IbdguSuGrtxroDWriYVWaRHIDlXVEUhLhJkFhwh+yz1T8BQ==
       tarball: 'file:projects/jwt-auth.tgz'
     version: 0.0.0
   'file:projects/middy-adaptor.tgz':
@@ -11785,6 +11787,7 @@ packages:
       integrity: sha512-h/XA+xUUgvGvKGPl1/TrciLG9i7hY2qbWHVwxlah0HJ/c3Z7muYRDR7w5/38XoZ8mRJh+98FjD/wwyzyr8Rmjw==
       tarball: 'file:projects/utils.tgz'
     version: 0.0.0
+registry: ''
 specifiers:
   '@rush-temp/class-validator': 'file:./projects/class-validator.tgz'
   '@rush-temp/compose': 'file:./projects/compose.tgz'
@@ -11809,6 +11812,7 @@ specifiers:
   '@types/http-errors': ^1.6.3
   '@types/jest': ^25.2.1
   '@types/jsonwebtoken': ^8.3.0
+  '@types/node': '>=8'
   '@types/supertest': ^2.0.8
   '@typescript-eslint/eslint-plugin': ^2.26.0
   '@typescript-eslint/parser': ^2.26.0
