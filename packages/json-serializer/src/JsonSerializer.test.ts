@@ -1,5 +1,5 @@
-import { Context } from "aws-lambda";
 import { jsonSerializer } from "./JsonSerializer";
+import { createContext, createEvent } from "@lambda-middleware/utils";
 
 describe("jsonSerializer", () => {
   describe("with a handler returning an empty object", () => {
@@ -8,7 +8,7 @@ describe("jsonSerializer", () => {
     beforeEach(async () => {
       const handler = async () => ({});
       const handlerWithMiddleware = jsonSerializer()(handler);
-      response = await handlerWithMiddleware({}, {} as Context);
+      response = await handlerWithMiddleware(createEvent({}), createContext());
     });
 
     it("returns 200", async () => {
@@ -30,7 +30,7 @@ describe("jsonSerializer", () => {
     beforeEach(async () => {
       const handler = async () => undefined;
       const handlerWithMiddleware = jsonSerializer()(handler);
-      response = await handlerWithMiddleware({}, {} as Context);
+      response = await handlerWithMiddleware(createEvent({}), createContext());
     });
 
     it("returns 204", async () => {
