@@ -1,6 +1,6 @@
 {
   "name": "@lambda-middleware/ie-no-open",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A middleware for adding the download options no-open header to AWS lambdas.",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",
@@ -30,7 +30,7 @@
   },
   "private": false,
   "dependencies": {
-    "@lambda-middleware/utils": "^1.0.1",
+    "@lambda-middleware/utils": "^1.0.2",
     "debug": ">=4.1.0",
     "tslib": "^2.0.1"
   },

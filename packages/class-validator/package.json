@@ -1,6 +1,6 @@
 {
   "name": "@lambda-middleware/class-validator",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A validation middleware for AWS http lambda functions based on class-validator.",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",
@@ -26,7 +26,7 @@
   },
   "private": false,
   "dependencies": {
-    "@lambda-middleware/utils": "^1.0.1",
+    "@lambda-middleware/utils": "^1.0.2",
     "debug": ">=4.1.0",
     "class-transformer": ">=0.2.3",
     "class-transformer-validator": ">=0.8.0",
@@ -46,8 +46,8 @@
     "test:unit": "jest"
   },
   "devDependencies": {
-    "@lambda-middleware/compose": "^1.0.1",
-    "@lambda-middleware/http-error-handler": "^1.0.1",
+    "@lambda-middleware/compose": "^1.1.0",
+    "@lambda-middleware/http-error-handler": "^2.0.0",
     "@types/debug": "^4.1.5",
     "@types/jest": "^25.2.1",
     "@types/supertest": "^2.0.8",

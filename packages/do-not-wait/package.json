@@ -1,6 +1,6 @@
 {
   "name": "@lambda-middleware/do-not-wait",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AWS lambda middleware to prevent Lambda from timing out because of processes running after returning a value.",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",
@@ -24,7 +24,7 @@
   },
   "private": false,
   "dependencies": {
-    "@lambda-middleware/utils": "^1.0.1",
+    "@lambda-middleware/utils": "^1.0.2",
     "debug": ">=4.1.0",
     "tslib": "^2.0.1"
   },

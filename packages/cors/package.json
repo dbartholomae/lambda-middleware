@@ -1,6 +1,6 @@
 {
   "name": "@lambda-middleware/cors",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "AWS lambda middleware for automatically adding CORS headers",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",
@@ -26,7 +26,7 @@
   },
   "private": false,
   "dependencies": {
-    "@lambda-middleware/utils": "^1.0.1",
+    "@lambda-middleware/utils": "^1.0.2",
     "debug": ">=4.1.0",
     "tslib": "^2.0.1"
   },

@@ -23,12 +23,12 @@
     "test:integration": "concurrently --timeout 600000 --kill-others --success first \"cd test && serverless offline\" \"wait-on http://localhost:3000/dev/status && jest -c jest.integration.config.js\""
   },
   "devDependencies": {
-    "@lambda-middleware/class-validator": "^1.0.1",
-    "@lambda-middleware/compose": "^1.0.1",
-    "@lambda-middleware/cors": "^1.0.0",
-    "@lambda-middleware/json-serializer": "^1.0.1",
-    "@lambda-middleware/jwt-auth": "^1.0.1",
-    "@lambda-middleware/http-error-handler": "^1.0.1",
+    "@lambda-middleware/class-validator": "^2.0.0",
+    "@lambda-middleware/compose": "^1.1.0",
+    "@lambda-middleware/cors": "^2.0.0",
+    "@lambda-middleware/json-serializer": "^2.0.0",
+    "@lambda-middleware/jwt-auth": "^1.0.2",
+    "@lambda-middleware/http-error-handler": "^2.0.0",
     "@types/debug": "^4.1.5",
     "@types/jest": "^25.2.1",
     "@types/supertest": "^2.0.8",

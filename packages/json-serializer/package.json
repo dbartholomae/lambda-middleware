@@ -1,6 +1,6 @@
 {
   "name": "@lambda-middleware/json-serializer",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A middleware for AWS http lambda functions to serialize JSON responses.",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",
@@ -27,7 +27,7 @@
   },
   "private": false,
   "dependencies": {
-    "@lambda-middleware/utils": "^1.0.1",
+    "@lambda-middleware/utils": "^1.0.2",
     "debug": ">=4.1.0",
     "tslib": "^2.0.1"
   },
