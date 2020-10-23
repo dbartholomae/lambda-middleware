@@ -27,12 +27,7 @@ export const cors = (options: CorsMiddlewareOptions = {}) => {
     ...options,
   };
 
-  return <
-    Event extends {
-      headers: APIGatewayEvent["headers"];
-      httpMethod: APIGatewayEvent["httpMethod"];
-    }
-  >(
+  return <Event extends APIGatewayEvent>(
     handler: PromiseHandler<Event, APIGatewayProxyResult>
   ) => async (
     event: Event,

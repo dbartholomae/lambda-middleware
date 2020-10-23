@@ -69,7 +69,7 @@ to: packages/<%= h.inflection.dasherize(name.toLowerCase()) %>/package.json
     "supertest": "^4.0.2",
     "ts-jest": "^25.3.1",
     "ts-loader": "^6.2.2",
-    "typescript": "^3.7.5",
+    "typescript": "^4.1.0",
     "wait-on": "^5.2.0",
     "webpack": "^4.41.5"
   },
