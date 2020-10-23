@@ -1,6 +1,6 @@
 import { PromiseHandler } from "@lambda-middleware/utils";
 import debugFactory, { IDebugger } from "debug";
-import { Context } from "aws-lambda";
+import { APIGatewayEvent, Context } from "aws-lambda";
 import { ClassValidatorMiddlewareOptions } from "./interfaces/ClassValidatorMiddlewareOptions";
 import { transformAndValidate } from "class-transformer-validator";
 
@@ -10,9 +10,10 @@ export type WithBody<Event, Body> = Omit<Event, "body"> & { body: Body };
 
 export const classValidator = <T extends object>(
   options: ClassValidatorMiddlewareOptions<T>
-) => <E extends { body: string | null }, R>(
-  handler: PromiseHandler<WithBody<E, T>, R>
-) => async (event: E, context: Context): Promise<R> => {
+) => <R>(handler: PromiseHandler<WithBody<APIGatewayEvent, T>, R>) => async (
+  event: APIGatewayEvent,
+  context: Context
+): Promise<R> => {
   logger(`Checking input ${JSON.stringify(event.body)}`);
   try {
     const body = event.body ?? "{}";

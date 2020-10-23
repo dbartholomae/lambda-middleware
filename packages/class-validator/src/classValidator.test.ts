@@ -1,6 +1,7 @@
 import { classValidator } from "./classValidator";
 
 import { IsOptional, IsString } from "class-validator";
+import { createEvent } from "@lambda-middleware/utils";
 
 class NameBody {
   @IsString()
@@ -21,7 +22,7 @@ describe("classValidator", () => {
       const handler = jest.fn();
       await classValidator({
         bodyType: NameBody,
-      })(handler)({ body }, {} as any);
+      })(handler)(createEvent({ body }), {} as any);
       expect(handler).toHaveBeenCalledWith(
         expect.objectContaining({
           body: {
@@ -41,7 +42,7 @@ describe("classValidator", () => {
           transformer: {
             excludeExtraneousValues: true,
           },
-        })(handler)({ body }, {} as any)
+        })(handler)(createEvent({ body }), {} as any)
       ).rejects.toBeDefined();
     });
   });
@@ -57,7 +58,7 @@ describe("classValidator", () => {
       const handler = jest.fn();
       await classValidator({
         bodyType: NameBody,
-      })(handler)({ body }, {} as any);
+      })(handler)(createEvent({ body }), {} as any);
       expect(handler).toHaveBeenCalledWith(
         expect.objectContaining({
           body: {
@@ -80,7 +81,7 @@ describe("classValidator", () => {
         validator: {
           whitelist: false,
         },
-      })(handler)({ body }, {} as any);
+      })(handler)(createEvent({ body }), {} as any);
       expect(actualResponse).toEqual(expectedResponse);
     });
   });
@@ -95,7 +96,7 @@ describe("classValidator", () => {
       await expect(
         classValidator({
           bodyType: NameBody,
-        })(handler)({ body }, {} as any)
+        })(handler)(createEvent({ body }), {} as any)
       ).rejects.toMatchObject({
         statusCode: 400,
       });
@@ -110,7 +111,7 @@ describe("classValidator", () => {
       await expect(
         classValidator({
           bodyType: NameBody,
-        })(handler)({ body }, {} as any)
+        })(handler)(createEvent({ body }), {} as any)
       ).rejects.toMatchObject({
         statusCode: 400,
       });
@@ -138,7 +139,7 @@ describe("classValidator", () => {
       const handler = jest.fn().mockResolvedValue(expectedResponse);
       const actualResponse = await classValidator({
         bodyType: OptionalNameBody,
-      })(handler)({ body }, {} as any);
+      })(handler)(createEvent({ body }), {} as any);
       expect(actualResponse).toEqual(expectedResponse);
     });
   });
