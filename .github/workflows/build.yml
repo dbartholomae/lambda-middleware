@@ -62,5 +62,7 @@ jobs:
       run: echo //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN > ~/.npmrc
       env:
         NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+    - name: Bump versions
+      run: node ./common/scripts/install-run-rush.js rush version --bump --target-branch main
     - name: publish
       run: node ./common/scripts/install-run-rush.js publish -a -b main -p --set-access-level public --include-all
