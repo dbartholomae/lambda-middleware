@@ -8,16 +8,11 @@ const logger: IDebugger = debugFactory("@lambda-middleware/class-transformer");
 
 export type WithBody<Event, Body> = Omit<Event, "body"> & { body: Body };
 
-export const classValidator = <
-  E extends { body: string | null },
-  R,
-  T extends object
->(
+export const classValidator = <T extends object>(
   options: ClassValidatorMiddlewareOptions<T>
-) => (handler: PromiseHandler<WithBody<E, T>, R>) => async (
-  event: E,
-  context: Context
-): Promise<R> => {
+) => <E extends { body: string | null }, R>(
+  handler: PromiseHandler<WithBody<E, T>, R>
+) => async (event: E, context: Context): Promise<R> => {
   logger(`Checking input ${JSON.stringify(event.body)}`);
   try {
     const body = event.body ?? "{}";
