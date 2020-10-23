@@ -47,7 +47,7 @@ async function helloWorld(event: { body: NameBody }) {
   };
 }
 
-// Let's "middyfy" our handler, then we will be able to attach middlewares to it
+// Let's add middleware to our handler, then we will be able to attach middlewares to it
 export const handler = compose(
   // The class validator throws validation errors from http-errors which are compatible with
   // the error handler middlewares for middy
