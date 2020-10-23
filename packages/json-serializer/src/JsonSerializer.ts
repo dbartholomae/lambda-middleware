@@ -1,13 +1,16 @@
 import { PromiseHandler } from "@lambda-middleware/utils";
 import debugFactory, { IDebugger } from "debug";
-import { APIGatewayProxyResult, Context } from "aws-lambda";
+import { APIGatewayEvent, APIGatewayProxyResult, Context } from "aws-lambda";
 import { JSONObject } from "./types/JSONObject";
 
 const logger: IDebugger = debugFactory("@lambda-middleware/json-serializer");
 
-export const jsonSerializer = <E>() => (
-  handler: PromiseHandler<E, JSONObject | undefined>
-) => async (event: E, context: Context): Promise<APIGatewayProxyResult> => {
+export const jsonSerializer = () => (
+  handler: PromiseHandler<APIGatewayEvent, JSONObject | undefined>
+) => async (
+  event: APIGatewayEvent,
+  context: Context
+): Promise<APIGatewayProxyResult> => {
   logger("Running handler");
   const response = await handler(event, context);
   logger("Response received");

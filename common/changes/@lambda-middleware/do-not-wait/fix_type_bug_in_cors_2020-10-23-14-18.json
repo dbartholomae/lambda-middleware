@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/do-not-wait",
+      "comment": "Update TypeScript version",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@lambda-middleware/do-not-wait",
+  "email": "daniel@bartholomae.name"
+}

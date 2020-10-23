@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/no-sniff",
+      "comment": "Update TypeScript version",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@lambda-middleware/no-sniff",
+  "email": "daniel@bartholomae.name"
+}

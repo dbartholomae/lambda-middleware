@@ -11,10 +11,10 @@ import { isErrorWithStatusCode } from "./interfaces/ErrorWithStatusCode";
 
 const logger: IDebugger = debugFactory("@lambda-middleware/error-handler");
 
-export const errorHandler = () => <E extends APIGatewayProxyEvent>(
-  handler: PromiseHandler<E, APIGatewayProxyResult>
-): PromiseHandler<E, APIGatewayProxyResult> => async (
-  event: E,
+export const errorHandler = () => (
+  handler: PromiseHandler<APIGatewayProxyEvent, APIGatewayProxyResult>
+): PromiseHandler<APIGatewayProxyEvent, APIGatewayProxyResult> => async (
+  event: APIGatewayProxyEvent,
   context: Context
 ): Promise<APIGatewayProxyResult> => {
   try {

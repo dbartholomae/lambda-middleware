@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/http-header-normalizer",
+      "comment": "Update TypeScript version",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@lambda-middleware/http-header-normalizer",
+  "email": "daniel@bartholomae.name"
+}

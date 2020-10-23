@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/class-validator",
+      "comment": "ast",
+      "type": "major"
+    }
+  ],
+  "packageName": "@lambda-middleware/class-validator",
+  "email": "daniel@bartholomae.name"
+}

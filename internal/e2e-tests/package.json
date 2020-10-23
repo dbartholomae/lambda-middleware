@@ -1,0 +1,67 @@
+{
+  "name": "@lambda-middleware/e2e-tests",
+  "version": "0.0.0",
+  "private": true,
+  "description": "E2E tests for @lambda-middleware",
+  "homepage": "https://dbartholomae.github.io/lambda-middleware/",
+  "author": {
+    "name": "Daniel Bartholomae",
+    "email": "daniel@bartholomae.name",
+    "url": ""
+  },
+  "files": [],
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "build": "echo \"Nothing to build here\"",
+    "lint": "eslint examples/**/*.ts",
+    "pretest": "npm run build",
+    "start": "cd test && serverless offline",
+    "test": "npm run lint && npm run test:integration",
+    "test:unit": "echo \"Nothing to test here\"",
+    "test:integration": "concurrently --timeout 600000 --kill-others --success first \"cd test && serverless offline\" \"wait-on http://localhost:3000/dev/status && jest -c jest.integration.config.js\""
+  },
+  "devDependencies": {
+    "@lambda-middleware/class-validator": "^1.0.1",
+    "@lambda-middleware/compose": "^1.0.1",
+    "@lambda-middleware/cors": "^1.0.0",
+    "@lambda-middleware/json-serializer": "^1.0.1",
+    "@lambda-middleware/jwt-auth": "^1.0.1",
+    "@lambda-middleware/http-error-handler": "^1.0.1",
+    "@types/debug": "^4.1.5",
+    "@types/jest": "^25.2.1",
+    "@types/supertest": "^2.0.8",
+    "@types/aws-lambda": "^8.10.47",
+    "@typescript-eslint/parser": "^2.26.0",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "aws-lambda": "^1.0.5",
+    "class-validator": ">=0.11.0",
+    "concurrently": "^5.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^25.2.7",
+    "jest-junit": "^10.0.0",
+    "prettier": "^2.0.2",
+    "prettier-config-standard": "^1.0.1",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "serverless": "^1.67.0",
+    "serverless-offline": "^6.1.4",
+    "serverless-webpack": "^5.3.1",
+    "source-map-support": "^0.5.16",
+    "supertest": "^4.0.2",
+    "tslib": "^2.0.1",
+    "ts-jest": "^25.3.1",
+    "ts-loader": "^6.2.2",
+    "typescript": "^4.0.3",
+    "wait-on": "^5.2.0",
+    "webpack": "^4.41.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dbartholomae/lambda-middleware.git",
+    "directory": "internal/e2e-tests"
+  }
+}
