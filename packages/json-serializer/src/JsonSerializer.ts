@@ -5,7 +5,7 @@ import { JSONObject } from "./types/JSONObject";
 
 const logger: IDebugger = debugFactory("@lambda-middleware/json-serializer");
 
-export const jsonSerializer = <E>() => (
+export const jsonSerializer = () => <E>(
   handler: PromiseHandler<E, JSONObject | undefined>
 ) => async (event: E, context: Context): Promise<APIGatewayProxyResult> => {
   logger("Running handler");
