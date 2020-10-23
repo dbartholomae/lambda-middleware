@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/ie-no-open",
+      "comment": "Update TypeScript version",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@lambda-middleware/ie-no-open",
+  "email": "daniel@bartholomae.name"
+}
