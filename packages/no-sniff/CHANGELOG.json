@@ -2,6 +2,23 @@
   "name": "@lambda-middleware/no-sniff",
   "entries": [
     {
+      "version": "1.0.2",
+      "tag": "@lambda-middleware/no-sniff_v1.0.2",
+      "date": "Fri, 23 Oct 2020 15:23:13 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Update TypeScript version"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@lambda-middleware/utils\" from `^1.0.1` to `^1.0.2`"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.1",
       "tag": "@lambda-middleware/no-sniff_v1.0.1",
       "date": "Thu, 13 Aug 2020 19:32:50 GMT",

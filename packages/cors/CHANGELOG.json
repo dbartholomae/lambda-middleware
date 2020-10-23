@@ -1,0 +1,22 @@
+{
+  "name": "@lambda-middleware/cors",
+  "entries": [
+    {
+      "version": "2.0.0",
+      "tag": "@lambda-middleware/cors_v2.0.0",
+      "date": "Fri, 23 Oct 2020 15:23:13 GMT",
+      "comments": {
+        "major": [
+          {
+            "comment": "Before, cors middleware could be used for handler of all kinds of events. Now it can only be used for APIGatewayEvents. This should not cause much trouble, as the middleware already returned APIGatewayResponses only."
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@lambda-middleware/utils\" from `^1.0.1` to `^1.0.2`"
+          }
+        ]
+      }
+    }
+  ]
+}
