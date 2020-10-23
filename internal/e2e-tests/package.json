@@ -15,7 +15,7 @@
   },
   "scripts": {
     "build": "echo \"Nothing to build here\"",
-    "lint": "eslint src/**/*.ts examples/**/*.ts",
+    "lint": "eslint examples/**/*.ts",
     "pretest": "npm run build",
     "start": "cd test && serverless offline",
     "test": "npm run lint && npm run test:integration",
