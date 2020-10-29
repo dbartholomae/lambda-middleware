@@ -1,6 +1,6 @@
 {
   "name": "@lambda-middleware/utils",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Utilities for use with AWS lambda middleware",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",

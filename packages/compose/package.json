@@ -1,6 +1,6 @@
 {
   "name": "@lambda-middleware/compose",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A compose function for functional lambda middleware.",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",
@@ -42,7 +42,7 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@lambda-middleware/utils": "^1.0.2",
+    "@lambda-middleware/utils": "^1.0.3",
     "@semantic-release/changelog": "^3.0.2",
     "@semantic-release/commit-analyzer": "^6.1.0",
     "@semantic-release/git": "^7.0.8",

@@ -1,6 +1,6 @@
 {
   "name": "@lambda-middleware/middy-adaptor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An adaptor to use middy middleware as functional middleware.",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",
@@ -25,7 +25,7 @@
   },
   "private": false,
   "dependencies": {
-    "@lambda-middleware/utils": "^1.0.2",
+    "@lambda-middleware/utils": "^1.0.3",
     "debug": ">=4.1.0",
     "tslib": "^2.0.1"
   },
