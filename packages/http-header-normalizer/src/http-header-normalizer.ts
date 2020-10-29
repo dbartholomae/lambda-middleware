@@ -3,17 +3,15 @@ import { PromiseHandler } from "@lambda-middleware/utils";
 import { APIGatewayProxyEvent, Context } from "aws-lambda";
 import { logger } from "./logger";
 
-type HashMap<Value> = { [key: string]: Value };
-
-function lowercaseKeys(object: HashMap<string>): HashMap<string> {
-  const newObject = {};
+function lowercaseKeys(object: Record<string, string>): Record<string, string> {
+  const newObject: Record<string, string> = {};
   for (const key in object) {
     newObject[key.toLowerCase()] = object[key];
   }
   return newObject;
 }
 
-function addReferrer(headers: HashMap<string>): HashMap<string> {
+function addReferrer(headers: Record<string, string>): Record<string, string> {
   return {
     ...headers,
     referrer: headers.referrer ?? headers.referer,
@@ -21,12 +19,14 @@ function addReferrer(headers: HashMap<string>): HashMap<string> {
   };
 }
 
-function normalizeHeaders(headers: HashMap<string>): HashMap<string> {
+function normalizeHeaders(
+  headers: Record<string, string>
+): Record<string, string> {
   return compose(addReferrer, lowercaseKeys)(headers);
 }
 
 export const httpHeaderNormalizer = <E extends APIGatewayProxyEvent, R>() => (
-  handler: PromiseHandler<E & { rawHeaders: HashMap<string> }, R>
+  handler: PromiseHandler<E & { rawHeaders: Record<string, string> }, R>
 ) => async (event: E, context: Context): Promise<R> => {
   logger("Running handler");
   const normalizedEvent = {

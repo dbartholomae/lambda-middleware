@@ -4,6 +4,11 @@ import { IsOptional, IsString } from "class-validator";
 import { createEvent } from "@lambda-middleware/utils";
 
 class NameBody {
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
   @IsString()
   public firstName: string;
 

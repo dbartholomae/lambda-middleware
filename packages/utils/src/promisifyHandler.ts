@@ -7,7 +7,7 @@ export function promisifyHandler<Event, Response>(
 ): PromiseHandler<Event, Response> {
   return function (event: Event, context: Context): Promise<Response> {
     return new Promise((resolve, reject) => {
-      function callback(err: any, response: Response): void {
+      function callback(err: any, response: Response | undefined): void {
         if (err) {
           return reject(err);
         }

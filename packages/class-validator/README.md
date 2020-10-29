@@ -22,12 +22,17 @@ This middleware is part of the [lambda middleware series](https://dbartholomae.g
 import "reflect-metadata";
 
 import { classValidator } from '@lambda-middleware/class-validator'
-import { compose } from "@lambda-middleware/compose";
+import { composeHandler } from "@lambda-middleware/compose";
 import { errorHandler } from "@lambda-middleware/http-error-handler";
 import { IsString } from "class-validator";
 
 // Define a validator for the body via class-validator
 class NameBody {
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
   @IsString()
   public firstName: string;
 
@@ -48,7 +53,7 @@ async function helloWorld(event: { body: NameBody }) {
 }
 
 // Let's add middleware to our handler, then we will be able to attach middlewares to it
-export const handler = compose(
+export const handler = composeHandler(
   // The class validator throws validation errors from http-errors which are compatible with
   // the error handler middlewares for middy
   errorHandler(),
@@ -63,6 +68,7 @@ export const handler = compose(
     // to set it to true manually as the default for class-validator would be
     // false
     validator: {},
-  })
-)(helloWorld);
+  }),
+  helloWorld
+);
 ```

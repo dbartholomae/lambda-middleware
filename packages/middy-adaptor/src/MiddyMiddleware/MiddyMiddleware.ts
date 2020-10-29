@@ -5,13 +5,13 @@ import { promisifyMiddyMiddleware } from "./promisifyMiddyMiddleware";
 import { logger } from "../logger";
 
 export class MiddyMiddleware<T, R, C extends Context = Context> {
-  private middlewareObject: PromisifiedMiddlewareObject;
+  private readonly middlewareObject: PromisifiedMiddlewareObject<T, R, C>;
   constructor(middlewareObject: MiddlewareObject<T, R, C>) {
     this.middlewareObject = promisifyMiddyMiddleware(middlewareObject);
   }
 
   public async onError(
-    instance: Instance,
+    instance: Instance<T, R, C>,
     defaultReturn: any
   ): Promise<any | undefined> {
     logger("Checking for onError middleware");
@@ -24,17 +24,17 @@ export class MiddyMiddleware<T, R, C extends Context = Context> {
     logger("onError middleware called");
   }
 
-  public async before(instance: Instance): Promise<void> {
+  public async before(instance: Instance<T, R, C>): Promise<void> {
     return this.run("before", instance);
   }
 
-  public async after(instance: Instance): Promise<void> {
+  public async after(instance: Instance<T, R, C>): Promise<void> {
     return this.run("after", instance);
   }
 
   private async run(
-    middlewareType: keyof PromisifiedMiddlewareObject,
-    instance: Instance
+    middlewareType: keyof PromisifiedMiddlewareObject<T, R, C>,
+    instance: Instance<T, R, C>
   ): Promise<void> {
     logger(`Checking for ${middlewareType} middleware`);
 
