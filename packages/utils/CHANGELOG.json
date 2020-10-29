@@ -2,6 +2,18 @@
   "name": "@lambda-middleware/utils",
   "entries": [
     {
+      "version": "1.0.3",
+      "tag": "@lambda-middleware/utils_v1.0.3",
+      "date": "Thu, 29 Oct 2020 19:56:29 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Make compatible with TypeScript strict mode"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.2",
       "tag": "@lambda-middleware/utils_v1.0.2",
       "date": "Fri, 23 Oct 2020 15:23:13 GMT",

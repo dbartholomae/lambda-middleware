@@ -1,6 +1,13 @@
 # Change Log - @lambda-middleware/compose
 
-This log was last generated on Fri, 23 Oct 2020 15:23:13 GMT and should not be manually modified.
+This log was last generated on Thu, 29 Oct 2020 19:56:29 GMT and should not be manually modified.
+
+## 1.2.0
+Thu, 29 Oct 2020 19:56:29 GMT
+
+### Minor changes
+
+- Add composeHandler function
 
 ## 1.1.0
 Fri, 23 Oct 2020 15:23:13 GMT
