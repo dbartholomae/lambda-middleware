@@ -1,4 +1,3 @@
-// tslint:disable-next-line:ban-types
 function composeTwo(f: Function, g: Function) {
   return function (this: any) {
     // eslint-disable-next-line prefer-rest-params
@@ -93,7 +92,6 @@ export function compose<
   fn1: (x: T1) => T2,
   fn0: (...args: V) => T1
 ): (...args: V) => T10;
-// tslint:disable-next-line:ban-types
 export function compose(...fns: Function[]): any {
   if (fns.length === 0) {
     throw new TypeError("compose requires at least one argument");

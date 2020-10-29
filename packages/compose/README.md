@@ -61,10 +61,9 @@ export const handler: ProxyHandler = compose(
 
 There's a [known issue with TypeScript](https://github.com/microsoft/TypeScript/issues/29904) that pipe and compose functions cannot
 infer types correctly if the innermost function is generic (in this case the last argument to `compose`).
-To get around it, you can force the type of the handler into the middleware chain:
+To get around it, this package also exports `composeHandler`:
 
 ```ts
-// When using decorators, don't forget to import this in the very first line of code
 import "reflect-metadata";
 
 import { classValidator } from "@lambda-middleware/class-validator";
@@ -98,12 +97,12 @@ async function helloWorld(event: {
   };
 }
 
-export const handler = compose(
+export const handler = composeHandler(
   errorHandler(),
   classValidator({
     bodyType: NameBody,
   }),
   // The following function solves the type trouble:
-  (x: typeof helloWorld): typeof helloWorld => x
-)(helloWorld);
+  helloWorld
+);
 ```

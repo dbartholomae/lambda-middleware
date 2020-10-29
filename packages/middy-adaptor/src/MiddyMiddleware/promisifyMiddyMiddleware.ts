@@ -10,7 +10,7 @@ export function promisifyMiddyMiddleware<T, R, C extends Context>(
   >).reduce(
     (accumulator, key) => ({
       ...accumulator,
-      [key]: promisifyMiddyMiddlewareFunction(middyMiddleware[key]),
+      [key]: promisifyMiddyMiddlewareFunction(middyMiddleware[key]!),
     }),
     {}
   );

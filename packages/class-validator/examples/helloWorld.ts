@@ -2,7 +2,7 @@
 import "reflect-metadata";
 
 import { classValidator } from "../";
-import { compose } from "@lambda-middleware/compose";
+import { composeHandler } from "@lambda-middleware/compose";
 import { errorHandler } from "@lambda-middleware/http-error-handler";
 import { IsString } from "class-validator";
 import { APIGatewayProxyResult } from "aws-lambda";
@@ -36,7 +36,7 @@ async function helloWorld(event: {
 }
 
 // Let's add middleware to our handler, then we will be able to attach middlewares to it
-export const handler = compose(
+export const handler = composeHandler(
   // The class validator throws validation errors from http-errors which are compatible with
   // the error handler middlewares for middy
   errorHandler(),
@@ -52,5 +52,5 @@ export const handler = compose(
     // false
     validator: {},
   }),
-  (x: typeof helloWorld): typeof helloWorld => x
-)(helloWorld);
+  helloWorld
+);

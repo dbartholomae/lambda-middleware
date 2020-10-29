@@ -1,4 +1,4 @@
-import { compose } from "../";
+import { composeHandler } from "../";
 import { PromiseHandler } from "@lambda-middleware/utils";
 import { Context, ProxyHandler, APIGatewayEvent } from "aws-lambda";
 
@@ -31,7 +31,8 @@ const addStatusCode = (statusCode: number) => (
 
 // Wrap the handler with the middleware.
 // With compose you can wrap multiple middlewares around one handler.
-export const handler: ProxyHandler = compose(
+export const handler: ProxyHandler = composeHandler(
   addStatusCode(200),
-  stringifyToBody()
-)(helloWorld);
+  stringifyToBody(),
+  helloWorld
+);

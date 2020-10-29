@@ -1,7 +1,7 @@
 import "reflect-metadata";
 
 import { classValidator } from "@lambda-middleware/class-validator";
-import { compose } from "@lambda-middleware/compose";
+import { composeHandler } from "@lambda-middleware/compose";
 import { cors } from "@lambda-middleware/cors";
 import { errorHandler } from "@lambda-middleware/http-error-handler";
 import { jsonSerializer } from "@lambda-middleware/json-serializer";
@@ -24,14 +24,16 @@ class NameBody {
 }
 
 // This is your AWS handler
-async function helloWorld(event: { body: NameBody }) {
+async function helloWorld(event: {
+  body: NameBody;
+}): Promise<{ message: string }> {
   // Thanks to the validation middleware you can be sure body is typed correctly
   return {
     message: `Hello ${event.body.firstName} ${event.body.lastName}`,
   };
 }
 
-const wrapper = compose(
+export const handler = composeHandler(
   // add cors headers last so even error responses from the
   // errorHandler middleware have cors headers applied
   cors(),
@@ -54,7 +56,5 @@ const wrapper = compose(
   classValidator({
     bodyType: NameBody,
   }),
-  (x: typeof helloWorld): typeof helloWorld => x
-)(helloWorld);
-
-export const handler = wrapper;
+  helloWorld
+);

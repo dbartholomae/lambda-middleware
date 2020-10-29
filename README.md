@@ -71,6 +71,24 @@ export const handler = compose(
 })
 ```
 
+There's a [known issue with TypeScript](https://github.com/microsoft/TypeScript/issues/29904) that pipe and compose functions cannot
+infer types correctly if the innermost function is generic (in this case the last argument to `compose`).
+If you use TypeScript in strict mode, you can instead use the `composeHandler` function exported from `@lambda-middleware/compose`:
+
+```typescript
+export const handler = composeHandler(
+  someMiddleware(),
+  someOtherMiddleware(),
+  aThirdMiddleware(),
+  () => {
+    return {
+      body: '',
+      statusCode: 200
+    }
+  }
+)
+```
+
 Composing middleware is equivalent to calling it nested:
 ```typescript
 export const handler =
