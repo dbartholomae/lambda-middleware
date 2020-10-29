@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/utils",
+      "comment": "Make compatible with TypeScript strict mode",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@lambda-middleware/utils",
+  "email": "daniel@bartholomae.name"
+}
