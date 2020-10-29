@@ -5,9 +5,15 @@ import { classValidator } from "../";
 import { compose } from "@lambda-middleware/compose";
 import { errorHandler } from "@lambda-middleware/http-error-handler";
 import { IsString } from "class-validator";
+import { APIGatewayProxyResult } from "aws-lambda";
 
 // Define a validator for the body via class-validator
 class NameBody {
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
   @IsString()
   public firstName: string;
 
@@ -16,7 +22,9 @@ class NameBody {
 }
 
 // This is your AWS handler
-async function helloWorld(event: { body: NameBody }) {
+async function helloWorld(event: {
+  body: NameBody;
+}): Promise<APIGatewayProxyResult> {
   // Thanks to the validation middleware you can be sure body is typed correctly
   return {
     body: `Hello ${event.body.firstName} ${event.body.lastName}`,
@@ -43,5 +51,6 @@ export const handler = compose(
     // to set it to true manually as the default for class-validator would be
     // false
     validator: {},
-  })
+  }),
+  (x: typeof helloWorld): typeof helloWorld => x
 )(helloWorld);

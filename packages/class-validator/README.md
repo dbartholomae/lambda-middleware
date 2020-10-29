@@ -28,6 +28,11 @@ import { IsString } from "class-validator";
 
 // Define a validator for the body via class-validator
 class NameBody {
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
   @IsString()
   public firstName: string;
 

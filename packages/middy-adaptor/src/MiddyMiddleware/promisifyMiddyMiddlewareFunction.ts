@@ -1,10 +1,19 @@
-import { Instance, MiddlewareFunction } from "../interfaces/MiddyTypes";
+import {
+  Instance,
+  MiddlewareFunction,
+  PromisifiedMiddlewareFunction,
+} from "../interfaces/MiddyTypes";
 import { isPromise } from "../utils/isPromise";
+import { Context } from "aws-lambda";
 
-export function promisifyMiddyMiddlewareFunction(
-  fn: MiddlewareFunction<unknown, unknown>
-) {
-  return (instance: Instance) => {
+export function promisifyMiddyMiddlewareFunction<T, R, C extends Context>(
+  fn: MiddlewareFunction<T, R, C> | undefined
+): PromisifiedMiddlewareFunction<T, R, C> | undefined {
+  if (fn === undefined) {
+    return undefined;
+  }
+
+  return (instance: Instance<T, R, C>) => {
     return new Promise((resolve, reject) => {
       function next(err: unknown): void {
         if (err) {

@@ -13,13 +13,13 @@ export const middyAdaptor = <
   middyMiddlewareObject: MiddlewareObject<Event, Response, ContextLike>
 ) => (handler: PromiseHandler<Event, Response>) => async (
   event: Event,
-  context: Context
+  context: ContextLike
 ): Promise<Response> => {
   const callbackListener = new CallbackListener();
-  const instance: Instance = {
+  const instance: Instance<Event, Response, ContextLike> = {
     context: { ...context },
     event: { ...event },
-    response: null,
+    response: (null as unknown) as Response,
     error: null,
     callback: callbackListener.callback,
   };

@@ -56,3 +56,54 @@ export const handler: ProxyHandler = compose(
   stringifyToBody()
 )(helloWorld);
 ```
+
+## Usage in TypeScript strict mode
+
+There's a [known issue with TypeScript](https://github.com/microsoft/TypeScript/issues/29904) that pipe and compose functions cannot
+infer types correctly if the innermost function is generic (in this case the last argument to `compose`).
+To get around it, you can force the type of the handler into the middleware chain:
+
+```ts
+// When using decorators, don't forget to import this in the very first line of code
+import "reflect-metadata";
+
+import { classValidator } from "@lambda-middleware/class-validator";
+import { compose } from "@lambda-middleware/compose";
+import { errorHandler } from "@lambda-middleware/http-error-handler";
+import { IsString } from "class-validator";
+import { APIGatewayProxyResult } from "aws-lambda";
+
+class NameBody {
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  @IsString()
+  public firstName: string;
+
+  @IsString()
+  public lastName: string;
+}
+
+async function helloWorld(event: {
+  body: NameBody;
+}): Promise<APIGatewayProxyResult> {
+  return {
+    body: `Hello ${event.body.firstName} ${event.body.lastName}`,
+    headers: {
+      "content-type": "text",
+    },
+    statusCode: 200,
+  };
+}
+
+export const handler = compose(
+  errorHandler(),
+  classValidator({
+    bodyType: NameBody,
+  }),
+  // The following function solves the type trouble:
+  (x: typeof helloWorld): typeof helloWorld => x
+)(helloWorld);
+```

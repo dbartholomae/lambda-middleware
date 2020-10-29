@@ -11,6 +11,11 @@ import { IsString } from "class-validator";
 
 // Define a validator for the body via class-validator
 class NameBody {
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
   @IsString()
   public firstName: string;
 
@@ -48,7 +53,8 @@ const wrapper = compose(
   // and other middlewares might not be able to handle the modified event
   classValidator({
     bodyType: NameBody,
-  })
+  }),
+  (x: typeof helloWorld): typeof helloWorld => x
 )(helloWorld);
 
 export const handler = wrapper;

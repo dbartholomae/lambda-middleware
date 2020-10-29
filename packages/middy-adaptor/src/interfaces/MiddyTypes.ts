@@ -33,10 +33,12 @@ export interface Instance<
   callback: Callback<Response>;
 }
 
-type PromisifiedMiddlewareFunction = (instance: Instance) => Promise<any>;
+export type PromisifiedMiddlewareFunction<T, R, C extends Context> = (
+  instance: Instance<T, R, C>
+) => Promise<any>;
 
-export type PromisifiedMiddlewareObject = {
-  before?: PromisifiedMiddlewareFunction;
-  after?: PromisifiedMiddlewareFunction;
-  onError?: PromisifiedMiddlewareFunction;
+export type PromisifiedMiddlewareObject<T, R, C extends Context> = {
+  before?: PromisifiedMiddlewareFunction<T, R, C>;
+  after?: PromisifiedMiddlewareFunction<T, R, C>;
+  onError?: PromisifiedMiddlewareFunction<T, R, C>;
 };

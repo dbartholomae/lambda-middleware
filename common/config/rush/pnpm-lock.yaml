@@ -56,6 +56,7 @@ dependencies:
   supertest: 4.0.2
   ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
   ts-loader: 6.2.2_typescript@4.0.3
+  ts-toolbelt: 8.0.7
   tslib: 2.0.3
   typescript: 4.0.3
   wait-on: 5.2.0
@@ -10477,6 +10478,10 @@ packages:
       typescript: '>=2.7'
     resolution:
       integrity: sha512-/TqB4SnererCDR/vb4S/QvSZvzQMJN8daAslg7MeaiHvD8rDZsSfXmNeNumyZZzMned72Xoq/isQljYSt8Ynfg==
+  /ts-toolbelt/8.0.7:
+    dev: false
+    resolution:
+      integrity: sha512-KICHyKxc5Nu34kyoODrEe2+zvuQQaubTJz7pnC5RQ19TH/Jged1xv+h8LBrouaSD310m75oAljYs59LNHkLDkQ==
   /tslib/1.14.1:
     dev: false
     resolution:
@@ -11343,7 +11348,7 @@ packages:
     dev: false
     name: '@rush-temp/class-validator'
     resolution:
-      integrity: sha512-UrbEJhMzF/lU/MKDmmy24qQSB+tERIsz5TZcZ7BITudaciOY5eHkdJz3pQarivNKUfKHayhRcQvGx77UD1NrFw==
+      integrity: sha512-gltpLhUXTG3ZkGUIvdkbWW2S/b4vMQ65rdAe+H13eYhtGnKp/d/zFXUgzDXAiFqWA+3rd6Y/8+MZ+is7//GLaw==
       tarball: 'file:projects/class-validator.tgz'
     version: 0.0.0
   'file:projects/compose.tgz':
@@ -11380,6 +11385,7 @@ packages:
       supertest: 4.0.2
       ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
       ts-loader: 6.2.2_typescript@4.0.3
+      ts-toolbelt: 8.0.7
       tslib: 2.0.3
       typescript: 4.0.3
       wait-on: 5.2.0
@@ -11387,7 +11393,7 @@ packages:
     dev: false
     name: '@rush-temp/compose'
     resolution:
-      integrity: sha512-MzWBmHJnNTTVlkBBRcdjuEa5+kNf5DP8J8Tbjc1GGDODu45ZLPaUIxQlsZeenSI36SJrK+eoDh3iTC12B6o6JQ==
+      integrity: sha512-v36uFBM33IxOWBybWPQchv3ldLZC2MjdMam+fNN2xNT0+quSTn7zfUPyhzDnIj5wuTU40mAvXU9hmbLKdVuoiA==
       tarball: 'file:projects/compose.tgz'
     version: 0.0.0
   'file:projects/cors.tgz':
@@ -11424,7 +11430,7 @@ packages:
     dev: false
     name: '@rush-temp/cors'
     resolution:
-      integrity: sha512-tldEPneJvYT5Z636vUGq3rPB24FGojmhkzvO5KPK8TLPDH5xQht8eSjzOjx6WAl1VrnHf7QHJLdsi1XFYFIoZQ==
+      integrity: sha512-3ppPf378yauooMj4bT6QP5OrGUPLTcKEMt5hCXHiC9oAH5EpH8MH/w52PXHwPiuB3O9E75lyij6xU/WrArZH8A==
       tarball: 'file:projects/cors.tgz'
     version: 0.0.0
   'file:projects/do-not-wait.tgz':
@@ -11452,7 +11458,7 @@ packages:
     dev: false
     name: '@rush-temp/do-not-wait'
     resolution:
-      integrity: sha512-pbqTL339tb6SrqbCaOpeycGNbaaIDjgNmgAiye3Pa+7QLa1QWVupIOwM8c2wFVlYvK/UI+QZbeg0sbU0HvxwAw==
+      integrity: sha512-0jqH3GeGIyRei7EgwLuOxsCVp3jZzmV3lUKxDCTBbPqVzQroa3wsuqu0e84FntBdpK3VdWdqKRBKczN56pxzjg==
       tarball: 'file:projects/do-not-wait.tgz'
     version: 0.0.0
   'file:projects/e2e-tests.tgz':
@@ -11489,7 +11495,7 @@ packages:
     dev: false
     name: '@rush-temp/e2e-tests'
     resolution:
-      integrity: sha512-EBms1BPrr2ZtRs932MNahK5GG8+2nQ8o0m0Xw9yXrg/wUV3t/s71oOTi4KKlv7jLE3R+uPLN5uB3Qq7BCftTPQ==
+      integrity: sha512-sdc6Dzz0OhESmCcuMx74yRcAAdZAlDus2fdLSQlZ7yzZvNVdtqUHJwTtjOti6lhRMmUAmy2vEY+kwZNJtnUNZQ==
       tarball: 'file:projects/e2e-tests.tgz'
     version: 0.0.0
   'file:projects/http-error-handler.tgz':
@@ -11529,7 +11535,7 @@ packages:
     dev: false
     name: '@rush-temp/http-error-handler'
     resolution:
-      integrity: sha512-0Ph7LwrkBYkVQqRA4rt7hgi9dcJUOATu8BA4A5AETxtpDbibrNfIdHAbXMtAQnEqhUG9DYi9gnG0jZvAiiOLAw==
+      integrity: sha512-L9AoSpY+BnFyamYAsKwLiIjjgUY50FwAdHVMY+nV/5YMIoUgy2Nk6EVCQwBG3YXdBlBahlQUn+/hfs+VsHWGjg==
       tarball: 'file:projects/http-error-handler.tgz'
     version: 0.0.0
   'file:projects/http-header-normalizer.tgz':
@@ -11566,7 +11572,7 @@ packages:
     dev: false
     name: '@rush-temp/http-header-normalizer'
     resolution:
-      integrity: sha512-FYdHfwXlF2PBhfNysKtA+W3O0BiP79Xg5n0c5lxdKUznxGV+NtZxrWG1KhymwrSPId4gTQ1I5mQyjKTJSIkAJA==
+      integrity: sha512-QRnytbnd6HbJLqeIdY2LlRxDH/YTIBZ03jGzJ841ycanqNbkLOT4yzNbUjP2Yeu9JLkRRvUG9GRIXVK5C06B5Q==
       tarball: 'file:projects/http-header-normalizer.tgz'
     version: 0.0.0
   'file:projects/ie-no-open.tgz':
@@ -11603,7 +11609,7 @@ packages:
     dev: false
     name: '@rush-temp/ie-no-open'
     resolution:
-      integrity: sha512-3d9DnnEy5Z8EAPGT7TpYjtMmNAXuV5KygkNd+mXuTC4dj1c7NBqKojtDpiAZunlpUb/OnqNzo83Ti2ltvmXBbA==
+      integrity: sha512-vB7P2EeQlfZ0IfENI/J9Hwc3CWeiX/980h1NjbHJ4ml7uS8qgteO2TZFEqt4Lr0pJRe74Y0wKw/is5gwDiUuxA==
       tarball: 'file:projects/ie-no-open.tgz'
     version: 0.0.0
   'file:projects/json-serializer.tgz':
@@ -11640,7 +11646,7 @@ packages:
     dev: false
     name: '@rush-temp/json-serializer'
     resolution:
-      integrity: sha512-mzYsCB+2y1YIlzIeGLzy9UCFP1Q4csvFDVR+x262/7E9n2ld6jFOd387P4F1nJCa7iQiOXB7fOjAU2MvTr/96Q==
+      integrity: sha512-YgCmC/BZ6gfZRFGghdne5XIzkZBbssprZ82TI6K3E2xuj/YZvB5SCK9cUamGm+egCw9wY2myw81iOCIjL5YvYw==
       tarball: 'file:projects/json-serializer.tgz'
     version: 0.0.0
   'file:projects/jwt-auth.tgz':
@@ -11683,7 +11689,7 @@ packages:
     dev: false
     name: '@rush-temp/jwt-auth'
     resolution:
-      integrity: sha512-8hslbK1nAF1IV/fHQvAakC/eZriQbmnNGSbwDh8IbdguSuGrtxroDWriYVWaRHIDlXVEUhLhJkFhwh+yz1T8BQ==
+      integrity: sha512-us+NA7x1rRZXEXXWIJrBZTuvMBtbXUg7oG5IkoR0Pwvf/ZaSQd61mNb9dNX4WCace7ifGuSrk7ez4NPSqBtmvg==
       tarball: 'file:projects/jwt-auth.tgz'
     version: 0.0.0
   'file:projects/middy-adaptor.tgz':
@@ -11720,7 +11726,7 @@ packages:
     dev: false
     name: '@rush-temp/middy-adaptor'
     resolution:
-      integrity: sha512-/dd5rFOCO6f7IpHl9wYPv5VXwZRK2GwJ0WskxfHkeUSdKVnvnCLsv1U+GUkhqKZjAhCI5ANudv/b5blkA2BynQ==
+      integrity: sha512-3LysRSGlJOuUiAR3cVY0xXGEzrvKWFHiBh/7RKzZ/O/6o3DOA+JVmiJIHMZeeMhgwjgoYCN7LYeUYarUmmvE4Q==
       tarball: 'file:projects/middy-adaptor.tgz'
     version: 0.0.0
   'file:projects/no-sniff.tgz':
@@ -11757,7 +11763,7 @@ packages:
     dev: false
     name: '@rush-temp/no-sniff'
     resolution:
-      integrity: sha512-oUEiD+hl4WNZGwoSLM3HBQqbDApQgIvJM1BgvsABpSHcL0Tyr9DJZFrquvfVwXpyx6c32KvQptVtCBaD/i9IUg==
+      integrity: sha512-mB5jqsN8xFEPOWmK2dt4AcKFbqjTGVS0KegGchpNl+jDUsrvnfKA5ibo+0Vq+ejrOTF2siRl5PuH+awco6U1eQ==
       tarball: 'file:projects/no-sniff.tgz'
     version: 0.0.0
   'file:projects/utils.tgz':
@@ -11846,6 +11852,7 @@ specifiers:
   supertest: ^4.0.2
   ts-jest: ^25.3.1
   ts-loader: ^6.2.2
+  ts-toolbelt: ^8.0.7
   tslib: ^2.0.1
   typescript: ^4.0.3
   wait-on: ^5.2.0
