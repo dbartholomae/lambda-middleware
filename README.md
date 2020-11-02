@@ -11,29 +11,29 @@ This monorepo is a collection of middleware for AWS lambda functions.
 ## Middlewares
 
 * [@lambda-middleware/class-validator](packages/class-validator): A validation middleware for AWS http lambda functions
-  based on class-validator.
-* [@lambda-middleware/compose](packages/compose): A compose function for functional lambda middleware.
+  based on class-validator. [![downloads](https://img.shields.io/npm/dw/%40lambda-middleware%2Fclass-validator.svg)](https://npmjs.org/package/@lambda-middleware/class-validator)
+* [@lambda-middleware/compose](packages/compose): A compose function for functional lambda middleware. [![downloads](https://img.shields.io/npm/dw/%40lambda-middleware%2Fcompose.svg)](https://npmjs.org/package/@lambda-middleware/compose)
 * [@lambda-middleware/http-error-handler](packages/http-error-handler): An error handler middleware for AWS http lambda
-  functions.
+  functions.[![downloads](https://img.shields.io/npm/dw/%40lambda-middleware%2Fhttp-error-handler.svg)](https://npmjs.org/package/@lambda-middleware/http-error-handler)
 * [@lambda-middleware/ie-no-open](packages/ie-no-open): A middleware for adding the download options no-open header to
-  AWS lambdas.
+  AWS lambdas.[![downloads](https://img.shields.io/npm/dw/%40lambda-middleware%2Fie-no-open.svg)](https://npmjs.org/package/@lambda-middleware/ie-no-open)
 * [@lambda-middleware/json-serializer](packages/json-serializer): A middleware for AWS http lambda functions to
-  serialize JSON responses.
+  serialize JSON responses.[![downloads](https://img.shields.io/npm/dw/%40lambda-middleware%2Fjson-serializer.svg)](https://npmjs.org/package/@lambda-middleware/json-serializer)
 * [@lambda-middleware/jwt-auth](packages/jwt-auth): A middleware for AWS http lambda functions to verify JWT auth
-  tokens inspired by express-jwt.
+  tokens inspired by express-jwt.[![downloads](https://img.shields.io/npm/dw/%40lambda-middleware%2Fjwt-auth.svg)](https://npmjs.org/package/@lambda-middleware/jwt-auth)
 * [@lambda-middleware/middy-adaptor](packages/middy-adaptor): An adaptor to use middy middleware as functional
-  middleware.
+  middleware.[![downloads](https://img.shields.io/npm/dw/%40lambda-middleware%2Fmiddy-adaptor.svg)](https://npmjs.org/package/@lambda-middleware/middy-adaptor)
 * [@lambda-middleware/no-sniff](packages/no-sniff): A middleware for adding the content type options no-sniff header
-  to AWS lambdas.
+  to AWS lambdas.[![downloads](https://img.shields.io/npm/dw/%40lambda-middleware%2Fno-sniff.svg)](https://npmjs.org/package/@lambda-middleware/no-sniff)
 * [@lambda-middleware/http-header-normalizer](packages/http-header-normalizer): Middleware for AWS lambdas that
-  normalizes headers to lower-case.
+  normalizes headers to lower-case.[![downloads](https://img.shields.io/npm/dw/%40lambda-middleware%2Fhttp-header-normalizer.svg)](https://npmjs.org/package/@lambda-middleware/http-header-normalizer)
 * [@lambda-middleware/do-not-wait](packages/do-not-wait): AWS lambda middleware to prevent Lambda from timing out
-  because of processes running after returning a value.
-* [@lambda-middleware/cors](packages/cors): AWS lambda middleware for automatically adding CORS headers.
+  because of processes running after returning a value.[![downloads](https://img.shields.io/npm/dw/%40lambda-middleware%2Fdo-not-wait.svg)](https://npmjs.org/package/@lambda-middleware/do-not-wait)
+* [@lambda-middleware/cors](packages/cors): AWS lambda middleware for automatically adding CORS headers.[![downloads](https://img.shields.io/npm/dw/%40lambda-middleware%2Fcors.svg)](https://npmjs.org/package/@lambda-middleware/cors)
 
 ## Other packages
 
-Furthermore there is utility collection available at [@lambda-middleware/utils](packages/utils).
+Furthermore there is utility collection available at [@lambda-middleware/utils](packages/utils).[![downloads](https://img.shields.io/npm/dw/%40lambda-middleware%2Futils.svg)](https://npmjs.org/package/@lambda-middleware/utils)
 
 ## Usage
 
