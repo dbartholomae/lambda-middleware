@@ -25,6 +25,7 @@ import {
 } from "@lambda-middleware/jwt-auth";
 import { compose } from "@lambda-middleware/compose";
 import { errorHandler } from "@lambda-middleware/http-error-handler";
+import { APIGatewayEvent } from 'aws-lambda'
 import createHttpError from "http-errors";
 
 interface TokenPayload {
@@ -40,7 +41,7 @@ function isTokenPayload(token: any): token is TokenPayload {
 }
 
 // This is your AWS handler
-const helloWorld = async (event: AuthorizedEvent<TokenPayload>) => {
+const helloWorld = async (event: APIGatewayEvent& AuthorizedEvent<TokenPayload>) => {
   // The middleware adds auth information if a valid token was added
   // If no auth was found and credentialsRequired is set to true, a 401 will be thrown. If auth exists you
   // have to check that it has the expected form.
@@ -71,7 +72,9 @@ export const handler = compose(
     algorithm: EncryptionAlgorithms.HS256,
     /** An optional boolean that enables making authorization mandatory */
     credentialsRequired: true,
-    /** An optional function that checks whether the token payload is formatted correctly */
+    /** An optional function that checks whether the token payload is formatted correctly.
+     * If you specify a TokenPayload type parameter to AuthorizedEvent, the corresponding type guard must be passed here.
+     */
     isPayload: isTokenPayload,
     /** A string or buffer containing either the secret for HMAC algorithms, or the PEM encoded public key for RSA and ECDSA */
     secretOrPublicKey: "secret",
