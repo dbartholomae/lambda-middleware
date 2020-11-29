@@ -41,7 +41,7 @@ function isTokenPayload(token: any): token is TokenPayload {
 }
 
 // This is your AWS handler
-const helloWorld = async (event: APIGatewayEvent& AuthorizedEvent<TokenPayload>) => {
+const helloWorld = async (event: APIGatewayEvent & AuthorizedEvent<TokenPayload>) => {
   // The middleware adds auth information if a valid token was added
   // If no auth was found and credentialsRequired is set to true, a 401 will be thrown. If auth exists you
   // have to check that it has the expected form.
