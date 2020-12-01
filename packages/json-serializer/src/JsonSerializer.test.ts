@@ -56,4 +56,20 @@ describe("jsonSerializer", () => {
       await expect(handlerWithMiddleware({}, {})).rejects.toBeDefined();
     });
   });
+
+  describe("with a handler returning an object with an undefined properti", () => {
+    let handlerWithMiddleware: any;
+
+    beforeEach(async () => {
+      const handler = () =>
+        Promise.resolve({
+          foo: undefined,
+        });
+      handlerWithMiddleware = jsonSerializer()(handler);
+    });
+
+    it("strips out the undefined property", async () => {
+      expect((await handlerWithMiddleware({}, {})).body).toEqual("{}");
+    });
+  });
 });

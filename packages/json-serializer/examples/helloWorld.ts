@@ -1,7 +1,12 @@
 import { jsonSerializer } from "../";
 
+interface Response {
+  // Undefined values will be stripped out
+  name?: string;
+}
+
 // This is your AWS handler
-async function helloWorld() {
+async function helloWorld(): Promise<Response> {
   return {};
 }
 

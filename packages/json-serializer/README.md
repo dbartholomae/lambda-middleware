@@ -23,8 +23,13 @@ This middleware is part of the [lambda middleware series](https://dbartholomae.g
 ```typescript
 import { jsonSerializer } from "@lambda-middleware/json-serializer";
 
+interface Response {
+  // Undefined values will be stripped out
+  name?: string;
+}
+
 // This is your AWS handler
-async function helloWorld() {
+async function helloWorld(): Promise<Response> {
   return {};
 }
 
