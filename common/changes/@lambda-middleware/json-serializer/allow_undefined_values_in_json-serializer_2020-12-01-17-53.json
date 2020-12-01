@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/json-serializer",
+      "comment": "Handle undefined values by stripping the props out",
+      "type": "minor"
+    }
+  ],
+  "packageName": "@lambda-middleware/json-serializer",
+  "email": "daniel@bartholomae.name"
+}
