@@ -1,6 +1,13 @@
 # Change Log - @lambda-middleware/json-serializer
 
-This log was last generated on Fri, 23 Oct 2020 15:23:13 GMT and should not be manually modified.
+This log was last generated on Tue, 01 Dec 2020 18:06:47 GMT and should not be manually modified.
+
+## 2.1.0
+Tue, 01 Dec 2020 18:06:47 GMT
+
+### Minor changes
+
+- Handle undefined values by stripping the props out
 
 ## 2.0.0
 Fri, 23 Oct 2020 15:23:13 GMT

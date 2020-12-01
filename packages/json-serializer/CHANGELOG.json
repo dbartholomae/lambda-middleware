@@ -2,6 +2,18 @@
   "name": "@lambda-middleware/json-serializer",
   "entries": [
     {
+      "version": "2.1.0",
+      "tag": "@lambda-middleware/json-serializer_v2.1.0",
+      "date": "Tue, 01 Dec 2020 18:06:47 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Handle undefined values by stripping the props out"
+          }
+        ]
+      }
+    },
+    {
       "version": "2.0.0",
       "tag": "@lambda-middleware/json-serializer_v2.0.0",
       "date": "Fri, 23 Oct 2020 15:23:13 GMT",
