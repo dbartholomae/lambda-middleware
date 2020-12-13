@@ -26,7 +26,7 @@
     "@lambda-middleware/class-validator": "^2.0.1",
     "@lambda-middleware/compose": "^1.2.0",
     "@lambda-middleware/cors": "^2.0.0",
-    "@lambda-middleware/json-serializer": "^2.1.0",
+    "@lambda-middleware/json-serializer": "^2.1.1",
     "@lambda-middleware/jwt-auth": "^1.0.2",
     "@lambda-middleware/http-error-handler": "^2.0.0",
     "@types/debug": "^4.1.5",
