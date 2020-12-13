@@ -13,6 +13,13 @@ describe("JSONObject", () => {
     expect(json).toBeDefined();
   });
 
+  it("accepts an object with null", async () => {
+    const json: JSONObject = {
+      foo: null,
+    };
+    expect(json).toBeDefined();
+  });
+
   it("accepts an object with a boolean", async () => {
     const json: JSONObject = {
       foo: true,
