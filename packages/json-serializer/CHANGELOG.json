@@ -2,6 +2,18 @@
   "name": "@lambda-middleware/json-serializer",
   "entries": [
     {
+      "version": "2.1.1",
+      "tag": "@lambda-middleware/json-serializer_v2.1.1",
+      "date": "Sun, 13 Dec 2020 00:23:19 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Allow null values"
+          }
+        ]
+      }
+    },
+    {
       "version": "2.1.0",
       "tag": "@lambda-middleware/json-serializer_v2.1.0",
       "date": "Tue, 01 Dec 2020 18:06:47 GMT",

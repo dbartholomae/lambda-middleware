@@ -1,6 +1,13 @@
 # Change Log - @lambda-middleware/json-serializer
 
-This log was last generated on Tue, 01 Dec 2020 18:06:47 GMT and should not be manually modified.
+This log was last generated on Sun, 13 Dec 2020 00:23:19 GMT and should not be manually modified.
+
+## 2.1.1
+Sun, 13 Dec 2020 00:23:19 GMT
+
+### Patches
+
+- Allow null values
 
 ## 2.1.0
 Tue, 01 Dec 2020 18:06:47 GMT
