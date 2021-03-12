@@ -2,6 +2,18 @@
   "name": "@lambda-middleware/utils",
   "entries": [
     {
+      "version": "1.0.4",
+      "tag": "@lambda-middleware/utils_v1.0.4",
+      "date": "Fri, 12 Mar 2021 11:17:52 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Remove dependency on aws-sdk and only depend on related types"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.3",
       "tag": "@lambda-middleware/utils_v1.0.3",
       "date": "Thu, 29 Oct 2020 19:56:29 GMT",

@@ -1,6 +1,13 @@
 # Change Log - @lambda-middleware/utils
 
-This log was last generated on Thu, 29 Oct 2020 19:56:29 GMT and should not be manually modified.
+This log was last generated on Fri, 12 Mar 2021 11:17:52 GMT and should not be manually modified.
+
+## 1.0.4
+Fri, 12 Mar 2021 11:17:52 GMT
+
+### Patches
+
+- Remove dependency on aws-sdk and only depend on related types
 
 ## 1.0.3
 Thu, 29 Oct 2020 19:56:29 GMT
