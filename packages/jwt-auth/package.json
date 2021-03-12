@@ -27,7 +27,7 @@
   },
   "private": false,
   "dependencies": {
-    "@lambda-middleware/utils": "^1.0.3",
+    "@lambda-middleware/utils": "^1.0.4",
     "@types/node": ">=8",
     "debug": ">=4.1.0",
     "http-errors": "^1.7.3",
