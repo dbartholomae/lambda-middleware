@@ -1,4 +1,4 @@
-import { APIGatewayEvent } from "aws-lambda";
+import type { APIGatewayEvent } from "aws-lambda";
 
 export function createEvent(
   overrides: Partial<APIGatewayEvent>

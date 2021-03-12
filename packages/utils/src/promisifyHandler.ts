@@ -1,5 +1,5 @@
-import { Context, Handler } from "aws-lambda";
-import { PromiseHandler } from ".";
+import type { Context, Handler } from "aws-lambda";
+import type { PromiseHandler } from ".";
 import { isPromise } from "./isPromise";
 
 export function promisifyHandler<Event, Response>(
