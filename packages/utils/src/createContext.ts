@@ -1,4 +1,4 @@
-import { Context } from "aws-lambda";
+import type { Context } from "aws-lambda";
 
 export function createContext(overrides?: Partial<Context>): Context {
   return {

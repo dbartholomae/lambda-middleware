@@ -39,7 +39,6 @@
   },
   "dependencies": {
     "@types/aws-lambda": "^8.10.47",
-    "aws-lambda": "^1.0.5",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
