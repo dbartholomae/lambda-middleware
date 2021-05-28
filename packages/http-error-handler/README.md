@@ -18,9 +18,9 @@ This middleware is part of the [lambda middleware series](https://dbartholomae.g
 ## Usage
 
 ```typescript
-import { errorHandler } from "@lambda-middleware/errorHandler";
+import { errorHandler } from "@lambda-middleware/http-error-handler";
 import { APIGatewayEvent, APIGatewayProxyResult } from "aws-lambda";
-import createHttpError from "http-errors";
+import * as createHttpError from "http-errors";
 
 // This is your AWS handler
 async function helloWorld(
