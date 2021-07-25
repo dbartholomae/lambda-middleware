@@ -19,6 +19,8 @@ This monorepo is a collection of middleware for AWS lambda functions.
   AWS lambdas.[![downloads](https://img.shields.io/npm/dw/%40lambda-middleware%2Fie-no-open.svg)](https://npmjs.org/package/@lambda-middleware/ie-no-open)
 * [@lambda-middleware/json-serializer](packages/json-serializer): A middleware for AWS http lambda functions to
   serialize JSON responses.[![downloads](https://img.shields.io/npm/dw/%40lambda-middleware%2Fjson-serializer.svg)](https://npmjs.org/package/@lambda-middleware/json-serializer)
+* [@lambda-middleware/json-deserializer](packages/json-deserializer): A middleware for AWS http lambda functions to
+  deserialize JSON request bodies.[![downloads](https://img.shields.io/npm/dw/%40lambda-middleware%2Fjson-deserializer.svg)](https://npmjs.org/package/@lambda-middleware/json-deserializer)
 * [@lambda-middleware/jwt-auth](packages/jwt-auth): A middleware for AWS http lambda functions to verify JWT auth
   tokens inspired by express-jwt.[![downloads](https://img.shields.io/npm/dw/%40lambda-middleware%2Fjwt-auth.svg)](https://npmjs.org/package/@lambda-middleware/jwt-auth)
 * [@lambda-middleware/middy-adaptor](packages/middy-adaptor): An adaptor to use middy middleware as functional
