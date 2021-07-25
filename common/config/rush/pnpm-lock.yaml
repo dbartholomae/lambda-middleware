@@ -7,16 +7,12 @@ dependencies:
   '@rush-temp/http-error-handler': 'file:projects/http-error-handler.tgz'
   '@rush-temp/http-header-normalizer': 'file:projects/http-header-normalizer.tgz'
   '@rush-temp/ie-no-open': 'file:projects/ie-no-open.tgz'
+  '@rush-temp/json-deserializer': 'file:projects/json-deserializer.tgz'
   '@rush-temp/json-serializer': 'file:projects/json-serializer.tgz'
   '@rush-temp/jwt-auth': 'file:projects/jwt-auth.tgz'
   '@rush-temp/middy-adaptor': 'file:projects/middy-adaptor.tgz'
   '@rush-temp/no-sniff': 'file:projects/no-sniff.tgz'
   '@rush-temp/utils': 'file:projects/utils.tgz'
-  '@semantic-release/changelog': 3.0.6_semantic-release@15.14.0
-  '@semantic-release/commit-analyzer': 6.3.3_semantic-release@15.14.0
-  '@semantic-release/git': 7.0.18_semantic-release@15.14.0
-  '@semantic-release/npm': 5.3.5_semantic-release@15.14.0
-  '@semantic-release/release-notes-generator': 7.3.5_semantic-release@15.14.0
   '@types/aws-lambda': 8.10.64
   '@types/debug': 4.1.5
   '@types/http-errors': 1.8.0
@@ -47,7 +43,6 @@ dependencies:
   prettier-config-standard: 1.0.1
   reflect-metadata: 0.1.13
   rimraf: 3.0.2
-  semantic-release: 15.14.0_semantic-release@15.14.0
   serialize-error: 7.0.1
   serverless: 1.83.0
   serverless-offline: 6.8.0_serverless@1.83.0
@@ -56,7 +51,6 @@ dependencies:
   supertest: 4.0.2
   ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
   ts-loader: 6.2.2_typescript@4.0.3
-  ts-toolbelt: 8.0.7
   tslib: 2.0.3
   typescript: 4.0.3
   wait-on: 5.2.0
@@ -11348,7 +11342,7 @@ packages:
     dev: false
     name: '@rush-temp/class-validator'
     resolution:
-      integrity: sha512-gltpLhUXTG3ZkGUIvdkbWW2S/b4vMQ65rdAe+H13eYhtGnKp/d/zFXUgzDXAiFqWA+3rd6Y/8+MZ+is7//GLaw==
+      integrity: sha512-a3HLONn/iW1CO6Bf4E47COlExTGz/Oi6yxqfoleH3LDi0Pm11r9FDmh1P6vMASn+/NKWPH27wRT2k5+s850d2w==
       tarball: 'file:projects/class-validator.tgz'
     version: 0.0.0
   'file:projects/compose.tgz':
@@ -11393,7 +11387,7 @@ packages:
     dev: false
     name: '@rush-temp/compose'
     resolution:
-      integrity: sha512-v36uFBM33IxOWBybWPQchv3ldLZC2MjdMam+fNN2xNT0+quSTn7zfUPyhzDnIj5wuTU40mAvXU9hmbLKdVuoiA==
+      integrity: sha512-oaFIaqk18YKlPZAeaOZCsUz3c5Au4Sa+7iUet/Ledq5/3dYWLePDtze/7Bki+vl38blpZSX8rL/cIjyL0Ngbhw==
       tarball: 'file:projects/compose.tgz'
     version: 0.0.0
   'file:projects/cors.tgz':
@@ -11430,7 +11424,7 @@ packages:
     dev: false
     name: '@rush-temp/cors'
     resolution:
-      integrity: sha512-3ppPf378yauooMj4bT6QP5OrGUPLTcKEMt5hCXHiC9oAH5EpH8MH/w52PXHwPiuB3O9E75lyij6xU/WrArZH8A==
+      integrity: sha512-ugEJm/FvZkI521ZEcvWob0eb6/LOqFPIxNCCCIazmk5q6uoaA3BYkAY9V3XRkaJjUM3xIWSiUW/N+GO9FaxubQ==
       tarball: 'file:projects/cors.tgz'
     version: 0.0.0
   'file:projects/do-not-wait.tgz':
@@ -11458,7 +11452,7 @@ packages:
     dev: false
     name: '@rush-temp/do-not-wait'
     resolution:
-      integrity: sha512-0jqH3GeGIyRei7EgwLuOxsCVp3jZzmV3lUKxDCTBbPqVzQroa3wsuqu0e84FntBdpK3VdWdqKRBKczN56pxzjg==
+      integrity: sha512-LZWzkZwGkao0HPCjQK2aekApA4ulBkEb5aJoOUTdrI+hrODZ0ktrbfgEHgR+nfL3DN3kt/RF7vJg9P+lgmrCKg==
       tarball: 'file:projects/do-not-wait.tgz'
     version: 0.0.0
   'file:projects/e2e-tests.tgz':
@@ -11495,7 +11489,7 @@ packages:
     dev: false
     name: '@rush-temp/e2e-tests'
     resolution:
-      integrity: sha512-sdc6Dzz0OhESmCcuMx74yRcAAdZAlDus2fdLSQlZ7yzZvNVdtqUHJwTtjOti6lhRMmUAmy2vEY+kwZNJtnUNZQ==
+      integrity: sha512-lOFLBG83pdBXRwUjzNJarFR6bbExBSJAfunH3ecdQpyZl3H6RmlXJld9KTBoHKJAiF+8Vg2WtYn9P0cz7ydLXA==
       tarball: 'file:projects/e2e-tests.tgz'
     version: 0.0.0
   'file:projects/http-error-handler.tgz':
@@ -11535,7 +11529,7 @@ packages:
     dev: false
     name: '@rush-temp/http-error-handler'
     resolution:
-      integrity: sha512-L9AoSpY+BnFyamYAsKwLiIjjgUY50FwAdHVMY+nV/5YMIoUgy2Nk6EVCQwBG3YXdBlBahlQUn+/hfs+VsHWGjg==
+      integrity: sha512-APFh8/c9GR++olN6k3yoN452sFkw3pw6RUTIU3qMWt78vbCR+VL0N914Yun04AwedtiizlIs2PckxZNygbTvqg==
       tarball: 'file:projects/http-error-handler.tgz'
     version: 0.0.0
   'file:projects/http-header-normalizer.tgz':
@@ -11572,7 +11566,7 @@ packages:
     dev: false
     name: '@rush-temp/http-header-normalizer'
     resolution:
-      integrity: sha512-QRnytbnd6HbJLqeIdY2LlRxDH/YTIBZ03jGzJ841ycanqNbkLOT4yzNbUjP2Yeu9JLkRRvUG9GRIXVK5C06B5Q==
+      integrity: sha512-WAX8eO8y11l5BwpASvhkSKH3Fd/5Etm9O5hXmb7l1zj/ZuSRNJ97cP4lTX/uqoo2n8H09/cCPSUDWcvxPVvqLA==
       tarball: 'file:projects/http-header-normalizer.tgz'
     version: 0.0.0
   'file:projects/ie-no-open.tgz':
@@ -11609,8 +11603,45 @@ packages:
     dev: false
     name: '@rush-temp/ie-no-open'
     resolution:
-      integrity: sha512-vB7P2EeQlfZ0IfENI/J9Hwc3CWeiX/980h1NjbHJ4ml7uS8qgteO2TZFEqt4Lr0pJRe74Y0wKw/is5gwDiUuxA==
+      integrity: sha512-A3Z6AwODIcXA2wman5A3Pk71AIp8GGFqo5iZFsPXBfTpjI9wM0spWWtiX6jNro41k1gO3zpUoejLW624cvRkHQ==
       tarball: 'file:projects/ie-no-open.tgz'
+    version: 0.0.0
+  'file:projects/json-deserializer.tgz':
+    dependencies:
+      '@types/aws-lambda': 8.10.64
+      '@types/debug': 4.1.5
+      '@types/jest': 25.2.3
+      '@types/supertest': 2.0.10
+      '@typescript-eslint/eslint-plugin': 2.34.0_7b4bd3cb2bb8840c27da3f93640083dc
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
+      aws-lambda: 1.0.6
+      concurrently: 5.3.0
+      debug: 4.2.0
+      eslint: 6.8.0
+      eslint-config-prettier: 6.14.0_eslint@6.8.0
+      eslint-plugin-prettier: 3.1.4_eslint@6.8.0+prettier@2.1.2
+      jest: 25.5.4
+      jest-junit: 10.0.0
+      pkg-ok: 2.3.1
+      prettier: 2.1.2
+      prettier-config-standard: 1.0.1
+      rimraf: 3.0.2
+      serverless: 1.83.0
+      serverless-offline: 6.8.0_serverless@1.83.0
+      serverless-webpack: 5.3.5_typescript@4.0.3+webpack@4.44.2
+      source-map-support: 0.5.19
+      supertest: 4.0.2
+      ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
+      ts-loader: 6.2.2_typescript@4.0.3
+      tslib: 2.0.3
+      typescript: 4.0.3
+      wait-on: 5.2.0
+      webpack: 4.44.2_webpack@4.44.2
+    dev: false
+    name: '@rush-temp/json-deserializer'
+    resolution:
+      integrity: sha512-XNbVGETloBZxrx/6ZDzv8sP2FJj1r9YBdokjn+4aSXtTfCPGevhTIsbIdARmyRpJrSd+4qb1bcL5lNO6Eu629A==
+      tarball: 'file:projects/json-deserializer.tgz'
     version: 0.0.0
   'file:projects/json-serializer.tgz':
     dependencies:
@@ -11646,7 +11677,7 @@ packages:
     dev: false
     name: '@rush-temp/json-serializer'
     resolution:
-      integrity: sha512-YgCmC/BZ6gfZRFGghdne5XIzkZBbssprZ82TI6K3E2xuj/YZvB5SCK9cUamGm+egCw9wY2myw81iOCIjL5YvYw==
+      integrity: sha512-qbBOjm5qYvf28zitWmD9QJEd2pgUYgJMoDLnmyc3hjvFZm0tx08Cl/T8sJGE6VjdIMZbOFyrzsC4bHPsXnMQPQ==
       tarball: 'file:projects/json-serializer.tgz'
     version: 0.0.0
   'file:projects/jwt-auth.tgz':
@@ -11689,7 +11720,7 @@ packages:
     dev: false
     name: '@rush-temp/jwt-auth'
     resolution:
-      integrity: sha512-us+NA7x1rRZXEXXWIJrBZTuvMBtbXUg7oG5IkoR0Pwvf/ZaSQd61mNb9dNX4WCace7ifGuSrk7ez4NPSqBtmvg==
+      integrity: sha512-cm2KYDMReldiDNKAL0dljWEoepLSI6WC9dzENJyYuhHNhCVz49ALqe+Pgo+oBB5PYJYnA2IQbMGdp50Zgvt35w==
       tarball: 'file:projects/jwt-auth.tgz'
     version: 0.0.0
   'file:projects/middy-adaptor.tgz':
@@ -11726,7 +11757,7 @@ packages:
     dev: false
     name: '@rush-temp/middy-adaptor'
     resolution:
-      integrity: sha512-3LysRSGlJOuUiAR3cVY0xXGEzrvKWFHiBh/7RKzZ/O/6o3DOA+JVmiJIHMZeeMhgwjgoYCN7LYeUYarUmmvE4Q==
+      integrity: sha512-4pzpiwjTd88lwe2/vbd2rvvPcOLXoJRkCUYomfGDXNupM82JSze5PI5ZF53ZiEoVmDvUSl7LQ+CLFXEbQgIBDQ==
       tarball: 'file:projects/middy-adaptor.tgz'
     version: 0.0.0
   'file:projects/no-sniff.tgz':
@@ -11763,7 +11794,7 @@ packages:
     dev: false
     name: '@rush-temp/no-sniff'
     resolution:
-      integrity: sha512-mB5jqsN8xFEPOWmK2dt4AcKFbqjTGVS0KegGchpNl+jDUsrvnfKA5ibo+0Vq+ejrOTF2siRl5PuH+awco6U1eQ==
+      integrity: sha512-eTBj8QTVj1h7BQYkTEegVv+xSztFyQxBwlCGVNFonFYZcewoYPVHfKU+3udUlpgGbMdLGabRZIXiJbDHQ0gXkg==
       tarball: 'file:projects/no-sniff.tgz'
     version: 0.0.0
   'file:projects/utils.tgz':
@@ -11790,7 +11821,7 @@ packages:
     dev: false
     name: '@rush-temp/utils'
     resolution:
-      integrity: sha512-h/XA+xUUgvGvKGPl1/TrciLG9i7hY2qbWHVwxlah0HJ/c3Z7muYRDR7w5/38XoZ8mRJh+98FjD/wwyzyr8Rmjw==
+      integrity: sha512-6WjwYZw7qoAPahAFKpr8AFUBR0zJ2NSATdnbvOTqOR2U6Jd57VFxzQ6dKCYsMmwRGkuJjuvHhzXD6QJ27hjCYg==
       tarball: 'file:projects/utils.tgz'
     version: 0.0.0
 registry: ''
@@ -11803,16 +11834,12 @@ specifiers:
   '@rush-temp/http-error-handler': 'file:./projects/http-error-handler.tgz'
   '@rush-temp/http-header-normalizer': 'file:./projects/http-header-normalizer.tgz'
   '@rush-temp/ie-no-open': 'file:./projects/ie-no-open.tgz'
+  '@rush-temp/json-deserializer': 'file:./projects/json-deserializer.tgz'
   '@rush-temp/json-serializer': 'file:./projects/json-serializer.tgz'
   '@rush-temp/jwt-auth': 'file:./projects/jwt-auth.tgz'
   '@rush-temp/middy-adaptor': 'file:./projects/middy-adaptor.tgz'
   '@rush-temp/no-sniff': 'file:./projects/no-sniff.tgz'
   '@rush-temp/utils': 'file:./projects/utils.tgz'
-  '@semantic-release/changelog': ^3.0.2
-  '@semantic-release/commit-analyzer': ^6.1.0
-  '@semantic-release/git': ^7.0.8
-  '@semantic-release/npm': ^5.1.4
-  '@semantic-release/release-notes-generator': ^7.1.4
   '@types/aws-lambda': ^8.10.47
   '@types/debug': ^4.1.5
   '@types/http-errors': ^1.6.3
@@ -11843,7 +11870,6 @@ specifiers:
   prettier-config-standard: ^1.0.1
   reflect-metadata: ^0.1.13
   rimraf: ^3.0.2
-  semantic-release: ^15.13.3
   serialize-error: '>=5.0.0'
   serverless: ^1.67.0
   serverless-offline: ^6.1.4
@@ -11852,7 +11878,6 @@ specifiers:
   supertest: ^4.0.2
   ts-jest: ^25.3.1
   ts-loader: ^6.2.2
-  ts-toolbelt: ^8.0.7
   tslib: ^2.0.1
   typescript: ^4.0.3
   wait-on: ^5.2.0
