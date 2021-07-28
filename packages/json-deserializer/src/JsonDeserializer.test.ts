@@ -29,7 +29,7 @@ describe("jsonDeserializer", () => {
     },
   };
 
-  it("should deserialize objects if the event has a json content-type header", async () => {
+  it("deserializes objects if the event has a json content-type header", async () => {
     const event: APIGatewayProxyEvent = createEvent({
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(testObject),
@@ -41,7 +41,7 @@ describe("jsonDeserializer", () => {
     );
   });
 
-  describe("should set the request body to null if:", () => {
+  describe("sets the request body to null if:", () => {
     it.each([
       ["null headers", null],
       ["null content type", { "Content-Type": null }],
@@ -57,7 +57,7 @@ describe("jsonDeserializer", () => {
     });
   });
 
-  it("should decode the request body before deserializing if isBase64Encoded is true", async () => {
+  it("decodes the request body before deserializing if isBase64Encoded is true", async () => {
     const event = createEvent({
       headers: { "Content-Type": "application/json" },
       body: Buffer.from(JSON.stringify(testObject)).toString("base64"),
@@ -70,7 +70,7 @@ describe("jsonDeserializer", () => {
     );
   });
 
-  it("should leave the request body as null if body is null", async () => {
+  it("leaves the request body as null if body is null", async () => {
     const event = createEvent({
       headers: { "Content-Type": "application/json" },
       body: null,
@@ -80,7 +80,7 @@ describe("jsonDeserializer", () => {
     expect(processedEvent.body).toBeNull();
   });
 
-  it("should throw a RequestBodyNotJsonError if the request body cannot deserialize", async () => {
+  it("throws a RequestBodyNotJsonError if the request body cannot deserialize", async () => {
     const event = createEvent({
       headers: { "Content-Type": "application/json" },
       body: "{thisisntvalidJson",
