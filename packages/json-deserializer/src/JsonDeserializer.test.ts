@@ -36,12 +36,12 @@ describe("jsonDeserializer", () => {
     });
 
     await handlerWithMiddleware(event, createContext());
-    expect(processedEvent.body).toMatchObject(
+    expect(processedEvent.bodyObject).toMatchObject(
       JSON.parse(JSON.stringify(testObject))
     );
   });
 
-  describe("sets the request body to null if:", () => {
+  describe("sets the request bodyObject to null if:", () => {
     it.each([
       ["null headers", null],
       ["null content type", { "Content-Type": null }],
@@ -53,7 +53,7 @@ describe("jsonDeserializer", () => {
       });
 
       await handlerWithMiddleware(event, createContext());
-      expect(processedEvent.body).toBeNull();
+      expect(processedEvent.bodyObject).toBeNull();
     });
   });
 
@@ -65,7 +65,7 @@ describe("jsonDeserializer", () => {
     });
 
     await handlerWithMiddleware(event, createContext());
-    expect(processedEvent.body).toMatchObject(
+    expect(processedEvent.bodyObject).toMatchObject(
       JSON.parse(JSON.stringify(testObject))
     );
   });
@@ -77,7 +77,7 @@ describe("jsonDeserializer", () => {
     });
 
     await handlerWithMiddleware(event, createContext());
-    expect(processedEvent.body).toBeNull();
+    expect(processedEvent.bodyObject).toBeNull();
   });
 
   it("throws a RequestBodyNotJsonError if the request body cannot deserialize", async () => {
