@@ -14,12 +14,12 @@ A middleware for AWS http lambda functions to deserialize incoming requests cont
 Depending on the request payload and header the following can happen:
 
 - **The event has a valid json content-type header** (eg. `application/json`), and:
-  - **The body contains a valid JSON payload** - body is deserialized and the event object body property is replaced with an object of type Record<string, unknown>.
+  - **The body contains a valid JSON payload** - `body` is deserialized and added back to the event object as `bodyObject` with a type of `Record<string, unknown>`.
   - **The body has invalid JSON payload** - the middleware throws a `RequestBodyNotJsonError`.
-- **The event has a non json content-type header** - the middleware will replace the body with `null`.
-- **The event has no body set** - the middleware will replace the body with `null`.
+- **The event has a non json content-type header** - the middleware will add a `bodyObject` property with `null`.
+- **The event has no body set** - the middleware will add a `bodyObject` property with `null`.
 
-Please note that this middleware just provides a basic object to the handler, without typing for the properties, you will need to handle validation of the request body object separately.
+Please note that this middleware just provides a basic object to the handler without typing for the properties, you will need to handle validation of the request body object separately.
 
 ## Lambda middleware
 
@@ -36,15 +36,14 @@ import { APIGatewayProxyObjectEvent } from "../lib/types/APIGatewayProxyObjectEv
 async function helloWorld(
   request: APIGatewayProxyObjectEvent<APIGatewayProxyEvent>
 ): Promise<APIGatewayProxyResult> {
-
   // We can simply pick out the body object from the request and use it
-  const { body: originalBody } = request ?? {};
+  const { bodyObject } = request ?? {};
 
   // Do something with the object and return it
   return {
     statusCode: 200,
     body: JSON.stringify({
-      ...originalBody,
+      ...bodyObject,
       additionalThing: "addedInHandler",
     }),
   };
