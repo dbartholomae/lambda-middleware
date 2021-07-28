@@ -13,9 +13,7 @@ const logger: IDebugger = debugFactory("@lambda-middleware/json-serializer");
 export const jsonDeserializer = <E extends APIGatewayProxyEvent>() => (
   handler: PromiseHandler<APIGatewayProxyObjectEvent<E>, APIGatewayProxyResult>
 ) => async (event: E, context: Context): Promise<APIGatewayProxyResult> => {
-  let body;
-
-  body = deserializeBody(event);
+  const body = deserializeBody(event);
   return await handler({ ...event, body }, context);
 };
 
