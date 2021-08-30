@@ -89,6 +89,7 @@ describe("jsonDeserializer", () => {
     expect(() =>
       handlerWithMiddleware(event, createContext())
     ).rejects.toMatchObject({
+      statusCode: 400,
       name: "RequestBodyNotJsonError",
       message:
         "Content-Type header specified JSON but the body is not valid JSON!",
