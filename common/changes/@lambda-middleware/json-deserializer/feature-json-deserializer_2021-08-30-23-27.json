@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/json-deserializer",
+      "comment": "Added json-deserializer lambda-middleware package",
+      "type": "minor"
+    }
+  ],
+  "packageName": "@lambda-middleware/json-deserializer",
+  "email": "matt@jenner.me.uk"
+}
