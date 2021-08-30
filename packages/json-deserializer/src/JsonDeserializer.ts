@@ -1,5 +1,4 @@
 import { PromiseHandler } from "@lambda-middleware/utils";
-import debugFactory, { IDebugger } from "debug";
 import {
   APIGatewayProxyEvent,
   APIGatewayProxyResult,
@@ -7,8 +6,6 @@ import {
 } from "aws-lambda";
 import { APIGatewayProxyObjectEvent } from "./types/APIGatewayProxyObjectEvent";
 import { RequestBodyNotJsonError } from "./customErrors/RequestBodyNotJsonError";
-
-const logger: IDebugger = debugFactory("@lambda-middleware/json-serializer");
 
 export const jsonDeserializer = <E extends APIGatewayProxyEvent>() => (
   handler: PromiseHandler<APIGatewayProxyObjectEvent<E>, APIGatewayProxyResult>
@@ -50,6 +47,13 @@ const isJsonMimeType = (event: APIGatewayProxyEvent) => {
     return false;
   }
 
-  const mimePattern = /^application\/(.+\+)?json(;.*)?$/;
-  return mimePattern.test(contentTypeHeader);
+  const mimeParts = contentTypeHeader.split("/");
+
+  if (mimeParts.length != 2) {
+    return false;
+  }
+
+  const lastSubtypePart = mimeParts[1].toLowerCase().split("+").pop()?.trim();
+
+  return lastSubtypePart === "json" || lastSubtypePart === "json;";
 };

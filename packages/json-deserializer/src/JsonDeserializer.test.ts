@@ -29,16 +29,23 @@ describe("jsonDeserializer", () => {
     },
   };
 
-  it("deserializes objects if the event has a json content-type header", async () => {
-    const event: APIGatewayProxyEvent = createEvent({
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(testObject),
-    });
+  describe("deserializes objects the event has a valid json content-type header:", () => {
+    it.each([
+      ["subtype is json", "application/json"],
+      ["subtype structured syntax specifier is json", "application/ld+json"],
+      ["semicolon is appended", "application/json;"],
+      ["whitespace is appended", "application/json;   "],
+    ])("%s (%p)", async (_string, mimeType: string) => {
+      const event: APIGatewayProxyEvent = createEvent({
+        headers: { "Content-Type": mimeType },
+        body: JSON.stringify(testObject),
+      });
 
-    await handlerWithMiddleware(event, createContext());
-    expect(processedEvent.bodyObject).toMatchObject(
-      JSON.parse(JSON.stringify(testObject))
-    );
+      await handlerWithMiddleware(event, createContext());
+      expect(processedEvent.bodyObject).toMatchObject(
+        JSON.parse(JSON.stringify(testObject))
+      );
+    });
   });
 
   describe("sets the request bodyObject to null if:", () => {
