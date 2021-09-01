@@ -1,5 +1,4 @@
-service:
-  name: test-microservice
+service: test-microservice
 
 plugins:
   - serverless-webpack
