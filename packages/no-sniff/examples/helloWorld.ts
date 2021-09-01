@@ -4,7 +4,7 @@ import { noSniff } from "../";
 async function helloWorld() {
   return {
     statusCode: 200,
-    body: "",
+    body: "{}",
   };
 }
 

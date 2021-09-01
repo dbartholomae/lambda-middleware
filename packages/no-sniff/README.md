@@ -24,7 +24,7 @@ import { noSniff } from "@lambda-middleware/no-sniff";
 async function helloWorld() {
   return {
     statusCode: 200,
-    body: "",
+    body: "{}",
   };
 }
 

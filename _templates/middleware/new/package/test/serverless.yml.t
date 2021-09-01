@@ -1,8 +1,7 @@
 ---
 to: packages/<%= h.inflection.dasherize(name.toLowerCase()) %>/test/serverless.yml
 ---
-service:
-  name: test-microservice
+service: test-microservice
 
 plugins:
   - serverless-webpack
@@ -10,7 +9,7 @@ plugins:
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs14.x
 
 functions:
   hello:

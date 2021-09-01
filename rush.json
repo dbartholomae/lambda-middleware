@@ -7,61 +7,80 @@
   "projectFolderMinDepth": 2,
   "projectFolderMaxDepth": 2,
   "repository": {
-     "url": "https://github.com/dbartholomae/lambda-middleware.git",
-     "defaultBranch": "main",
-     "defaultRemote": "origin"
+    "url": "https://github.com/dbartholomae/lambda-middleware.git",
+    "defaultBranch": "main",
+    "defaultRemote": "origin"
   },
-  "projects": [{
-    "packageName": "@lambda-middleware/http-error-handler",
-    "projectFolder": "packages/http-error-handler",
-    "shouldPublish": true
-  }, {
-    "packageName": "@lambda-middleware/json-serializer",
-    "projectFolder": "packages/json-serializer",
-    "shouldPublish": true
-  }, {
-    "packageName": "@lambda-middleware/compose",
-    "projectFolder": "packages/compose",
-    "shouldPublish": true
-  }, {
-    "packageName": "@lambda-middleware/jwt-auth",
-    "projectFolder": "packages/jwt-auth",
-    "shouldPublish": true
-  }, {
-    "packageName": "@lambda-middleware/class-validator",
-    "projectFolder": "packages/class-validator",
-    "shouldPublish": true
-  }, {
-    "packageName": "@lambda-middleware/no-sniff",
-    "projectFolder": "packages/no-sniff",
-    "shouldPublish": true
-  }, {
-    "packageName": "@lambda-middleware/ie-no-open",
-    "projectFolder": "packages/ie-no-open",
-    "shouldPublish": true
-  }, {
-    "packageName": "@lambda-middleware/middy-adaptor",
-    "projectFolder": "packages/middy-adaptor",
-    "shouldPublish": true
-  }, {
-    "packageName": "@lambda-middleware/utils",
-    "projectFolder": "packages/utils",
-    "shouldPublish": true
-  }, {
-    "packageName": "@lambda-middleware/http-header-normalizer",
-    "projectFolder": "packages/http-header-normalizer",
-    "shouldPublish": true
-  }, {
-    "packageName": "@lambda-middleware/do-not-wait",
-    "projectFolder": "packages/do-not-wait",
-    "shouldPublish": true
-  }, {
-    "packageName": "@lambda-middleware/cors",
-    "projectFolder": "packages/cors",
-    "shouldPublish": true
-  }, {
-    "packageName": "@lambda-middleware/e2e-tests",
-    "projectFolder": "internal/e2e-tests",
-    "shouldPublish": false
-  }]
+  "projects": [
+    {
+      "packageName": "@lambda-middleware/http-error-handler",
+      "projectFolder": "packages/http-error-handler",
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@lambda-middleware/json-deserializer",
+      "projectFolder": "packages/json-deserializer",
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@lambda-middleware/json-serializer",
+      "projectFolder": "packages/json-serializer",
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@lambda-middleware/compose",
+      "projectFolder": "packages/compose",
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@lambda-middleware/jwt-auth",
+      "projectFolder": "packages/jwt-auth",
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@lambda-middleware/class-validator",
+      "projectFolder": "packages/class-validator",
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@lambda-middleware/no-sniff",
+      "projectFolder": "packages/no-sniff",
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@lambda-middleware/ie-no-open",
+      "projectFolder": "packages/ie-no-open",
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@lambda-middleware/middy-adaptor",
+      "projectFolder": "packages/middy-adaptor",
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@lambda-middleware/utils",
+      "projectFolder": "packages/utils",
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@lambda-middleware/http-header-normalizer",
+      "projectFolder": "packages/http-header-normalizer",
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@lambda-middleware/do-not-wait",
+      "projectFolder": "packages/do-not-wait",
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@lambda-middleware/cors",
+      "projectFolder": "packages/cors",
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@lambda-middleware/e2e-tests",
+      "projectFolder": "internal/e2e-tests",
+      "shouldPublish": false
+    }
+  ]
 }
