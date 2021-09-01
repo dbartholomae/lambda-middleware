@@ -25,7 +25,7 @@ import { APIGatewayProxyResult } from "aws-lambda";
 async function helloWorld(): Promise<APIGatewayProxyResult> {
   return {
     statusCode: 200,
-    body: "",
+    body: "{}",
   };
 }
 

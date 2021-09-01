@@ -24,7 +24,7 @@ import { ieNoOpen } from "@lambda-middleware/ie-no-open";
 async function helloWorld() {
   return {
     statusCode: 200,
-    body: "",
+    body: "{}",
   };
 }
 
