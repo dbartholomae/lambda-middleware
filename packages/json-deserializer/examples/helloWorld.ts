@@ -14,10 +14,11 @@ async function helloWorld(
 
   return {
     statusCode: 200,
-    body: JSON.stringify({
-      ...originalBody,
-      additionalThing: "addedInHandler",
-    }),
+    body: JSON.stringify(
+      Object.assign({}, originalBody, {
+        additionalThing: "addedInHandler",
+      })
+    ),
   };
 }
 
