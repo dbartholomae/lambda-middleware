@@ -1,0 +1,17 @@
+{
+  "name": "@lambda-middleware/json-deserializer",
+  "entries": [
+    {
+      "version": "1.1.0",
+      "tag": "@lambda-middleware/json-deserializer_v1.1.0",
+      "date": "Wed, 01 Sep 2021 18:57:50 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Added json-deserializer lambda-middleware package"
+          }
+        ]
+      }
+    }
+  ]
+}
