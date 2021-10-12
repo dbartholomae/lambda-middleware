@@ -34,7 +34,7 @@ describe("frameguard", () => {
     }
   );
 
-  it("defaults X-Frame-Options to SAMEORIGIN", async () => {
+  it("sets X-Frame-Options to sameorigin by default", async () => {
     const handler = jest.fn().mockResolvedValue(emptyResponse);
 
     const response = await frameguard()(handler)(event, createContext());
