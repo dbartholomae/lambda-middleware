@@ -4,6 +4,7 @@ dependencies:
   '@rush-temp/cors': 'file:projects/cors.tgz'
   '@rush-temp/do-not-wait': 'file:projects/do-not-wait.tgz'
   '@rush-temp/e2e-tests': 'file:projects/e2e-tests.tgz_debug@4.2.0'
+  '@rush-temp/frameguard': 'file:projects/frameguard.tgz'
   '@rush-temp/http-error-handler': 'file:projects/http-error-handler.tgz'
   '@rush-temp/http-header-normalizer': 'file:projects/http-header-normalizer.tgz'
   '@rush-temp/ie-no-open': 'file:projects/ie-no-open.tgz'
@@ -944,6 +945,45 @@ packages:
       debug: '*'
     resolution:
       integrity: sha512-F0ReVFmwnbSDyH9PaifjrxvR0HvnKS37VyoEOCagj/31vGrksyrvuwI8BxC0YwPReRDb4n99+CtGkDsdGb9AQg==
+  /@serverless/components/3.17.0_debug@4.3.2:
+    dependencies:
+      '@serverless/platform-client': 4.3.0_debug@4.3.2
+      '@serverless/platform-client-china': 2.2.4_debug@4.3.2
+      '@serverless/utils': 4.1.0
+      adm-zip: 0.5.5
+      ansi-escapes: 4.3.1
+      chalk: 4.1.2
+      child-process-ext: 2.1.1
+      chokidar: 3.5.2
+      ci-info: 3.2.0
+      dayjs: 1.10.6
+      dotenv: 8.2.0
+      fastest-levenshtein: 1.0.12
+      figures: 3.2.0
+      fs-extra: 9.1.0
+      got: 11.8.2
+      graphlib: 2.1.8
+      https-proxy-agent: 5.0.0
+      inquirer-autocomplete-prompt: 1.4.0
+      js-yaml: 3.14.1
+      memoizee: 0.4.15
+      minimist: 1.2.5
+      open: 7.4.2
+      prettyoutput: 1.2.0
+      ramda: 0.27.1
+      semver: 7.3.5
+      strip-ansi: 6.0.0
+      tencent-serverless-http: 1.3.2
+      traverse: 0.6.6
+      uuid: 8.3.2
+    dev: false
+    engines:
+      node: '>=10.0'
+    hasBin: true
+    peerDependencies:
+      debug: '*'
+    resolution:
+      integrity: sha512-F0ReVFmwnbSDyH9PaifjrxvR0HvnKS37VyoEOCagj/31vGrksyrvuwI8BxC0YwPReRDb4n99+CtGkDsdGb9AQg==
   /@serverless/core/1.1.2:
     dependencies:
       fs-extra: 7.0.1
@@ -958,6 +998,36 @@ packages:
     dependencies:
       '@serverless/event-mocks': 1.1.1
       '@serverless/platform-client': 4.3.0_debug@4.2.0
+      '@serverless/utils': 5.7.0
+      chalk: 4.1.2
+      child-process-ext: 2.1.1
+      chokidar: 3.5.2
+      cli-color: 2.0.0
+      flat: 5.0.2
+      fs-extra: 9.1.0
+      js-yaml: 4.1.0
+      jszip: 3.7.1
+      lodash: 4.17.21
+      memoizee: 0.4.15
+      ncjsm: 4.2.0
+      node-dir: 0.1.17
+      node-fetch: 2.6.1
+      open: 7.4.2
+      semver: 7.3.5
+      simple-git: 2.45.0
+      uuid: 8.3.2
+      yamljs: 0.3.0
+    dev: false
+    engines:
+      node: '>=10.0'
+    peerDependencies:
+      debug: '*'
+    resolution:
+      integrity: sha512-1lLChYK/zwrF5SEAubVr9Oz/xGnq1Yjbw36X1iz0j/+jwbtpt1AeumksArA3UVAgDSecVOfaksxUta2cc10pRA==
+  /@serverless/dashboard-plugin/5.4.4_debug@4.3.2:
+    dependencies:
+      '@serverless/event-mocks': 1.1.1
+      '@serverless/platform-client': 4.3.0_debug@4.3.2
       '@serverless/utils': 5.7.0
       chalk: 4.1.2
       child-process-ext: 2.1.1
@@ -1015,11 +1085,59 @@ packages:
       debug: '*'
     resolution:
       integrity: sha512-qQ2yLVwzRh2+6jWM60r+0TCDanwjoCxdCtYM7Vfmqe0Fu8ZT5LvWn5r4E6CYw3HFBmr9cZgEdmUYBEYST2FeSw==
+  /@serverless/platform-client-china/2.2.4_debug@4.3.2:
+    dependencies:
+      '@serverless/utils-china': 1.1.4
+      adm-zip: 0.5.5
+      archiver: 5.3.0
+      axios: 0.21.1_debug@4.3.2
+      dotenv: 8.2.0
+      fast-glob: 3.2.7
+      fs-extra: 9.1.0
+      https-proxy-agent: 5.0.0
+      js-yaml: 3.14.1
+      minimatch: 3.0.4
+      querystring: 0.2.1
+      run-parallel-limit: 1.1.0
+      traverse: 0.6.6
+      urlencode: 1.1.0
+      ws: 7.5.4
+    dev: false
+    engines:
+      node: '>=10.0'
+    peerDependencies:
+      debug: '*'
+    resolution:
+      integrity: sha512-qQ2yLVwzRh2+6jWM60r+0TCDanwjoCxdCtYM7Vfmqe0Fu8ZT5LvWn5r4E6CYw3HFBmr9cZgEdmUYBEYST2FeSw==
   /@serverless/platform-client/4.3.0_debug@4.2.0:
     dependencies:
       adm-zip: 0.5.5
       archiver: 5.3.0
       axios: 0.21.1_debug@4.2.0
+      fast-glob: 3.2.7
+      https-proxy-agent: 5.0.0
+      ignore: 5.1.8
+      isomorphic-ws: 4.0.1_ws@7.5.4
+      js-yaml: 3.14.1
+      jwt-decode: 2.2.0
+      minimatch: 3.0.4
+      querystring: 0.2.1
+      run-parallel-limit: 1.1.0
+      throat: 5.0.0
+      traverse: 0.6.6
+      ws: 7.5.4
+    dev: false
+    engines:
+      node: '>=10.0'
+    peerDependencies:
+      debug: '*'
+    resolution:
+      integrity: sha512-q2CMqCkKeBaKA/UwfJAZLkdUsbghSbiYPvAX4rl9rsR5APm4KWtjKQP9CTOtVO5JRMWYoysK6jF0d5VJOABRzQ==
+  /@serverless/platform-client/4.3.0_debug@4.3.2:
+    dependencies:
+      adm-zip: 0.5.5
+      archiver: 5.3.0
+      axios: 0.21.1_debug@4.3.2
       fast-glob: 3.2.7
       https-proxy-agent: 5.0.0
       ignore: 5.1.8
@@ -2012,6 +2130,14 @@ packages:
   /axios/0.21.1_debug@4.2.0:
     dependencies:
       follow-redirects: 1.14.2_debug@4.2.0
+    dev: false
+    peerDependencies:
+      debug: '*'
+    resolution:
+      integrity: sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
+  /axios/0.21.1_debug@4.3.2:
+    dependencies:
+      follow-redirects: 1.14.2_debug@4.3.2
     dev: false
     peerDependencies:
       debug: '*'
@@ -4424,6 +4550,19 @@ packages:
   /follow-redirects/1.14.2_debug@4.2.0:
     dependencies:
       debug: 4.2.0
+    dev: false
+    engines:
+      node: '>=4.0'
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    resolution:
+      integrity: sha512-yLR6WaE2lbF0x4K2qE2p9PEXKLDjUjnR/xmjS3wHAYxtlsI9MLLBJUZirAHKzUZDGLxje7w/cXR49WOUo4rbsA==
+  /follow-redirects/1.14.2_debug@4.3.2:
+    dependencies:
+      debug: 4.3.2
     dev: false
     engines:
       node: '>=4.0'
@@ -8823,6 +8962,72 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-/gLzaqdisNlymMiQJMkFoACy7NXkOd7E67sbcOrENXuVb48QAS4PTT8VPkMNu6eQonlphGagbKhpqVmKzHJDmQ==
+  /serverless/2.57.0_debug@4.3.2:
+    dependencies:
+      '@serverless/cli': 1.5.2
+      '@serverless/components': 3.17.0_debug@4.3.2
+      '@serverless/dashboard-plugin': 5.4.4_debug@4.3.2
+      '@serverless/platform-client': 4.3.0_debug@4.3.2
+      '@serverless/utils': 5.7.0
+      ajv: 6.12.6
+      ajv-keywords: 3.5.2_ajv@6.12.6
+      archiver: 5.3.0
+      aws-sdk: 2.980.0
+      bluebird: 3.7.2
+      boxen: 5.0.1
+      cachedir: 2.3.0
+      chalk: 4.1.2
+      child-process-ext: 2.1.1
+      ci-info: 3.2.0
+      cli-progress-footer: 1.1.1
+      d: 1.0.1
+      dayjs: 1.10.6
+      decompress: 4.2.1
+      dotenv: 10.0.0
+      dotenv-expand: 5.1.0
+      essentials: 1.1.1
+      ext: 1.5.0
+      fastest-levenshtein: 1.0.12
+      filesize: 8.0.0
+      fs-extra: 9.1.0
+      get-stdin: 8.0.0
+      globby: 11.0.4
+      got: 11.8.2
+      graceful-fs: 4.2.8
+      https-proxy-agent: 5.0.0
+      is-docker: 2.2.1
+      is-wsl: 2.2.0
+      js-yaml: 4.1.0
+      json-cycle: 1.3.0
+      json-refs: 3.0.15
+      lodash: 4.17.21
+      memoizee: 0.4.15
+      micromatch: 4.0.4
+      ncjsm: 4.2.0
+      node-fetch: 2.6.1
+      object-hash: 2.2.0
+      path2: 0.1.0
+      process-utils: 4.0.0
+      promise-queue: 2.2.5
+      replaceall: 0.1.6
+      semver: 7.3.5
+      signal-exit: 3.0.3
+      tabtab: 3.0.2
+      tar: 6.1.11
+      timers-ext: 0.1.7
+      type: 2.5.0
+      untildify: 4.0.0
+      uuid: 8.3.2
+      yaml-ast-parser: 0.0.43
+    dev: false
+    engines:
+      node: '>=10.0'
+    hasBin: true
+    peerDependencies:
+      debug: '*'
+    requiresBuild: true
+    resolution:
+      integrity: sha512-/gLzaqdisNlymMiQJMkFoACy7NXkOd7E67sbcOrENXuVb48QAS4PTT8VPkMNu6eQonlphGagbKhpqVmKzHJDmQ==
   /set-blocking/2.0.0:
     dev: false
     resolution:
@@ -10889,6 +11094,43 @@ packages:
       integrity: sha512-Jtliiltl6xS+Fnb+7UgPXNtJcFPIisK7LhIcx9OuZklPi6nBJzfP78p+lpJj/VeJIvozXM/3KGef7UIWL3gLsA==
       tarball: 'file:projects/e2e-tests.tgz'
     version: 0.0.0
+  'file:projects/frameguard.tgz':
+    dependencies:
+      '@types/aws-lambda': 8.10.64
+      '@types/debug': 4.1.5
+      '@types/jest': 25.2.3
+      '@types/supertest': 2.0.10
+      '@typescript-eslint/eslint-plugin': 2.34.0_7b4bd3cb2bb8840c27da3f93640083dc
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
+      aws-lambda: 1.0.6
+      concurrently: 5.3.0
+      debug: 4.3.2
+      eslint: 6.8.0
+      eslint-config-prettier: 6.14.0_eslint@6.8.0
+      eslint-plugin-prettier: 3.1.4_eslint@6.8.0+prettier@2.1.2
+      jest: 25.5.4
+      jest-junit: 10.0.0
+      pkg-ok: 2.3.1
+      prettier: 2.1.2
+      prettier-config-standard: 1.0.1
+      rimraf: 3.0.2
+      serverless: 2.57.0_debug@4.3.2
+      serverless-offline: 8.0.0_serverless@2.57.0
+      serverless-webpack: 5.5.3_42727329b5550ba795c5536b94b79e05
+      source-map-support: 0.5.19
+      supertest: 4.0.2
+      ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
+      ts-loader: 6.2.2_typescript@4.0.3
+      tslib: 2.0.3
+      typescript: 4.0.3
+      wait-on: 5.2.0
+      webpack: 4.44.2_webpack@4.44.2
+    dev: false
+    name: '@rush-temp/frameguard'
+    resolution:
+      integrity: sha512-ghIbgyEhNsIi0BGErj2jz7aLuHEXGRmoUsZlmkI7nDtG17AcDpm0+twJh9XYK6PyPE544oUfXxvfWcZLeQWkDw==
+      tarball: 'file:projects/frameguard.tgz'
+    version: 0.0.0
   'file:projects/http-error-handler.tgz':
     dependencies:
       '@types/aws-lambda': 8.10.64
@@ -11228,6 +11470,7 @@ specifiers:
   '@rush-temp/cors': 'file:./projects/cors.tgz'
   '@rush-temp/do-not-wait': 'file:./projects/do-not-wait.tgz'
   '@rush-temp/e2e-tests': 'file:./projects/e2e-tests.tgz'
+  '@rush-temp/frameguard': 'file:./projects/frameguard.tgz'
   '@rush-temp/http-error-handler': 'file:./projects/http-error-handler.tgz'
   '@rush-temp/http-header-normalizer': 'file:./projects/http-header-normalizer.tgz'
   '@rush-temp/ie-no-open': 'file:./projects/ie-no-open.tgz'
