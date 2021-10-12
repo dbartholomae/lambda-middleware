@@ -28,20 +28,20 @@ describe("frameguard", () => {
 
       expect(response).toMatchObject({
         headers: {
-          "X-Frame-Options": action,
+          "X-Frame-Options": action.toUpperCase(),
         },
       });
     }
   );
 
-  it("sets X-Frame-Options to sameorigin by default", async () => {
+  it("sets X-Frame-Options to SAMEORIGIN by default", async () => {
     const handler = jest.fn().mockResolvedValue(emptyResponse);
 
     const response = await frameguard()(handler)(event, createContext());
 
     expect(response).toMatchObject({
       headers: {
-        "X-Frame-Options": "sameorigin",
+        "X-Frame-Options": "SAMEORIGIN",
       },
     });
   });

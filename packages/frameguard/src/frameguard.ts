@@ -13,6 +13,9 @@ export const frameguard = <E>(
   const response = await handler(event, context);
   return {
     ...response,
-    headers: { ...response.headers, "X-Frame-Options": options.action },
+    headers: {
+      ...response.headers,
+      "X-Frame-Options": options.action.toUpperCase(),
+    },
   };
 };
