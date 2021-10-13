@@ -78,6 +78,11 @@
       "shouldPublish": true
     },
     {
+      "packageName": "@lambda-middleware/frameguard",
+      "projectFolder": "packages/frameguard",
+      "shouldPublish": true
+    },
+    {
       "packageName": "@lambda-middleware/e2e-tests",
       "projectFolder": "internal/e2e-tests",
       "shouldPublish": false
