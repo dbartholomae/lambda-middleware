@@ -1,6 +1,6 @@
 {
   "name": "@lambda-middleware/frameguard",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "AWS lambda middleware for preventing clickjacking by using frameguards",
   "homepage": "https://dbartholomae.github.io/lambda-middleware/",
   "license": "MIT",
