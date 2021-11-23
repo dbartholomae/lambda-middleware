@@ -49,11 +49,15 @@ const isJsonMimeType = (event: APIGatewayProxyEvent) => {
 
   const mimeParts = contentTypeHeader.split("/");
 
+  if (mimeParts[1].includes(";")) {
+    mimeParts[1] = mimeParts[1].split(";")[0];
+  }
+
   if (mimeParts.length != 2) {
     return false;
   }
 
   const lastSubtypePart = mimeParts[1].toLowerCase().split("+").pop()?.trim();
 
-  return lastSubtypePart === "json" || lastSubtypePart === "json;";
+  return lastSubtypePart === "json";
 };

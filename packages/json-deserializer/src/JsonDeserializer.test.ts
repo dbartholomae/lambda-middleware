@@ -35,6 +35,7 @@ describe("jsonDeserializer", () => {
       ["subtype structured syntax specifier is json", "application/ld+json"],
       ["semicolon is appended", "application/json;"],
       ["whitespace is appended", "application/json;   "],
+      ["charset is appended", "application/json; charset=utf-8"],
     ])("%s (%p)", async (_string, mimeType: string) => {
       const event: APIGatewayProxyEvent = createEvent({
         headers: { "Content-Type": mimeType },
