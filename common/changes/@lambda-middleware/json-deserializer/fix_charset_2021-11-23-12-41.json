@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/json-deserializer",
+      "comment": "fix: JsonDeserializer accepts content-type header with charset",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@lambda-middleware/json-deserializer",
+  "email": "michal.ezop@gmail.com"
+}

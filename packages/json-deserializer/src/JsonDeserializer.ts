@@ -38,22 +38,12 @@ const deserializeBody = <
   }
 };
 
-const isJsonMimeType = (event: APIGatewayProxyEvent) => {
+const isJsonMimeType = (event: APIGatewayProxyEvent): boolean => {
   const { headers } = event;
   const contentTypeHeader =
-    headers?.["Content-Type"] ?? headers?.["content-type"];
-
-  if (!contentTypeHeader) {
-    return false;
-  }
-
-  const mimeParts = contentTypeHeader.split("/");
-
-  if (mimeParts.length != 2) {
-    return false;
-  }
-
-  const lastSubtypePart = mimeParts[1].toLowerCase().split("+").pop()?.trim();
-
-  return lastSubtypePart === "json" || lastSubtypePart === "json;";
+    headers?.["Content-Type"] ?? headers?.["content-type"] ?? "";
+  return (
+    contentTypeHeader.startsWith("application/json") ||
+    contentTypeHeader.startsWith("application/ld+json")
+  );
 };
