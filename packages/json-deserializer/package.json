@@ -1,6 +1,6 @@
 {
   "name": "@lambda-middleware/json-deserializer",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A middleware for AWS http lambda functions to deserialize JSON request bodies into an object.",
   "scripts": {
     "build": "rimraf ./lib && tsc --project tsconfig.build.json",
