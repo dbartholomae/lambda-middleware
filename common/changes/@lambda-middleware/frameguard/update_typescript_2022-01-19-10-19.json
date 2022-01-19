@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/frameguard",
+      "comment": "",
+      "type": "none"
+    }
+  ],
+  "packageName": "@lambda-middleware/frameguard",
+  "email": "daniel@bartholomae.name"
+}
