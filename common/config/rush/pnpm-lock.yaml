@@ -21,8 +21,8 @@ dependencies:
   '@types/jsonwebtoken': 8.5.0
   '@types/node': 14.14.2
   '@types/supertest': 2.0.10
-  '@typescript-eslint/eslint-plugin': 2.34.0_7b4bd3cb2bb8840c27da3f93640083dc
-  '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
+  '@typescript-eslint/eslint-plugin': 2.34.0_44389f4a1e38c91edad3112a04c84368
+  '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.5.4
   aws-lambda: 1.0.6
   class-transformer: 0.3.1
   class-transformer-validator: 0.9.1_4ae0cf6eab4c30830de5e5acc43ca1c7
@@ -47,13 +47,13 @@ dependencies:
   serialize-error: 7.0.1
   serverless: 2.57.0_debug@4.2.0
   serverless-offline: 8.0.0_serverless@2.57.0
-  serverless-webpack: 5.5.3_42727329b5550ba795c5536b94b79e05
+  serverless-webpack: 5.5.3_aaaff1a393272d83a94349349d7e2858
   source-map-support: 0.5.19
   supertest: 4.0.2
-  ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
-  ts-loader: 6.2.2_typescript@4.0.3
+  ts-jest: 25.5.1_jest@25.5.4+typescript@4.5.4
+  ts-loader: 6.2.2_typescript@4.5.4
   tslib: 2.0.3
-  typescript: 4.0.3
+  typescript: 4.5.4
   wait-on: 5.2.0
   webpack: 4.44.2_webpack@4.44.2
 lockfileVersion: 5.1
@@ -1495,15 +1495,15 @@ packages:
     dev: false
     resolution:
       integrity: sha512-HmU8SeIRhZCWcnRskCs36Q1Q00KBV6Cqh/ora8WN1+22dY07AZdn6Gel8QZ3t26XYPImtcL8WV/eqjhVmMEw4g==
-  /@typescript-eslint/eslint-plugin/2.34.0_7b4bd3cb2bb8840c27da3f93640083dc:
+  /@typescript-eslint/eslint-plugin/2.34.0_44389f4a1e38c91edad3112a04c84368:
     dependencies:
-      '@typescript-eslint/experimental-utils': 2.34.0_eslint@6.8.0+typescript@4.0.3
-      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
+      '@typescript-eslint/experimental-utils': 2.34.0_eslint@6.8.0+typescript@4.5.4
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.5.4
       eslint: 6.8.0
       functional-red-black-tree: 1.0.1
       regexpp: 3.1.0
-      tsutils: 3.17.1_typescript@4.0.3
-      typescript: 4.0.3
+      tsutils: 3.17.1_typescript@4.5.4
+      typescript: 4.5.4
     dev: false
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
@@ -1516,10 +1516,10 @@ packages:
         optional: true
     resolution:
       integrity: sha512-4zY3Z88rEE99+CNvTbXSyovv2z9PNOVffTWD2W8QF5s2prBQtwN2zadqERcrHpcR7O/+KMI3fcTAmUUhK/iQcQ==
-  /@typescript-eslint/experimental-utils/2.34.0_eslint@6.8.0+typescript@4.0.3:
+  /@typescript-eslint/experimental-utils/2.34.0_eslint@6.8.0+typescript@4.5.4:
     dependencies:
       '@types/json-schema': 7.0.6
-      '@typescript-eslint/typescript-estree': 2.34.0_typescript@4.0.3
+      '@typescript-eslint/typescript-estree': 2.34.0_typescript@4.5.4
       eslint: 6.8.0
       eslint-scope: 5.1.1
       eslint-utils: 2.1.0
@@ -1531,14 +1531,14 @@ packages:
       typescript: '*'
     resolution:
       integrity: sha512-eS6FTkq+wuMJ+sgtuNTtcqavWXqsflWcfBnlYhg/nS4aZ1leewkXGbvBhaapn1q6qf4M71bsR1tez5JTRMuqwA==
-  /@typescript-eslint/parser/2.34.0_eslint@6.8.0+typescript@4.0.3:
+  /@typescript-eslint/parser/2.34.0_eslint@6.8.0+typescript@4.5.4:
     dependencies:
       '@types/eslint-visitor-keys': 1.0.0
-      '@typescript-eslint/experimental-utils': 2.34.0_eslint@6.8.0+typescript@4.0.3
-      '@typescript-eslint/typescript-estree': 2.34.0_typescript@4.0.3
+      '@typescript-eslint/experimental-utils': 2.34.0_eslint@6.8.0+typescript@4.5.4
+      '@typescript-eslint/typescript-estree': 2.34.0_typescript@4.5.4
       eslint: 6.8.0
       eslint-visitor-keys: 1.3.0
-      typescript: 4.0.3
+      typescript: 4.5.4
     dev: false
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
@@ -1550,7 +1550,7 @@ packages:
         optional: true
     resolution:
       integrity: sha512-03ilO0ucSD0EPTw2X4PntSIRFtDPWjrVq7C3/Z3VQHRC7+13YB55rcJI3Jt+YgeHbjUdJPcPa7b23rXCBokuyA==
-  /@typescript-eslint/typescript-estree/2.34.0_typescript@4.0.3:
+  /@typescript-eslint/typescript-estree/2.34.0_typescript@4.5.4:
     dependencies:
       debug: 4.2.0
       eslint-visitor-keys: 1.3.0
@@ -1558,8 +1558,8 @@ packages:
       is-glob: 4.0.1
       lodash: 4.17.20
       semver: 7.3.2
-      tsutils: 3.17.1_typescript@4.0.3
-      typescript: 4.0.3
+      tsutils: 3.17.1_typescript@4.5.4
+      typescript: 4.5.4
     dev: false
     engines:
       node: ^8.10.0 || ^10.13.0 || >=11.10.1
@@ -8874,7 +8874,7 @@ packages:
       serverless: ^1.60.0 || 2
     resolution:
       integrity: sha512-ov5PbO8gbT+KtHK0rA6NiYnNdzeVaCt8FLn9sJGN2nPvuyTbemJ5i0eOeOOX8Wn9LsHIIyYuxGa+tQM353M8wg==
-  /serverless-webpack/5.5.3_42727329b5550ba795c5536b94b79e05:
+  /serverless-webpack/5.5.3_aaaff1a393272d83a94349349d7e2858:
     dependencies:
       bestzip: 2.2.0
       bluebird: 3.7.2
@@ -8889,7 +8889,7 @@ packages:
     engines:
       node: '>= 10.12.0'
     optionalDependencies:
-      ts-node: 9.0.0_typescript@4.0.3
+      ts-node: 9.0.0_typescript@4.5.4
     peerDependencies:
       serverless: 1 || 2
       typescript: '*'
@@ -10007,7 +10007,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-XrHUvV5HpdLmIj4uVMxHggLbFSZYIn7HEWsqePZcI50pco+MPqJ50wMGY794X7AOOhxOBAjbkqfAbEe/QMp2Lw==
-  /ts-jest/25.5.1_jest@25.5.4+typescript@4.0.3:
+  /ts-jest/25.5.1_jest@25.5.4+typescript@4.5.4:
     dependencies:
       bs-logger: 0.2.6
       buffer-from: 1.1.1
@@ -10019,7 +10019,7 @@ packages:
       micromatch: 4.0.2
       mkdirp: 0.5.5
       semver: 6.3.0
-      typescript: 4.0.3
+      typescript: 4.5.4
       yargs-parser: 18.1.3
     dev: false
     engines:
@@ -10030,14 +10030,14 @@ packages:
       typescript: '>=3.4 <4.0'
     resolution:
       integrity: sha512-kHEUlZMK8fn8vkxDjwbHlxXRB9dHYpyzqKIGDNxbzs+Rz+ssNDSDNusEK8Fk/sDd4xE6iKoQLfFkFVaskmTJyw==
-  /ts-loader/6.2.2_typescript@4.0.3:
+  /ts-loader/6.2.2_typescript@4.5.4:
     dependencies:
       chalk: 2.4.2
       enhanced-resolve: 4.3.0
       loader-utils: 1.4.0
       micromatch: 4.0.2
       semver: 6.3.0
-      typescript: 4.0.3
+      typescript: 4.5.4
     dev: false
     engines:
       node: '>=8.6'
@@ -10045,13 +10045,13 @@ packages:
       typescript: '*'
     resolution:
       integrity: sha512-HDo5kXZCBml3EUPcc7RlZOV/JGlLHwppTLEHb3SHnr5V7NXD4klMEkrhJe5wgRbaWsSXi+Y1SIBN/K9B6zWGWQ==
-  /ts-node/9.0.0_typescript@4.0.3:
+  /ts-node/9.0.0_typescript@4.5.4:
     dependencies:
       arg: 4.1.3
       diff: 4.0.2
       make-error: 1.3.6
       source-map-support: 0.5.19
-      typescript: 4.0.3
+      typescript: 4.5.4
       yn: 3.1.1
     dev: false
     engines:
@@ -10070,10 +10070,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-uZtkfKblCEQtZKBF6EBXVZeQNl82yqtDQdv+eck8u7tdPxjLu2/lp5/uPW+um2tpuxINHWy3GhiccY7QgEaVHQ==
-  /tsutils/3.17.1_typescript@4.0.3:
+  /tsutils/3.17.1_typescript@4.5.4:
     dependencies:
       tslib: 1.14.1
-      typescript: 4.0.3
+      typescript: 4.5.4
     dev: false
     engines:
       node: '>= 6'
@@ -10166,13 +10166,13 @@ packages:
     dev: false
     resolution:
       integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-  /typescript/4.0.3:
+  /typescript/4.5.4:
     dev: false
     engines:
       node: '>=4.2.0'
     hasBin: true
     resolution:
-      integrity: sha512-tEu6DGxGgRJPb/mVPIZ48e69xCn2yRmCgYmDugAVwmJ6o+0u1RI18eO7E7WBTLYLaEVVOhwQmcdhQHweux/WPg==
+      integrity: sha512-VgYs2A2QIRuGphtzFV7aQJduJ2gyfTljngLzjpfW9FoYZF6xuw1W0vW9ghCKLfcWrCFxK81CSGRAvS1pn4fIUg==
   /unbox-primitive/1.0.1:
     dependencies:
       function-bind: 1.1.1
@@ -10913,8 +10913,8 @@ packages:
       '@types/debug': 4.1.5
       '@types/jest': 25.2.3
       '@types/supertest': 2.0.10
-      '@typescript-eslint/eslint-plugin': 2.34.0_7b4bd3cb2bb8840c27da3f93640083dc
-      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
+      '@typescript-eslint/eslint-plugin': 2.34.0_44389f4a1e38c91edad3112a04c84368
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.5.4
       aws-lambda: 1.0.6
       class-transformer: 0.3.1
       class-transformer-validator: 0.9.1_4ae0cf6eab4c30830de5e5acc43ca1c7
@@ -10933,19 +10933,19 @@ packages:
       rimraf: 3.0.2
       serverless: 2.57.0_debug@4.2.0
       serverless-offline: 8.0.0_serverless@2.57.0
-      serverless-webpack: 5.5.3_42727329b5550ba795c5536b94b79e05
+      serverless-webpack: 5.5.3_aaaff1a393272d83a94349349d7e2858
       source-map-support: 0.5.19
       supertest: 4.0.2
-      ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
-      ts-loader: 6.2.2_typescript@4.0.3
+      ts-jest: 25.5.1_jest@25.5.4+typescript@4.5.4
+      ts-loader: 6.2.2_typescript@4.5.4
       tslib: 2.0.3
-      typescript: 4.0.3
+      typescript: 4.5.4
       wait-on: 5.2.0
       webpack: 4.44.2_webpack@4.44.2
     dev: false
     name: '@rush-temp/class-validator'
     resolution:
-      integrity: sha512-4UU9uHdNFbiT2SZ7su6Zdok6ATtly4IZikLl9PJb73HNJZr/kxarneNBXAk3ZI1NC6h6Z6y05tL7yAOKisENKw==
+      integrity: sha512-4nFLl8t+o8MxgpAhHEDvE8QkymQnEyYcAI7/l02A03ChZowr1SE9gjmPhryAohXXJyMY2iO9SGoY6BBKvIaf6w==
       tarball: 'file:projects/class-validator.tgz'
     version: 0.0.0
   'file:projects/compose.tgz_debug@4.2.0':
@@ -10953,8 +10953,8 @@ packages:
       '@types/aws-lambda': 8.10.64
       '@types/jest': 25.2.3
       '@types/supertest': 2.0.10
-      '@typescript-eslint/eslint-plugin': 2.34.0_7b4bd3cb2bb8840c27da3f93640083dc
-      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
+      '@typescript-eslint/eslint-plugin': 2.34.0_44389f4a1e38c91edad3112a04c84368
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.5.4
       aws-lambda: 1.0.6
       codecov: 3.8.0
       concurrently: 5.3.0
@@ -10971,13 +10971,13 @@ packages:
       rimraf: 3.0.2
       serverless: 2.57.0_debug@4.2.0
       serverless-offline: 8.0.0_serverless@2.57.0
-      serverless-webpack: 5.5.3_42727329b5550ba795c5536b94b79e05
+      serverless-webpack: 5.5.3_aaaff1a393272d83a94349349d7e2858
       source-map-support: 0.5.19
       supertest: 4.0.2
-      ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
-      ts-loader: 6.2.2_typescript@4.0.3
+      ts-jest: 25.5.1_jest@25.5.4+typescript@4.5.4
+      ts-loader: 6.2.2_typescript@4.5.4
       tslib: 2.0.3
-      typescript: 4.0.3
+      typescript: 4.5.4
       wait-on: 5.2.0
       webpack: 4.44.2_webpack@4.44.2
     dev: false
@@ -10986,7 +10986,7 @@ packages:
     peerDependencies:
       debug: '*'
     resolution:
-      integrity: sha512-9MDGj6VSjT8pXh0PwegSiIdsOFfldmPhTmtvB/6+N6xyWyZJpaEen9FSrxziH5F9u0ALtAWzxWP11kjrWQAS0w==
+      integrity: sha512-yfkOl2AzaVSMXoawGmZkGA7GbKibgB4hZJApm1yGW2C1ugafQrYGLZYzAiEel8pQYJutBl3X4iXnYPG0ZSufjA==
       tarball: 'file:projects/compose.tgz'
     version: 0.0.0
   'file:projects/cors.tgz':
@@ -10995,8 +10995,8 @@ packages:
       '@types/debug': 4.1.5
       '@types/jest': 25.2.3
       '@types/supertest': 2.0.10
-      '@typescript-eslint/eslint-plugin': 2.34.0_7b4bd3cb2bb8840c27da3f93640083dc
-      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
+      '@typescript-eslint/eslint-plugin': 2.34.0_44389f4a1e38c91edad3112a04c84368
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.5.4
       aws-lambda: 1.0.6
       concurrently: 5.3.0
       debug: 4.2.0
@@ -11011,19 +11011,19 @@ packages:
       rimraf: 3.0.2
       serverless: 2.57.0_debug@4.2.0
       serverless-offline: 8.0.0_serverless@2.57.0
-      serverless-webpack: 5.5.3_42727329b5550ba795c5536b94b79e05
+      serverless-webpack: 5.5.3_aaaff1a393272d83a94349349d7e2858
       source-map-support: 0.5.19
       supertest: 4.0.2
-      ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
-      ts-loader: 6.2.2_typescript@4.0.3
+      ts-jest: 25.5.1_jest@25.5.4+typescript@4.5.4
+      ts-loader: 6.2.2_typescript@4.5.4
       tslib: 2.0.3
-      typescript: 4.0.3
+      typescript: 4.5.4
       wait-on: 5.2.0
       webpack: 4.44.2_webpack@4.44.2
     dev: false
     name: '@rush-temp/cors'
     resolution:
-      integrity: sha512-L2CJQVm3RgS885vbQc1rWCHgNi4OQD94+Zsvn7oaXAKOrOI44iFOehih+LQBIc54QFWMKpWtMM/QAslqX+p/Cw==
+      integrity: sha512-j1zm44MorzrsA+nTSboHl4AmKQVTpzMWB5Oik7TROA9Xq+73UKx9FybrjFRpILWwzdvsOckiVf5j1YH0sBgYIA==
       tarball: 'file:projects/cors.tgz'
     version: 0.0.0
   'file:projects/do-not-wait.tgz':
@@ -11031,8 +11031,8 @@ packages:
       '@types/aws-lambda': 8.10.64
       '@types/debug': 4.1.5
       '@types/jest': 25.2.3
-      '@typescript-eslint/eslint-plugin': 2.34.0_7b4bd3cb2bb8840c27da3f93640083dc
-      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
+      '@typescript-eslint/eslint-plugin': 2.34.0_44389f4a1e38c91edad3112a04c84368
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.5.4
       aws-lambda: 1.0.6
       concurrently: 5.3.0
       debug: 4.2.0
@@ -11045,13 +11045,13 @@ packages:
       prettier: 2.1.2
       prettier-config-standard: 1.0.1
       rimraf: 3.0.2
-      ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
+      ts-jest: 25.5.1_jest@25.5.4+typescript@4.5.4
       tslib: 2.0.3
-      typescript: 4.0.3
+      typescript: 4.5.4
     dev: false
     name: '@rush-temp/do-not-wait'
     resolution:
-      integrity: sha512-LZWzkZwGkao0HPCjQK2aekApA4ulBkEb5aJoOUTdrI+hrODZ0ktrbfgEHgR+nfL3DN3kt/RF7vJg9P+lgmrCKg==
+      integrity: sha512-lNSS+euhHlNXVU07f/DFiZiArCgi2l4gwg+lGav1Z84Iha3kj4++J3Y5PK3OqJrU82a/ENH/DvMpl5iUR7Pg+A==
       tarball: 'file:projects/do-not-wait.tgz'
     version: 0.0.0
   'file:projects/e2e-tests.tgz_debug@4.2.0':
@@ -11060,8 +11060,8 @@ packages:
       '@types/debug': 4.1.5
       '@types/jest': 25.2.3
       '@types/supertest': 2.0.10
-      '@typescript-eslint/eslint-plugin': 2.34.0_7b4bd3cb2bb8840c27da3f93640083dc
-      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
+      '@typescript-eslint/eslint-plugin': 2.34.0_44389f4a1e38c91edad3112a04c84368
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.5.4
       aws-lambda: 1.0.6
       class-validator: 0.12.2
       concurrently: 5.3.0
@@ -11076,13 +11076,13 @@ packages:
       rimraf: 3.0.2
       serverless: 2.57.0_debug@4.2.0
       serverless-offline: 8.0.0_serverless@2.57.0
-      serverless-webpack: 5.5.3_42727329b5550ba795c5536b94b79e05
+      serverless-webpack: 5.5.3_aaaff1a393272d83a94349349d7e2858
       source-map-support: 0.5.19
       supertest: 4.0.2
-      ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
-      ts-loader: 6.2.2_typescript@4.0.3
+      ts-jest: 25.5.1_jest@25.5.4+typescript@4.5.4
+      ts-loader: 6.2.2_typescript@4.5.4
       tslib: 2.0.3
-      typescript: 4.0.3
+      typescript: 4.5.4
       wait-on: 5.2.0
       webpack: 4.44.2_webpack@4.44.2
     dev: false
@@ -11091,7 +11091,7 @@ packages:
     peerDependencies:
       debug: '*'
     resolution:
-      integrity: sha512-Jtliiltl6xS+Fnb+7UgPXNtJcFPIisK7LhIcx9OuZklPi6nBJzfP78p+lpJj/VeJIvozXM/3KGef7UIWL3gLsA==
+      integrity: sha512-/ZqRxBVkW7GLdYMUNXNwTv5joxeyxUD3wqQN9VD6NdvdK/s8wzWsUj04KrEWr92ORkMX50/NME+ud6fgzYAevg==
       tarball: 'file:projects/e2e-tests.tgz'
     version: 0.0.0
   'file:projects/frameguard.tgz':
@@ -11100,8 +11100,8 @@ packages:
       '@types/debug': 4.1.5
       '@types/jest': 25.2.3
       '@types/supertest': 2.0.10
-      '@typescript-eslint/eslint-plugin': 2.34.0_7b4bd3cb2bb8840c27da3f93640083dc
-      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
+      '@typescript-eslint/eslint-plugin': 2.34.0_44389f4a1e38c91edad3112a04c84368
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.5.4
       aws-lambda: 1.0.6
       concurrently: 5.3.0
       debug: 4.3.2
@@ -11116,19 +11116,19 @@ packages:
       rimraf: 3.0.2
       serverless: 2.57.0_debug@4.3.2
       serverless-offline: 8.0.0_serverless@2.57.0
-      serverless-webpack: 5.5.3_42727329b5550ba795c5536b94b79e05
+      serverless-webpack: 5.5.3_aaaff1a393272d83a94349349d7e2858
       source-map-support: 0.5.19
       supertest: 4.0.2
-      ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
-      ts-loader: 6.2.2_typescript@4.0.3
+      ts-jest: 25.5.1_jest@25.5.4+typescript@4.5.4
+      ts-loader: 6.2.2_typescript@4.5.4
       tslib: 2.0.3
-      typescript: 4.0.3
+      typescript: 4.5.4
       wait-on: 5.2.0
       webpack: 4.44.2_webpack@4.44.2
     dev: false
     name: '@rush-temp/frameguard'
     resolution:
-      integrity: sha512-ghIbgyEhNsIi0BGErj2jz7aLuHEXGRmoUsZlmkI7nDtG17AcDpm0+twJh9XYK6PyPE544oUfXxvfWcZLeQWkDw==
+      integrity: sha512-9P5lWWIGlgjLBYqTJTd9h0HICey511mRiGEsSqyCox8ro8NgGBliA8/LdIqq8X+SUQj1XeR7M9XpS/5B3yt3vQ==
       tarball: 'file:projects/frameguard.tgz'
     version: 0.0.0
   'file:projects/http-error-handler.tgz':
@@ -11138,8 +11138,8 @@ packages:
       '@types/http-errors': 1.8.0
       '@types/jest': 25.2.3
       '@types/supertest': 2.0.10
-      '@typescript-eslint/eslint-plugin': 2.34.0_7b4bd3cb2bb8840c27da3f93640083dc
-      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
+      '@typescript-eslint/eslint-plugin': 2.34.0_44389f4a1e38c91edad3112a04c84368
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.5.4
       aws-lambda: 1.0.6
       concurrently: 5.3.0
       debug: 4.2.0
@@ -11156,19 +11156,19 @@ packages:
       serialize-error: 7.0.1
       serverless: 2.57.0_debug@4.2.0
       serverless-offline: 8.0.0_serverless@2.57.0
-      serverless-webpack: 5.5.3_42727329b5550ba795c5536b94b79e05
+      serverless-webpack: 5.5.3_aaaff1a393272d83a94349349d7e2858
       source-map-support: 0.5.19
       supertest: 4.0.2
-      ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
-      ts-loader: 6.2.2_typescript@4.0.3
+      ts-jest: 25.5.1_jest@25.5.4+typescript@4.5.4
+      ts-loader: 6.2.2_typescript@4.5.4
       tslib: 2.0.3
-      typescript: 4.0.3
+      typescript: 4.5.4
       wait-on: 5.2.0
       webpack: 4.44.2_webpack@4.44.2
     dev: false
     name: '@rush-temp/http-error-handler'
     resolution:
-      integrity: sha512-5J1UT0xBK7CQv/sYVmVToUlPPOmhDzJmIfNlaH4KyxUlFGwr/+tSPAozxi2QgXMaVTTHrOqeR8o/tqaLYocPAQ==
+      integrity: sha512-Rq4lYWadpvNlg4nvTBEclRBWkhbnaBi8NLcnI4lFzc0YVlKt7NDJPxm8xnDasfIfxzKXHSePA2s7Q9+mYoCrXg==
       tarball: 'file:projects/http-error-handler.tgz'
     version: 0.0.0
   'file:projects/http-header-normalizer.tgz':
@@ -11177,8 +11177,8 @@ packages:
       '@types/debug': 4.1.5
       '@types/jest': 25.2.3
       '@types/supertest': 2.0.10
-      '@typescript-eslint/eslint-plugin': 2.34.0_7b4bd3cb2bb8840c27da3f93640083dc
-      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
+      '@typescript-eslint/eslint-plugin': 2.34.0_44389f4a1e38c91edad3112a04c84368
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.5.4
       aws-lambda: 1.0.6
       concurrently: 5.3.0
       debug: 4.2.0
@@ -11193,19 +11193,19 @@ packages:
       rimraf: 3.0.2
       serverless: 2.57.0_debug@4.2.0
       serverless-offline: 8.0.0_serverless@2.57.0
-      serverless-webpack: 5.5.3_42727329b5550ba795c5536b94b79e05
+      serverless-webpack: 5.5.3_aaaff1a393272d83a94349349d7e2858
       source-map-support: 0.5.19
       supertest: 4.0.2
-      ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
-      ts-loader: 6.2.2_typescript@4.0.3
+      ts-jest: 25.5.1_jest@25.5.4+typescript@4.5.4
+      ts-loader: 6.2.2_typescript@4.5.4
       tslib: 2.0.3
-      typescript: 4.0.3
+      typescript: 4.5.4
       wait-on: 5.2.0
       webpack: 4.44.2_webpack@4.44.2
     dev: false
     name: '@rush-temp/http-header-normalizer'
     resolution:
-      integrity: sha512-TQ9Lef7yLqqFQCIWOTwJV1VxzGZWl3KuugRvjSfjdiYdIokoEac9EV5zojHFKvyFIOu1g7S0j46/8gv7Q+R47Q==
+      integrity: sha512-sR2U4CRq5rvbnH32X+igx6iENd+I7MAUnCf+yBSbKJPgQmAJ3WjQh50B1Biw2IBNTBOpJRvRQF2eBoa6t9cppg==
       tarball: 'file:projects/http-header-normalizer.tgz'
     version: 0.0.0
   'file:projects/ie-no-open.tgz':
@@ -11214,8 +11214,8 @@ packages:
       '@types/debug': 4.1.5
       '@types/jest': 25.2.3
       '@types/supertest': 2.0.10
-      '@typescript-eslint/eslint-plugin': 2.34.0_7b4bd3cb2bb8840c27da3f93640083dc
-      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
+      '@typescript-eslint/eslint-plugin': 2.34.0_44389f4a1e38c91edad3112a04c84368
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.5.4
       aws-lambda: 1.0.6
       concurrently: 5.3.0
       debug: 4.2.0
@@ -11230,19 +11230,19 @@ packages:
       rimraf: 3.0.2
       serverless: 2.57.0_debug@4.2.0
       serverless-offline: 8.0.0_serverless@2.57.0
-      serverless-webpack: 5.5.3_42727329b5550ba795c5536b94b79e05
+      serverless-webpack: 5.5.3_aaaff1a393272d83a94349349d7e2858
       source-map-support: 0.5.19
       supertest: 4.0.2
-      ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
-      ts-loader: 6.2.2_typescript@4.0.3
+      ts-jest: 25.5.1_jest@25.5.4+typescript@4.5.4
+      ts-loader: 6.2.2_typescript@4.5.4
       tslib: 2.0.3
-      typescript: 4.0.3
+      typescript: 4.5.4
       wait-on: 5.2.0
       webpack: 4.44.2_webpack@4.44.2
     dev: false
     name: '@rush-temp/ie-no-open'
     resolution:
-      integrity: sha512-wSsDXFRYZpAxVvaOsgGGg1NeE0e6lWUwUzL5ibu8yvYZWunOtw15jdP0tfgtYrRmytT9+qwIG9Mghkh+33ysPQ==
+      integrity: sha512-Pt1FBWpMj22jlW8M3pb5stY+bdTVphhTjPEPUbyVRHYqYclMinu0rdhkcJY4jt1bizKHjU8Af45svTRIRIPNCw==
       tarball: 'file:projects/ie-no-open.tgz'
     version: 0.0.0
   'file:projects/json-deserializer.tgz':
@@ -11251,8 +11251,8 @@ packages:
       '@types/debug': 4.1.5
       '@types/jest': 25.2.3
       '@types/supertest': 2.0.10
-      '@typescript-eslint/eslint-plugin': 2.34.0_7b4bd3cb2bb8840c27da3f93640083dc
-      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
+      '@typescript-eslint/eslint-plugin': 2.34.0_44389f4a1e38c91edad3112a04c84368
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.5.4
       aws-lambda: 1.0.6
       concurrently: 5.3.0
       debug: 4.2.0
@@ -11267,19 +11267,19 @@ packages:
       rimraf: 3.0.2
       serverless: 2.57.0_debug@4.2.0
       serverless-offline: 8.0.0_serverless@2.57.0
-      serverless-webpack: 5.5.3_42727329b5550ba795c5536b94b79e05
+      serverless-webpack: 5.5.3_aaaff1a393272d83a94349349d7e2858
       source-map-support: 0.5.19
       supertest: 4.0.2
-      ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
-      ts-loader: 6.2.2_typescript@4.0.3
+      ts-jest: 25.5.1_jest@25.5.4+typescript@4.5.4
+      ts-loader: 6.2.2_typescript@4.5.4
       tslib: 2.0.3
-      typescript: 4.0.3
+      typescript: 4.5.4
       wait-on: 5.2.0
       webpack: 4.44.2_webpack@4.44.2
     dev: false
     name: '@rush-temp/json-deserializer'
     resolution:
-      integrity: sha512-8FkIK0QJ/uygXDDt1bdrDXXQoWbCDQiy3/+jjMGZFUTh0/42xLs2uJdDcCm6mQUCga9Ocmrs/87iBwMTCWLtWQ==
+      integrity: sha512-C1G+JmfuZZo7S6H9kNEqWH0GNoINplpEZ1lzBJRh7NSjg9Do2r+bp6hvL+ic2trqLAKEUjpHWCd8uEtVVtSwyg==
       tarball: 'file:projects/json-deserializer.tgz'
     version: 0.0.0
   'file:projects/json-serializer.tgz':
@@ -11288,8 +11288,8 @@ packages:
       '@types/debug': 4.1.5
       '@types/jest': 25.2.3
       '@types/supertest': 2.0.10
-      '@typescript-eslint/eslint-plugin': 2.34.0_7b4bd3cb2bb8840c27da3f93640083dc
-      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
+      '@typescript-eslint/eslint-plugin': 2.34.0_44389f4a1e38c91edad3112a04c84368
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.5.4
       aws-lambda: 1.0.6
       concurrently: 5.3.0
       debug: 4.2.0
@@ -11304,19 +11304,19 @@ packages:
       rimraf: 3.0.2
       serverless: 2.57.0_debug@4.2.0
       serverless-offline: 8.0.0_serverless@2.57.0
-      serverless-webpack: 5.5.3_42727329b5550ba795c5536b94b79e05
+      serverless-webpack: 5.5.3_aaaff1a393272d83a94349349d7e2858
       source-map-support: 0.5.19
       supertest: 4.0.2
-      ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
-      ts-loader: 6.2.2_typescript@4.0.3
+      ts-jest: 25.5.1_jest@25.5.4+typescript@4.5.4
+      ts-loader: 6.2.2_typescript@4.5.4
       tslib: 2.0.3
-      typescript: 4.0.3
+      typescript: 4.5.4
       wait-on: 5.2.0
       webpack: 4.44.2_webpack@4.44.2
     dev: false
     name: '@rush-temp/json-serializer'
     resolution:
-      integrity: sha512-SI/OfKSzWPCCZRu54+WUiiCJ/LhIr5kSGuS3vsNXWd4FqciZRofEePkkeMAjSH1uvQ2CFDH9q8ho+CUkSBEwsQ==
+      integrity: sha512-MFH5o+ETKO7gD2gLMnuGRpMEDvbQLm6B1wNpuFn9RaTF6BAYtlUk1nyGnpnuKoqtoj3uFysOGTxK2Yl4adN6NA==
       tarball: 'file:projects/json-serializer.tgz'
     version: 0.0.0
   'file:projects/jwt-auth.tgz':
@@ -11328,8 +11328,8 @@ packages:
       '@types/jsonwebtoken': 8.5.0
       '@types/node': 14.14.2
       '@types/supertest': 2.0.10
-      '@typescript-eslint/eslint-plugin': 2.34.0_7b4bd3cb2bb8840c27da3f93640083dc
-      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
+      '@typescript-eslint/eslint-plugin': 2.34.0_44389f4a1e38c91edad3112a04c84368
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.5.4
       aws-lambda: 1.0.6
       concurrently: 5.3.0
       debug: 4.2.0
@@ -11347,19 +11347,19 @@ packages:
       rimraf: 3.0.2
       serverless: 2.57.0_debug@4.2.0
       serverless-offline: 8.0.0_serverless@2.57.0
-      serverless-webpack: 5.5.3_42727329b5550ba795c5536b94b79e05
+      serverless-webpack: 5.5.3_aaaff1a393272d83a94349349d7e2858
       source-map-support: 0.5.19
       supertest: 4.0.2
-      ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
-      ts-loader: 6.2.2_typescript@4.0.3
+      ts-jest: 25.5.1_jest@25.5.4+typescript@4.5.4
+      ts-loader: 6.2.2_typescript@4.5.4
       tslib: 2.0.3
-      typescript: 4.0.3
+      typescript: 4.5.4
       wait-on: 5.2.0
       webpack: 4.44.2_webpack@4.44.2
     dev: false
     name: '@rush-temp/jwt-auth'
     resolution:
-      integrity: sha512-5md9ybXjsIlZ9fnJGdvDNsK7o5xzTKBaVnUbxAcDKjtPZMcSUBz6pXLyE+yBRGTIWm/A7fLaSp150HVCMS46wQ==
+      integrity: sha512-JMTV4jFBFsGWbG7nVJivXG64yPPhJLjTKXQERZIBEIFPPQUBsQ7XP0YmYZB2GvNdJiyZ59egxpU/oNaIcNSzrg==
       tarball: 'file:projects/jwt-auth.tgz'
     version: 0.0.0
   'file:projects/middy-adaptor.tgz':
@@ -11368,8 +11368,8 @@ packages:
       '@types/debug': 4.1.5
       '@types/jest': 25.2.3
       '@types/supertest': 2.0.10
-      '@typescript-eslint/eslint-plugin': 2.34.0_7b4bd3cb2bb8840c27da3f93640083dc
-      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
+      '@typescript-eslint/eslint-plugin': 2.34.0_44389f4a1e38c91edad3112a04c84368
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.5.4
       aws-lambda: 1.0.6
       concurrently: 5.3.0
       debug: 4.2.0
@@ -11384,19 +11384,19 @@ packages:
       rimraf: 3.0.2
       serverless: 2.57.0_debug@4.2.0
       serverless-offline: 8.0.0_serverless@2.57.0
-      serverless-webpack: 5.5.3_42727329b5550ba795c5536b94b79e05
+      serverless-webpack: 5.5.3_aaaff1a393272d83a94349349d7e2858
       source-map-support: 0.5.19
       supertest: 4.0.2
-      ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
-      ts-loader: 6.2.2_typescript@4.0.3
+      ts-jest: 25.5.1_jest@25.5.4+typescript@4.5.4
+      ts-loader: 6.2.2_typescript@4.5.4
       tslib: 2.0.3
-      typescript: 4.0.3
+      typescript: 4.5.4
       wait-on: 5.2.0
       webpack: 4.44.2_webpack@4.44.2
     dev: false
     name: '@rush-temp/middy-adaptor'
     resolution:
-      integrity: sha512-VItlH8WIkyGjwHdTc7n51qvhMZy9Y+WqwvXsDegqc5R+LBG8idoWkFPAqHYbj4KHeyt274foODFEwxTyJLttXA==
+      integrity: sha512-MJha36GR6nKDuTLagV3F9t4jcHvrQKEXRMntTmIQhOx2Z/69XZwYr8AM+mKaOY0q12A6bokeq3URT0iIqBp2qw==
       tarball: 'file:projects/middy-adaptor.tgz'
     version: 0.0.0
   'file:projects/no-sniff.tgz':
@@ -11405,8 +11405,8 @@ packages:
       '@types/debug': 4.1.5
       '@types/jest': 25.2.3
       '@types/supertest': 2.0.10
-      '@typescript-eslint/eslint-plugin': 2.34.0_7b4bd3cb2bb8840c27da3f93640083dc
-      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
+      '@typescript-eslint/eslint-plugin': 2.34.0_44389f4a1e38c91edad3112a04c84368
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.5.4
       aws-lambda: 1.0.6
       concurrently: 5.3.0
       debug: 4.2.0
@@ -11421,19 +11421,19 @@ packages:
       rimraf: 3.0.2
       serverless: 2.57.0_debug@4.2.0
       serverless-offline: 8.0.0_serverless@2.57.0
-      serverless-webpack: 5.5.3_42727329b5550ba795c5536b94b79e05
+      serverless-webpack: 5.5.3_aaaff1a393272d83a94349349d7e2858
       source-map-support: 0.5.19
       supertest: 4.0.2
-      ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
-      ts-loader: 6.2.2_typescript@4.0.3
+      ts-jest: 25.5.1_jest@25.5.4+typescript@4.5.4
+      ts-loader: 6.2.2_typescript@4.5.4
       tslib: 2.0.3
-      typescript: 4.0.3
+      typescript: 4.5.4
       wait-on: 5.2.0
       webpack: 4.44.2_webpack@4.44.2
     dev: false
     name: '@rush-temp/no-sniff'
     resolution:
-      integrity: sha512-Qvumv5J0rL11agoDFu3j0l5xz5nyPhrgPD0WEBwuXbzzBLVwd9bhlGfwtwYVL1nrQzbdM4aeu19xyS11aUQFKw==
+      integrity: sha512-lxTsDjpuJpbnwUf/i3kpp988yEkvzct4tIBaIpxkHNlzm0QHnFUISxCzG2qc7rTo1FQQJuFdM9VaoN1dYS0RjQ==
       tarball: 'file:projects/no-sniff.tgz'
     version: 0.0.0
   'file:projects/utils.tgz':
@@ -11441,8 +11441,8 @@ packages:
       '@types/aws-lambda': 8.10.64
       '@types/debug': 4.1.5
       '@types/jest': 25.2.3
-      '@typescript-eslint/eslint-plugin': 2.34.0_7b4bd3cb2bb8840c27da3f93640083dc
-      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.0.3
+      '@typescript-eslint/eslint-plugin': 2.34.0_44389f4a1e38c91edad3112a04c84368
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.5.4
       aws-lambda: 1.0.6
       eslint: 6.8.0
       eslint-config-prettier: 6.14.0_eslint@6.8.0
@@ -11454,13 +11454,13 @@ packages:
       prettier-config-standard: 1.0.1
       rimraf: 3.0.2
       source-map-support: 0.5.19
-      ts-jest: 25.5.1_jest@25.5.4+typescript@4.0.3
+      ts-jest: 25.5.1_jest@25.5.4+typescript@4.5.4
       tslib: 2.0.3
-      typescript: 4.0.3
+      typescript: 4.5.4
     dev: false
     name: '@rush-temp/utils'
     resolution:
-      integrity: sha512-6WjwYZw7qoAPahAFKpr8AFUBR0zJ2NSATdnbvOTqOR2U6Jd57VFxzQ6dKCYsMmwRGkuJjuvHhzXD6QJ27hjCYg==
+      integrity: sha512-CXH77rat6qjje+fVV6YgpEwTx03RkTmske/suDfSoi9AnKhK4odbUGq5EKN3vchS0WpnpP1jjzjUS5E/VfSTPw==
       tarball: 'file:projects/utils.tgz'
     version: 0.0.0
 registry: ''
@@ -11519,6 +11519,6 @@ specifiers:
   ts-jest: ^25.3.1
   ts-loader: ^6.2.2
   tslib: ^2.0.1
-  typescript: ^4.0.3
+  typescript: ~4.5.4
   wait-on: ^5.2.0
   webpack: ^4.41.5

@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/http-header-normalizer",
+      "comment": "",
+      "type": "none"
+    }
+  ],
+  "packageName": "@lambda-middleware/http-header-normalizer",
+  "email": "daniel@bartholomae.name"
+}

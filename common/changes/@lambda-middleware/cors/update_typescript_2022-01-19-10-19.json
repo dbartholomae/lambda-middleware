@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/cors",
+      "comment": "",
+      "type": "none"
+    }
+  ],
+  "packageName": "@lambda-middleware/cors",
+  "email": "daniel@bartholomae.name"
+}

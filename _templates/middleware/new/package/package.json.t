@@ -28,7 +28,7 @@ to: packages/<%= h.inflection.dasherize(name.toLowerCase()) %>/package.json
   },
   "private": false,
   "dependencies": {
-    "@lambda-middleware/utils": "^1.0.1",
+    "@lambda-middleware/utils": "^1.0.4",
     "debug": ">=4.1.0",
     "tslib": "^2.0.1"
   },
@@ -69,7 +69,7 @@ to: packages/<%= h.inflection.dasherize(name.toLowerCase()) %>/package.json
     "supertest": "^4.0.2",
     "ts-jest": "^25.3.1",
     "ts-loader": "^6.2.2",
-    "typescript": "^4.1.0",
+    "typescript": "^4.5.4",
     "wait-on": "^5.2.0",
     "webpack": "^4.41.5"
   },
