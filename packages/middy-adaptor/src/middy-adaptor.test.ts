@@ -1,6 +1,10 @@
 import { middyAdaptor } from "./middy-adaptor";
 import { Instance, MiddlewareObject } from "./interfaces/MiddyTypes";
-import { PromiseHandler } from "@lambda-middleware/utils";
+import {
+  createContext,
+  createEvent,
+  PromiseHandler,
+} from "@lambda-middleware/utils";
 
 describe("middyAdaptor", () => {
   describe("with an empty middleware", () => {
@@ -17,14 +21,17 @@ describe("middyAdaptor", () => {
       };
       const handler = jest.fn().mockResolvedValue(response);
       expect(
-        await middyAdaptor(middyMiddleware)(handler)({} as any, {} as any)
+        await middyAdaptor(middyMiddleware)(handler)(
+          createEvent({}),
+          createContext()
+        )
       ).toMatchObject(response);
     });
 
     it("throws the error thrown by the handler", async () => {
       const handler = jest.fn().mockRejectedValue(new Error("handler error"));
       await expect(
-        middyAdaptor(middyMiddleware)(handler)({} as any, {} as any)
+        middyAdaptor(middyMiddleware)(handler)(createEvent({}), createContext())
       ).rejects.toMatchObject({
         message: "handler error",
       });
@@ -49,7 +56,10 @@ describe("middyAdaptor", () => {
       };
       const handler = jest.fn().mockResolvedValue(response);
       expect(
-        await middyAdaptor(middyMiddleware)(handler)({} as any, {} as any)
+        await middyAdaptor(middyMiddleware)(handler)(
+          createEvent({}),
+          createContext()
+        )
       ).toMatchObject(response);
     });
 
@@ -62,7 +72,10 @@ describe("middyAdaptor", () => {
         instance.event.customProperty = "set";
       };
       const handler = jest.fn().mockResolvedValue(response);
-      await middyAdaptor(middyMiddleware)(handler)({} as any, {} as any);
+      await middyAdaptor(middyMiddleware)(handler)(
+        createEvent({}),
+        createContext()
+      );
       expect(handler).toHaveBeenCalledWith(
         expect.objectContaining({
           customProperty: "set",
@@ -85,7 +98,10 @@ describe("middyAdaptor", () => {
         });
         return response;
       };
-      await middyAdaptor(middyMiddleware)(handler)({} as any, {} as any);
+      await middyAdaptor(middyMiddleware)(handler)(
+        createEvent({}),
+        createContext()
+      );
     });
 
     it("carries changes from the after-middleware to the response", async () => {
@@ -113,7 +129,7 @@ describe("middyAdaptor", () => {
       };
       const handler = jest.fn().mockRejectedValue(new Error("handler error"));
       await expect(
-        middyAdaptor(middyMiddleware)(handler)({} as any, {} as any)
+        middyAdaptor(middyMiddleware)(handler)(createEvent({}), createContext())
       ).rejects.toMatchObject({
         message: "onError error",
       });
@@ -125,7 +141,10 @@ describe("middyAdaptor", () => {
       };
       const handler = jest.fn().mockRejectedValue(new Error("handler error"));
       expect(
-        await middyAdaptor(middyMiddleware)(handler)({} as any, {} as any)
+        await middyAdaptor(middyMiddleware)(handler)(
+          createEvent({}),
+          createContext()
+        )
       ).toEqual("response");
     });
 
@@ -134,7 +153,10 @@ describe("middyAdaptor", () => {
         instance.callback(null, "response");
       };
       const handler = jest.fn().mockResolvedValue("response");
-      await middyAdaptor(middyMiddleware)(handler)({} as any, {} as any);
+      await middyAdaptor(middyMiddleware)(handler)(
+        createEvent({}),
+        createContext()
+      );
       expect(handler).not.toHaveBeenCalled();
     });
 
@@ -144,7 +166,10 @@ describe("middyAdaptor", () => {
       };
       const handler = jest.fn();
       expect(
-        await middyAdaptor(middyMiddleware)(handler)({} as any, {} as any)
+        await middyAdaptor(middyMiddleware)(handler)(
+          createEvent({}),
+          createContext()
+        )
       ).toEqual("response");
     });
 
@@ -154,7 +179,7 @@ describe("middyAdaptor", () => {
       };
       const handler = jest.fn().mockResolvedValue("response");
       await expect(
-        middyAdaptor(middyMiddleware)(handler)({} as any, {} as any)
+        middyAdaptor(middyMiddleware)(handler)(createEvent({}), createContext())
       ).rejects.toMatchObject({
         message: "Callback error",
       });
@@ -166,7 +191,10 @@ describe("middyAdaptor", () => {
       };
       const handler = jest.fn().mockResolvedValue("response");
       expect(
-        await middyAdaptor(middyMiddleware)(handler)({} as any, {} as any)
+        await middyAdaptor(middyMiddleware)(handler)(
+          createEvent({}),
+          createContext()
+        )
       ).toEqual("response");
     });
 
@@ -176,7 +204,7 @@ describe("middyAdaptor", () => {
       };
       const handler = jest.fn().mockResolvedValue("response");
       await expect(
-        middyAdaptor(middyMiddleware)(handler)({} as any, {} as any)
+        middyAdaptor(middyMiddleware)(handler)(createEvent({}), createContext())
       ).rejects.toMatchObject({
         message: "Callback error",
       });
@@ -192,7 +220,10 @@ describe("middyAdaptor", () => {
         throw error;
       };
       const handler = jest.fn().mockResolvedValue(response);
-      await middyAdaptor(middyMiddleware)(handler)({} as any, {} as any);
+      await middyAdaptor(middyMiddleware)(handler)(
+        createEvent({}),
+        createContext()
+      );
       expect(middyMiddleware.onError).toHaveBeenCalledWith(
         expect.objectContaining({
           error,
@@ -220,7 +251,10 @@ describe("middyAdaptor", () => {
       };
       const handler = jest.fn().mockResolvedValue(response);
       expect(
-        await middyAdaptor(middyMiddleware)(handler)({} as any, {} as any)
+        await middyAdaptor(middyMiddleware)(handler)(
+          createEvent({}),
+          createContext()
+        )
       ).toMatchObject(response);
     });
 
@@ -230,7 +264,7 @@ describe("middyAdaptor", () => {
       };
       const handler = jest.fn().mockRejectedValue(new Error("handler error"));
       await expect(
-        middyAdaptor(middyMiddleware)(handler)({} as any, {} as any)
+        middyAdaptor(middyMiddleware)(handler)(createEvent({}), createContext())
       ).rejects.toMatchObject({
         message: "onError error",
       });

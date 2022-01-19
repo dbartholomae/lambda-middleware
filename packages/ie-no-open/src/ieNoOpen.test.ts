@@ -1,3 +1,4 @@
+import { createEvent, createContext } from "@lambda-middleware/utils";
 import { ieNoOpen } from "./ieNoOpen";
 
 describe("ieNoOpen", () => {
@@ -7,9 +8,9 @@ describe("ieNoOpen", () => {
       body: "",
     };
     const handler = jest.fn().mockResolvedValue(response);
-    expect(await ieNoOpen()(handler)({} as any, {} as any)).toMatchObject(
-      response
-    );
+    expect(
+      await ieNoOpen()(handler)(createEvent({}), createContext())
+    ).toMatchObject(response);
   });
 
   it("sets the X-Content-Type-Options header to nosniff", async () => {
@@ -18,7 +19,9 @@ describe("ieNoOpen", () => {
       body: "",
     };
     const handler = jest.fn().mockResolvedValue(response);
-    expect(await ieNoOpen()(handler)({} as any, {} as any)).toMatchObject({
+    expect(
+      await ieNoOpen()(handler)(createEvent({}), createContext())
+    ).toMatchObject({
       headers: {
         "X-Download-Options": "noopen",
       },
