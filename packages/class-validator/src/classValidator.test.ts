@@ -1,7 +1,7 @@
 import { classValidator } from "./classValidator";
 
 import { IsOptional, IsString } from "class-validator";
-import { createEvent } from "@lambda-middleware/utils";
+import { createContext, createEvent } from "@lambda-middleware/utils";
 
 class NameBody {
   constructor(firstName: string, lastName: string) {
@@ -27,7 +27,7 @@ describe("classValidator", () => {
       const handler = jest.fn();
       await classValidator({
         bodyType: NameBody,
-      })(handler)(createEvent({ body }), {} as any);
+      })(handler)(createEvent({ body }), createContext());
       expect(handler).toHaveBeenCalledWith(
         expect.objectContaining({
           body: {
@@ -47,7 +47,7 @@ describe("classValidator", () => {
           transformer: {
             excludeExtraneousValues: true,
           },
-        })(handler)(createEvent({ body }), {} as any)
+        })(handler)(createEvent({ body }), createContext())
       ).rejects.toBeDefined();
     });
   });
@@ -63,7 +63,7 @@ describe("classValidator", () => {
       const handler = jest.fn();
       await classValidator({
         bodyType: NameBody,
-      })(handler)(createEvent({ body }), {} as any);
+      })(handler)(createEvent({ body }), createContext());
       expect(handler).toHaveBeenCalledWith(
         expect.objectContaining({
           body: {
@@ -86,7 +86,7 @@ describe("classValidator", () => {
         validator: {
           whitelist: false,
         },
-      })(handler)(createEvent({ body }), {} as any);
+      })(handler)(createEvent({ body }), createContext());
       expect(actualResponse).toEqual(expectedResponse);
     });
   });
@@ -101,7 +101,7 @@ describe("classValidator", () => {
       await expect(
         classValidator({
           bodyType: NameBody,
-        })(handler)(createEvent({ body }), {} as any)
+        })(handler)(createEvent({ body }), createContext())
       ).rejects.toMatchObject({
         statusCode: 400,
       });
@@ -116,7 +116,7 @@ describe("classValidator", () => {
       await expect(
         classValidator({
           bodyType: NameBody,
-        })(handler)(createEvent({ body }), {} as any)
+        })(handler)(createEvent({ body }), createContext())
       ).rejects.toMatchObject({
         statusCode: 400,
       });
@@ -144,7 +144,7 @@ describe("classValidator", () => {
       const handler = jest.fn().mockResolvedValue(expectedResponse);
       const actualResponse = await classValidator({
         bodyType: OptionalNameBody,
-      })(handler)(createEvent({ body }), {} as any);
+      })(handler)(createEvent({ body }), createContext());
       expect(actualResponse).toEqual(expectedResponse);
     });
   });
