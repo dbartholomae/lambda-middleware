@@ -29,5 +29,10 @@
     "allowWarningsInSuccessfulBuild": true,
     "ignoreDependencyOrder": true
   }],
-  "parameters": []
+  "parameters": [{
+    "parameterKind": "flag",
+    "longName": "--fix",
+    "description": "Automatically fix linting errors.",
+    "associatedCommands": ["lint"]
+  }]
 }
