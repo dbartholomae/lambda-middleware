@@ -100,11 +100,14 @@ We recommend to read up on tools you are unfamiliar with, e. g.
 or [to Hygen](http://www.hygen.io/docs/quick-start).
 
 After all tools are installed, please run `rush update` to install all
-dependencies, `rush build` to build them and then `rush lint`, `rush test:unit`, and `rush test:integration` 
+dependencies, `rush build` to build them and then `rush lint`, `rush test:unit`, and `rush test:integration`
 to ensure that everything is set up correctly.
 
 Now you can create a new branch describing the change you are about to make,
 e. g. `add_warmup_middleware`, and start coding.
+
+For creating a new middleware, you can use hygen: `npx hygen middleware new`.
+Afterwards, run `rush update` and `rush build`, and you are good-to-go.
 
 ## Your First Contribution
 
