@@ -30,7 +30,7 @@ export const classValidator = <T extends object>(
     return handler({ ...event, body: transformedBody }, context);
   } catch (error) {
     logger("Input is invalid");
-    error.statusCode = 400;
+    (error as { statusCode?: number }).statusCode = 400;
     throw error;
   }
 };

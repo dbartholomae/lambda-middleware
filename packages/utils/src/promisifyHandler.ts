@@ -11,7 +11,7 @@ export function promisifyHandler<Event, Response>(
         if (err) {
           return reject(err);
         }
-        return resolve(response);
+        return resolve(response!);
       }
 
       const result = handler(event, context, callback);

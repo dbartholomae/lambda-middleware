@@ -10,7 +10,7 @@ export function promisifyMiddyMiddlewareFunction<T, R, C extends Context>(
   fn: MiddlewareFunction<T, R, C>
 ): PromisifiedMiddlewareFunction<T, R, C> {
   return (instance: Instance<T, R, C>) => {
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
       function next(err: unknown): void {
         if (err) {
           return reject(err);

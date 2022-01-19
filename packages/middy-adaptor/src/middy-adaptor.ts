@@ -40,7 +40,7 @@ export const middyAdaptor = <
     await middyMiddleware.after(instance);
   } catch (error) {
     logger("error in handler or before or after middleware");
-    instance.error = error;
+    instance.error = error as Error;
     const newError = await middyMiddleware.onError(instance, error);
     if (newError) {
       throw newError;
