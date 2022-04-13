@@ -2,7 +2,7 @@ import { PromiseHandler } from "@lambda-middleware/utils";
 import debugFactory, { IDebugger } from "debug";
 import { APIGatewayProxyResult, Context } from "aws-lambda";
 
-const logger: IDebugger = debugFactory("@lambda-middleware/no-sniff");
+const logger: IDebugger = debugFactory("@lambda-middleware/ie-no-open");
 
 export const ieNoOpen = <E>() => (
   handler: PromiseHandler<E, APIGatewayProxyResult>
