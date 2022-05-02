@@ -62,4 +62,55 @@ describe("AJVAdditionalPropertiesErrorHandler", () => {
       expect(actual).toEqual(expectedBody);
     });
   });
+
+  describe("given error does not exists", () => {
+    it("returns body without deleting properties", () => {
+      jest
+        .spyOn(
+          additionalPropertiesErrorHandler as any,
+          "findAdditionalPropertyError"
+        )
+        .mockReturnValue(undefined);
+      jest
+        .spyOn(additionalPropertiesErrorHandler as any, "validate")
+        .mockReturnValueOnce(false)
+        .mockReturnValueOnce(true);
+
+      // when
+      const actual = additionalPropertiesErrorHandler.handleError({
+        firstName: "John",
+        lastName: "Doe",
+        injection: "malicious",
+      } as NameBody);
+
+      // then
+      expect(actual).toEqual({
+        firstName: "John",
+        lastName: "Doe",
+        injection: "malicious",
+      });
+    });
+
+    it("returns body without deleting properties", () => {
+      additionalPropertiesErrorHandler['validate']['errors'];
+      jest
+        .spyOn(additionalPropertiesErrorHandler as any, "validate")
+        .mockReturnValueOnce(false)
+        .mockReturnValueOnce(true);
+
+      // when
+      const actual = additionalPropertiesErrorHandler.handleError({
+        firstName: "John",
+        lastName: "Doe",
+        injection: "malicious",
+      } as NameBody);
+
+      // then
+      expect(actual).toEqual({
+        firstName: "John",
+        lastName: "Doe",
+        injection: "malicious",
+      });
+    });
+  });
 });
