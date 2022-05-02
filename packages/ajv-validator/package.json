@@ -26,9 +26,10 @@
   },
   "private": false,
   "dependencies": {
-    "@lambda-middleware/utils": "^1.0.4",
-    "debug": ">=4.1.0",
-    "tslib": "^2.0.1"
+    "@lambda-middleware/utils": "1.0.4",
+    "debug": "4.1.0",
+    "tslib": "2.0.1",
+    "ajv": "8.11.0"
   },
   "directories": {
     "example": "examples"

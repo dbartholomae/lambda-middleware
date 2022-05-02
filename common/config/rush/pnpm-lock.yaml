@@ -24,6 +24,7 @@ dependencies:
   '@types/supertest': 2.0.10
   '@typescript-eslint/eslint-plugin': 2.34.0_44389f4a1e38c91edad3112a04c84368
   '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.5.4
+  ajv: 8.11.0
   aws-lambda: 1.0.6
   class-transformer: 0.3.1
   class-transformer-validator: 0.9.1_4ae0cf6eab4c30830de5e5acc43ca1c7
@@ -1788,6 +1789,15 @@ packages:
     dev: false
     resolution:
       integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==
+  /ajv/8.11.0:
+    dependencies:
+      fast-deep-equal: 3.1.3
+      json-schema-traverse: 1.0.0
+      require-from-string: 2.0.2
+      uri-js: 4.4.0
+    dev: false
+    resolution:
+      integrity: sha512-wGgprdCvMalC0BztXvitD2hC04YffAvtsUn93JbGXYLAtCUO4xd17mCCZQxUOItiBwZvJScWo8NIvQMQ71rdpg==
   /ansi-align/3.0.0:
     dependencies:
       string-width: 3.1.0
@@ -6399,6 +6409,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==
+  /json-schema-traverse/1.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug==
   /json-schema/0.2.3:
     dev: false
     resolution:
@@ -8566,6 +8580,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-jGStX9MNqxyXbiNE/+f3kqam30I=
+  /require-from-string/2.0.2:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==
   /require-main-filename/2.0.0:
     dev: false
     resolution:
@@ -10916,6 +10936,7 @@ packages:
       '@types/supertest': 2.0.10
       '@typescript-eslint/eslint-plugin': 2.34.0_44389f4a1e38c91edad3112a04c84368
       '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.5.4
+      ajv: 8.11.0
       aws-lambda: 1.0.6
       concurrently: 5.3.0
       debug: 4.3.2
@@ -10942,7 +10963,7 @@ packages:
     dev: false
     name: '@rush-temp/ajv-validator'
     resolution:
-      integrity: sha512-MZ0oS7htAoEuvaqMSnNBxkAQsgnUCbcwDK2dl5rrwszyIkQNx5lnCOQJsG9R+oZOLZixxWdN13Wx241f5Pmlfg==
+      integrity: sha512-jfFD5pUhtMCIoeR1gC3QJCXfIRYWKmYS+gNvKz9sl4lXYXyCxGOFnJQrfUJqunbZmFO22IH4xG35dtMuFqD09w==
       tarball: 'file:projects/ajv-validator.tgz'
     version: 0.0.0
   'file:projects/class-validator.tgz':
@@ -11528,6 +11549,7 @@ specifiers:
   '@types/supertest': ^2.0.8
   '@typescript-eslint/eslint-plugin': ^2.26.0
   '@typescript-eslint/parser': ^2.26.0
+  ajv: ~8.11.0
   aws-lambda: ^1.0.5
   class-transformer: '>=0.2.3'
   class-transformer-validator: '>=0.8.0'
