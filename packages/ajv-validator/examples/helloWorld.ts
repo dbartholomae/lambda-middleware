@@ -1,13 +1,36 @@
-import { ajvValidator } from "../";
+import { JSONSchemaType } from "ajv";
 import { APIGatewayProxyResult } from "aws-lambda";
+import { ajvValidator } from "../";
+
+class NameBody {
+  constructor(
+    public readonly firstName: string,
+    public readonly lastName: string
+  ) {}
+}
+
+const schema: JSONSchemaType<NameBody> = {
+  type: "object",
+  properties: {
+    firstName: { type: "string" },
+    lastName: { type: "string", nullable: true },
+  },
+  required: ["firstName"],
+  additionalProperties: false,
+};
 
 // This is your AWS handler
-async function helloWorld(): Promise<APIGatewayProxyResult> {
+async function helloWorld(event: {
+  body: NameBody;
+}): Promise<APIGatewayProxyResult> {
   return {
+    body: `Hello ${event.body.firstName} ${event.body.lastName}`,
+    headers: {
+      "content-type": "text",
+    },
     statusCode: 200,
-    body: "",
   };
 }
 
 // Wrap the handler with the middleware
-export const handler = ajvValidator()(helloWorld);
+export const handler = ajvValidator({ ajv: { schema } })(helloWorld);
