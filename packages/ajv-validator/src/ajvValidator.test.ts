@@ -61,7 +61,7 @@ describe("ajvValidator", () => {
         }),
         expect.anything()
       );
-    })
+    });
   });
 
   describe("given superfluous input", () => {
@@ -126,7 +126,7 @@ describe("ajvValidator", () => {
         )
       ).rejects.toMatchObject({
         statusCode: 400,
-        message: "must have required property 'firstName'"
+        message: "must have required property 'firstName'",
       });
     });
   });
@@ -136,14 +136,16 @@ describe("ajvValidator", () => {
       const handler = jest.fn();
 
       // then
-      expect(
+      await expect(
         ajvValidator({ ajv: { schema } })(handler)(
           createEvent({ body: input }),
           createContext()
         )
-      ).rejects.toMatchObject({
-        statusCode: 400,
-      });
+      ).rejects.toMatchObject(
+        expect.objectContaining({
+          statusCode: 400,
+        })
+      );
     });
   });
 
@@ -187,14 +189,16 @@ describe("ajvValidator", () => {
       });
 
       // then
-      expect(
+      await expect(
         ajvValidator({ ajv: { schema } })(handler)(
           createEvent({ body: validBodyJSON }),
           createContext()
         )
-      ).rejects.toMatchObject({
-        statusCode: 400,
-      });
+      ).rejects.toMatchObject(
+        expect.objectContaining({
+          statusCode: 400,
+        })
+      );
     });
   });
 });
