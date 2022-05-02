@@ -44,6 +44,7 @@ export const ajvValidator = <T extends object>(
     logger(`Input is invalid. Error: ${error}`);
     return Promise.reject(error);
   } catch (error) {
+    (error as { statusCode?: number }).statusCode = 400;
     logger(`Input is invalid. Error: ${error}`);
     return Promise.reject(error)
   }
