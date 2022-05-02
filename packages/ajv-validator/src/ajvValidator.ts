@@ -22,7 +22,7 @@ export const ajvValidator = <T extends object>(
     }
   
     const validate = ajv.compile(options.ajv.schema);
-    const body: T = JSON.parse((event.body || "{}") ?? "{}");
+    const body: T = JSON.parse(event.body || "{}");
     const errorHandlers = [new AdditionalPropertiesErrorHandler({ validate })];
   
     errorHandlers.forEach((errorHandler) => errorHandler.handleError(body));
