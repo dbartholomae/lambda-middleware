@@ -92,4 +92,74 @@ describe("ajvValidator", () => {
       }
     );
   });
+
+  describe("given invalid input", () => {
+    it("throws an error with statusCode 400", async () => {
+      const invalidBody = {
+        foo: "",
+        bar: 1,
+      };
+      const handler = jest.fn();
+  
+      // then
+      expect(
+        ajvValidator({ ajv: { schema } })(handler)(
+          createEvent({ body: JSON.stringify(invalidBody) }),
+          createContext()
+        )
+      ).rejects.toMatchObject({
+        statusCode: 400,
+      });
+    })
+  });
+
+  describe.each([undefined, null, "{}"])("given %p input", (input) => {
+    it("throws an error with statusCode 400", async () => {
+      const handler = jest.fn();
+
+      // then
+      expect(
+        ajvValidator({ ajv: { schema } })(handler)(
+          createEvent({ body: input }),
+          createContext()
+        )
+      ).rejects.toMatchObject({
+        statusCode: 400,
+      });
+    });
+  });
+
+  describe("with an empty body and optional properties", () => {
+    class OptionalNameBody {
+      constructor(
+        public readonly firstName?: string,
+        public readonly lastName?: string
+      ) {}
+    }
+    const optionalsSchema: JSONSchemaType<OptionalNameBody> = {
+      type: "object",
+      properties: {
+        firstName: { type: "string", nullable: true },
+        lastName: { type: "string", nullable: true },
+      },
+      additionalProperties: false,
+    };
+
+    it("returns the handler's response", async () => {
+      const expectedResponse = {
+        statusCode: 200,
+        body: "Done",
+      }
+      const handler = jest.fn().mockResolvedValue(expectedResponse);
+      
+      // when
+      const actualResponse = await ajvValidator({ ajv: { schema: optionalsSchema } })(handler)(
+        createEvent({ body: "" }),
+        createContext()
+      )
+
+      // then
+      expect(actualResponse).toEqual(expectedResponse);
+    });
+  });
 });
