@@ -13,22 +13,38 @@ export const ajvValidator = <T extends object>(
   event: APIGatewayEvent,
   context: Context
 ): Promise<R> => {
-  logger(`Checking input ${JSON.stringify(event.body)}`);
-  let ajv = new Ajv({ allErrors: true });
-
-  if (options.ajv.options) {
-    ajv = new Ajv(options.ajv.options);
+  logger(`Checking input ${event.body}`);
+  try {
+    let ajv = new Ajv({ allErrors: true });
+  
+    if (options.ajv.options) {
+      ajv = new Ajv(options.ajv.options);
+    }
+  
+    const validate = ajv.compile(options.ajv.schema);
+    const body: T = JSON.parse((event.body || "{}") ?? "{}");
+    const errorHandlers = [new AdditionalPropertiesErrorHandler({ validate })];
+  
+    errorHandlers.forEach((errorHandler) => errorHandler.handleError(body));
+  
+    if (validate(body)) {
+      logger("Input is valid");
+      return handler({ ...event, body }, context);
+    }
+  
+    const error: {
+      statusCode: number;
+      message?: string;
+    } = {
+      statusCode: 400,
+    };
+  
+    error.message = validate.errors?.map((error) => error.message).join("\n");
+  
+    logger(`Input is invalid. Error: ${error}`);
+    return Promise.reject(error);
+  } catch (error) {
+    logger(`Input is invalid. Error: ${error}`);
+    return Promise.reject(error)
   }
-
-  const validate = ajv.compile(options.ajv.schema);
-  const body: T = JSON.parse(event.body ?? "{}");
-  const errorHandlers = [new AdditionalPropertiesErrorHandler({ validate })];
-
-  errorHandlers.forEach((errorHandler) => errorHandler.handleError(body));
-
-  if (validate(body)) {
-    return handler({ ...event, body }, context);
-  }
-
-  return Promise.reject();
 };
