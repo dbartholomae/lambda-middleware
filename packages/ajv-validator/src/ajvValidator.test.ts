@@ -19,11 +19,11 @@ describe("ajvValidator", () => {
     required: ["firstName"],
     additionalProperties: false,
   };
-  const givenBody = JSON.stringify({
+  const validBodyJSON = JSON.stringify({
     firstName: "John",
     lastName: "Doe",
   });
-  const expectedBody: NameBody = {
+  const validBody: NameBody = {
     firstName: "John",
     lastName: "Doe",
   };
@@ -35,16 +35,33 @@ describe("ajvValidator", () => {
       // when
       await ajvValidator({
         ajv: { schema },
-      })(handler)(createEvent({ body: givenBody }), createContext());
+      })(handler)(createEvent({ body: validBodyJSON }), createContext());
 
       // then
       expect(handler).toHaveBeenCalledWith(
         expect.objectContaining({
-          body: expectedBody,
+          body: validBody,
         }),
         expect.anything()
       );
     });
+
+    it("changes ajv configuration with given inputs successfully", async () => {
+      const handler = jest.fn();
+
+      // when
+      await ajvValidator({
+        ajv: { schema, options: { allErrors: true } },
+      })(handler)(createEvent({ body: validBodyJSON }), createContext());
+
+      // then
+      expect(handler).toHaveBeenCalledWith(
+        expect.objectContaining({
+          body: validBody,
+        }),
+        expect.anything()
+      );
+    })
   });
 
   describe("given superfluous input", () => {
@@ -85,7 +102,7 @@ describe("ajvValidator", () => {
         // then
         expect(handler).toHaveBeenCalledWith(
           expect.objectContaining({
-            body: expectedBody,
+            body: validBody,
           }),
           expect.anything()
         );
@@ -100,7 +117,7 @@ describe("ajvValidator", () => {
         bar: 1,
       };
       const handler = jest.fn();
-  
+
       // then
       expect(
         ajvValidator({ ajv: { schema } })(handler)(
@@ -109,8 +126,9 @@ describe("ajvValidator", () => {
         )
       ).rejects.toMatchObject({
         statusCode: 400,
+        message: "must have required property 'firstName'"
       });
-    })
+    });
   });
 
   describe.each([undefined, null, "{}"])("given %p input", (input) => {
@@ -149,17 +167,34 @@ describe("ajvValidator", () => {
       const expectedResponse = {
         statusCode: 200,
         body: "Done",
-      }
+      };
       const handler = jest.fn().mockResolvedValue(expectedResponse);
-      
+
       // when
-      const actualResponse = await ajvValidator({ ajv: { schema: optionalsSchema } })(handler)(
-        createEvent({ body: "" }),
-        createContext()
-      )
+      const actualResponse = await ajvValidator({
+        ajv: { schema: optionalsSchema },
+      })(handler)(createEvent({ body: "" }), createContext());
 
       // then
       expect(actualResponse).toEqual(expectedResponse);
+    });
+  });
+
+  describe("when handler throws error", () => {
+    it("returns 400 error promise rejection successfully", async () => {
+      const handler = jest.fn().mockImplementation(() => {
+        throw new Error();
+      });
+
+      // then
+      expect(
+        ajvValidator({ ajv: { schema } })(handler)(
+          createEvent({ body: validBodyJSON }),
+          createContext()
+        )
+      ).rejects.toMatchObject({
+        statusCode: 400,
+      });
     });
   });
 });
