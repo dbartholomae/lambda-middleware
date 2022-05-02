@@ -1,4 +1,5 @@
 dependencies:
+  '@rush-temp/ajv-validator': 'file:projects/ajv-validator.tgz'
   '@rush-temp/class-validator': 'file:projects/class-validator.tgz'
   '@rush-temp/compose': 'file:projects/compose.tgz_debug@4.2.0'
   '@rush-temp/cors': 'file:projects/cors.tgz'
@@ -8863,7 +8864,7 @@ packages:
       please-upgrade-node: 3.2.0
       portfinder: 1.0.28
       semver: 7.3.5
-      serverless: 2.57.0_debug@4.2.0
+      serverless: 2.57.0_debug@4.3.2
       update-notifier: 5.1.0
       velocityjs: 2.0.3
       ws: 7.5.4
@@ -10907,6 +10908,43 @@ packages:
       node: '>= 10'
     resolution:
       integrity: sha512-zshzwQW7gG7hjpBlgeQP9RuyPGNxvJdzR8SUM3QhxCnLjWN2E7j3dOvpeDcQoETfHx0urRS7EtmVToql7YpU4A==
+  'file:projects/ajv-validator.tgz':
+    dependencies:
+      '@types/aws-lambda': 8.10.64
+      '@types/debug': 4.1.5
+      '@types/jest': 25.2.3
+      '@types/supertest': 2.0.10
+      '@typescript-eslint/eslint-plugin': 2.34.0_44389f4a1e38c91edad3112a04c84368
+      '@typescript-eslint/parser': 2.34.0_eslint@6.8.0+typescript@4.5.4
+      aws-lambda: 1.0.6
+      concurrently: 5.3.0
+      debug: 4.3.2
+      eslint: 6.8.0
+      eslint-config-prettier: 6.14.0_eslint@6.8.0
+      eslint-plugin-prettier: 3.1.4_eslint@6.8.0+prettier@2.1.2
+      jest: 25.5.4
+      jest-junit: 10.0.0
+      pkg-ok: 2.3.1
+      prettier: 2.1.2
+      prettier-config-standard: 1.0.1
+      rimraf: 3.0.2
+      serverless: 2.57.0_debug@4.3.2
+      serverless-offline: 8.0.0_serverless@2.57.0
+      serverless-webpack: 5.5.3_aaaff1a393272d83a94349349d7e2858
+      source-map-support: 0.5.19
+      supertest: 4.0.2
+      ts-jest: 25.5.1_jest@25.5.4+typescript@4.5.4
+      ts-loader: 6.2.2_typescript@4.5.4
+      tslib: 2.0.3
+      typescript: 4.5.4
+      wait-on: 5.2.0
+      webpack: 4.44.2_webpack@4.44.2
+    dev: false
+    name: '@rush-temp/ajv-validator'
+    resolution:
+      integrity: sha512-MZ0oS7htAoEuvaqMSnNBxkAQsgnUCbcwDK2dl5rrwszyIkQNx5lnCOQJsG9R+oZOLZixxWdN13Wx241f5Pmlfg==
+      tarball: 'file:projects/ajv-validator.tgz'
+    version: 0.0.0
   'file:projects/class-validator.tgz':
     dependencies:
       '@types/aws-lambda': 8.10.64
@@ -10945,7 +10983,7 @@ packages:
     dev: false
     name: '@rush-temp/class-validator'
     resolution:
-      integrity: sha512-4nFLl8t+o8MxgpAhHEDvE8QkymQnEyYcAI7/l02A03ChZowr1SE9gjmPhryAohXXJyMY2iO9SGoY6BBKvIaf6w==
+      integrity: sha512-8YzC3lMHhVPwOBEz+soz4WhBWzFHnxMUpQkTyZ4vwTPn0kfILRM02bHbrGdz1UVeUDCGELnN+f9mDqQSltd/4g==
       tarball: 'file:projects/class-validator.tgz'
     version: 0.0.0
   'file:projects/compose.tgz_debug@4.2.0':
@@ -10986,7 +11024,7 @@ packages:
     peerDependencies:
       debug: '*'
     resolution:
-      integrity: sha512-yfkOl2AzaVSMXoawGmZkGA7GbKibgB4hZJApm1yGW2C1ugafQrYGLZYzAiEel8pQYJutBl3X4iXnYPG0ZSufjA==
+      integrity: sha512-1lJmezF+d0jUQNlA1hWQolL2zu13eAGZA7FzFoyvSEJmyM2kJmzmbs8Gp8B6ZtTLz7wYSxAFtJE9GRchMkkG1w==
       tarball: 'file:projects/compose.tgz'
     version: 0.0.0
   'file:projects/cors.tgz':
@@ -11023,7 +11061,7 @@ packages:
     dev: false
     name: '@rush-temp/cors'
     resolution:
-      integrity: sha512-j1zm44MorzrsA+nTSboHl4AmKQVTpzMWB5Oik7TROA9Xq+73UKx9FybrjFRpILWwzdvsOckiVf5j1YH0sBgYIA==
+      integrity: sha512-dg/c4q2pfzYc0eEVsdAbGz9BonFEGOI4EsU+5Di40Dq17sQDBdn0uJ2VinJZUFK/zVB/DGIezzprKxzqGMcyfQ==
       tarball: 'file:projects/cors.tgz'
     version: 0.0.0
   'file:projects/do-not-wait.tgz':
@@ -11051,7 +11089,7 @@ packages:
     dev: false
     name: '@rush-temp/do-not-wait'
     resolution:
-      integrity: sha512-lNSS+euhHlNXVU07f/DFiZiArCgi2l4gwg+lGav1Z84Iha3kj4++J3Y5PK3OqJrU82a/ENH/DvMpl5iUR7Pg+A==
+      integrity: sha512-YljO5KVAcFzGipfmD15HAl3genfDIWcqrlM4pIIC25Q/RzmTIXrpxLtpKd++w8zk/BRT6STnveL6UujCMULO9A==
       tarball: 'file:projects/do-not-wait.tgz'
     version: 0.0.0
   'file:projects/e2e-tests.tgz_debug@4.2.0':
@@ -11091,7 +11129,7 @@ packages:
     peerDependencies:
       debug: '*'
     resolution:
-      integrity: sha512-/ZqRxBVkW7GLdYMUNXNwTv5joxeyxUD3wqQN9VD6NdvdK/s8wzWsUj04KrEWr92ORkMX50/NME+ud6fgzYAevg==
+      integrity: sha512-IE8bFk8BTKt7fQDC5/59Eeou5yLXq8OFMJu0BopPCS3ejNSs40HPecbq7b7fNHviU5ZpyTN8epjKm4zG1N39RA==
       tarball: 'file:projects/e2e-tests.tgz'
     version: 0.0.0
   'file:projects/frameguard.tgz':
@@ -11128,7 +11166,7 @@ packages:
     dev: false
     name: '@rush-temp/frameguard'
     resolution:
-      integrity: sha512-9P5lWWIGlgjLBYqTJTd9h0HICey511mRiGEsSqyCox8ro8NgGBliA8/LdIqq8X+SUQj1XeR7M9XpS/5B3yt3vQ==
+      integrity: sha512-a1FIqdoL2OCauYwFKfZ5tFbE+3h82xrwzLquKRHsrANTrwJDCqXydAWSkCT/CWic1AFyqaOR4zCnZ9+p+l/Q5w==
       tarball: 'file:projects/frameguard.tgz'
     version: 0.0.0
   'file:projects/http-error-handler.tgz':
@@ -11168,7 +11206,7 @@ packages:
     dev: false
     name: '@rush-temp/http-error-handler'
     resolution:
-      integrity: sha512-Rq4lYWadpvNlg4nvTBEclRBWkhbnaBi8NLcnI4lFzc0YVlKt7NDJPxm8xnDasfIfxzKXHSePA2s7Q9+mYoCrXg==
+      integrity: sha512-JqWThkxIVsTLEVRfTi7JAFv8TpPdZmudbeoXvBd8QRuIvgoFKXO4UbzxInn2hdX4u5GgmGl7tyoYhS7GQ2QwQg==
       tarball: 'file:projects/http-error-handler.tgz'
     version: 0.0.0
   'file:projects/http-header-normalizer.tgz':
@@ -11205,7 +11243,7 @@ packages:
     dev: false
     name: '@rush-temp/http-header-normalizer'
     resolution:
-      integrity: sha512-sR2U4CRq5rvbnH32X+igx6iENd+I7MAUnCf+yBSbKJPgQmAJ3WjQh50B1Biw2IBNTBOpJRvRQF2eBoa6t9cppg==
+      integrity: sha512-Qyww1NJBv2nXHf858abDJTbYP5qHqtNn7XT8QLu4hyTwyXmAtsETuhbjOd2/kTeZ8TRDSVwe9ron0IdBN+GV6g==
       tarball: 'file:projects/http-header-normalizer.tgz'
     version: 0.0.0
   'file:projects/ie-no-open.tgz':
@@ -11242,7 +11280,7 @@ packages:
     dev: false
     name: '@rush-temp/ie-no-open'
     resolution:
-      integrity: sha512-Pt1FBWpMj22jlW8M3pb5stY+bdTVphhTjPEPUbyVRHYqYclMinu0rdhkcJY4jt1bizKHjU8Af45svTRIRIPNCw==
+      integrity: sha512-tneGbZrw71M0BupPd0QCxvqbAdUc0bQoqP8s4CCdBG0KZOZwUMrb2E4jN48AISbDhiXiz1VsoasESZKUoPTC9A==
       tarball: 'file:projects/ie-no-open.tgz'
     version: 0.0.0
   'file:projects/json-deserializer.tgz':
@@ -11279,7 +11317,7 @@ packages:
     dev: false
     name: '@rush-temp/json-deserializer'
     resolution:
-      integrity: sha512-C1G+JmfuZZo7S6H9kNEqWH0GNoINplpEZ1lzBJRh7NSjg9Do2r+bp6hvL+ic2trqLAKEUjpHWCd8uEtVVtSwyg==
+      integrity: sha512-cyejy1Ls/z33I+Ux6kr/gQuWvLMlDSM6d3THOvhWuNxhbs0RnaUqlkHjI6SY/LoCQocFJopFuZmo5smY8ewpFw==
       tarball: 'file:projects/json-deserializer.tgz'
     version: 0.0.0
   'file:projects/json-serializer.tgz':
@@ -11316,7 +11354,7 @@ packages:
     dev: false
     name: '@rush-temp/json-serializer'
     resolution:
-      integrity: sha512-MFH5o+ETKO7gD2gLMnuGRpMEDvbQLm6B1wNpuFn9RaTF6BAYtlUk1nyGnpnuKoqtoj3uFysOGTxK2Yl4adN6NA==
+      integrity: sha512-v1RqSDtmCyoCwaoZe8iGljs6mUaS2FARiYS60/MNcuwwZakCFQUDJK2LMBerCz4dNwuYFytUlHq7rBQkwiKn5w==
       tarball: 'file:projects/json-serializer.tgz'
     version: 0.0.0
   'file:projects/jwt-auth.tgz':
@@ -11359,7 +11397,7 @@ packages:
     dev: false
     name: '@rush-temp/jwt-auth'
     resolution:
-      integrity: sha512-JMTV4jFBFsGWbG7nVJivXG64yPPhJLjTKXQERZIBEIFPPQUBsQ7XP0YmYZB2GvNdJiyZ59egxpU/oNaIcNSzrg==
+      integrity: sha512-TxF4UHLwh5sEdTD3u4dwhnSyHplKswz0ttr+fIcs2gXYBre/BV2KP8b1ypa2pUttdo+uN/1WC2Rbqvfw+ihgbA==
       tarball: 'file:projects/jwt-auth.tgz'
     version: 0.0.0
   'file:projects/middy-adaptor.tgz':
@@ -11396,7 +11434,7 @@ packages:
     dev: false
     name: '@rush-temp/middy-adaptor'
     resolution:
-      integrity: sha512-MJha36GR6nKDuTLagV3F9t4jcHvrQKEXRMntTmIQhOx2Z/69XZwYr8AM+mKaOY0q12A6bokeq3URT0iIqBp2qw==
+      integrity: sha512-Z6i8AQGgmrZ303BFqfwE+AyGKlMDwgMG7A/DM3FZluxrEYc8Dt+oezhGiRnsZLg+UH+G8K1QdwSkLfeTNEo7+g==
       tarball: 'file:projects/middy-adaptor.tgz'
     version: 0.0.0
   'file:projects/no-sniff.tgz':
@@ -11433,7 +11471,7 @@ packages:
     dev: false
     name: '@rush-temp/no-sniff'
     resolution:
-      integrity: sha512-lxTsDjpuJpbnwUf/i3kpp988yEkvzct4tIBaIpxkHNlzm0QHnFUISxCzG2qc7rTo1FQQJuFdM9VaoN1dYS0RjQ==
+      integrity: sha512-2fZ0M+9HPV3zmii2xknhohGRAYRr+SgWdRvLnuunC4IzavT5+TCG7aBrKwk79uvRe9mtSDlc8aVj8KW4i0naGw==
       tarball: 'file:projects/no-sniff.tgz'
     version: 0.0.0
   'file:projects/utils.tgz':
@@ -11460,11 +11498,12 @@ packages:
     dev: false
     name: '@rush-temp/utils'
     resolution:
-      integrity: sha512-CXH77rat6qjje+fVV6YgpEwTx03RkTmske/suDfSoi9AnKhK4odbUGq5EKN3vchS0WpnpP1jjzjUS5E/VfSTPw==
+      integrity: sha512-xxxpnvrLJcCdf3tdAqiTYz9T/aObgb1PaVJH6F+eyjOMePDKvXI3mMPyX9HO59H3Kf8dP9vXCE+qvgZbmKL8MQ==
       tarball: 'file:projects/utils.tgz'
     version: 0.0.0
 registry: ''
 specifiers:
+  '@rush-temp/ajv-validator': 'file:./projects/ajv-validator.tgz'
   '@rush-temp/class-validator': 'file:./projects/class-validator.tgz'
   '@rush-temp/compose': 'file:./projects/compose.tgz'
   '@rush-temp/cors': 'file:./projects/cors.tgz'
@@ -11519,6 +11558,6 @@ specifiers:
   ts-jest: ^25.3.1
   ts-loader: ^6.2.2
   tslib: ^2.0.1
-  typescript: ~4.5.4
+  typescript: ^4.5.4
   wait-on: ^5.2.0
   webpack: ^4.41.5

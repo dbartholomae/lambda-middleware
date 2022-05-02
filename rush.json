@@ -13,6 +13,11 @@
   },
   "projects": [
     {
+      "packageName": "@lambda-middleware/ajv-validator",
+      "projectFolder": "packages/ajv-validator",
+      "shouldPublish": true
+    },
+    {
       "packageName": "@lambda-middleware/http-error-handler",
       "projectFolder": "packages/http-error-handler",
       "shouldPublish": true
