@@ -19,31 +19,77 @@ describe("ajvValidator", () => {
     required: ["firstName"],
     additionalProperties: false,
   };
+  const givenBody = JSON.stringify({
+    firstName: "John",
+    lastName: "Doe",
+  });
+  const expectedBody: NameBody = {
+    firstName: "John",
+    lastName: "Doe",
+  };
 
   describe("given valid input", () => {
-    const body = JSON.stringify({
-      firstName: "John",
-      lastName: "Doe",
-    });
-
     it("sets the body to the transformed and validated value successfully", async () => {
       const handler = jest.fn();
 
       // when
       await ajvValidator({
         ajv: { schema },
-      })(handler)(createEvent({ body }), createContext());
+      })(handler)(createEvent({ body: givenBody }), createContext());
 
       // then
       expect(handler).toHaveBeenCalledWith(
         expect.objectContaining({
-          body: {
-            firstName: "John",
-            lastName: "Doe",
-          },
+          body: expectedBody,
         }),
         expect.anything()
       );
     });
+  });
+
+  describe("given superfluous input", () => {
+    it.each([
+      {
+        firstName: "John",
+        lastName: "Doe",
+        injection: "malicious",
+      },
+      {
+        firstName: "John",
+        lastName: "Doe",
+        injection: 10,
+      },
+      {
+        firstName: "John",
+        lastName: "Doe",
+        injection: { firstName: "malicious" },
+      },
+      {
+        firstName: "John",
+        lastName: "Doe",
+        injection: [],
+      },
+    ])(
+      "%p validator omits the superfluous inputs successfully",
+      async (givenBody) => {
+        const handler = jest.fn();
+
+        // when
+        await ajvValidator({
+          ajv: { schema },
+        })(handler)(
+          createEvent({ body: JSON.stringify(givenBody) }),
+          createContext()
+        );
+
+        // then
+        expect(handler).toHaveBeenCalledWith(
+          expect.objectContaining({
+            body: expectedBody,
+          }),
+          expect.anything()
+        );
+      }
+    );
   });
 });
