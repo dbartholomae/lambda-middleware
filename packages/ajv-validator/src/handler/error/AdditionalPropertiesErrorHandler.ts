@@ -14,24 +14,30 @@ export class AdditionalPropertiesErrorHandler<T> extends AJVErrorHandler<T> {
     return this.removeAdditionalProperties(body);
   }
 
-  private removeAdditionalProperties(body: T): T {
+  private removeAdditionalProperties(body: Readonly<T>): T {
     while (Object.keys(body).length && !this.validate(body)) {
-      body = this.removeAdditionalProperty(body);
+      const additionalProperty = this.findAdditionalProperty();
+
+      if (!additionalProperty) {
+        break;
+      }
+
+      delete body[additionalProperty];
     }
 
     return body;
   }
 
-  private removeAdditionalProperty(body: T): T {
-    const additionalPropertyError = this.findAdditionalPropertyError();
+  private findAdditionalProperty(): string | undefined {
+    let result: string | undefined = undefined;
 
-    if (!additionalPropertyError) {
-      return body;
+    const error = this.findAdditionalPropertyError();
+
+    if (error) {
+      result = this.keyOfAdditionalProperty(error);
     }
 
-    delete body[this.keyOfAdditionalProperty(additionalPropertyError)];
-
-    return body;
+    return result;
   }
 
   private findAdditionalPropertyError(): ErrorObject | undefined {
@@ -41,7 +47,7 @@ export class AdditionalPropertiesErrorHandler<T> extends AJVErrorHandler<T> {
     );
   }
 
-  private keyOfAdditionalProperty(error: ErrorObject): keyof T {
+  private keyOfAdditionalProperty(error: ErrorObject): string {
     return error.params[AdditionalPropertiesErrorHandler.ERROR_PARAM_KEY];
   }
 }
