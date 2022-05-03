@@ -18,17 +18,52 @@ This middleware is part of the [lambda middleware series](https://dbartholomae.g
 ## Usage
 
 ```typescript
-import { ajvValidator } from "@lambda-middleware/ajv-validator";
+import { composeHandler } from "@lambda-middleware/compose";
+import { errorHandler } from "@lambda-middleware/http-error-handler";
+import { JSONSchemaType } from "ajv";
 import { APIGatewayProxyResult } from "aws-lambda";
+import { ajvValidator } from "../";
+
+// Define a data class
+class NameBody {
+  constructor(
+    public readonly firstName: string,
+    public readonly lastName: string
+  ) {}
+}
+
+const schema: JSONSchemaType<NameBody> = {
+  type: "object",
+  properties: {
+    firstName: { type: "string" },
+    lastName: { type: "string", nullable: true },
+  },
+  required: ["firstName"],
+  additionalProperties: false,
+};
 
 // This is your AWS handler
-async function helloWorld(): Promise<APIGatewayProxyResult> {
+async function helloWorld(event: {
+  body: NameBody;
+}): Promise<APIGatewayProxyResult> {
+  // Thanks to the validation middleware you can be sure body is typed correctly
   return {
+    body: `Hello ${event.body.firstName} ${event.body.lastName}`,
+    headers: {
+      "content-type": "text",
+    },
     statusCode: 200,
-    body: "",
   };
 }
 
-// Wrap the handler with the middleware
-export const handler = ajvValidator()(helloWorld);
+// Let's add middleware to our handler, then we will be able to attach middlewares to it
+export const handler = composeHandler(
+  // The ajv validator return promise rejections when an errors occurs while doing a validation. The rejected errors are compatible with the error handler formats
+  errorHandler(),
+  // add the validator middleware
+  // give a schema configuration similar to the line 35 schema object depending on your dto
+  // you can also give further configurations to ajv using the options property of ajv object that the ajvValidator takes. For configuration options please visit https://ajv.js.org/options.html
+  ajvValidator({ ajv: { schema } }),
+  helloWorld
+);
 ```
