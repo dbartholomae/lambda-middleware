@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/ajv-validator",
+      "comment": "Add a validator based on ajv module",
+      "type": "minor"
+    }
+  ],
+  "packageName": "@lambda-middleware/ajv-validator",
+  "email": "berkaygungor.1996@gmail.com"
+}
