@@ -1,3 +1,5 @@
+import { composeHandler } from "@lambda-middleware/compose";
+import { errorHandler } from "@lambda-middleware/http-error-handler";
 import { JSONSchemaType } from "ajv";
 import { APIGatewayProxyResult } from "aws-lambda";
 import { ajvValidator } from "../";
@@ -33,4 +35,8 @@ async function helloWorld(event: {
 }
 
 // Wrap the handler with the middleware
-export const handler = ajvValidator({ ajv: { schema } })(helloWorld);
+export const handler = composeHandler(
+  errorHandler(),
+  ajvValidator({ ajv: { schema } }),
+  helloWorld
+);

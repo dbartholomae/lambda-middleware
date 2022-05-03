@@ -12,12 +12,13 @@ describe("Handler with ajvValidator middleware", () => {
           lastName: "Doe",
         })
         .expect(200);
+        
       expect(response.text).toEqual("Hello John Doe");
     });
   });
 
   describe("with invalid input", () => {
-    it("returns 400 and the validation error", async () => {
+    it("returns 400", async () => {
       const response = await server
         .post("/hello")
         .send({
@@ -25,7 +26,10 @@ describe("Handler with ajvValidator middleware", () => {
           inject: "malicious"
         })
         .expect(400);
-      expect(JSON.stringify(response.body)).toBeDefined();
+        
+      expect(response.body).toMatchObject(
+        expect.objectContaining({ statusCode: 400 })
+      );
     });
   });
 });
