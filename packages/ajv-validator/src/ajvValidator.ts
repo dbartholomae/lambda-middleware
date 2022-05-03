@@ -34,12 +34,11 @@ export const ajvValidator = <T extends object>(
   
     const error: {
       statusCode: number;
-      message?: string;
+      message: string;
     } = {
       statusCode: 400,
+      message: validate.errors!.map((error) => error.message).join("\n")
     };
-  
-    error.message = validate.errors?.map((error) => error.message).join("\n");
   
     logger(`Input is invalid. Error: ${error}`);
     return Promise.reject(error);
