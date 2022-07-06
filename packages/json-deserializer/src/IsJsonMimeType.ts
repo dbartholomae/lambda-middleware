@@ -1,6 +1,8 @@
-import { APIGatewayProxyEvent } from "aws-lambda";
+import { APIGatewayProxyEvent, APIGatewayProxyEventV2 } from "aws-lambda";
 
-export const isJsonMimeType = (event: APIGatewayProxyEvent): boolean => {
+export const isJsonMimeType = (
+  event: APIGatewayProxyEvent | APIGatewayProxyEventV2
+): boolean => {
   const { headers } = event;
   const contentTypeHeader =
     headers?.["Content-Type"] ?? headers?.["content-type"] ?? "";

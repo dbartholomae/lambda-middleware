@@ -1,9 +1,11 @@
-import { APIGatewayProxyEvent } from "aws-lambda";
+import { APIGatewayProxyEvent, APIGatewayProxyEventV2 } from "aws-lambda";
 import { isJsonMimeType } from "./IsJsonMimeType";
 import { RequestBodyNotJsonError } from "./customErrors/RequestBodyNotJsonError";
 
 export const deserializeBody = <
-  E extends APIGatewayProxyEvent & { body: string | null }
+  E extends (APIGatewayProxyEvent | APIGatewayProxyEventV2) & {
+    body: string | null;
+  }
 >(
   event: E
 ): Record<string, unknown> | null => {
