@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/json-deserializer",
+      "comment": "Updated deserializeBody middleware to also work on APIGatewayProxyEventV2 event types",
+      "type": "minor"
+    }
+  ],
+  "packageName": "@lambda-middleware/json-deserializer",
+  "email": "abmohan@gmail.com"
+}
