@@ -1,8 +1,6 @@
 # Security policy
 
-If you find a security vulnerability, do NOT open an issue. Email
-[daniel@bartholomae.name](mailto:daniel@bartholomae.name&subject=Security%20vulnerability%20in%20repo)
-instead. This reduces the risk of criminals getting aware and exploiting the
+If you find a security vulnerability, do NOT open an issue. Instead, report the vulnerability on the [security advisories page](https://github.com/dbartholomae/lambda-middleware/security/advisories). This reduces the risk of criminals getting aware and exploiting the
 vulnerability before we got a chance to fix it.
 
 In order to determine whether you are dealing with a security issue, ask yourself these two questions:
@@ -11,7 +9,7 @@ In order to determine whether you are dealing with a security issue, ask yoursel
 
 If the answer to either of those two questions are "yes", then you're probably dealing with a security issue.
 Note that even if you answer "no" to both questions, you may still be dealing with a security issue, so if you're
-unsure, just email us at [daniel@bartholomae.name](mailto:daniel@bartholomae.name&subject=Security%20vulnerability%20in%20repo).
+unsure, please report on the [security advisories page](https://github.com/dbartholomae/lambda-middleware/security/advisories).
 
 If the bug is not security related, please use the corresponding issue template
 to submit it on GitHub.
