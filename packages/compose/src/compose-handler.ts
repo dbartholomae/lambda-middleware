@@ -1,24 +1,24 @@
 import { compose } from "./compose";
 
-export function composeHandler<V, T1>(fn0: (x: V) => T1, handler: V): T1;
+export function composeHandler<V, T1>(fn0: (x: V) => T1, handler: V): T1 & { handler: V };;
 export function composeHandler<V, T1, T2>(
   fn1: (x: T1) => T2,
   fn0: (x: V) => T1,
   handler: V
-): T2;
+): T2 & { handler: V };
 export function composeHandler<V, T1, T2, T3>(
   fn2: (x: T2) => T3,
   fn1: (x: T1) => T2,
   fn0: (x: V) => T1,
   handler: V
-): T3;
+): T3 & { handler: V };
 export function composeHandler<V, T1, T2, T3, T4>(
   fn3: (x: T3) => T4,
   fn2: (x: T2) => T3,
   fn1: (x: T1) => T2,
   fn0: (x: V) => T1,
   handler: V
-): T4;
+): T4 & { handler: V };
 export function composeHandler<V, T1, T2, T3, T4, T5>(
   fn4: (x: T4) => T5,
   fn3: (x: T3) => T4,
@@ -26,7 +26,7 @@ export function composeHandler<V, T1, T2, T3, T4, T5>(
   fn1: (x: T1) => T2,
   fn0: (x: V) => T1,
   handler: V
-): T5;
+): T5 & { handler: V };
 export function composeHandler<V, T1, T2, T3, T4, T5, T6>(
   fn5: (x: T5) => T6,
   fn4: (x: T4) => T5,
@@ -35,7 +35,7 @@ export function composeHandler<V, T1, T2, T3, T4, T5, T6>(
   fn1: (x: T1) => T2,
   fn0: (x: V) => T1,
   handler: V
-): T6;
+): T6 & { handler: V };
 export function composeHandler<V, T1, T2, T3, T4, T5, T6, T7>(
   fn6: (x: T6) => T7,
   fn5: (x: T5) => T6,
@@ -45,7 +45,7 @@ export function composeHandler<V, T1, T2, T3, T4, T5, T6, T7>(
   fn1: (x: T1) => T2,
   fn0: (x: V) => T1,
   handler: V
-): T7;
+): T7 & { handler: V };
 export function composeHandler<V, T1, T2, T3, T4, T5, T6, T7, T8>(
   fn7: (x: T7) => T8,
   fn6: (x: T6) => T7,
@@ -56,7 +56,7 @@ export function composeHandler<V, T1, T2, T3, T4, T5, T6, T7, T8>(
   fn1: (x: T1) => T2,
   fn0: (x: V) => T1,
   handler: V
-): T8;
+): T8 & { handler: V };
 export function composeHandler<V, T1, T2, T3, T4, T5, T6, T7, T8, T9>(
   fn8: (x: T8) => T9,
   fn7: (x: T7) => T8,
@@ -68,7 +68,7 @@ export function composeHandler<V, T1, T2, T3, T4, T5, T6, T7, T8, T9>(
   fn1: (x: T1) => T2,
   fn0: (x: V) => T1,
   handler: V
-): T9;
+): T9 & { handler: V };
 export function composeHandler<V, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(
   fn9: (x: T9) => T10,
   fn8: (x: T8) => T9,
@@ -81,7 +81,7 @@ export function composeHandler<V, T1, T2, T3, T4, T5, T6, T7, T8, T9, T10>(
   fn1: (x: T1) => T2,
   fn0: (x: V) => T1,
   handler: V
-): T10;
+): T10 & { handler: V };
 export function composeHandler(...fns: Function[]): any {
   /* eslint-disable-next-line @typescript-eslint/ban-ts-ignore */
   // @ts-ignore

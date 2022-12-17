@@ -57,6 +57,21 @@ export const handler: ProxyHandler = compose(
 )(helloWorld);
 ```
 
+## Unit tests
+
+In order to unit test handler without need of moving it outside of compose function you can access `handler` property of resulted function.
+```ts
+export const handle = composeHandler(
+  middleware1(),
+  middleware2(),
+  async (event) => {
+    // do some stuff...
+  },
+);
+
+handle.handler();
+```
+
 ## Usage in TypeScript strict mode
 
 There's a [known issue with TypeScript](https://github.com/microsoft/TypeScript/issues/29904) that pipe and compose functions cannot
