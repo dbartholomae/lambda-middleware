@@ -1,0 +1,24 @@
+service: test-microservice
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  hello:
+    handler: handler.fullExample
+    events:
+      - http:
+          method: post
+          path: hello
+
+  status:
+    handler: handler.status
+    events:
+      - http:
+          method: get
+          path: status
