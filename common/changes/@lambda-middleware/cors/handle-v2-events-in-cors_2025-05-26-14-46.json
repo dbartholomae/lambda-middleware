@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "packageName": "@lambda-middleware/cors",
+      "comment": "Handle v2 events correctly",
+      "type": "minor"
+    }
+  ],
+  "packageName": "@lambda-middleware/cors",
+  "email": "daniel@bartholomae.name"
+}
