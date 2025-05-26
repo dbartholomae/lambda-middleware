@@ -1,6 +1,7 @@
 import { PromiseHandler } from "@lambda-middleware/utils";
 import {
-  APIGatewayEvent,
+  APIGatewayProxyEvent,
+  APIGatewayProxyEventV2,
   APIGatewayProxyResult,
   APIGatewayProxyResultV2,
   Context,
@@ -11,7 +12,6 @@ import {
 } from "./interfaces/CorsMiddlewareOptions";
 import { handlePreflightRequest } from "./handlePreflightRequest";
 import { handleNonPreflightRequest } from "./handleNonPreflightRequest";
-import { APIGatewayProxyEventV2 } from "aws-lambda/trigger/api-gateway-proxy";
 import { isAPIGatewayProxyEvent } from "./type-guards/isAPIGatewayProxyEvent";
 
 export const cors = (options: CorsMiddlewareOptions = {}) => {
@@ -35,8 +35,8 @@ export const cors = (options: CorsMiddlewareOptions = {}) => {
   };
 
   return <
-    Event extends APIGatewayEvent | APIGatewayProxyEventV2,
-    Result extends Event extends APIGatewayEvent
+    Event extends APIGatewayProxyEvent | APIGatewayProxyEventV2,
+    Result extends Event extends APIGatewayProxyEvent
       ? APIGatewayProxyResult
       : APIGatewayProxyResultV2
   >(
@@ -58,6 +58,18 @@ export const cors = (options: CorsMiddlewareOptions = {}) => {
         fullOptions
       ) as unknown) as Result;
     }
-    throw new Error("Event is not an API Gateway Proxy Event");
+
+    if (event.requestContext.http.method.toLowerCase() === "options") {
+      return (handlePreflightRequest(
+        runHandler as () => Promise<APIGatewayProxyResult>,
+        event,
+        fullOptions
+      ) as unknown) as Result;
+    }
+    return (handleNonPreflightRequest(
+      runHandler as () => Promise<APIGatewayProxyResult>,
+      event,
+      fullOptions
+    ) as unknown) as Result;
   };
 };
