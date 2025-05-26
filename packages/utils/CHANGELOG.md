@@ -1,6 +1,13 @@
 # Change Log - @lambda-middleware/utils
 
-This log was last generated on Fri, 12 Mar 2021 11:17:52 GMT and should not be manually modified.
+This log was last generated on Mon, 26 May 2025 14:57:52 GMT and should not be manually modified.
+
+## 1.1.0
+Mon, 26 May 2025 14:57:52 GMT
+
+### Minor changes
+
+- Expose createEventV2 helper
 
 ## 1.0.4
 Fri, 12 Mar 2021 11:17:52 GMT

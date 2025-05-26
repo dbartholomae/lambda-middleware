@@ -2,6 +2,18 @@
   "name": "@lambda-middleware/utils",
   "entries": [
     {
+      "version": "1.1.0",
+      "tag": "@lambda-middleware/utils_v1.1.0",
+      "date": "Mon, 26 May 2025 14:57:52 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Expose createEventV2 helper"
+          }
+        ]
+      }
+    },
+    {
       "version": "1.0.4",
       "tag": "@lambda-middleware/utils_v1.0.4",
       "date": "Fri, 12 Mar 2021 11:17:52 GMT",
