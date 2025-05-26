@@ -39,7 +39,7 @@
     "url": ""
   },
   "dependencies": {
-    "@lambda-middleware/utils": "^1.0.4",
+    "@lambda-middleware/utils": "^1.1.0",
     "debug": ">=4.1.0",
     "tslib": "^2.0.1"
   },

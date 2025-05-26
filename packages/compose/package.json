@@ -42,7 +42,7 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@lambda-middleware/utils": "^1.0.4",
+    "@lambda-middleware/utils": "^1.1.0",
     "@types/jest": "^25.2.1",
     "@types/supertest": "^2.0.8",
     "@types/aws-lambda": "^8.10.47",
