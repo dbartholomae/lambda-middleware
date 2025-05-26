@@ -13,7 +13,8 @@ AWS lambda middleware for automatically adding CORS headers.
 
 ## Lambda middleware
 
-This middleware is part of the [lambda middleware series](https://dbartholomae.github.io/lambda-middleware/). It can be used independently.
+This middleware is part of the [lambda middleware series](https://dbartholomae.github.io/lambda-middleware/). It can be used independently. It works with both
+API Gateway and API Gateway V2 type events.
 
 ## Usage
 
