@@ -1,7 +1,14 @@
 import type { APIGatewayProxyEventV2 } from "aws-lambda";
 
+// Define DeepPartial utility type
+export type DeepPartial<T> = T extends object
+  ? {
+      [P in keyof T]?: DeepPartial<T[P]>;
+    }
+  : T;
+
 export function createEventV2(
-  overrides: Partial<APIGatewayProxyEventV2>
+  overrides: DeepPartial<APIGatewayProxyEventV2>
 ): APIGatewayProxyEventV2 {
   return {
     version: "2.0",
@@ -30,6 +37,6 @@ export function createEventV2(
       timeEpoch: Math.floor(Date.now() / 1000),
     },
     isBase64Encoded: false,
-    ...overrides,
+    ...(overrides as Partial<APIGatewayProxyEventV2>), // Cast to Partial for spreading, assuming structure matches
   };
 }
